@@ -19,7 +19,7 @@ const Clients = () => {
       <div className="absolute inset-0 bg-black opacity-20"></div>
 
       {/* Content */}
-      <div className="w-[1319px] h-[247px] relative top-[122px] left-[310px] flex justify-center items-center gap-[140px]">
+      <div className="w-[1319px] h-[247px] relative top-[122px] md:left-[310px] xsm:left-[250px] flex justify-center items-center gap-[140px]">
         <div className="w-[218px] h-[247px] flex flex-col items-center gap-[30px]">
           <Image
             src="/Group (1).svg"

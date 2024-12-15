@@ -3,7 +3,7 @@ import Image from "next/image";
 const AboutChooseUs = () => {
   return (
     <>
-      <section className="w-[1320px] h-[865px] absolute top-[1384px] left-[300px]  flex flex-col justify-between">
+      <section className="w-[1320px] h-[865px] absolute top-[1384px] md:left-[300px] xsm:left-[200px]  flex flex-col justify-between">
         <div className=" h-[112px] flex flex-col justify-center text-center">
           <h1 className="font-roboto text-[48px] font-bold text-[#333333]">
             Why Choose us

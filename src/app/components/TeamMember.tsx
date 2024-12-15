@@ -8,7 +8,7 @@ const AboutTeamMember = () => {
         <div className="w-[1920px] h-[460px] relative">
           <div className="w-[1920px] absolute h-[460px] bg-[#FF9F0DD9] bg-opacity-85 "></div>
           <Image src="/about6.svg" alt="" height={158.89} width={81.48} className="w-[120.89px] h-[288.89px] absolute rotate-[36.87]  left-[900.33px]"/>
-          <div className="w-[418px] h-[176px] flex flex-col z-20 absolute left-[760px] top-[90px]">
+          <div className="w-[418px] h-[176px] flex flex-col z-20 absolute md:left-[760px] xsm:left-[650px] top-[90px]">
             <h1 className="text-white font-bold font-roboto text-[48px] text-center">
               Team Member
             </h1>
@@ -25,7 +25,7 @@ const AboutTeamMember = () => {
             className="w-[1919px] h-[456px]"
           />
         </div>
-        <div className="absolute top-[260px] left-[300px] grid grid-cols-4 gap-[25px]">
+        <div className="absolute top-[260px] md:left-[300px] xsm:left-[200px] grid grid-cols-4 gap-[25px]">
         <TeamMemberCard name="Mark Henry" profession="Owner"/>
         <TeamMemberCard name="Lucky Helen" profession="Chef"/>
         <TeamMemberCard name="Moon Henry" profession="Founder"/>

@@ -13,7 +13,7 @@ const Blog = () => {
  
 >
   <div className=''>
-    <Banner mainHeading="Our Blog" name="Blog"/>
+    <Banner mainHeading="Blog List" name="Blog"/>
   </div>
 {/* Left Side */}
   <div className='w-[872px] bg-green-300'>
@@ -38,3 +38,4 @@ const Blog = () => {
 }
 
 export default Blog;
+

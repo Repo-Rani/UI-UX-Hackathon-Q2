@@ -8,8 +8,8 @@ const OurMenu = () => {
   return (
     <>
       <section
-        className="relative mx-auto w-[390px] md:w-[1920px] lg:w-[1920px] max-w-[1920px]"
-        style={{ backgroundColor: "white" }}
+        className="relative mx-auto w-[1920px] lg:w-[1920px] max-w-[1920px]"
+       
       >
         <Banner mainHeading="Our Menu" name="Menu" />
         <div className="w-[1320px] h-[628px] absolute top-[531px] left-[300px]  bg-white flex justify-between ">

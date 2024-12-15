@@ -14,7 +14,7 @@ const Navbar = () => {
   };
 
   return (
-    <header className="w-[1920px] h-[90px] bg-[#0D0D0D]">
+    <header className="w-[1920px] h-[90px] xsm:bg-[#0D0D0D]">
       <nav className="w-[1320px] h-[32px] absolute top-[29px] left-[300px] ">
         <div className="w-[109px] h-[32px]">
 
@@ -23,8 +23,8 @@ const Navbar = () => {
             Food<span className="text-[#FF9F0D]">tuck</span>
           </h1>
         </div>
-        <ul className={`bg-black/70 absolute top-0 left-0 h-screen w-full flex flex-col items-center justify-center transition-all duration-500 ease-in-out z-40 ${
-            isMenuOpen ? "translate-x-0" : "-translate-x-full"} md:w-[508px] md:h-[24px] md:bg-transparent md:absolute md:translate-x-0 md:left-[451px] md:top-[4px]  flex md:flex-row justify-between items-center`}>
+        <ul className={`bg-black/70 absolute top-0 left-0 h-screen w-full flex flex-col items-center justify-center transition-all duration-500 ease-in-out z-[100] ${
+            isMenuOpen ? "translate-x-0" : "-translate-x-full"} xsm:w-[508px] xsm:h-[24px] xsm:bg-transparent xsm:absolute xsm:translate-x-0 xsm:left-[451px] xsm:top-[4px]  flex xsm:flex-row justify-between items-center`}>
           <li>
             <Link
               href="/"
@@ -116,6 +116,8 @@ const Navbar = () => {
           />
         </div>
         <div className="absolute top-[4px] left-[1256px] hover:text-[#FF9F0D] hover:scale-105 transition-all duration-300">
+
+          <Link href="/signup">
           <Image
             src="/User (1).svg"
             alt="user-vector"
@@ -123,8 +125,10 @@ const Navbar = () => {
             width={24}
             className="w-[24px] h-[24px] text-[#FFFFFF] cursor-pointer "
           />
+          </Link>
         </div>
         <div className="absolute top-[4px] left-[1296px] hover:text-[#FF9F0D] hover:scale-105 transition-all duration-300">
+          <Link href="/cart">
           <Image
             src="/Tote (1).svg"
             alt="Tote-vector"
@@ -132,9 +136,10 @@ const Navbar = () => {
             width={24}
             className="w-[24px] h-[24px] text-[#FFFFFF] cursor-pointer "
           />
+          </Link>
         </div>
 
-        <div className="xs:text-xl sm:text-3xl cursor-pointer z-50 md:hidden">
+        <div className="text-3xl cursor-pointer z-[200] xsm:hidden">
           <ToggleButton onClick={toggleMenu} isOpen={isMenuOpen} />
         </div>
       </nav>

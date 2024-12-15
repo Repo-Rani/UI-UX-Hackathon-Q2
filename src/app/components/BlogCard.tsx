@@ -1,15 +1,14 @@
 import React from "react";
 import Image from "next/image";
+// import { BlogCardProps } from "../../../types/componentTypes";
 import { BlogCardProps } from "../../../types/type";
 import Link from "next/link";
-// import { useRouter } from "next/router";
-const BlogCard = ({ image, title }: BlogCardProps) => {
+const BlogCard = ({id, image, title }: BlogCardProps) => {
   return (
+    <Link  href={`/blogDetails/${id}`} passHref>
     <div className="w-[872px] h-[830px] flex flex-col items-center justify-between ">
       <div className="relative">
         <Image src={image} alt="food-image" height={520} width={872} />
-
-        {/* Date and Month Box */}
         <div className="w-[60px] h-[60px] bg-[#ff9f0d] rounded-[6px] absolute left-[24px] top-[24px] flex flex-col items-center justify-center">
           <span className="font-inter text-[18px] font-bold w-[22px] h-[26px] text-[#ffffff]">
             14
@@ -45,7 +44,6 @@ const BlogCard = ({ image, title }: BlogCardProps) => {
           </span>
         </div>
       </div>
-
       <h2 className=" h-[32px] font-roboto font-bold text-[24px] leading-[32px] relative right-[200px] whitespace-nowrap">
         {title}
       </h2>
@@ -68,6 +66,7 @@ const BlogCard = ({ image, title }: BlogCardProps) => {
         />
       </button>
     </div>
+    </Link>
   );
 };
 

@@ -8,11 +8,11 @@ import Footer from "../components/Footer";
 const Shop = () => {
   return (
     <>
-    <section className="w-[390px]  md:w-[1920px] lg:w-[1920px]  max-w-[1920px] ">
+    <section className="  w-[1920px] lg:w-[1920px]  max-w-[1920px] ">
       <div className="w-[1320px] ">
       <Banner mainHeading="Our Shop" name="Shop" />
 
-      <div className="absolute left-[300px] top-[580px] ">
+      <div className="absolute md:left-[300px] xsm:left-[200px] top-[580px] ">
         <div className="w-[332px] h-[46px] flex justify-between">
           <span className="font-inter font-normal text-[20px] leading-[28px] w-[81px] h-[28px] text-[#333333] relative top-[10px]">
             Sort By :

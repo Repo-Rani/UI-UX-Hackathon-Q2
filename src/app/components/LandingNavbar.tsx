@@ -16,7 +16,7 @@ const LandingNavbar = () => {
 
   return (
     <header>
-      <nav className=" max-w-[1920]  w-[1320px] h-[87px] absolute top-[45px] left-[300px] bg-transparent z-[10]">
+      <nav className=" max-w-[1920]  xsm:w-[1320px]  h-[87px] absolute top-[45px] left-[300px] bg-blue-300 z-[10]">
         <div className="  h-[32px] w-[109px] absolute left-[605px] flex items-center">
           <Link
             href="/"
@@ -37,9 +37,9 @@ const LandingNavbar = () => {
         </div>
 
         <ul
-  className={`bg-black/70 fixed top-0 left-0 h-screen w-full flex flex-col items-center justify-center transition-all duration-500 ease-in-out z-40 ${
+  className={`bg-black/70 fixed top-0 left-0 h-screen w-[1920px] flex flex-col items-center justify-center transition-all duration-500 ease-in-out z-[100] ${
     isMenuOpen ? "translate-x-0" : "-translate-x-full"
-  } md:relative md:h-auto md:w-auto md:flex-row md:translate-x-0`}
+  } xsm:relative xsm:h-auto xsm:w-auto xsm:flex-row xsm:translate-x-0`}
 >
           <li>
             <Link
@@ -95,7 +95,7 @@ const LandingNavbar = () => {
                 About
               </Link>
               <Image
-                src="/Project Status.svg"
+                src="/Vector (8).svg"
                 alt="dropdown"
                 height={10}
                 width={10}
@@ -142,7 +142,7 @@ const LandingNavbar = () => {
           />
         </div>
 
-        <div className="xs:text-xl sm:text-3xl cursor-pointer z-50 md:hidden">
+        <div className="text-3xl cursor-pointer z-50 xsm:hidden">
           <ToggleButton onClick={toggleMenu} isOpen={isMenuOpen} />
         </div>
       </nav>

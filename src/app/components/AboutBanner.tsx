@@ -3,7 +3,7 @@ import Image from "next/image";
 const AboutBanner = () => {
   return (
     <>
-      <section className="w-[1320px] h-[734px] absolute top-[530px] left-[300px]  flex justify-between ">
+      <section className="w-[1320px] h-[734px] absolute top-[530px] md:left-[300px] xsm:left-[200px]  flex justify-between ">
         <div className="">
           <Image
             src="/about1.svg"

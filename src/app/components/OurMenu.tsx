@@ -14,7 +14,7 @@ const OurMenu = () => {
   ];
 
   return (
-    <div className="w-[1320px] h-[656px]">
+    <div className="w-[1320px] h-[656px] ">
       <span className="w-[144px] h-[40px] font-greatvibes font-normal text-[32px] text-[#ff9f0d] relative left-[600px]">
         Choose & pick
       </span>

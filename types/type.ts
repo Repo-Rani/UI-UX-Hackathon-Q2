@@ -15,15 +15,27 @@ export interface StarterMenuProps {
   price: string;
 }
 
+// 
+
 export interface ShopCardProps {
+  id: string;
   image: string;
   title: string;
   price: string;
   discountPrice?: string;
   sell?: string;
+  tag?: string;
+  des?: string;
+  ratingImage?: string;
+  raingNum?: string;
+  reviews?: string;
+  text?: string;
+  bottomDetail?: string;
+  bottomDetail2?: string;
 }
 
 export interface BlogCardProps {
+  id: string;
   image: string;
   title: string;
 }

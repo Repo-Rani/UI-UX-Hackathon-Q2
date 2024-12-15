@@ -1,12 +1,11 @@
 import React from 'react';
 import Image from 'next/image';
 import { ShopCardProps } from '../../../types/type';
-import Link from "next/link"
-const ShopCard = ({id,  image, title, price, discountPrice, sell }: ShopCardProps) => {
+const ShopCardsSliders = ({id,  image, title, price, discountPrice, sell }: ShopCardProps) => {
   return (
 
-    <Link href={`shopDetails/${id}`} passHref>
-    <div className="w-[312px] h-[330px] relative group">
+    
+    <div className="w-[312px] h-[350px] relative group">
       {/* Image Section */}
       <div className="relative">
         <Image
@@ -65,8 +64,8 @@ const ShopCard = ({id,  image, title, price, discountPrice, sell }: ShopCardProp
         )}
       </div>
     </div>
-    </Link>
+    
   );
 };
 
-export default ShopCard;
+export default ShopCardsSliders

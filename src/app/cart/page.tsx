@@ -2,6 +2,7 @@ import Banner from "../components/Banner";
 import CartItem from "../components/CartItem";
 import Image from "next/image";
 import Footer from "../components/Footer";
+import Link from "next/link";
 const Cart = () => {
   return (
     <>
@@ -90,7 +91,7 @@ const Cart = () => {
           </div>
           <div className="w-[648px] h-[64px] flex justify-center items-center gap-[10px] bg-[#FF9F0D]">
             <p className="text-white font-normal text-[18px] font-inter">
-              Proceed to Checkout
+            <Link href="/checkout">  Proceed to Checkout</Link>
             </p>
             <Image
               src="/CheckSquareOffset.svg"

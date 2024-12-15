@@ -1,14 +1,16 @@
 import React from "react";
 import { ToggleButtonProps } from "../../../types/type";
+import { BiMenuAltRight } from "react-icons/bi";
+import { MdOutlineClose } from "react-icons/md";
 
 
 
 const ToggleButton = ({ onClick, isOpen }: ToggleButtonProps) => {
   return (
     <button onClick={onClick} className="text-white z-10  ">
-      {isOpen ? (  <i className="bx bx-x text-2xl cursor-pointer "></i> 
+      {isOpen ? (  <BiMenuAltRight  className=" text-2xl cursor-pointer "/>
 ):(
-  <i className="bx bx-menu-alt-right text-2xl  cursor-pointer"></i>
+  <MdOutlineClose  className=" text-2xl  cursor-pointer"/>
 
 )}
       

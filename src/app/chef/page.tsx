@@ -8,7 +8,7 @@ const Chef = () => {
     <>
  <section>
     <Banner mainHeading="Our Chef" name="Chef"/>
-    <div className='w-[1320px] h-[1386px] absolute top-[580px] left-[300px] '>
+    <div className='w-[1320px] h-[1386px] absolute top-[580px] md:left-[300px] xsm:left-[225px]  '>
       <ChefCardsItem/>
     </div>
  </section>

@@ -20,7 +20,7 @@ const About = () => {
       <AboutFoodMenu/>
       
     </section>
-    <div className='absolute top-[5350px]'>
+    <div className='absolute top-[4950px]'>
     <Footer/>
     </div>
     </>

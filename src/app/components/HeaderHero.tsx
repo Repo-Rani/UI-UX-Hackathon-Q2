@@ -14,7 +14,7 @@ const HeaderHero = () => {
   return (
     <>
       {/* Hero Section */}
-      <section className=" relative md:mx-auto w-full bg-opacity-80 lg:w-[1920px]  max-w-[1920px] bg-black md:w-[1920px] h-[950px] ">
+      <section className=" relative mx-auto  bg-opacity-80 lg:w-[1920px]  max-w-[1920px] bg-black w-[1920px] h-[950px] ">
         {/* Background Image */}
         <Image
           src="/hero-image (2).svg"
@@ -24,7 +24,7 @@ const HeaderHero = () => {
           className="absolute top-0 left-0 w-full h-full z-0 object-cover opacity-10"
         />
 
-        <div className="relative top-[181px] left-[242px]  h-[492px] w-[25.28px] items-center  ">
+        <div className="relative top-[181px] md:left-[242px] xsm:left-[150px]  h-[492px] w-[25.28px] items-center  ">
           <div className="w-[158px] relative top-[85px]  border-[1px] -rotate-90 border-[#ffffff] left-[-67px]"></div>
           <div className=" w-[25.28px] h-[107px]  relative top-[195px]  flex flex-col items-center gap-[25px] ">
             <FaFacebookF className=" text-[#ffffff] hover:text-[#ff9f0d] hover:scale-110 transition-all duration-300 ease-in-out  w-[25.28px] h-[25.21px]  " />
@@ -34,7 +34,7 @@ const HeaderHero = () => {
           <div className="w-[158px] relative top-[305px]  border-[1px] -rotate-90 border-[#ffffff] left-[-67px]"></div>
         </div>
 
-        <div className="absolute top-[293px] left-[300px] w-[472px] h-[356px] rounded-[30px]">
+        <div className="absolute top-[293px] md:left-[300px] xsm:left-[200px] w-[472px] h-[356px] rounded-[30px]">
           <span className="font-greatvibes font-normal text-[32px] leading-[40px] text-[#FF9F0D]">
             Its Quick & Amusing!
           </span>
@@ -44,29 +44,29 @@ const HeaderHero = () => {
           </h1>
         </div>
 
-        <p className="font-inter font-normal text-[16px] leading-[24px] text-[#FFFFFF] absolute top-[509px] left-[300px]">
+        <p className="font-inter font-normal text-[16px] leading-[24px] text-[#FFFFFF] absolute top-[509px] md:left-[300px] xsm:left-[200px]">
           Lorem ipsum dolor sit amet, consectetur adipiscing elit. <br />
           Varius sed pharetra dictum neque massa congue
         </p>
-        <button className="w-[190px] h-[60px] absolute top-[589px] left-[300px] rounded-[30px] bg-[#FF9F0D] hover:bg-[#E0DFDF] text-[16px] text-[#E0DFDF] hover:text-[#FF9F0D] hover:scale-105 transition-all duration-300 ease-in-out leading-[24px] font-normal">
+        <button className="w-[190px] h-[60px] absolute top-[589px] md:left-[300px] xsm:left-[200px] rounded-[30px] bg-[#FF9F0D] hover:bg-[#E0DFDF] text-[16px] text-[#E0DFDF] hover:text-[#FF9F0D] hover:scale-105 transition-all duration-300 ease-in-out leading-[24px] font-normal">
           See Menu
         </button>
         {/* Image side */}
 
-        <div className="absolute top-[198px] left-[865px]">
+        <div className="absolute top-[198px] md:left-[865px] xsm:left-[800px]">
           <Image
             src="/Image (2).svg"
             alt="food-image"
             height={670}
             width={877.8}
-            className=" w-[877.8px] h-[670px]  "
+            className=" md:w-[877.8px] md:h-[670px] xsm:w-[790px] xsm:h-[600px] "
           />
         </div>
       </section>
       {/* About us section */}
-      <section className="w-[1320px] h-[562px] absolute top-[1070px] left-[300px] bg-black">
+      <section className="w-[1320px] h-[562px] absolute top-[1070px] md:left-[300px] xsm:left-[200px] bg-black">
         <div className="w-[562px] h-[562px]  flex flex-col gap-[12px] ">
-          <span className="md:text-[32px] text-[24px] font-normal text-[#FF9F0D] font-greatvibes">
+          <span className="xsm:text-[32px] text-[24px] font-normal text-[#FF9F0D] font-greatvibes">
             About us
           </span>
 
@@ -141,7 +141,7 @@ const HeaderHero = () => {
 
       {/* Food Category */}
 
-      <section className="w-[1320px] h-[489px] absolute top-[1752px] left-[300px] rounded-[6px]  ">
+      <section className="w-[1320px] h-[489px] absolute top-[1752px] md:left-[300px] xsm:left-[200px] rounded-[6px]  ">
         <span className="w-[177px] h-[40px] relative  left-[550px] font-greatvibes text-normal text-[#FF9F0D] text-[32px] leading-[40px] ">
           Food Category
         </span>
@@ -149,7 +149,7 @@ const HeaderHero = () => {
           <span className="text-[#FF9F0D]">Ch</span>oose Food Iteam
         </h2>
 
-        <div className="grid grid-cols-1 md:grid-cols-4 gap-[10px] w-[1320px] h-[329px] rounded-[6px] relative top-[50px] ">
+        <div className="grid grid-cols-2 xsm:grid-cols-4 gap-[10px] w-[1320px] h-[329px] rounded-[6px] relative top-[50px] ">
           <div>
             <div className="w-[206px] h-[97px]  absolute top-[125px] flex items-center justify-between flex-col ">
               <div className="w-[125px] h-[40px] bg-[#ffffff] relative flex items-start justify-center ml-16 ">
@@ -199,14 +199,14 @@ const HeaderHero = () => {
             />
           </div>
         </div>
-        <div className="relative left-[1140px] bottom-[200px]">
+        {/* <div className="absolute left-[1100px] top-[-40px]">
           <Image src="/hero-leaf.svg" alt="leaf" height={532.3} width={444.1} />
-        </div>
+        </div> */}
       </section>
 
       {/* Why Choose Us */}
 
-      <section className="absolute top-[2361px] left-[300px]">
+      <section className="absolute top-[2361px] md:left-[300px] xsm:left-[220px]">
         <WhyChooseMe />
       </section>
 
@@ -216,16 +216,16 @@ const HeaderHero = () => {
       </section>
 
 {/* Our Menu */}
-      <section className="absolute left-[300px] top-[3834px]">
+      <section className="absolute md:left-[300px] xsm:left-[200px] top-[3834px]">
         <OurMenu/>
       </section>
 
 {/* Our Chef */}
-<section className="absolute top-[4562px] left-[300px]">
+<section className="absolute top-[4562px] md:left-[300px] xsm:left-[200px]">
   <OurChef/>
   </section>
 
-  <section className="absolute top-[5339px] left-[300px]">
+  <section className="absolute top-[5339px] md:left-[300px] xsm:left-[200px]">
     <Testimonial/>
   </section>
 
@@ -253,7 +253,7 @@ const HeaderHero = () => {
   </div>
       </section>
 
-      <section className="absolute top-[6907px] left-[300px]">
+      <section className="absolute top-[6907px] md:left-[300px] xsm:left-[200px]">
          <div className='w-[1320px] h-[732px]'>
                 <span className='w-[124px] h-[40px] font-greatvibes text-[32px] font-normal text-[#ff9f0d] relative left-[600px]'>Blog Post</span>
                 <h2 className='w-[462px] h-[56px] font-roboto font-bold text-[48px] text-[#ffffff] relative left-[455px]'><span className='text-[#ff9f0d]'>La</span>test News & Blog</h2>
@@ -262,7 +262,9 @@ const HeaderHero = () => {
 
       
       </section>
+      <div className="absolute top-[7759px]">
     <LandingFooter/>
+    </div>
     </>
   );
 };
