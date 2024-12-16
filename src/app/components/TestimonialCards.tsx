@@ -18,7 +18,6 @@ const TestimonialCards = () => {
 
   return (
     <div className="w-[868.47px] h-[450px] relative left-[220px] bottom-[170px] bg-[#ffffff] shadow-custom">
-      
       <div className="w-[696.57px] h-[485.89px] relative left-[85px] top-[20px] flex flex-col justify-center gap-[12px] items-center ">
       <Image src="/testimonial.svg" alt="image" height={500.56} width={395.75}  className='absolute top-[90px] left-[525px] bottom-[160px]'/>
 

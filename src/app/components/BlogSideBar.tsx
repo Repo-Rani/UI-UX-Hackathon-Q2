@@ -320,9 +320,11 @@ const BlogSideBar = () => {
             {images.map((src, index) => (
               <div key={index} className="relative group w-[110px] h-[92px]">
                 {/* Image */}
-                <img
+                <Image
                   src={src}
                   alt={`blog-image-${index}`}
+                  height={100}
+                  width={100}
                   className="w-full h-full object-cover"
                 />
                 {/* Overlay */}
