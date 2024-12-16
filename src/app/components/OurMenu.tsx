@@ -37,7 +37,7 @@ const OurMenu = () => {
       <div className="grid grid-cols-2 gap-[20px]">
       <div className="relative top-[85px] left-[35px]">
         <Image src="/menuleaf.svg" alt="menu-leaf" height={406} width={515}/>
-        <Image src="/menu-plate.svg" alt="menu-food" height={362} width={366} className="relative bottom-[400px] left-[70px]"/>
+        <Image src="/menu-plate.svg" alt="menu-food" height={362} width={366} className="relative bottom-[400px] left-[70px] food-rotate"/>
       </div>
 
       {/* Right side */}

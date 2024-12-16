@@ -4,15 +4,23 @@ import Link from "next/link";
 
 const OurChef = () => {
   return (
-    <div className="w-[1320px] h-[656px] ">
+    <div
+ 
+    className="w-[1320px] h-[656px] ">
       <span className="w-[56px] h-[40px] font-greatvibes font-normal text-[32px] text-[#ff9f0d] relative left-[630px]">
         Chefs
       </span>
       <h3 className="w-[329px] h-[56px] font-helvetica text-[48px] font-bold text-[#ffffff] relative left-[500px]">
         <span className="text-[#ff9f0d]">Me</span>et Our Chef
       </h3>
-      <div className="flex justify-between relative top-[20px] w-[1320px] h-[391px] ">
-        <div>
+      <div
+       
+      className="flex justify-between relative top-[20px] w-[1320px] h-[391px] ">
+        <div
+          data-aos="flip-left"
+          data-aos-easing="ease-out-cubic"
+          data-aos-duration="1000"
+        >
           <Image
             src="/chef-1.svg"
             alt="chef-image"
@@ -30,7 +38,12 @@ const OurChef = () => {
           </div>
         </div>
 
-        <div>
+        <div 
+        
+        data-aos="flip-left"
+        data-aos-easing="ease-out-cubic"
+        data-aos-duration="1000"
+        >
           <Image
             src="/chef-2.svg"
             alt="chef-image"
@@ -48,7 +61,11 @@ const OurChef = () => {
           </div>
         </div>
 
-        <div>
+        <div
+         data-aos="flip-left"
+         data-aos-easing="ease-out-cubic"
+         data-aos-duration="1000"
+        >
           <Image
             src="/chef-3.svg"
             alt="chef-image"
@@ -65,7 +82,11 @@ const OurChef = () => {
             </span>
           </div>
         </div>
-        <div>
+        <div
+         data-aos="flip-left"
+         data-aos-easing="ease-out-cubic"
+         data-aos-duration="1000"
+        >
           <Image
             src="/chef-4.svg"
             alt="chef-image"

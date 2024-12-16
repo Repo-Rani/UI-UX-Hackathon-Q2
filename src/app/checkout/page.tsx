@@ -1,9 +1,15 @@
 import React from "react";
 import Image from "next/image";
+import Banner from "../components/Banner";
+import Footer from "../components/LandingFooter";
+import Link from "next/link";
 const Checkout = () => {
   return (
     <>
-      <section className="w-[1320px] h-[723px] absolute left-[300px] top-[530px] flex justify-between">
+    <section>
+
+      <Banner name="Checkout" mainHeading="Checkout Page"/>
+      <div className="w-[1320px] h-[723px] absolute left-[300px] top-[630px] flex justify-between">
         <div className="w-[872px] h-[723px]">
           <h1 className="text-[20px] font-bold font-helvetica text-black  mb-3">
             Shipping Address
@@ -128,7 +134,7 @@ const Checkout = () => {
               <div className="w-[424px] h-[88px] flex flex-col justify-between">
                 <label
                   htmlFor=""
-                  className="text-[16px]font-helveticafont-normal text-black"
+                  className="text-[16px]font-helvetica font-normal text-black"
                 >
                   Zip code
                 </label>
@@ -180,14 +186,14 @@ const Checkout = () => {
             <button className="w-[424px] h-[56px] border-[1px] border-[#E0E0E0]">
               <div className="flex justify-center items-center gap-[8px]">
                 <Image
-                  src="/CaretLeft.svg"
+                  src="/CaretLeft (1).svg"
                   alt=""
                   height={24}
                   width={24}
                   className="w-[24px] h-[24px]"
                 />
                 <p className="text-[#4F4F4F] text-[16px] font-helvetica font-normal">
-                  Back to cart
+                 <Link href="/cart"> Back to cart</Link>
                 </p>
               </div>
             </button>
@@ -197,7 +203,7 @@ const Checkout = () => {
                   Proceed to shipping
                 </p>
                 <Image
-                  src="/CaretLeft (1).svg"
+                  src="/CaretLeft.svg"
                   alt=""
                   height={24}
                   width={24}
@@ -349,6 +355,10 @@ const Checkout = () => {
             </button>
           </div>
         </div>
+      </div>
+      <div className="absolute top-[1500px]">
+      <Footer/>
+      </div>
       </section>
     </>
   );

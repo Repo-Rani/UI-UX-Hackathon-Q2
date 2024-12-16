@@ -1,7 +1,20 @@
+"use client"
 import React from 'react';
 import { shopCardData } from '../../../data/data';
 import ShopCard from './ShopCard';
+import { useEffect } from 'react';
+import AOS from "aos";
+import "aos/dist/aos.css";
 const ShopCardList = () => {
+  useEffect(() => {
+      AOS.init({
+        duration: 1000,
+        easing: "ease",
+        once: true,
+        anchorPlacement: "top-bottom",
+      });
+    }, []);
+
   return (
     <section>
     <div className="absolute left-[100px] md:left-[300px] top-[650px]  ">

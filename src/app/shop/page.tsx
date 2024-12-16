@@ -1,11 +1,22 @@
+"use client"
 import React from "react";
 import Banner from "../components/Banner";
 import Image from "next/image";
 import ShopCardList from "../components/ShopCardList";
 import Pagination from "../components/Pagination";
 import Footer from "../components/Footer";
-
+import { useEffect } from 'react';
+import AOS from "aos";
+import "aos/dist/aos.css";
 const Shop = () => {
+    useEffect(() => {
+      AOS.init({
+        duration: 1000,
+        easing: "ease",
+        once: true,
+        anchorPlacement: "top-bottom",
+      });
+    }, []);
   return (
     <>
     <section className="  w-[1920px] lg:w-[1920px]  max-w-[1920px] ">

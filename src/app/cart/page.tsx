@@ -89,9 +89,10 @@ const Cart = () => {
               </p>
             </div>
           </div>
+          <Link href="/checkout"> 
           <div className="w-[648px] h-[64px] flex justify-center items-center gap-[10px] bg-[#FF9F0D]">
             <p className="text-white font-normal text-[18px] font-inter">
-            <Link href="/checkout">  Proceed to Checkout</Link>
+             Proceed to Checkout
             </p>
             <Image
               src="/CheckSquareOffset.svg"
@@ -101,6 +102,7 @@ const Cart = () => {
               className="h-[20px] w-[20px]"
             />
           </div>
+          </Link>
         </div>
       </div>
 

@@ -1,3 +1,4 @@
+"use client"
 import React from 'react'
 import AboutBanner from '../components/AboutBanner'
 import Banner from '../components/Banner'
@@ -6,7 +7,18 @@ import AboutTeamMember from '../components/TeamMember'
 import AboutFoodMenu from '../components/AboutMenu'
 import Footer from '../components/Footer'
 import Testimonail from '../components/Testimonial'
+import { useEffect } from 'react';
+import AOS from "aos";
+import "aos/dist/aos.css";
 const About = () => {
+   useEffect(() => {
+      AOS.init({
+        duration: 1000,
+        easing: "ease",
+        once: true,
+        anchorPlacement: "top-bottom",
+      });
+    }, []);
   return (
     <>
     <section className=''>

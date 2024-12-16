@@ -9,6 +9,7 @@ const config: Config = {
   theme: {
     extend: {
       screens: { 
+
        
         'xsm':'425px', 
         'md': '768px',
@@ -16,6 +17,8 @@ const config: Config = {
         'xl': '1280px', 
         '2xl': '1536px', 
       },
+
+      
       boxShadow: {
         'custom': '0px 0px 80px 0px #CDCDCD40',
       },

@@ -54,7 +54,7 @@ const Footer = () => {
             </p>
             <div className="flex gap-[14px]">
               <div className="w-[78px] h-[72px] bg-[#FF9F0D] flex justify-center items-center ">
-              <PiClockClockwise className="text-[#ffffff] h-[40px] w-[40px]" />
+              <PiClockClockwise className="text-[#ffffff] h-[40px] w-[40px] food-rotate" />
               </div>
               <div className="w-[149px] h-[74px] flex justify-between flex-col">
                 <h2 className="font-inter text-[18px] text-white font-normal">

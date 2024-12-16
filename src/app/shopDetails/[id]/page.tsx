@@ -17,9 +17,27 @@ const shopCardsDetails: React.FC<Props> = ({ params }) => {
   const product = shopCardData.find((item: any) => item.id === id);
   if (!product) {
     return (
-      <div className="text-center mt-10 text-black">
-      error page
+      <section>
+        <Banner name="404" mainHeading="404 Error" />
+        <h1 className="absolute top-[580px] left-[880px] font-helvetica text-[#FF9F0D] text-[96px] font-bold">
+          404
+        </h1>
+        <h3 className="text-[32px] font-helvetica font-bold text-[#333333] absolute left-[645px] top-[725px]">
+          Oops! Look likes something going wrong
+        </h3>
+
+        <p className="text-[18px] font-normal text-[#4F4F4F] font-inter w-[490px] absolute left-[715px] text-center top-[790px]">
+          Page Cannot be found! we’ll have it figured out in no time. Menwhile,
+          cheek out these fresh ideas:
+        </p>
+
+        <button className="w-[197px] h-[58px] absolute left-[862px] top-[870px] py-[16px] px-[48px] rounded-[6px] text-[18px] font-bold text-white font-helvetica flex justify-center items-center bg-[#FF9F0D]">
+     <Link href="/shop">Go to home</Link>
+        </button>
+        <div className="absolute top-[1050px]">
+        <Footer/>
       </div>
+      </section>
     );
   }
   return (
@@ -182,7 +200,7 @@ const shopCardsDetails: React.FC<Props> = ({ params }) => {
             className="h-[20px] w-[20px]"
           />
           <p className="font-normal text-[18px] text-white font-inter ">
-            Add to cart
+           <Link href="/cart"> Add to cart</Link>
           </p>
         </button>
 

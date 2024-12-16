@@ -17,10 +17,31 @@
     @apply after:w-full after:scale-x-100;
   }
 }
+@keyframes rotatePlate {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.food-rotate {
+  animation: rotatePlate 8s linear infinite;
+}
+
 
 body {
   width: 100%;
   max-width: 1920px;
   margin: auto;
+  scroll-snap-type: none;
   font-family: Helvetica, sans-serif;
+ 
 }
+
+
+
+
+
+

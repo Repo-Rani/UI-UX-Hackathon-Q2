@@ -6,6 +6,7 @@ const ChefCardsItem = () => {
     <div className='grid grid-cols-2 xsm:grid-cols-4 gap-[20px]'>
        {chefsData.map((item, index) => (
     <ChefCards
+   
       key={index}
       image={item.image}
       name={item.name}

@@ -6,7 +6,10 @@ const ShopCard = ({id,  image, title, price, discountPrice, sell }: ShopCardProp
   return (
 
     <Link href={`shopDetails/${id}`} passHref>
-    <div className="w-[312px] h-[330px] relative group">
+    <div
+     data-aos="flip-right"
+        data-aos-delay="100"
+    className="w-[312px] h-[330px] relative group">
       {/* Image Section */}
       <div className="relative">
         <Image

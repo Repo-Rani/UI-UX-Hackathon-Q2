@@ -1,19 +1,33 @@
+"use client"
 import React from "react";
 import Banner from "../components/Banner";
 import Image from "next/image";
 import StarterMenuItems from "../components/StarterMenuItems";
 import Clients from "../components/Client";
 import Footer from "../components/Footer";
+import { useEffect } from 'react';
+import AOS from "aos";
+import "aos/dist/aos.css";
 const OurMenu = () => {
+   useEffect(() => {
+      AOS.init({
+        duration: 1000,
+        easing: "ease",
+        once: true,
+        anchorPlacement: "top-bottom",
+      });
+    }, []);
   return (
     <>
       <section
-        className="relative mx-auto w-[1920px] lg:w-[1920px] max-w-[1920px]"
+        className="relative mx-auto w-[1920px] lg:w-[1920px] max-w-[1920px] "
        
       >
         <Banner mainHeading="Our Menu" name="Menu" />
         <div className="w-[1320px] h-[628px] absolute top-[531px] left-[300px]  bg-white flex justify-between ">
           <Image
+             data-aos="fade-right"
+        data-aos-delay="100"
             src="/Rectangle 8874 (1).svg"
             alt="meni-item"
             height={626}
@@ -70,6 +84,8 @@ const OurMenu = () => {
 
         <div className="w-[1320px] h-[628px] absolute top-[1279px] left-[300px]  bg-white flex justify-between flex-row-reverse ">
           <Image
+             data-aos="fade-left"
+        data-aos-delay="100"
             src="/menu2.svg"
             alt="menu-item"
             height={626}
@@ -130,6 +146,8 @@ const OurMenu = () => {
 
         <div className="w-[1320px] h-[628px] absolute top-[2615px] left-[300px]  bg-white flex justify-between ">
           <Image
+             data-aos="fade-right"
+        data-aos-delay="100"
             src="/menu3.svg"
             alt="meni-item"
             height={626}
@@ -186,6 +204,8 @@ const OurMenu = () => {
 
         <div className="w-[1320px] h-[628px] absolute top-[3363px] left-[300px]  bg-white flex justify-between flex-row-reverse ">
           <Image
+             data-aos="fade-left"
+        data-aos-delay="100"
             src="/menu4.svg"
             alt="menu-item"
             height={626}

@@ -10,24 +10,36 @@ const Banner = ({ name , mainHeading}: BannerPropsTypes) => {
           alt=""
           height={410}
           width={1920}
-          className="w-[1930px] h-[410px]"
+          className="w-[1930px] h-[410px] "
         />
         <div className="w-[225px] absolute top-[198px] left-[850px]  flex justify-center gap-[20px] items-center flex-col ">
-          <h1 className="text-[48px] font-bold font-helvetica text-white whitespace-nowrap">
+          <h1
+          
+             data-aos="zoom-in-down"
+        data-aos-delay="200"
+          className="text-[48px] font-bold font-helvetica text-white whitespace-nowrap">
            {mainHeading}
           </h1>
           <div className="w-[133px] h-[28px] flex justify-between items-center ">
-            <p className="font-inter font-normal text-[20px] text-white">
+            <p 
+                 data-aos="zoom-in-down"
+        data-aos-delay="200"
+            className="font-inter font-normal text-[20px] text-white">
               Home
             </p>
             <Image
+                 data-aos="zoom-in-down"
+        data-aos-delay="200"
               src="/CaretRight.svg"
               alt="chevron-icon"
               width={16}
               height={16}
               className="h-[16px] w-[16px]"
             />
-            <p className="font-inter font-normal text-[20px] text-[#FF9F0D] whitespace-nowrap">
+            <p 
+                 data-aos="zoom-in-down"
+        data-aos-delay="200"
+            className="font-inter font-normal text-[20px] text-[#FF9F0D] whitespace-nowrap">
               {name}
             </p>
           </div>
