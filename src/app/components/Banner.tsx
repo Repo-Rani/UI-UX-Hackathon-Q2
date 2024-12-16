@@ -13,7 +13,7 @@ const Banner = ({ name , mainHeading}: BannerPropsTypes) => {
           className="w-[1930px] h-[410px]"
         />
         <div className="w-[225px] absolute top-[198px] left-[850px]  flex justify-center gap-[20px] items-center flex-col ">
-          <h1 className="text-[48px] font-bold font-roboto text-white whitespace-nowrap">
+          <h1 className="text-[48px] font-bold font-helvetica text-white whitespace-nowrap">
            {mainHeading}
           </h1>
           <div className="w-[133px] h-[28px] flex justify-between items-center ">

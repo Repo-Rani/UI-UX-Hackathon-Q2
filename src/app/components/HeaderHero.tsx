@@ -14,7 +14,7 @@ const HeaderHero = () => {
   return (
     <>
       {/* Hero Section */}
-      <section className=" relative mx-auto  bg-opacity-80 lg:w-[1920px]  max-w-[1920px] bg-black w-[1920px] h-[950px] ">
+      <section className=" relative mx-auto  bg-opacity-80 lg:w-[1920px]  max-w-[1920px] bg-black xsm:w-[1920px] w-full xsm:h-[950px]   ">
         {/* Background Image */}
         <Image
           src="/hero-image (2).svg"
@@ -38,7 +38,7 @@ const HeaderHero = () => {
           <span className="font-greatvibes font-normal text-[32px] leading-[40px] text-[#FF9F0D]">
             Its Quick & Amusing!
           </span>
-          <h1 className="font-halvetica font-bold text-5xl leading-[68px] text-white">
+          <h1 className="font-helvetica font-bold text-5xl leading-[68px] text-white">
             <span className="text-[#FF9F0D]">Th</span>e Art of speed food
             Quality
           </h1>
@@ -48,18 +48,18 @@ const HeaderHero = () => {
           Lorem ipsum dolor sit amet, consectetur adipiscing elit. <br />
           Varius sed pharetra dictum neque massa congue
         </p>
-        <button className="w-[190px] h-[60px] absolute top-[589px] md:left-[300px] xsm:left-[200px] rounded-[30px] bg-[#FF9F0D] hover:bg-[#E0DFDF] text-[16px] text-[#E0DFDF] hover:text-[#FF9F0D] hover:scale-105 transition-all duration-300 ease-in-out leading-[24px] font-normal">
+        <button className="md:w-[190px] md:h-[60px] w-[130px]  h-[40px] absolute top-[589px] md:left-[300px] xsm:left-[200px] rounded-[30px] bg-[#FF9F0D] hover:bg-[#E0DFDF] text-[16px] font-inter text-[#E0DFDF] hover:text-[#FF9F0D] hover:scale-105 transition-all duration-300 ease-in-out leading-[24px] font-normal">
           See Menu
         </button>
         {/* Image side */}
 
-        <div className="absolute top-[198px] md:left-[865px] xsm:left-[800px]">
+        <div className="absolute xsm:top-[198px] md:left-[865px] xsm:left-[800px] left-[300px]">
           <Image
             src="/Image (2).svg"
             alt="food-image"
             height={670}
             width={877.8}
-            className=" md:w-[877.8px] md:h-[670px] xsm:w-[790px] xsm:h-[600px] "
+            className=" md:w-[877.8px] md:h-[670px] xsm:w-[790px] xsm:h-[600px] w-[690px] h-[500px] "
           />
         </div>
       </section>
@@ -70,12 +70,12 @@ const HeaderHero = () => {
             About us
           </span>
 
-          <h1 className="text-[20px] md:text-[48px] font-bold font-roboto whitespace-nowrap leading-[56px] text-[#ffffff]">
+          <h1 className="text-[20px] md:text-[48px] font-bold font-helvetica whitespace-nowrap leading-[56px] text-[#ffffff]">
             <span className="text-[#FF9F0D]">We </span>Create the best <br />
             foody product
           </h1>
 
-          <p className="text-[10px] leading-[24px] md:text-[16px] text-[#ffffff] font-normal">
+          <p className="text-[10px] leading-[24px] md:text-[16px] text-[#ffffff] font-inter font-normal">
             Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque
             diam pellentesque bibendum non dui volutpat fringilla bibendum.
             Urna, elit augue urna, vitae feugiat pretium donec id elementum.
@@ -87,25 +87,25 @@ const HeaderHero = () => {
           <div className="flex flex-col gap-4">
             <div className="flex items-center">
               <FaCheck className="w-[17px] h-[12.24px] text-[#ffffff] mr-2" />
-              <span className="text-[10px] text-[#ffffff] md:text-[18px] font-normal whitespace-nowrap w-[327px]">
+              <span className="text-[10px] text-[#ffffff] md:text-[18px] font-normal whitespace-nowrap font-inter w-[327px]">
                 Lacus nisi, et ac dapibus sit eu velit in consequat.
               </span>
             </div>
             <div className="flex items-center">
               <FaCheck className="w-[17px] h-[12.24px] text-[#ffffff] mr-2" />
-              <span className="text-[10px] text-[#ffffff] md:text-[18px] font-normal whitespace-nowrap w-[327px]">
-                Quisque diam pellentesque bibendum non dui volutpat fringilla{" "}
+              <span className="text-[10px] text-[#ffffff] md:text-[18px] font-normal font-inter whitespace-nowrap w-[327px]">
+                Quisque diam pellentesque bibendum non dui volutpat fringilla
               </span>
             </div>
             <div className="flex items-center">
               <FaCheck className="w-[17px] h-[12.24px] text-[#ffffff] mr-2" />
-              <span className="text-[10px] text-[#ffffff] md:text-[18px] font-normal whitespace-nowrap w-[327px]">
+              <span className="text-[10px] text-[#ffffff] md:text-[18px] font-normal whitespace-nowrap font-inter w-[327px]">
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit
               </span>
             </div>
 
-            <div className="flex flex-col md:flex-row items-center md:items-start">
-              <button className="bg-[#FF9F0D] hover:bg-[#E0DFDF] text-[16px] text-[#E0DFDF] hover:text-[#FF9F0D] hover:scale-105 transition-all duration-300 ease-in-out w-[100px] h-[30px] md:w-[190px] md:h-[60px] rounded-[30px] mt-[25px] ">
+            <div className="flex flex-col md:flex-row items-center md:items-start relative md:right-0 right-[225px] ">
+              <button className="bg-[#FF9F0D] hover:bg-[#E0DFDF] text-[16px] text-[#E0DFDF] hover:text-[#FF9F0D] hover:scale-105 transition-all duration-300 ease-in-out w-[100px] h-[30px] md:w-[190px] md:h-[60px]  rounded-[30px] mt-[25px] ">
                 Read More
               </button>
             </div>
@@ -145,7 +145,7 @@ const HeaderHero = () => {
         <span className="w-[177px] h-[40px] relative  left-[550px] font-greatvibes text-normal text-[#FF9F0D] text-[32px] leading-[40px] ">
           Food Category
         </span>
-        <h2 className="w-[446px] h-[56px] relative left-[420px] font-roboto font-bold text-[48px] text-[#ffffff]">
+        <h2 className="w-[446px] h-[56px] relative left-[420px] font-helvetica font-bold text-[48px] text-[#ffffff]">
           <span className="text-[#FF9F0D]">Ch</span>oose Food Iteam
         </h2>
 
@@ -167,7 +167,7 @@ const HeaderHero = () => {
               src="/c1.svg"
               alt="cate-food"
               height={328}
-              width={305}
+              width={305} 
               className="w-[305px] h-[328px]"
             />
           </div>
@@ -199,11 +199,11 @@ const HeaderHero = () => {
             />
           </div>
         </div>
-        {/* <div className="absolute left-[1100px] top-[-40px]">
+       
+      </section> 
+      <div className="absolute top-[1950px] left-[1440px]">
           <Image src="/hero-leaf.svg" alt="leaf" height={532.3} width={444.1} />
-        </div> */}
-      </section>
-
+        </div> 
       {/* Why Choose Us */}
 
       <section className="absolute top-[2361px] md:left-[300px] xsm:left-[220px]">
@@ -236,7 +236,7 @@ const HeaderHero = () => {
       <section className="w-[1920px] h-[558px] absolute top-[6229px]">
    <Image src=" /hero-imagess.svg" alt="hero-images" height={558} width={1920}/>
   <span className="w-[273px] h-[40px] relative bottom-[440px] left-[1350px]  font-greatvibes font-normal text-[32px] text-[#ff9f0d]">Resturant Active Process</span>
-  <h2 className="w-[705px] h-[112px] relative left-[950px] bottom-[430px] font-roboto text-[48px]  font-bold text-[#ffffff] text-right"><span className="text-[#ff9f0d]">We</span> Document Every Food <br />
+  <h2 className="w-[705px] h-[112px] relative left-[950px] bottom-[430px] font-helvetica text-[48px]  font-bold text-[#ffffff] text-right"><span className="text-[#ff9f0d]">We</span> Document Every Food <br />
   Bean Process untile it is saved</h2>
   <p className="w-[651px] h-[48px] relative left-[1000px] bottom-[375px] text-[16px] font-inter font-normal text-[#ffffff] text-right">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque diam pellentesque bibendum non dui volutpat fringilla bibendum. Urna, elit augue urna, </p>
 
@@ -256,7 +256,7 @@ const HeaderHero = () => {
       <section className="absolute top-[6907px] md:left-[300px] xsm:left-[200px]">
          <div className='w-[1320px] h-[732px]'>
                 <span className='w-[124px] h-[40px] font-greatvibes text-[32px] font-normal text-[#ff9f0d] relative left-[600px]'>Blog Post</span>
-                <h2 className='w-[462px] h-[56px] font-roboto font-bold text-[48px] text-[#ffffff] relative left-[455px]'><span className='text-[#ff9f0d]'>La</span>test News & Blog</h2>
+                <h2 className='w-[462px] h-[56px] font-helvetica font-bold text-[48px] text-[#ffffff] relative left-[455px]'><span className='text-[#ff9f0d]'>La</span>test News & Blog</h2>
       <LatestBlogItems/>
       </div>
 

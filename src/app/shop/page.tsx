@@ -72,54 +72,54 @@ const Shop = () => {
         </div>
 
         <div className="w-[248px] h-[372px] relative top-[40px] left-[28px] flex flex-col justify-between items-center">
-          <h2 className="font-roboto font-bold text-[20px] text-[#333333] w-[248px] h-[28px]">
+          <h2 className="font-helvetica font-bold text-[20px] text-[#333333] w-[248px] h-[28px]">
             Category
           </h2>
           <div className="w-[248px] h-[26px] flex gap-[8px] ">
             <div className="w-[14px] h-[14px] border-[1px] border-[#333333] inline-block mt-2"></div>
-            <span className="font-roboto text-[18px] font-normal text-[#333333]">
+            <span className="font-helvetica text-[18px] font-normal text-[#333333]">
               Sandwiches
             </span>
           </div>
           <div className="w-[248px] h-[26px] flex gap-[8px]  ">
             <div className="w-[14px] h-[14px] border-[1px] border-[#333333] inline-block mt-2"></div>
-            <span className="font-roboto text-[18px] font-normal text-[#333333]">
+            <span className="font-helvetica text-[18px] font-normal text-[#333333]">
               Burgur
             </span>
           </div>
           <div className="w-[248px] h-[26px] flex gap-[8px] ">
             <div className="w-[14px] h-[14px] border-[1px] border-[#333333] inline-block mt-2"></div>
-            <span className="font-roboto text-[18px] font-normal text-[#333333]">
+            <span className="font-helvetica text-[18px] font-normal text-[#333333]">
               Chicken Chup
             </span>
           </div>
           <div className="w-[248px] h-[26px] flex gap-[8px] ">
             <div className="w-[14px] h-[14px] border-[1px] border-[#333333] inline-block mt-2"></div>
-            <span className="font-roboto text-[18px] font-normal text-[#333333]">
+            <span className="font-helvetica text-[18px] font-normal text-[#333333]">
               Drink
             </span>
           </div>
           <div className="w-[248px] h-[26px] flex gap-[8px] ">
             <div className="w-[14px] h-[14px] border-[1px] border-[#333333] inline-block mt-2"></div>
-            <span className="font-roboto text-[18px] font-normal text-[#333333]">
+            <span className="font-helvetica text-[18px] font-normal text-[#333333]">
               Pizza
             </span>
           </div>
           <div className="w-[248px] h-[26px] flex gap-[8px] ">
             <div className="w-[14px] h-[14px] border-[1px] border-[#333333] inline-block mt-2"></div>
-            <span className="font-roboto text-[18px] font-normal text-[#333333]">
+            <span className="font-helvetica text-[18px] font-normal text-[#333333]">
               Thi
             </span>
           </div>
           <div className="w-[248px] h-[26px] flex gap-[8px] ">
             <div className="w-[14px] h-[14px] border-[1px] border-[#333333] inline-block mt-2"></div>
-            <span className="font-roboto text-[18px] font-normal text-[#333333]">
+            <span className="font-helvetica text-[18px] font-normal text-[#333333]">
               Non Veg
             </span>
           </div>
           <div className="w-[248px] h-[26px] flex gap-[8px] ">
             <div className="w-[14px] h-[14px] border-[1px] border-[#333333] inline-block mt-2"></div>
-            <span className="font-roboto text-[18px] font-normal text-[#333333]">
+            <span className="font-helvetica text-[18px] font-normal text-[#333333]">
               Uncategorized
             </span>
           </div>
@@ -136,14 +136,19 @@ const Shop = () => {
           <span className="font-inter font-bold text-[16px] w-[105px] h-[24px] text-[#ffffff] relative top-[-250px]  left-[25px]">
             Perfect Taste
           </span>
-          <h2 className="w-[181px] h-[28px]  font-roboto font-bold text-[20px] relative top-[-240px] left-[25px] text-[#ffffff]">
+          <h2 className="w-[181px] h-[28px]  font-helvetica font-bold text-[20px] relative top-[-240px] left-[25px] text-[#ffffff]">
             Classic Restaurant
           </h2>
+          <span className="font-inter text-[16px]font-bold text-[#ff9f0d] relative top-[-220px] left-[25px]">45.00$</span>
+          <div className="flex justify-between w-[106px] h-[24px] relative top-[-140px] left-[25px]">
+            <span className="font-inter font-normal text-[16px] text-[#ffffff]">Shop Now</span>
+            <Image src="/ArrowCircleRight.svg" alt="image" height={24} width={24}/>
+          </div>
         </div>
       </div>
 
-      <div className="w-[248px] h-[87px] absolute top-[1420px]  left-[1333px] flex flex-col justify-between ">
-        <h1 className="text-[20px] font-bold text-black font-roboto ">
+      <div className="w-[248px] h-[87px] absolute top-[1440px]  left-[1333px] flex flex-col justify-between ">
+        <h1 className="text-[20px] font-bold text-black font-helvetica ">
           Filter By Price
         </h1>
         <Image
@@ -164,7 +169,7 @@ const Shop = () => {
       </div>
 
       <div className="w-[252px] h-[368px] absolute top-[1511px] left-[1338px] ">
-        <h1 className=" text-[20px] font-bold text-black font-roboto mb-7 mt-5">
+        <h1 className=" text-[20px] font-bold text-black font-helvetica mb-7 mt-5">
           Latest Products
         </h1>
 
@@ -178,7 +183,7 @@ const Shop = () => {
               className="w-[71.81px] h-[65px]"
             />
             <div className="flex flex-col justify-between ">
-              <h1 className="text-[16px] font-normal text-[#4F4F4F] font-roboto">
+              <h1 className="text-[16px] font-normal text-[#4F4F4F] font-helvetica">
                 Pizza
               </h1>
               <Image
@@ -188,7 +193,7 @@ const Shop = () => {
                 width={63}
                 className="w-[63px] h-[9px]"
               />
-              <p className="text-[16px] font-normal text-[#4F4F4F] font-roboto">
+              <p className="text-[16px] font-normal text-[#4F4F4F] font-helvetica">
                 $35.00
               </p>
             </div>
@@ -203,7 +208,7 @@ const Shop = () => {
               className="w-[71.81px] h-[65px] "
             />
             <div className="flex flex-col justify-between ">
-              <h1 className="text-[16px] font-normal text-[#4F4F4F] font-roboto">
+              <h1 className="text-[16px] font-normal text-[#4F4F4F] font-helvetica">
                 Pizza
               </h1>
               <Image
@@ -213,7 +218,7 @@ const Shop = () => {
                 width={63}
                 className="w-[63px] h-[9px]"
               />
-              <p className="text-[16px] font-normal text-[#4F4F4F] font-roboto">
+              <p className="text-[16px] font-normal text-[#4F4F4F] font-helvetica">
                 $35.00
               </p>
             </div>
@@ -227,7 +232,7 @@ const Shop = () => {
               className="w-[71.81px] h-[65px]"
             />
             <div className="flex flex-col justify-between ">
-              <h1 className="text-[16px] font-normal text-[#4F4F4F] font-roboto">
+              <h1 className="text-[16px] font-normal text-[#4F4F4F] font-helvetica">
                 Pizza
               </h1>
               <Image
@@ -237,7 +242,7 @@ const Shop = () => {
                 width={63}
                 className="w-[63px] h-[9px]"
               />
-              <p className="text-[16px] font-normal text-[#4F4F4F] font-roboto">
+              <p className="text-[16px] font-normal text-[#4F4F4F] font-helvetica">
                 $35.00
               </p>
             </div>
@@ -251,7 +256,7 @@ const Shop = () => {
               className="w-[71.81px] h-[65px]"
             />
             <div className="flex flex-col justify-between ">
-              <h1 className="text-[16px] font-normal text-[#4F4F4F] font-roboto">
+              <h1 className="text-[16px] font-normal text-[#4F4F4F] font-helvetica">
                 Pizza
               </h1>
               <Image
@@ -261,7 +266,7 @@ const Shop = () => {
                 width={63}
                 className="w-[63px] h-[9px]"
               />
-              <p className="text-[16px] font-normal text-[#4F4F4F] font-roboto">
+              <p className="text-[16px] font-normal text-[#4F4F4F] font-helvetica">
                 $35.00
               </p>
             </div>
@@ -269,7 +274,7 @@ const Shop = () => {
         </div>
 
         <div className="  w-[225px] h-[162px] relative top-[50px]">
-          <h2 className="font-roboto text-[20px] font-bold w-[127px] h-[28px] text-[#333333] mb-5">
+          <h2 className="font-helvetica text-[20px] font-bold w-[127px] h-[28px] text-[#333333] mb-5">
             Product Tags{" "}
           </h2>
           <div className="flex flex-col justify-between gap-[10px]">

@@ -9,8 +9,8 @@ const NextArrow = ({ onClick }: NextArrowsProps) => {
   return (
     <div
       onClick={onClick}
-      onMouseEnter={() => setIsActive(true)} // Hover start
-      onMouseLeave={() => setIsActive(false)} // Hover end
+      onMouseEnter={() => setIsActive(true)} 
+      onMouseLeave={() => setIsActive(false)} 
       className={`w-[46px] h-[46px] rounded-full ${
         isActive ? "bg-[#ff9f0d]" : "bg-gray-300"
       } flex items-center justify-center cursor-pointer absolute top-[-77px] left-[1155px] transition-colors duration-300`}

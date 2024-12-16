@@ -10,7 +10,7 @@ const LatestBlog = ({ image, title, date }: LatestBlogProps) => {
       <span className="w-[133px] h-[24px] font-inter font-normal text-[16px] text-[#ff9f0d] relative left-[43px]">
         {date}
       </span>
-      <h2 className="w-[340px] h-[64px] font-robot font-bold text-[24px] text-[#ffffff] relative left-[43px]">
+      <h2 className="w-[340px] h-[64px] font-helvetica font-bold text-[24px] text-[#ffffff] relative left-[43px]">
         {title}
       </h2>
       <div className="flex justify-between">

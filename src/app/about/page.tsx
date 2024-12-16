@@ -14,7 +14,7 @@ const About = () => {
       <AboutBanner/>
       <AboutChooseUs/>
       <AboutTeamMember/>
-      <section className=' absolute top-[3175px] left-[300px]'>
+      <section className=' absolute top-[3190px] left-[300px]'>
       <Testimonail/> 
       </section>
       <AboutFoodMenu/>
@@ -28,3 +28,5 @@ const About = () => {
 }
 
 export default About;
+
+

@@ -54,13 +54,13 @@ const ShopCardsSliders = ({id,  image, title, price, discountPrice, sell }: Shop
       </div>
 
       {/* Title Section */}
-      <h2 className="mt-4 font-bold text-[18px] text-[#333333]">{title}</h2>
+      <h2 className="mt-4 font-bold text-[18px] text-[#333333] font-inter">{title}</h2>
       
       {/* Price Section */}
       <div className="flex justify-between items-center mt-2">
-        <span className="text-[#FF9F0D] font-medium">{price}</span>
+        <span className="text-[#FF9F0D] font-medium font-inter">{price}</span>
         {discountPrice && (
-          <span className="line-through text-[#828282] relative right-[12rem]">{discountPrice}</span>
+          <span className="line-through text-[#828282] font-inter relative right-[12rem]">{discountPrice}</span>
         )}
       </div>
     </div>

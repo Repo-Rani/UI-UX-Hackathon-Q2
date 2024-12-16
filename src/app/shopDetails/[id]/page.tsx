@@ -309,7 +309,7 @@ const shopCardsDetails: React.FC<Props> = ({ params }) => {
         </div>
         </div>
         <div className=" w-[1320px] h-[401px] absolute top-[1950px] left-[302px]">
-      <h2 className="w-[255px] h-[39px] font-halvetica font-bold text-[32px] text-[#333333] relative bottom-[30px] left-[10px]">Similar Products</h2>
+      <h2 className="w-[255px] h-[39px] font-helvetica font-bold text-[32px] text-[#333333] relative bottom-[30px] left-[10px]">Similar Products</h2>
      <ShopSliders/>
      </div>
       </section>

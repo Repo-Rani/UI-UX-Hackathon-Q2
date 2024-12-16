@@ -70,7 +70,7 @@ const BlogSideBar = () => {
               </span>
             </div>
           </div>
-          <p className="font-roboto font-normal text-[16px] text-center text-[#828282] ">
+          <p className="font-helvetica font-normal text-[16px] text-center text-[#828282] ">
             Lorem ipsum dolor sit amet, consectetur adipisicing elit.Veritatis
             distinctio, odio eligendi suscipit reprehenderit atque
           </p>
@@ -86,7 +86,7 @@ const BlogSideBar = () => {
 
       {/* Recent Post scetion */}
       <div className="w-[423px] h-[592px] border-[1px] border-[#e0e0e0] flex flex-col justify-between ">
-        <h2 className="w-[116px] h-[28px] font-roboto text-[20px] font-bold text-[#333333] mt-5 ml-5">
+        <h2 className="w-[116px] h-[28px] font-helvetica text-[20px] font-bold text-[#333333] mt-5 ml-5">
           Recent Post
         </h2>
         <div className="flex justify-start  gap-[20px]">
@@ -98,10 +98,10 @@ const BlogSideBar = () => {
             className="rounded-[6px]"
           />
           <div className="flex flex-col justify-between w-[205px] h-[77.64px]">
-            <span className="  font-normal text-[14px] text-[#828282] ">
+            <span className="  font-normal text-[14px] font-helvetica  text-[#828282] ">
               June 22, 2020
             </span>
-            <p className="w-[205px] h-[47.78px] font-roboto font-normal text-[16px] text-[#4f4f4f] leading-[24px]">
+            <p className="w-[205px] h-[47.78px] font-helvetica font-normal text-[16px] text-[#4f4f4f] leading-[24px]">
               Lorem ipsum dolor sit cing elit, sed do.
             </p>
           </div>
@@ -117,10 +117,10 @@ const BlogSideBar = () => {
             className="rounded-[6px]"
           />
           <div className="flex  flex-col justify-between w-[205px] h-[77.64px]">
-            <span className=" font-normal text-[14px] text-[#828282]">
+            <span className=" font-normal font-helvetica text-[14px] text-[#828282]">
               June 22, 2020
             </span>
-            <p className="w-[205px] h-[47.78px] font-roboto font-normal text-[16px] text-[#4f4f4f] leading-[24px]">
+            <p className="w-[205px] h-[47.78px] font-helvetica font-normal text-[16px] text-[#4f4f4f] leading-[24px]">
               Lorem ipsum dolor sit cing elit, sed do.
             </p>
           </div>
@@ -140,7 +140,7 @@ const BlogSideBar = () => {
             <span className=" font-normal text-[14px] text-[#828282] whitespace-nowrap">
               June 22, 2020
             </span>
-            <p className="w-[205px] h-[47.78px] font-roboto font-normal text-[16px] text-[#4f4f4f] leading-[24px]">
+            <p className="w-[205px] h-[47.78px] font-helvetica font-normal text-[16px] text-[#4f4f4f] leading-[24px]">
               Lorem ipsum dolor sit cing elit, sed do.
             </p>
           </div>
@@ -160,7 +160,7 @@ const BlogSideBar = () => {
             <span className="  font-normal text-[14px] text-[#828282]">
               June 22, 2020
             </span>
-            <p className="w-[205px] h-[47.78px] font-roboto font-normal text-[16px] text-[#4f4f4f] leading-[24px]">
+            <p className="w-[205px] h-[47.78px] font-helvetica font-normal text-[16px] text-[#4f4f4f] leading-[24px]">
               Lorem ipsum dolor sit cing elit, sed do.
             </p>
           </div>
@@ -176,10 +176,10 @@ const BlogSideBar = () => {
         <div className="w-[311px] h-[62px] flex justify-start items-center gap-[25px]">
           <Image src="/bi-1.svg" alt="food-image" height={62} width={67} />
           <div className="flex justify-between w-[280px]">
-            <h2 className="w-[92px] h-[24px] font-roboto font-bold text-[16px] text-[#333333]">
+            <h2 className="w-[92px] h-[24px] font-helvetica font-bold text-[16px] text-[#333333]">
               Chicken Fry
             </h2>
-            <span className="w-[18px] h-[24px] font-roboto font-normal text-[16px] text-center text-[#333333]">
+            <span className="w-[18px] h-[24px] font-helvetica font-normal text-[16px] text-center text-[#333333]">
               26
             </span>
           </div>
@@ -188,10 +188,10 @@ const BlogSideBar = () => {
         <div className="w-[311px] h-[62px] flex justify-start items-center gap-[25px]">
           <Image src="/bi-2.svg" alt="food-image" height={62} width={67} />
           <div className="flex justify-between w-[280px]">
-            <h2 className="w-[92px] h-[24px] font-roboto font-bold text-[16px] text-[#333333]">
+            <h2 className="w-[92px] h-[24px] font-helvetica font-bold text-[16px] text-[#333333] whitespace-nowrap">
               Burgur Food
             </h2>
-            <span className="w-[18px] h-[24px] font-roboto font-normal text-[16px] text-center text-[#333333]">
+            <span className="w-[18px] h-[24px] font-helvetica font-normal text-[16px] text-center text-[#333333]">
               46
             </span>
           </div>
@@ -200,10 +200,10 @@ const BlogSideBar = () => {
         <div className="w-[311px] h-[62px] flex justify-start items-center gap-[25px]">
           <Image src="/bi-3.svg" alt="food-image" height={62} width={67} />
           <div className="flex justify-between w-[280px]">
-            <h2 className="w-[92px] h-[24px] font-roboto font-bold text-[16px] text-[#333333]">
+            <h2 className="w-[92px] h-[24px] font-helvetica font-bold text-[16px] text-[#333333]">
               Pizza
             </h2>
-            <span className="w-[18px] h-[24px] font-roboto font-normal text-[16px] text-center text-[#333333]">
+            <span className="w-[18px] h-[24px] font-helvetica font-normal text-[16px] text-center text-[#333333]">
               16
             </span>
           </div>
@@ -212,10 +212,10 @@ const BlogSideBar = () => {
         <div className="w-[311px] h-[62px] flex justify-start items-center gap-[25px]">
           <Image src="/bi-4.svg" alt="food-image" height={62} width={67} />
           <div className="flex justify-between w-[280px]">
-            <h2 className="w-[92px] h-[24px] font-roboto font-bold text-[16px] text-[#333333]">
+            <h2 className="w-[92px] h-[24px] font-helvetica font-bold text-[16px] text-[#333333]">
               Fresh Fruit
             </h2>
-            <span className="w-[18px] h-[24px] font-roboto font-normal text-[16px] text-center text-[#333333]">
+            <span className="w-[18px] h-[24px] font-helvetica font-normal text-[16px] text-center text-[#333333]">
               36
             </span>
           </div>
@@ -224,10 +224,10 @@ const BlogSideBar = () => {
         <div className="w-[311px] h-[62px] flex justify-start items-center gap-[25px]">
           <Image src="/bi-5.svg" alt="food-image" height={62} width={67} />
           <div className="flex justify-between w-[280px]">
-            <h2 className="w-[92px] h-[24px] font-roboto font-bold text-[16px] text-[#333333]">
+            <h2 className="w-[92px] h-[24px] font-helvetica font-bold text-[16px] text-[#333333]">
               Vegetables
             </h2>
-            <span className="w-[18px] h-[24px] font-roboto font-normal text-[16px] text-center text-[#333333]">
+            <span className="w-[18px] h-[24px] font-helvetica font-normal text-[16px] text-center text-[#333333]">
               16
             </span>
           </div>
@@ -237,24 +237,24 @@ const BlogSideBar = () => {
       {/* Popular Tags */}
       <div className="w-[423px] h-[308px] border-[1px] border-[#e0e0e0]  ">
         <div className="w-[325px] h-[244px] relative top-[30px] left-[45px] ">
-          <h2 className="w-[126px] h-[28px]  font-roboto font-bold text-[20px] mb-5">
+          <h2 className="w-[126px] h-[28px] font-helvetica font-bold text-[20px] mb-5">
             Popular Tags
           </h2>
 
           <div className="flex justify-center flex-col gap-[20px] ">
             <div className="flex justify-between gap-[20px] ">
               <div className="flex justify-center items-center w-[115px] h-[38px]  border-[1px] border-[#e0e0e0]  ">
-                <span className="w-[61px] h-[22px] font-roboto font-normal  text-[14px]">
+                <span className="w-[61px] h-[22px] font-helvetica font-normal  text-[14px]">
                   Sandwich
                 </span>
               </div>
               <div className="flex justify-center items-center  w-[115px] h-[38px]  border-[1px] border-[#e0e0e0]  ">
-                <span className="w-[61px] h-[22px] font-roboto font-normal  text-[14px]">
+                <span className="w-[61px] h-[22px] font-helvetica font-normal  text-[14px]">
                   Tikka
                 </span>
               </div>
               <div className="flex justify-center items-center  w-[115px] h-[38px]  border-[1px] border-[#e0e0e0]  ">
-                <span className="w-[61px] h-[22px] font-roboto font-normal  text-[14px]">
+                <span className="w-[61px] h-[22px] font-helvetica font-normal  text-[14px]">
                   Bbq
                 </span>
               </div>
@@ -262,30 +262,30 @@ const BlogSideBar = () => {
 
             <div className="flex gap-[25px] ">
               <div className=" w-[115px] h-[38px]  border-[1px] border-[#e0e0e0] flex justify-center items-center ">
-                <span className="w-[61px] h-[22px] font-roboto font-normal  text-[14px]">
+                <span className="w-[61px] h-[22px] font-helvetica font-normal  text-[14px]">
                   Restaurant
                 </span>
               </div>
 
               <div className="flex justify-start items-center p-2  w-[115px] h-[38px]  border-[1px] border-[#e0e0e0]  ">
-                <span className="w-[61px] h-[22px] font-roboto font-normal  text-[14px] whitespace-nowrap">
+                <span className="w-[61px] h-[22px] font-helvetica font-normal  text-[14px] whitespace-nowrap">
                   Chicken Sharma
                 </span>
               </div>
             </div>
             <div className="flex justify-between gap-[20px] ">
               <div className="flex justify-center items-center  w-[115px] h-[38px]  border-[1px] border-[#e0e0e0]  ">
-                <span className="w-[61px] h-[22px] font-roboto font-normal  text-[14px]">
+                <span className="w-[61px] h-[22px] font-helvetica font-normal  text-[14px]">
                   Health
                 </span>
               </div>
               <div className="flex justify-center items-center  w-[115px] h-[38px]  border-[1px] border-[#e0e0e0]  ">
-                <span className="w-[61px] h-[22px] font-roboto font-normal  text-[14px] whitespace-nowrap">
+                <span className="w-[61px] h-[22px] font-helvetica font-normal  text-[14px] whitespace-nowrap">
                   Fast Food
                 </span>
               </div>
               <div className="flex justify-center items-center  w-[115px] h-[38px]  border-[1px] border-[#e0e0e0]  ">
-                <span className="w-[61px] h-[22px] font-roboto font-normal  text-[14px]">
+                <span className="w-[61px] h-[22px] font-helvetica font-normal  text-[14px]">
                   Food
                 </span>
               </div>
@@ -293,17 +293,17 @@ const BlogSideBar = () => {
 
             <div className="flex justify-between gap-[20px]">
               <div className="flex justify-center items-center  w-[115px] h-[38px]  border-[1px] border-[#e0e0e0]  ">
-                <span className="w-[61px] h-[22px] font-roboto font-normal  text-[14px]">
+                <span className="w-[61px] h-[22px] font-helvetica font-normal  text-[14px]">
                   Pizza
                 </span>
               </div>
               <div className="flex justify-center items-center  w-[115px] h-[38px]  border-[1px] border-[#e0e0e0]  ">
-                <span className="w-[61px] h-[22px] font-roboto font-normal  text-[14px]">
+                <span className="w-[61px] h-[22px] font-helvetica font-normal  text-[14px]">
                   Burgur
                 </span>
               </div>
               <div className="flex justify-center items-center  w-[115px] h-[38px]  border-[1px] border-[#e0e0e0]  ">
-                <span className="w-[61px] h-[22px] font-roboto font-normal  text-[14px]">
+                <span className="w-[61px] h-[22px] font-helvetica   font-normal  text-[14px]">
                   Chicken
                 </span>
               </div>
@@ -313,7 +313,7 @@ const BlogSideBar = () => {
       </div>
       <div className="w-[422px] h-[316px] border-[1px] border-[#e0e0e0] ">
         <div className="w-[362px] h-[252px]  relative top-[28px] left-[25px] flex flex-col justify-between">
-          <h2 className="w-[131px] h-[28px] font-roboto font-bold text-[20px] text-[#333333]">
+          <h2 className="w-[131px] h-[28px] font-helvetica font-bold text-[20px] text-[#333333]">
             Photo Gallery
           </h2>
           <div className="flex flex-wrap gap-4 justify-center">

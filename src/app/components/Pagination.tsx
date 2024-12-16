@@ -8,7 +8,7 @@ const Pagination = () => {
   const pageNumbers = [1, 2, 3]; 
 
   const handlePageClick = (index: any) => {
-    setActivePage(index); // Set the active button index
+    setActivePage(index); 
   };
 
   return (
@@ -24,12 +24,11 @@ const Pagination = () => {
         {pageNumbers.map((number, index) => (
           <button
             key={index}
-            onClick={() => handlePageClick(index)} // Handle button click
             className={`w-[48px] h-[48px] border-[2px] border-[#f2f2f2] flex justify-center items-center 
             ${
               activePage === index
-                ? "bg-[#ff9f0d] text-[#ffffff]" // Active styles
-                : "bg-[#ffffff] text-[#ff9f0d]" // Default styles
+                ? "bg-[#ff9f0d] text-[#ffffff]" 
+                : "bg-[#ffffff] text-[#ff9f0d]" 
             } hover:bg-[#ff9f0d] hover:text-[#ffffff] transition-all duration-300 ease-in-out`}
           >
             <span className="w-[8px] h-[24px] text-[16px] font-normal font-inter">

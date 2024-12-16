@@ -15,7 +15,7 @@ export interface StarterMenuProps {
   price: string;
 }
 
-// 
+//
 
 export interface ShopCardProps {
   id: string;

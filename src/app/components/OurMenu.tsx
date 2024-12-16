@@ -18,7 +18,7 @@ const OurMenu = () => {
       <span className="w-[144px] h-[40px] font-greatvibes font-normal text-[32px] text-[#ff9f0d] relative left-[600px]">
         Choose & pick
       </span>
-      <h2 className="w-[358px] h-[56px] font-roboto font-bold text-[48px] text-[#ffffff] relative left-[500px]">
+      <h2 className="w-[358px] h-[56px] font-helvetica font-bold text-[48px] text-[#ffffff] relative left-[500px]">
         <span className="text-[#ff9f0d]">Fr</span>om Our Menu
       </h2>
 

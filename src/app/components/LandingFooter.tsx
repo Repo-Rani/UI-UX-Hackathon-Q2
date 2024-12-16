@@ -22,7 +22,7 @@ const Footer = () => {
                 <span className="text-[#FF9F0D]">St</span>ill You Need Our
                 Support?
               </h2>
-              <p className="font-normal text-[16px] leading-[24px] font-roboto text-[#ffffff]">
+              <p className="font-normal text-[16px] leading-[24px] font-helvetica text-[#ffffff]">
                 Dont wait make a smart & logical quote here. Its pretty easy.
               </p>
             </div>
@@ -46,7 +46,7 @@ const Footer = () => {
         </div>
         <div className="w-[1320px] h-[331px] relative top-[280px] flex justify-between items-center">
           <div className="flex justify-center relative top-[-55px] gap-[20px] flex-col">
-            <h2 className=" text-[24px] font-bold text-white font-roboto">About Us</h2>
+            <h2 className=" text-[24px] font-bold text-white font-helvetica">About Us</h2>
             <p className="font-inter font-normal text-white text-[16px] w-[312px]">
               orporate clients and leisure travelers has been relying on
               Groundlink for dependab safe, and professional chauffeured car
@@ -199,7 +199,7 @@ const Footer = () => {
                   20 Feb 2022
                 </p>
                 <p className="text-white font-inter font-normal text-[18px] whitespace-nowrap">
-                  Keep Your Business{" "}
+                  Keep Your Business
                 </p>
               </div>
             </div>
@@ -219,7 +219,7 @@ const Footer = () => {
                   20 Feb 2022
                 </p>
                 <p className="text-white font-inter font-normal text-[18px] whitespace-nowrap">
-                  Keep Your Business{" "}
+                  Keep Your Business
                 </p>
               </div>
             </div>

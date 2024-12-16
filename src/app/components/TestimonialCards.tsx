@@ -6,19 +6,18 @@ import Image from "next/image";
 const TestimonialCards = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
 
-  // Automatically change slide every 3 seconds
+  
   useEffect(() => {
     const interval = setInterval(() => {
       setCurrentIndex((prevIndex) =>
         prevIndex === testimonialsData.length - 1 ? 0 : prevIndex + 1
       );
-    }, 4000); // Change every 4 seconds
+    }, 4000); 
     return () => clearInterval(interval);
   }, []);
 
   return (
     <div className="w-[868.47px] h-[450px] relative left-[220px] bottom-[170px] bg-[#ffffff] shadow-custom">
-      {/* Testimonial Card */}
       
       <div className="w-[696.57px] h-[485.89px] relative left-[85px] top-[20px] flex flex-col justify-center gap-[12px] items-center ">
       <Image src="/testimonial.svg" alt="image" height={500.56} width={395.75}  className='absolute top-[90px] left-[525px] bottom-[160px]'/>
@@ -44,10 +43,10 @@ const TestimonialCards = () => {
           height={24} width={152}
           className="w-[152px] h-[24px]"
         />
-        <h3 className="w-[159px] h-[32px] font-roboto font-bold text-[24px] text-[#333333]">
+        <h3 className="w-[159px] h-[32px] font-roboto font-bold text-[24px] text-[#333333] whitespace-nowrap">
           {testimonialsData[currentIndex].name}
         </h3>
-        <p className="w-[110px] h-[24px] font-roboto font-normal text-[16px] text-[#828282]">
+        <p className="w-[110px] h-[24px] font-roboto font-normal text-[16px] text-[#828282] whitespace-nowrap">
           "{testimonialsData[currentIndex].profession}"
         </p>
       </div>

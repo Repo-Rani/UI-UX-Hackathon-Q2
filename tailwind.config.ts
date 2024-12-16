@@ -9,8 +9,7 @@ const config: Config = {
   theme: {
     extend: {
       screens: { 
-        'xs': '320px',
-        'sm': '375px',
+       
         'xsm':'425px', 
         'md': '768px',
         'lg': '1024px', 
@@ -26,9 +25,8 @@ const config: Config = {
       fontFamily:{
         inter: ["inter","sans", "serif"],
         greatvibes:["Great Vibes","sans", "cursive"],
-        roboto:["roboto","sans"],
         miniver: ["miniver","sans"],
-        halvetica: ['Halvetica', "Sans-serif"],
+        helvetica: ['Helvetica', "Sans-serif"],
       },
     },
   },

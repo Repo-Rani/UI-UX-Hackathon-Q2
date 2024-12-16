@@ -17,11 +17,11 @@ const Footer = () => {
         <div className="w-[1170px] h-[142.62px] absolute  md:left-[359px] top-[70px] flex justify-between flex-col items-center">
           <div className="w-[1170px]  flex justify-between items-center h-[100px]">
             <div className="flex justify-center gap-[10px] flex-col">
-              <h2 className=" font-roboto font-bold text-[32px] text-[#ffffff] leading-[40px]">
+              <h2 className=" font-helvetica font-bold text-[32px] text-[#ffffff] leading-[40px]">
                 <span className="text-[#FF9F0D]">St</span>ill You Need Our
                 Support?
               </h2>
-              <p className="font-normal text-[16px] leading-[24px] font-roboto text-[#ffffff]">
+              <p className="font-normal text-[16px] leading-[24px] font-helvetica text-[#ffffff]">
                 Dont wait make a smart & logical quote here. Its pretty easy.
               </p>
             </div>
@@ -34,7 +34,7 @@ const Footer = () => {
               />
               <button
                 type="submit"
-                className="bg-white text-[#FF9F0D] px-6 py-2 rounded-[4px] font-semibold hover:bg-[#FF9F0D] hover:text-white transition-all duration-300"
+                className="bg-white text-[#FF9F0D] font-inter px-6 py-2 rounded-[4px] font-semibold hover:bg-[#FF9F0D] hover:text-white transition-all duration-300"
               >
                 Subscribe Now
               </button>
@@ -43,9 +43,9 @@ const Footer = () => {
 
           <div className="w-[1170px] border-b-[1px] border-[#FF9F0D]"></div>
         </div>
-        <div className="w-[1320px] h-[331px] relative top-[280px] flex justify-between  items-center">
+        <div className="w-[1320px] h-[331px] relative top-[280px]  flex justify-between  items-center">
           <div className="flex justify-center relative top-[-55px] gap-[20px] flex-col">
-            <h2 className=" text-[24px] font-bold text-white font-roboto">
+            <h2 className=" text-[24px] font-bold text-white font-helvetica">
               About Us
             </h2>
             <p className="font-inter font-normal text-white text-[16px] w-[312px]">
@@ -71,7 +71,7 @@ const Footer = () => {
             </div>
           </div>
           <div className="w-[143px] h-[367px] flex justify-between flex-col  text-white cursor-pointer list-none">
-            <h2 className="font-bold text-[24px] font-poppins  whitespace-nowrap">
+            <h2 className="font-bold text-[24px] font-helvetica  whitespace-nowrap">
               Useful Links
             </h2>
 
@@ -125,7 +125,7 @@ const Footer = () => {
             </li>
           </div>
           <div className="w-[143px] h-[367px] flex justify-between flex-col cursor-pointer  text-white list-none">
-            <h2 className="font-bold text-[24px] font-roboto  whitespace-nowrap">
+            <h2 className="font-bold text-[24px] font-helvetica  whitespace-nowrap">
               Help?
             </h2>
             <li>
@@ -178,7 +178,7 @@ const Footer = () => {
             </li>
           </div>
           <div className="w-[143px] h-[367px] flex justify-start flex-col text-white">
-            <h2 className="font-bold text-white text-[24px] font-roboto whitespace-nowrap">
+            <h2 className="font-bold text-white text-[24px] font-helvetica whitespace-nowrap">
               Recent Post
             </h2>
             <div className="flex flex-col justify-center gap-[10px] relative top-[20px]">

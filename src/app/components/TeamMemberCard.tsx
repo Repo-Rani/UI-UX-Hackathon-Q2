@@ -18,10 +18,10 @@ const TeamMemberCard = ({ name, profession }: TeamMemberCardsPropsTypes) => {
 
         {/* Card Details */}
         <div className="w-[312px] h-[88px] py-3 flex justify-between flex-col shadow-xl shadow-[#CDCDCD40]">
-          <h1 className="font-bold text-[20px] font-roboto text-[#4F4F4F] text-center">
+          <h1 className="font-bold text-[20px] font-helvetica text-[#4F4F4F] text-center">
             {name}
           </h1>
-          <p className="text-[16px] font-roboto font-normal text-[#BDBDBD] text-center">
+          <p className="text-[16px] font-helvetica font-normal text-[#BDBDBD] text-center">
             {profession}
           </p>
         </div>

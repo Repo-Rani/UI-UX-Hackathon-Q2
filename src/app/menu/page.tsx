@@ -29,7 +29,7 @@ const OurMenu = () => {
               width={16}
               className="h-[24px] w-[24px] relative left-[20px]"
             />
-            <h1 className="font-roboto text-[48px] font-bold text-black relative left-[20px]">
+            <h1 className="font-helvetica text-[48px] font-bold text-black relative left-[20px]">
               Starter Menu
             </h1>
 
@@ -85,7 +85,7 @@ const OurMenu = () => {
               width={16}
               className="h-[24px] w-[24px] relative left-[20px]"
             />
-            <h1 className="font-roboto text-[48px] font-bold text-black relative left-[20px]">
+            <h1 className="font-helvetica text-[48px] font-bold text-black relative left-[20px]">
               Main course
             </h1>
 
@@ -145,7 +145,7 @@ const OurMenu = () => {
               width={16}
               className="h-[24px] w-[24px] relative left-[20px]"
             />
-            <h1 className="font-roboto text-[48px] font-bold text-black relative left-[20px]">
+            <h1 className="font-helvetica text-[48px] font-bold text-black relative left-[20px]">
               Dessert
             </h1>
 
@@ -201,7 +201,7 @@ const OurMenu = () => {
               width={16}
               className="h-[24px] w-[24px] relative left-[20px]"
             />
-            <h1 className="font-roboto text-[48px] font-bold text-black relative left-[20px]">
+            <h1 className="font-helvetica text-[48px] font-bold text-black relative left-[20px]">
               Drinks
             </h1>
 
@@ -244,7 +244,7 @@ const OurMenu = () => {
           <span className="font-inter font-normal text-[18px] text-[#333333] relative left-[600px]">
             Partners & Clients
           </span>
-          <h2 className="font-roboto font-bold text-[48px] leading-[56px] text-[#333333] relative left-[360px]">
+          <h2 className="font-helvetica font-bold text-[48px] leading-[56px] text-[#333333] relative left-[360px]">
             We work with the best pepole
           </h2>
           <div className="w-[1322px] h-[129.37px]  relative top-[60px] flex items-center justify-between bg-white">

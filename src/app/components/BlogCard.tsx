@@ -44,7 +44,7 @@ const BlogCard = ({id, image, title }: BlogCardProps) => {
           </span>
         </div>
       </div>
-      <h2 className=" h-[32px] font-roboto font-bold text-[24px] leading-[32px] relative right-[200px] whitespace-nowrap">
+      <h2 className=" w-[475px] font-helvetica font-bold text-[24px] leading-[32px] relative right-[200px] whitespace-nowrap">
         {title}
       </h2>
       <div className="w-[694.83px]  border-[1px] border-[#828282] relative left-[-88px] opacity-[17%]"></div>
@@ -55,7 +55,7 @@ const BlogCard = ({id, image, title }: BlogCardProps) => {
         eirmod tempor invidunt ut labore et dolore magna aliquyam erat
       </p>
       <button className="w-[172px] h-[52px] rounded-[6px] border-[1px] border-[#ff9f0d] py-[14px] px-[32px]  hover:scale-105 transition-all duration-300 ease-in-out flex items-center justify-between relative right-[350px]">
-        <span className="w-[80px] h-[24px] font-roboto font-normal text-[16px] text-[#ff9f0d] ">
+        <span className="w-[80px] h-[24px] font-helvetica font-normal text-[16px] text-[#ff9f0d] ">
           <Link href="/blog">Read More</Link>
         </span>
         <Image

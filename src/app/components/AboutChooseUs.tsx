@@ -5,13 +5,13 @@ const AboutChooseUs = () => {
     <>
       <section className="w-[1320px] h-[865px] absolute top-[1384px] md:left-[300px] xsm:left-[200px]  flex flex-col justify-between">
         <div className=" h-[112px] flex flex-col justify-center text-center">
-          <h1 className="font-roboto text-[48px] font-bold text-[#333333]">
+          <h1 className="font-helvetica text-[48px] font-bold text-[#333333]">
             Why Choose us
           </h1>
-          <p className="text-[16px] font-normal font-roboto text-[#4F4F4F] leading-[24px] text-center">
+          <p className="text-[16px] font-normal font-helvetica text-[#4F4F4F] leading-[24px] text-center">
             Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque
             diam <br /> pellentesque bibendum non dui volutpat fringilla
-            bibendum.{" "}
+            bibendum.
           </p>
         </div>
 
@@ -31,10 +31,10 @@ const AboutChooseUs = () => {
               width={80}
               className="h-[80px] w-[80px]"
             />
-            <h1 className="font-roboto font-bold text-[24px] text-[#333333]">
+            <h1 className="font-helvetica font-bold text-[24px] text-[#333333]">
               Best Chef
             </h1>
-            <p className="w-[359px] font-roboto text-[16px] font-normal text-[#4F4F4F] text-center">
+            <p className="w-[359px] font-helvetica text-[16px] font-normal text-[#4F4F4F] text-center">
               Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque
               diam pellentesque bibendum non dui volutpat{" "}
             </p>
@@ -47,10 +47,10 @@ const AboutChooseUs = () => {
               width={80}
               className="h-[80px] w-[80px]"
             />
-            <h1 className="font-roboto font-bold text-[24px] text-[#333333]">
+            <h1 className="font-helvetica font-bold text-[24px] text-[#333333]">
               120 Item food
             </h1>
-            <p className="w-[359px] font-roboto text-[16px] font-normal text-[#4F4F4F] text-center">
+            <p className="w-[359px] font-helvetica text-[16px] font-normal text-[#4F4F4F] text-center">
               Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque
               diam pellentesque bibendum non dui volutpat{" "}
             </p>
@@ -63,12 +63,12 @@ const AboutChooseUs = () => {
               width={80}
               className="h-[80px] w-[80px]"
             />
-            <h1 className="font-roboto font-bold text-[24px] text-[#333333]">
+            <h1 className="font-helvetica font-bold text-[24px] text-[#333333]">
               Clean Environment
             </h1>
-            <p className="w-[359px] font-roboto text-[16px] font-normal text-[#4F4F4F] text-center">
+            <p className="w-[359px] font-helvetica text-[16px] font-normal text-[#4F4F4F] text-center">
               Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque
-              diam pellentesque bibendum non dui volutpat{" "}
+              diam pellentesque bibendum non dui volutpat
             </p>
           </div>
         </div>

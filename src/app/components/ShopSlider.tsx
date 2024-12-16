@@ -23,19 +23,19 @@ const ShopSliders = () => {
       {
         breakpoint: 1280,
         settings: {
-          slidesToShow: 3,
+          slidesToShow: 4,
         },
       },
       {
         breakpoint: 1000,
         settings: {
-          slidesToShow: 2,
+          slidesToShow: 4,
         },
       },
       {
         breakpoint: 650,
         settings: {
-          slidesToShow: 1,
+          slidesToShow: 3,
         },
       },
     ],

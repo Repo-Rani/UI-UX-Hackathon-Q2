@@ -5,7 +5,7 @@ const Checkout = () => {
     <>
       <section className="w-[1320px] h-[723px] absolute left-[300px] top-[530px] flex justify-between">
         <div className="w-[872px] h-[723px]">
-          <h1 className="text-[20px] font-bold font-roboto text-black  mb-3">
+          <h1 className="text-[20px] font-bold font-helvetica text-black  mb-3">
             Shipping Address
           </h1>
           <div className="flex flex-col gap-[20px]">
@@ -13,7 +13,7 @@ const Checkout = () => {
               <div className="w-[424px] h-[88px]   flex flex-col justify-between">
                 <label
                   htmlFor=""
-                  className="text-[16px] font-roboto font-normal text-black"
+                  className="text-[16px] font-helvetica font-normal text-black"
                 >
                   First name
                 </label>
@@ -25,7 +25,7 @@ const Checkout = () => {
               <div className="w-[424px] h-[88px]   flex flex-col justify-between">
                 <label
                   htmlFor=""
-                  className="text-[16px] font-roboto font-normal text-black"
+                  className="text-[16px] font-helvetica font-normal text-black"
                 >
                   Last Name
                 </label>
@@ -39,7 +39,7 @@ const Checkout = () => {
               <div className="w-[424px] h-[88px] flex flex-col justify-between">
                 <label
                   htmlFor=""
-                  className="text-[16px] font-roboto font-normal text-black"
+                  className="text-[16px] font-helvetica font-normal text-black"
                 >
                   Email address
                 </label>
@@ -51,7 +51,7 @@ const Checkout = () => {
               <div className="w-[424px] h-[88px] flex flex-col justify-between">
                 <label
                   htmlFor=""
-                  className="text-[16px] font-roboto font-normal text-black"
+                  className="text-[16px] font-helvetica font-normal text-black"
                 >
                   Phone number
                 </label>
@@ -65,7 +65,7 @@ const Checkout = () => {
               <div className="w-[424px] h-[88px] flex flex-col justify-between">
                 <label
                   htmlFor=""
-                  className="text-[16px] font-roboto font-normal text-black"
+                  className="text-[16px] font-helvetica font-normal text-black"
                 >
                   Company
                 </label>
@@ -78,14 +78,14 @@ const Checkout = () => {
               <div className="w-[424px] h-[88px] flex flex-col justify-between relative">
                 <label
                   htmlFor=""
-                  className="text-[16px] font-roboto font-normal text-black"
+                  className="text-[16px] font-helvetica font-normal text-black"
                 >
                   Country
                 </label>
                 <div className="relative">
                   <input
                     type="text"
-                    className="w-[424px] h-[56px] border-[1px] border-[#E0E0E0] outline-none px-4 pr-10 font-roboto text-[16px] text-black/70 font-normal"
+                    className="w-[424px] h-[56px] border-[1px] border-[#E0E0E0] outline-none px-4 pr-10 font-helvetica text-[16px] text-black/70 font-normal"
                     placeholder="Choose country"
                   />
                   <div className="absolute inset-y-0 right-4 flex items-center pointer-events-none">
@@ -104,14 +104,14 @@ const Checkout = () => {
               <div className="w-[424px] h-[88px] flex flex-col justify-between relative">
                 <label
                   htmlFor=""
-                  className="text-[16px] font-roboto font-normal text-black"
+                  className="text-[16px] font-helvetica font-normal text-black"
                 >
                   City
                 </label>
                 <div className="relative">
                   <input
                     type="text"
-                    className="w-[424px] h-[56px] border-[1px] border-[#E0E0E0] outline-none px-4 pr-10 font-roboto text-[16px] text-black/70 font-normal"
+                    className="w-[424px] h-[56px] border-[1px] border-[#E0E0E0] outline-none px-4 pr-10 font-helvetica text-[16px] text-black/70 font-normal"
                     placeholder="Choose city"
                   />
                   <div className="absolute inset-y-0 right-4 flex items-center pointer-events-none">
@@ -128,7 +128,7 @@ const Checkout = () => {
               <div className="w-[424px] h-[88px] flex flex-col justify-between">
                 <label
                   htmlFor=""
-                  className="text-[16px] font-roboto font-normal text-black"
+                  className="text-[16px]font-helveticafont-normal text-black"
                 >
                   Zip code
                 </label>
@@ -142,7 +142,7 @@ const Checkout = () => {
               <div className="w-[424px] h-[88px] flex flex-col justify-between">
                 <label
                   htmlFor=""
-                  className="text-[16px] font-roboto font-normal text-black"
+                  className="text-[16px] font-helvetica font-normal text-black"
                 >
                   Address 1
                 </label>
@@ -154,7 +154,7 @@ const Checkout = () => {
               <div className="w-[424px] h-[88px] flex flex-col justify-between">
                 <label
                   htmlFor=""
-                  className="text-[16px] font-roboto font-normal text-black"
+                  className="text-[16px] font-helvetica font-normal text-black"
                 >
                   Address 2
                 </label>
@@ -166,12 +166,12 @@ const Checkout = () => {
             </div>
           </div>
           <div className="flex flex-col justify-center">
-            <h1 className="text-[20px] font-roboto text-black font-bold mt-[20px]">
+            <h1 className="text-[20px] font-helvetica text-black font-bold mt-[20px]">
               Billing Address
             </h1>
             <div className="flex items-center gap-[6px] mt-1">
               <div className="w-[20px] h-[20px] border-[1px] border-[#BDBDBD]"></div>
-              <p className="font-normal text-[14px] text-[#4F4F4F] font-roboto">
+              <p className="font-normal text-[14px] text-[#4F4F4F] font-helvetica">
                 Same as shipping address
               </p>
             </div>
@@ -186,14 +186,14 @@ const Checkout = () => {
                   width={24}
                   className="w-[24px] h-[24px]"
                 />
-                <p className="text-[#4F4F4F] text-[16px] font-roboto font-normal">
+                <p className="text-[#4F4F4F] text-[16px] font-helvetica font-normal">
                   Back to cart
                 </p>
               </div>
             </button>
             <button className="w-[424px] h-[56px]  bg-[#FF9F0D] ">
               <div className="flex justify-center items-center gap-[8px]">
-                <p className="text-white text-[16px] font-roboto font-normal">
+                <p className="text-white text-[16px] font-helvetica font-normal">
                   Proceed to shipping
                 </p>
                 <Image
@@ -220,13 +220,13 @@ const Checkout = () => {
                   className="h-[88px] w-[82.72]"
                 />
                 <div className="flex flex-col justify-center gap-[5px]">
-                  <h1 className="text-[16px] font-bold text-black font-roboto">
+                  <h1 className="text-[16px] font-bold text-black font-helvetica">
                     Chicken Tikka Kabab
                   </h1>
-                  <p className="text-[14px] font-normal text-[#4F4F4F] font-roboto">
+                  <p className="text-[14px] font-normal text-[#4F4F4F] font-helvetica">
                     150 gm net
                   </p>
-                  <p className="text-[14px] font-normal text-[#4F4F4F] font-roboto">
+                  <p className="text-[14px] font-normal text-[#4F4F4F] font-helvetica">
                     50$
                   </p>
                 </div>
@@ -246,13 +246,13 @@ const Checkout = () => {
                   className="h-[88px] w-[82.72]"
                 />
                 <div className="flex flex-col justify-center gap-[5px]">
-                  <h1 className="text-[16px] font-bold text-black font-roboto">
+                  <h1 className="text-[16px] font-bold text-black font-helvetica">
                     Chicken Tikka Kabab
                   </h1>
-                  <p className="text-[14px] font-normal text-[#4F4F4F] font-roboto">
+                  <p className="text-[14px] font-normal text-[#4F4F4F] font-helvetica">
                     150 gm net
                   </p>
-                  <p className="text-[14px] font-normal text-[#4F4F4F] font-roboto">
+                  <p className="text-[14px] font-normal text-[#4F4F4F] font-helvetica">
                     50$
                   </p>
                 </div>
@@ -272,13 +272,13 @@ const Checkout = () => {
                   className="h-[88px] w-[82.72]"
                 />
                 <div className="flex flex-col justify-center  gap-[5px]">
-                  <h1 className="text-[16px] font-bold text-black font-roboto">
+                  <h1 className="text-[16px] font-bold text-black font-helvetica">
                     Chicken Tikka Kabab
                   </h1>
-                  <p className="text-[14px] font-normal text-[#4F4F4F] font-roboto">
+                  <p className="text-[14px] font-normal text-[#4F4F4F] font-helvetica">
                     150 gm net
                   </p>
-                  <p className="text-[14px] font-normal text-[#4F4F4F] font-roboto">
+                  <p className="text-[14px] font-normal text-[#4F4F4F] font-helvetica">
                     50$
                   </p>
                 </div>
@@ -291,51 +291,51 @@ const Checkout = () => {
           <div className="w-[376px] h-[264px] mx-auto flex flex-col justify-between ">
             <div className="flex flex-col justify-center gap-[10px]">
               <div className="flex justify-between items-center w-[376px] h-[24px]">
-                <p className="font-normal font-roboto text-[16px] text-[#4F4F4F]">
+                <p className="font-normal font-helvetica text-[16px] text-[#4F4F4F]">
                   Sub-total
                 </p>
-                <p className="text-[#333333] font-normal font-roboto text-[16px] ">
+                <p className="text-[#333333] font-normal font-helvetica text-[16px] ">
                   130$
                 </p>
               </div>
               <div className="flex justify-between items-center w-[376px] h-[24px]">
-                <p className="font-normal font-roboto text-[16px] text-[#4F4F4F]">
+                <p className="font-normal font-helvetica text-[16px] text-[#4F4F4F]">
                   Shipping
                 </p>
-                <p className="text-[#333333] font-normal font-roboto text-[16px] ">
+                <p className="text-[#333333] font-normal font-helvetica text-[16px] ">
                   Free
                 </p>
               </div>
               <div className="flex justify-between items-center w-[376px] h-[24px]">
-                <p className="font-normal font-roboto text-[16px] text-[#4F4F4F]">
+                <p className="font-normal font-helvetica text-[16px] text-[#4F4F4F]">
                   Discount
                 </p>
-                <p className="text-[#333333] font-normal font-roboto text-[16px] ">
+                <p className="text-[#333333] font-normal font-helvetica text-[16px] ">
                   25%
                 </p>
               </div>
               <div className="flex justify-between items-center w-[376px] h-[24px]">
-                <p className="font-normal font-roboto text-[16px] text-[#4F4F4F]">
+                <p className="font-normal font-helvetica text-[16px] text-[#4F4F4F]">
                   Tax
                 </p>
-                <p className="text-[#333333] font-normal font-roboto text-[16px] ">
+                <p className="text-[#333333] font-normal font-helvetica text-[16px] ">
                   54.76$
                 </p>
               </div>
               <div className="w-[353.44px] border-b-[1px] border-[#E0E0E0] mx-auto mb-5"></div>
 
               <div className="flex justify-between items-center w-[376px] h-[24px]">
-                <p className="font-normal font-roboto text-[18px] text-[#333333]">
+                <p className="font-normal font-helvetica text-[18px] text-[#333333]">
                   Total
                 </p>
-                <p className="font-bold font-roboto text-[18px] text-[#333333] ">
+                <p className="font-bold font-helvetica text-[18px] text-[#333333] ">
                   432.65$
                 </p>
               </div>
             </div>
             <button className="w-[376px] h-[58px] py-[16px] px-[48px] rounded-[6px] bg-[#FF9F0D]">
               <div className="flex justify-center items-center gap-[12px]">
-                <p className="text-[18px] font-normal text-white font-roboto">
+                <p className="text-[18px] font-normal text-white font-helvetica">
                   Place an order
                 </p>
                 <Image

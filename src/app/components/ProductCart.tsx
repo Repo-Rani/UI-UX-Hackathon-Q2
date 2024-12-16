@@ -26,8 +26,6 @@ const ProductCart = ({
           <div className="flex justify-center items-center gap-[20px] w-[110px] h-[32px] border-[1px] rounded-[18px] border-[#e0e0e0] relative top-[37px] right-[60px] ">
            
           <Image src="/Minus (1).svg" alt="minus icon" height={16} width={16} className="h-[16px] w-[16px]"/>
-
-         
             <span className=" font-inter font-normal text-[16px] text-[#33333]">
               {quantity}
             </span>
@@ -37,7 +35,6 @@ const ProductCart = ({
           <span className="w-[65px] h-[24px] font-inter font-bold text-[16px] text-[#33333] relative top-[35px]">
             ${total}
           </span>
-          {/* <span className="w-[20px] h-[20px] text-[#1f242e]">x</span> */}
           <Image src="/X.svg" alt="cross icon" height={16} width={16} className="h-[16px] w-[16px] relative top-[35px]"/>
         </div>
       </div>

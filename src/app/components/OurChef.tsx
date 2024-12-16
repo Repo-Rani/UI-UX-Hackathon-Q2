@@ -8,7 +8,7 @@ const OurChef = () => {
       <span className="w-[56px] h-[40px] font-greatvibes font-normal text-[32px] text-[#ff9f0d] relative left-[630px]">
         Chefs
       </span>
-      <h3 className="w-[329px] h-[56px] font-roboto text-[48px] font-bold text-[#ffffff] relative left-[500px]">
+      <h3 className="w-[329px] h-[56px] font-helvetica text-[48px] font-bold text-[#ffffff] relative left-[500px]">
         <span className="text-[#ff9f0d]">Me</span>et Our Chef
       </h3>
       <div className="flex justify-between relative top-[20px] w-[1320px] h-[391px] ">

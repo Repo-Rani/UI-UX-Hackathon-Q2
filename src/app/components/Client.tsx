@@ -28,10 +28,10 @@ const Clients = () => {
             width={120}
             className="W-[120px] h-[120px]"
           />
-          <h2 className="w-[218px] h-[32px] font-roboto font-bold text-[24px] leading-[32px] ml-8 text-[#ffffff]">
+          <h2 className="w-[218px] h-[32px] font-helvetica font-bold text-[24px] leading-[32px] ml-8 text-[#ffffff]">
             Professional Chefs
           </h2>
-          <span className="w-[67px] h-[48px] font-roboto font-bold text-[40px] leading-[48px] text-[#ffffff]">
+          <span className="w-[67px] h-[48px]font-helvetica font-bold text-[40px] leading-[48px] text-[#ffffff]">
             420
           </span>
         </div>
@@ -43,10 +43,10 @@ const Clients = () => {
             width={120}
             className="W-[120px] h-[120px]"
           />
-          <h2 className="w-[218px] h-[32px] font-roboto font-bold text-[24px] leading-[32px] ml-16 text-[#ffffff]">
+          <h2 className="w-[218px] h-[32px] font-helvetica font-bold text-[24px] leading-[32px] ml-16 text-[#ffffff]">
             Item Of Food
           </h2>
-          <span className="w-[67px] h-[48px] font-roboto font-bold text-[40px] leading-[48px] text-[#ffffff]">
+          <span className="w-[67px] h-[48px]font-helvetica font-bold text-[40px] leading-[48px] text-[#ffffff]">
             320
           </span>
         </div>
@@ -58,10 +58,10 @@ const Clients = () => {
             width={120}
             className="W-[120px] h-[120px]"
           />
-          <h2 className="w-[218px] h-[32px] font-roboto font-bold text-[24px] leading-[32px] text-[#ffffff]">
+          <h2 className="w-[218px] h-[32px] font-helvetica font-bold text-[24px] leading-[32px] text-[#ffffff] whitespace-nowrap">
             Years Of Experience
           </h2>
-          <span className="w-[67px] h-[48px] font-roboto font-bold text-[40px] leading-[48px] text-[#ffffff]">
+          <span className="w-[67px] h-[48px] font-helvetica font-bold text-[40px] leading-[48px] text-[#ffffff]">
             30+
           </span>
         </div>
@@ -73,10 +73,10 @@ const Clients = () => {
             width={120}
             className="W-[120px] h-[120px]"
           />
-          <h2 className="w-[218px] h-[32px] font-roboto font-bold text-[24px] leading-[32px] text-[#ffffff]">
+          <h2 className="w-[218px] h-[32px] font-helvetica font-bold text-[24px] leading-[32px] text-[#ffffff]">
             Happy Customers
           </h2>
-          <span className="w-[67px] h-[48px] font-roboto font-bold text-[40px] leading-[48px] text-[#ffffff]">
+          <span className="w-[67px] h-[48px] font-helvetica font-bold text-[40px] leading-[48px] text-[#ffffff]">
             220
           </span>
         </div>

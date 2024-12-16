@@ -9,7 +9,7 @@ const Login = () => {
         <Banner name="Login" mainHeading="Login page" />
       </div>
       <section className="w-[424px] h-[564px] absolute top-[630px] left-[743px]  shadow-2xl shadow-[#E0E0E0]">
-        <h1 className="text-[20px] font-bold font-halvetica relative top-[35px] left-[35px] text-[#333333]">
+        <h1 className="text-[20px] font-bold font-helvetica relative top-[35px] left-[35px] text-[#333333]">
           Login
         </h1>
         <div className="relative top-[-48px]">
@@ -23,7 +23,7 @@ const Login = () => {
             />
             <input
               type="text"
-              className="border-none outline-none text-[16px] font-normal text-[#4F4F4F] font-halvetica"
+              className="border-none outline-none text-[16px] font-normal text-[#4F4F4F] font-helvetica"
               placeholder="Email"
             />
           </div>
@@ -37,7 +37,7 @@ const Login = () => {
             />
             <input
               type="text"
-              className="border-none outline-none text-[16px] font-normal text-[#4F4F4F] font-halvetica"
+              className="border-none outline-none text-[16px] font-normal text-[#4F4F4F] font-helvetica"
               placeholder="Passward"
             />
           </div>
@@ -49,20 +49,20 @@ const Login = () => {
     />
     <span className="absolute w-[10px] h-[10px] border-white border-2 border-t-0 border-l-0 transform rotate-45 hidden checked:block"></span>
   </div>
-  <p className="text-[14px] font-halvetica font-normal text-[#333333]">
+  <p className="text-[14px] font-helvetica font-normal text-[#333333]">
     Remember me?
   </p>
 </div>
           <button className="relative top-[180px] left-[35px] w-[360px] h-[44px] bg-[#FF9F0D] text-white hover:bg-[#ffffff] hover:text-[#FF9F0D] hover:border-[1px] hover:border-[#FF9F0D] transition-all duration-300 ease-in-out font-halvetica text-[16px] font-normal flex justify-center items-center">
             Login
           </button>
-          <p className="text-[14px] font-normal font-halvetica text-[#828282] relative left-[283px] top-[195px]">
+          <p className="text-[14px] font-normal font-helvetica text-[#828282] relative left-[283px] top-[195px]">
             Forget password?
           </p>
           <div className="w-[360px] h-[152px] relative left-[35px] top-[220px] flex justify-between flex-col ">
             <div className="w-[360px] h-[32px] flex justify-center items-center">
               <span className="border-b-[1px] w-[168px] border-[#E0E0E0]"></span>
-              <span className="w-[32px] h-[32px] border-[#E0E0E0] border-[1px] text-[14px] font-halvetica font-normal text-[#4F4F4F] flex justify-center items-center">
+              <span className="w-[32px] h-[32px] border-[#E0E0E0] border-[1px] text-[14px] font-helvetica font-normal text-[#4F4F4F] flex justify-center items-center">
                 OR
               </span>
 
@@ -78,7 +78,7 @@ const Login = () => {
                 width={24}
                 className="h-[24px] w-[24px]"
               />
-              <p className="font-normal text-[16px] font-halvetica text-[#4F4F4F] text-center">
+              <p className="font-normal text-[16px] font-helvetica text-[#4F4F4F] text-center">
                 Sign up with Google
               </p>
             </div>
@@ -90,7 +90,7 @@ const Login = () => {
                 width={24}
                 className="h-[24px] w-[24px]"
               />
-              <p className="font-normal text-[16px] font-halvetica text-[#4F4F4F] text-center">
+              <p className="font-normal text-[16px] font-helvetica text-[#4F4F4F] text-center">
                 Sign up with Apple
               </p>
             </div>
@@ -98,7 +98,7 @@ const Login = () => {
         </div>
       </section>
 
-      <div className="absolute top-[1254px]">
+      <div className="absolute top-[1290px]">
         <Footer/>
       </div>
     </>
