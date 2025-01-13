@@ -1,8 +1,20 @@
 import React from 'react'
+import Banner from '../components/Banner';
+import Footer from '../components/Footer';
 
 const page = () => {
   return (
-    <div>page</div>
+    <>
+    <section>
+    <div>
+      <Banner mainHeading='Contact Us' name="Contact"/>
+    </div>
+   
+    </section>
+    <div className='absolute  top-[1300px]'>
+      <Footer/>
+    </div>
+    </>
   )
 }
 

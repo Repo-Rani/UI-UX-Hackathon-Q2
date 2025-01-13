@@ -26,16 +26,33 @@
   }
 }
 
-.food-rotate {
-  animation: rotatePlate 8s linear infinite;
+@keyframes subtleShake {
+  0% {
+    transform: translateX(0); 
+  }
+  25% {
+    transform: translateX(-2px); 
+  }
+  50% {
+    transform: translateX(2px); 
+  }
+  75% {
+    transform: translateX(-2px); 
+  }
+  100% {
+    transform: translateX(0); 
+  }
 }
 
-
+.food-rotate {
+  animation: subtleShake 2s ease-in-out infinite; 
+  display: inline-block;
+}
 body {
-  width: 100%;
-  max-width: 1920px;
+  width: 100vw;
+    max-width: 1920px;
   margin: auto;
-  scroll-snap-type: none;
+  box-sizing: border-box;
   font-family: Helvetica, sans-serif;
  
 }

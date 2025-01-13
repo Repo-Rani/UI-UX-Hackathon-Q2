@@ -295,7 +295,6 @@ export const shopCardData = [
       image: "/sf-12.svg",
       title: "Pizza",
       price: "$43.00",
-      disccountPrice: "$45.00",
       tag: "In Stock",
       des: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque diam pellentesque bibendum non dui volutpat fringilla bibendum. Urna, urna, vitae feugiat pretium donec id elementum. Ultrices mattis sed vitae mus risus. Lacus nisi, et ac dapibus sit eu velit in consequat.",
       ratingImage: "/Star (2).svg",
@@ -312,7 +311,7 @@ export const shopCardData = [
       image: "/sf-13.svg",
       title: "Cheese Butter",
       price: "$10.00",
-      disccountPrice: "$45.00",
+     
       tag: "In Stock",
       des: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque diam pellentesque bibendum non dui volutpat fringilla bibendum. Urna, urna, vitae feugiat pretium donec id elementum. Ultrices mattis sed vitae mus risus. Lacus nisi, et ac dapibus sit eu velit in consequat.",
       ratingImage: "/Star (2).svg",
@@ -329,7 +328,7 @@ export const shopCardData = [
       image: "/sf-14.svg",
       title: "Sandwiches",
       price: "$25.00",
-      disccountPrice: "$45.00",
+     
       tag: "In Stock",
       des: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque diam pellentesque bibendum non dui volutpat fringilla bibendum. Urna, urna, vitae feugiat pretium donec id elementum. Ultrices mattis sed vitae mus risus. Lacus nisi, et ac dapibus sit eu velit in consequat.",
       ratingImage: "/Star (2).svg",
@@ -346,7 +345,7 @@ export const shopCardData = [
       image: "/sf-15.svg",
       title: "Chicken Chup",
       price: "$12.00",
-      disccountPrice: "$45.00",
+     
       tag: "In Stock",
       des: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque diam pellentesque bibendum non dui volutpat fringilla bibendum. Urna, urna, vitae feugiat pretium donec id elementum. Ultrices mattis sed vitae mus risus. Lacus nisi, et ac dapibus sit eu velit in consequat.",
       ratingImage: "/Star (2).svg",
@@ -680,30 +679,3 @@ export const cartData = [
 
 
 
-// export const blogCardData = [
-//     {
-//       id: "digital-detox", // Dynamic ID
-//       image: "/b1.svg",
-//       title: "10 Reasons To Do A Digital Detox Challenge",
-//       details: "Full details about the Digital Detox Challenge...",
-//     },
-//     {
-//       id: "soft-pretzels", // Dynamic ID
-//       image: "/b2.svg",
-//       title: "Traditional Soft Pretzels with Sweet Beer Cheese",
-//       details: "Full details about Traditional Soft Pretzels...",
-//     },
-//     {
-//       id: "hangover-burger", // Dynamic ID
-//       image: "/b3.svg",
-//       title: "The Ultimate Hangover Burger: Egg in a Hole Burger",
-//       details: "Full details about Hangover Burger...",
-//     },
-//     {
-//       id: "pizza-toast", // Dynamic ID
-//       image: "/b4.svg",
-//       title: "My Favorite Easy Black Pizza Toast Recipe",
-//       details: "Full details about Pizza Toast recipe...",
-//     },
-//   ];
-  

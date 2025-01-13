@@ -3,7 +3,7 @@ import { chefsData } from '../../../data/data'
 import ChefCards from './ChefCards'
 const ChefCardsItem = () => {
   return (
-    <div className='grid grid-cols-2 xsm:grid-cols-4 gap-[20px]'>
+    <div className='grid grid-cols-3 md:grid-cols-4 md:gap-[20px]'>
        {chefsData.map((item, index) => (
     <ChefCards
    

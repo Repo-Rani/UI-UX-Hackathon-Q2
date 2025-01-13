@@ -7,9 +7,9 @@ const ShopCard = ({id,  image, title, price, discountPrice, sell }: ShopCardProp
 
     <Link href={`shopDetails/${id}`} passHref>
     <div
-     data-aos="flip-right"
-        data-aos-delay="100"
-    className="w-[312px] h-[330px] relative group">
+    //  data-aos="flip-right"
+    //     data-aos-delay="100"
+    className="w-[150px] md:w-[312px] h-[160px] md:h-[330px] relative group">
       {/* Image Section */}
       <div className="relative">
         <Image
@@ -17,7 +17,7 @@ const ShopCard = ({id,  image, title, price, discountPrice, sell }: ShopCardProp
           alt="shop-food"
           height={267}
           width={312}
-          className="w-[312px] h-[267px] object-cover rounded-md"
+          className="md:w-[312px] w-[150px] h-[160px] md:h-[267px] object-cover rounded-md"
         />
         {/* Hidden Div */}
         <div className="absolute inset-0 hidden group-hover:flex items-center justify-center bg-black bg-opacity-50">
@@ -51,18 +51,18 @@ const ShopCard = ({id,  image, title, price, discountPrice, sell }: ShopCardProp
       
         {/* Sell Badge */}
         {sell && (
-          <div className="absolute top-[20px] left-[20px] bg-[#ff9f0d] rounded-[6px] w-[52px] h-[22px] flex items-center justify-center">
-            <span className="font-inter font-normal text-[14px] text-[#ffffff]">{sell}</span>
+          <div className="absolute top-[20px] left-[20px] bg-[#ff9f0d] rounded-[6px] w-[40px] h-[18px] md:w-[52px] md:h-[22px] flex items-center justify-center">
+            <span className="font-inter font-normal text-[12px] md:text-[14px] text-[#ffffff]">{sell}</span>
           </div>
         )}
       </div>
 
       {/* Title Section */}
-      <h2 className="mt-4 font-bold text-[18px] text-[#333333] font-inter">{title}</h2>
+      <h2 className="md:mt-4 mt-2 font-bold text-[16px] md:text-[18px] text-[#333333] font-inter">{title}</h2>
       
       {/* Price Section */}
-      <div className="flex justify-between items-center mt-2">
-        <span className="text-[#FF9F0D] font-medium font-inter">{price}</span>
+      <div className="flex justify-between items-center mt-1 md:mt-2">
+        <span className="text-[#FF9F0D]  font-medium font-inter">{price}</span>
         {discountPrice && (
           <span className="line-through text-[#828282] relative right-[12rem] font-inter">{discountPrice}</span>
         )}

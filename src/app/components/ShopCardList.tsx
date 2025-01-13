@@ -17,8 +17,8 @@ const ShopCardList = () => {
 
   return (
     <section>
-    <div className="absolute left-[100px] md:left-[300px] top-[650px]  ">
-    <div className="grid grid-cols-3  gap-x-[350px] gap-y-[30px] md:gap-[25px]  ">
+    <div className="absolute left-[40px] md:left-[300px] xl:left-[100px] xxl:left-[300px] top-[660px] md:top-[650px]  ">
+    <div className="grid grid-cols-2 md:grid-cols-3  gap-x-[15px] gap-y-[70px] md:gap-[25px]  ">
     {shopCardData.map((item) => (
     <ShopCard
         key={item.id}
@@ -45,9 +45,3 @@ const ShopCardList = () => {
 };
 
 export default ShopCardList;
-
-
-
-
-
-

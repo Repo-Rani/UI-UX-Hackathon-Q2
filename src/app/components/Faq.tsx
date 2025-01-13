@@ -4,7 +4,7 @@ import FaqCard from './FaqCard'
 
 const Faq = () => {
   return (
-    <div className='grid grid-cols-1 md:grid-cols-2 gap-[10px] '>
+    <div className='grid grid-cols-1 md:grid-cols-2  md:gap-[10px] '>
         {faqData.map((item, index) => (
     <FaqCard
       key={index}

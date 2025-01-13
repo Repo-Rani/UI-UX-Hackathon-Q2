@@ -35,14 +35,14 @@ const ShopSliders = () => {
       {
         breakpoint: 650,
         settings: {
-          slidesToShow: 3,
+          slidesToShow: 1,
         },
       },
     ],
   };
 
   return (
-    <div className="w-full max-w-[1320px] mx-auto">
+    <div className="md:w-full md:left-0 left-[35px]  w-[300px] max-w-[1320px] mx-auto">
       <Slider {...settings}>
         {shopCardData.map((el) => (
           <ShopCardsSliders

@@ -3,16 +3,17 @@ import React, { useState } from "react";
 import Image from "next/image";
 import { usePathname } from "next/navigation";
 import Link from "next/link";
-import { RxCross2 } from "react-icons/rx";
-import { IoMenu } from "react-icons/io5";
+import { FaTimes } from "react-icons/fa";
+import { FaBars } from "react-icons/fa";
 
 const LandingNavbar = () => {
-  const [isMenuOpen, setIsMenuOpen] = useState(false);
   const pathName = usePathname();
+    const [isOpen, setIsOpen] = useState(false); 
+  
 
   return (
     <header>
-      <nav className="max-w-[1920px] w-[1320px] h-[87px] absolute top-[45px] left-[300px] z-[10]">
+      <nav className="max-w-[1920px] w-[1320px] h-[87px] absolute top-[45px] left-[300px] xxl:left-[300px] xl:left-[70px] xl:px-8 xxl:px-0 z-[10] md:block hidden">
         {/* Logo */}
         <div className="h-[32px] w-[109px] absolute left-[605px] flex items-center">
           <Link
@@ -37,7 +38,7 @@ const LandingNavbar = () => {
         </div>
 
         {/* Desktop Menu */}
-        <ul className="relative h-auto w-auto hidden xsm:flex flex-row translate-x-0">
+        <ul className="relative h-auto w-auto hidden md:flex flex-row translate-x-0">
           <li>
             <Link
               href="/"
@@ -110,59 +111,7 @@ const LandingNavbar = () => {
           </li>
         </ul>
 
-        {/* Mobile Menu Button */}
-        <div className="absolute top-[20px] left-[20px] xsm:hidden">
-          <button onClick={() => setIsMenuOpen(!isMenuOpen)}>
-            {isMenuOpen ? (
-              <RxCross2 className="w-[24px] h-[24px]"
-              />
-            ) : (
-              <IoMenu className="w-[24px] h-[24px]"
-              />
-            )}
-          </button>
-        </div>
-
-        {/* Mobile Menu */}
-        {isMenuOpen && (
-          <ul className="absolute top-[87px] left-0 w-full bg-black text-white flex flex-col items-center gap-4 py-4 z-20">
-            <li>
-              <Link href="/" className="hover:text-[#FF9F0D]">
-                Home
-              </Link>
-            </li>
-            <li>
-              <Link href="/menu" className="hover:text-[#FF9F0D]">
-                Menu
-              </Link>
-            </li>
-            <li>
-              <Link href="/blog" className="hover:text-[#FF9F0D]">
-                Blog
-              </Link>
-            </li>
-            <li>
-              <Link href="/pages" className="hover:text-[#FF9F0D]">
-                Pages
-              </Link>
-            </li>
-            <li>
-              <Link href="/about" className="hover:text-[#FF9F0D]">
-                About
-              </Link>
-            </li>
-            <li>
-              <Link href="/shop" className="hover:text-[#FF9F0D]">
-                Shop
-              </Link>
-            </li>
-            <li>
-              <Link href="/contact" className="hover:text-[#FF9F0D]">
-                Contact
-              </Link>
-            </li>
-          </ul>
-        )}
+        
 
         {/* Search Bar */}
         <div className="border-[1px] border-[#FF9F0D] w-[310px] h-[54px] absolute top-[33px] left-[978px] rounded-[27px] flex items-center justify-center">
@@ -180,6 +129,70 @@ const LandingNavbar = () => {
           />
         </div>
       </nav>
+
+
+      <div className="md:hidden flex items-center justify-between px-4 py-5 bg-[#0D0D0D] ">
+
+      <div className="h-[32px] w-[109px]  flex items-center">
+          <Link
+            href="/"
+            className="text-[24px] font-bold text-white font-inter w-[109px] h-[32px] z-10"
+          >
+            Food<span className="text-[#FF9F0D]">tuck</span>
+          </Link>
+        </div>
+
+
+     
+<button
+  onClick={() => setIsOpen(!isOpen)}
+  className="text-[#FFFFFF] focus:outline-none "
+>
+  {isOpen ? "" : <FaBars size={22} />}
+</button>
+</div>
+
+
+<div
+className={`fixed top-0 left-0 w-full h-full bg-[#0D0D0D] opacity-[70%]  z-50 transform ${
+  isOpen ? "translate-x-0" : "-translate-x-full"
+} transition-transform ease-in-out duration-300 md:hidden`}
+>
+<div className="flex justify-end p-4">
+  <button
+    onClick={() => setIsOpen(false)}
+    className="text-[#FFFFFF] focus:outline-none"
+  >
+    <FaTimes size={20} className="mr-[10px]" />
+  </button>
+</div>
+<ul className="flex flex-col items-center gap-6 mt-10">
+  {[
+    { name: "Home", href: "/" },
+    { name: "Menu", href: "/menu" },
+    { name: "Blog", href: "/blog" },
+    { name: "Pages", href: "/pages" },
+    { name: "About", href: "/about" },
+    { name: "Shop", href: "/shop" },
+    { name: "Contact", href: "/contact" },
+  ].map((item) => (
+    <li key={item.name}>
+      <Link
+        href={item.href}
+        onClick={() => setIsOpen(false)}
+        className={` nav_link text-[16px] font-bold hover:text-[#FF9F0D] ${
+          pathName === item.href ? "text-[#FF9F0D]" : "text-[#FFFFFF]"
+        }`}
+      >
+        {item.name}
+      </Link>
+    </li>
+  ))}
+</ul>
+</div>
+
+
+      
     </header>
   );
 };

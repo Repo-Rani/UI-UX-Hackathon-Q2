@@ -9,21 +9,14 @@ const config: Config = {
   theme: {
     extend: {
       screens: { 
-
-       
-        'xsm':'425px', 
-        'md': '768px',
-        'lg': '1024px', 
-        'xl': '1280px', 
-        '2xl': '1536px', 
-      },
-
-      
+       xl: "1484px",
+       xxl: "1920px"
+      },      
       boxShadow: {
         'custom': '0px 0px 80px 0px #CDCDCD40',
       },
       color: {
-       
+
       },
       fontFamily:{
         inter: ["inter","sans", "serif"],

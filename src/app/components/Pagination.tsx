@@ -14,9 +14,9 @@ const Pagination = () => {
   return (
     <>
       {/* Pagination */}
-      <div className="w-[306px] h-[51px] flex items-center justify-between">
+      <div className=" w-[190px] md:w-[306px] h-[40px] md:h-[51px] relative md:left-0 left-[95px] flex items-center justify-between">
         {/* Previous Button */}
-        <button className="w-[48px] h-[48px] border-[2px] border-[#f2f2f2] text-[#ff9f0d] bg-[#ffffff] hover:bg-[#ff9f0d] hover:text-[#ffffff] transition-all duration-300 ease-in-out flex justify-center items-center">
+        <button className="md:w-[48px] w-[30px] h-[30px] md:h-[48px] border-[2px] border-[#f2f2f2] text-[#ff9f0d] bg-[#ffffff] hover:bg-[#ff9f0d] hover:text-[#ffffff] transition-all duration-300 ease-in-out flex justify-center items-center">
           <MdOutlineKeyboardDoubleArrowLeft className="text-[#ff9f0d] w-[14px] h-[17px] font-black" />
         </button>
 
@@ -24,7 +24,7 @@ const Pagination = () => {
         {pageNumbers.map((number, index) => (
           <button
             key={index}
-            className={`w-[48px] h-[48px] border-[2px] border-[#f2f2f2] flex justify-center items-center 
+            className={`md:w-[48px] w-[30px] h-[30px] md:h-[48px] border-[2px] border-[#f2f2f2] flex justify-center items-center 
             ${
               activePage === index
                 ? "bg-[#ff9f0d] text-[#ffffff]" 
@@ -38,7 +38,7 @@ const Pagination = () => {
         ))}
 
         {/* Next Button */}
-        <button className="w-[48px] h-[48px] border-[2px] border-[#f2f2f2] flex justify-center items-center">
+        <button className="md:w-[48px] w-[30px] h-[30px] md:h-[48px] border-[2px] border-[#f2f2f2] flex justify-center items-center">
           <MdOutlineKeyboardDoubleArrowRight className="text-[#ff9f0d] w-[14px] h-[17px] font-black" />
         </button>
       </div>

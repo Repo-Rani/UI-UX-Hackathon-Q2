@@ -20,28 +20,28 @@ const Blog = () => {
   return (
     <>
     <section
-  className="relative mx-auto w-[390px] md:w-[1920px] lg:w-[1920px] max-w-[1920px]"
+  className="relative mx-auto w-[390px] md:w-[1920px] xl:w-[1484px] xxl:w-[1920px] lg:w-[1920px] max-w-[1920px]"
  
 >
   <div className=''>
     <Banner mainHeading="Blog List" name="Blog"/>
   </div>
 {/* Left Side */}
-  <div className='w-[872px] bg-green-300'>
+  <div className='w-[300px] md:w-[872px] bg-green-300'>
     <BlogCardList/>
 
   </div>
   {/* Right Side */}
-  <aside className='absolute top-[530px] left-[1196px]'>
+  <aside className='absolute top-[2900px] md:top-[530px] left-[50px] md:left-[1196px] xl:left-[1000px]'>
     <BlogSideBar/>
   </aside>
 
-  <div className='absolute top-[4000px] left-[583px]'>
+  <div className='absolute md:top-[4000px] top-[2790px] md:left-[583px]'>
     <Pagination/>
   </div>
 </section>
 
-<div className='absolute top-[4245px]'>
+<div className='absolute top-[2970px] md:top-[4245px]'>
 <Footer/>
 </div>
 </>

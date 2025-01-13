@@ -3,15 +3,15 @@ import { StarterMenuProps } from '../../../types/type'
 
 const StarterMenuItems = ({names,desc,text,price}: StarterMenuProps) => {
   return (
-    <div className="w-[760px] h-[111px] flex justify-between flex-col relative left-[20px] ">
-    <div className="w-[760px] h-[111px] flex justify-between ">
-    <div className="flex justify-between flex-col">
-    <h1 className='text-[24px] font-helvetica text-black font-bold mt-[10px]'>{names}</h1>
-    <p className='text-[16px] font-helvetica font-normal text-[#4F4F4F]'>{desc}</p>
-    <p className='text-[16px] font-helvetica font-normal text-[#4F4F4F]'>{text}</p>
+    <div className="md:w-[760px] md:h-[111px] w-[390px] h-[80px] flex justify-between flex-col relative md:left-[20px] ">
+    <div className="md:w-[760px] md:h-[111px] w-[320px] h-[80px] flex justify-between  ">
+    <div className="flex justify-between flex-col ">
+    <h1 className='md:text-[24px] text-[18px] font-helvetica text-[#333333] hover:text-[#FF9F0D] font-bold mt-[10px] cursor-pointer '>{names}</h1>
+    <p className='md:text-[16px] text-[10px] font-helvetica font-normal text-[#4F4F4F]'>{desc}</p>
+    <p className='md:text-[16px] text-[10px] font-helvetica font-normal text-[#4F4F4F]'>{text}</p>
     </div>
     <div className="">
-      <p className='font-helvetica text-[24px] font-bold text-[#FF9F0D]'>{price}</p>
+      <p className='font-helvetica md:text-[24px] text-[18px] font-bold text-[#FF9F0D]'>{price}</p>
     </div>
     
         </div>
@@ -24,4 +24,4 @@ const StarterMenuItems = ({names,desc,text,price}: StarterMenuProps) => {
   )
 }
 
-export default StarterMenuItems
+export default StarterMenuItems 

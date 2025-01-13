@@ -4,7 +4,7 @@ import MenuCard from './MenuCard'
 
 const MenuCardItemsList = () => {
   return (
-    <div className='grid grid-cols-1 xsm:grid-cols-2 gap-[15px] gap-x-36'>
+    <div className='grid grid-cols-1 md:grid-cols-2 gap-y-[20px] gap-x-[130px] '>
       {menuCardData.map((item, index) => (
     <MenuCard
    key={index}

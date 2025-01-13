@@ -1,11 +1,13 @@
 import React from 'react';
 import Image from 'next/image';
+import Link from 'next/link';
 import { ShopCardProps } from '../../../types/type';
 const ShopCardsSliders = ({id,  image, title, price, discountPrice, sell }: ShopCardProps) => {
   return (
 
-    
-    <div className="w-[312px] h-[350px] relative group">
+    <Link href={`${id}`} passHref>
+
+    <div className="w-[300px] h-[240px] md:w-[312px] md:h-[350px] relative group">
       {/* Image Section */}
       <div className="relative">
         <Image
@@ -13,7 +15,7 @@ const ShopCardsSliders = ({id,  image, title, price, discountPrice, sell }: Shop
           alt="shop-food"
           height={267}
           width={312}
-          className="w-[312px] h-[267px] object-cover rounded-md"
+          className="w-[390px] h-[240px] md:w-[312px] md:h-[267px] object-cover rounded-md"
         />
         {/* Hidden Div */}
         <div className="absolute inset-0 hidden group-hover:flex items-center justify-center bg-black bg-opacity-50">
@@ -64,7 +66,7 @@ const ShopCardsSliders = ({id,  image, title, price, discountPrice, sell }: Shop
         )}
       </div>
     </div>
-    
+    </Link>
   );
 };
 

@@ -26,13 +26,13 @@ const About = () => {
       <AboutBanner/>
       <AboutChooseUs/>
       <AboutTeamMember/>
-      <section className=' absolute top-[3190px] left-[300px]'>
+      <section className=' absolute top-[3000px] md:top-[3190px] left-[35px] md:left-[300px] xl:left-[100px] xxl:left-[300px]'>
       <Testimonail/> 
       </section>
       <AboutFoodMenu/>
       
     </section>
-    <div className='absolute top-[4950px]'>
+    <div className='absolute md:top-[4950px] top-[4700px]'>
     <Footer/>
     </div>
     </>

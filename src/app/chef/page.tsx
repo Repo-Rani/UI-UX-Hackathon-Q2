@@ -19,11 +19,11 @@ const Chef = () => {
     <>
       <section>
         <Banner mainHeading="Our Chef" name="Chef" />
-        <div className="w-[1320px] h-[1386px] absolute top-[580px] md:left-[300px] xsm:left-[225px]  ">
+        <div className="w-[390px] md:w-[1320px] md:h-[1386px] h-[1100px] absolute top-[520px] md:top-[580px] xl:left-[100px] xxl:left-[300px] left-[18px] md:left-[300px]   ">
           <ChefCardsItem />
         </div>
       </section>
-      <div className="absolute top-[2036px]">
+      <div className="absolute md:top-[2036px] top-[1500px]">
         <Footer />
       </div>
     </>

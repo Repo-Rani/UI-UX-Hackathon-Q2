@@ -4,7 +4,7 @@ import ProductCart from "./ProductCart";
 
 const CartItem = () => {
   return (
-    <div className="w-[1320px] h-[115.15px]  flex flex-col justify-center gap-[20px]">
+    <div className="w-[300px] md:w-[1320px] h-[115.15px]  flex flex-col justify-center gap-[20px]">
       {cartData.map((item, index) => (
         <ProductCart
           key={index}

@@ -11,11 +11,11 @@ const NextArrow = ({ onClick }: NextArrowsProps) => {
       onClick={onClick}
       onMouseEnter={() => setIsActive(true)} 
       onMouseLeave={() => setIsActive(false)} 
-      className={`w-[46px] h-[46px] rounded-full ${
+      className={`md:w-[46px] w-[30px] h-[30px] md:h-[46px] rounded-full ${
         isActive ? "bg-[#ff9f0d]" : "bg-gray-300"
-      } flex items-center justify-center cursor-pointer absolute top-[-77px] left-[1155px] transition-colors duration-300`}
+      } flex items-center justify-center cursor-pointer absolute top-[-77px] left-[270px] md:left-[1155px] transition-colors duration-300`}
     >
-      <GoArrowRight className="h-[24px] w-[24px] text-white" />
+      <GoArrowRight className="h-[16px] md:h-[24px] w-[16px] md:w-[24px] text-white" />
     </div>
   );
 };
