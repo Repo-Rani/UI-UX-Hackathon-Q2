@@ -1,10 +1,10 @@
 "use client"
 import React from 'react'
-import Banner from '../components/Banner'
-import BlogCardList from '../components/BlogCardList';
-import BlogSideBar from '../components/BlogSideBar';
-import Pagination from '../components/Pagination';
-import Footer from '../components/Footer';
+import Banner from '@/components/Banner';
+import BlogSideBar from '@/components/BlogSideBar';
+// import Pagination from '@/components/Pagination';
+import BlogCard from '@/components/BlogCard';
+import Footer from '@/components/Footer';
 import { useEffect } from 'react';
 import AOS from "aos";
 import "aos/dist/aos.css";
@@ -28,7 +28,7 @@ const Blog = () => {
   </div>
 {/* Left Side */}
   <div className='w-[300px] md:w-[872px] bg-green-300'>
-    <BlogCardList/>
+   <BlogCard/>
 
   </div>
   {/* Right Side */}
@@ -37,7 +37,7 @@ const Blog = () => {
   </aside>
 
   <div className='absolute md:top-[4000px] top-[2790px] md:left-[583px]'>
-    <Pagination/>
+    {/* <Pagination/> */}
   </div>
 </section>
 

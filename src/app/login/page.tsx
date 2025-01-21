@@ -1,15 +1,17 @@
 import React from "react";
-import Banner from "../components/Banner";
+import Banner from "@/components/Banner";
 import Image from "next/image";
-import Footer from "../components/Footer";
+import Footer from "@/components/Footer";
 const Login = () => {
   return (
     <>
       <div className="">
         <Banner name="Login" mainHeading="Login page" />
       </div>
-      <section className="w-[300px] md:w-[424px] h-[564px] absolute top-[510px]  md:top-[630px]  md:left-[743px] xl:left-[543px] xxl:left-[743px] left-[50px]  shadow-2xl shadow-[#E0E0E0]">
-        <h1 className="text-[18px] md:text-[20px] font-bold font-helvetica relative top-[35px] left-[35px] text-[#333333]">
+      <div className="flex justify-center w-full items-center">
+
+      <section className="w-[300px] md:w-[424px] h-[564px] absolute top-[540px]  md:top-[630px]  md:left-[150px] lg:left-[343px] xl:left-[543px] xxl:left-[630px] xxxl:left-[743px]     shadow-2xl shadow-[#E0E0E0]">
+        <h1 className="text-[18px] md:text-[20px] w-[150px] font-bold font-helvetica relative top-[35px] left-[35px] text-[#333333]">
           Login
         </h1>
         <div className="relative top-[-48px]">
@@ -41,7 +43,7 @@ const Login = () => {
               placeholder="Passward"
             />
           </div>
-          <div className="h-[22px] flex justify-start items-center gap-[10px] pl-[14px] relative top-[153px] left-[35px] whitespace-nowrap">
+          <div className="h-[22px] w-[200px] flex justify-start items-center gap-[10px] pl-[14px] relative top-[153px] left-[35px] px-3 ms:px-0 whitespace-nowrap">
   <div className="w-[20px] h-[20px] flex items-center justify-center">
     <input
       type="checkbox"
@@ -49,7 +51,7 @@ const Login = () => {
     />
     <span className="absolute w-[6px] md:w-[10px]  h-[6px] md:h-[10px] border-white border-2 border-t-0 border-l-0 transform rotate-45 hidden checked:block"></span>
   </div>
-  <p className="text-[12px] md:text-[14px] font-helvetica font-normal text-[#333333]">
+  <p className="text-[12px] md:text-[14px] w-[150px] font-helvetica font-normal text-[#333333]">
     Remember me?
   </p>
 </div>
@@ -97,6 +99,7 @@ const Login = () => {
           </div>
         </div>
       </section>
+      </div>
 
       <div className="absolute md:top-[1290px] top-[1190px]">
         <Footer/>

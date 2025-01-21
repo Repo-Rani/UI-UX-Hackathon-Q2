@@ -11,9 +11,9 @@ const page = () => {
     </div>
    
     </section>
-    <div className='absolute  top-[1300px]'>
+    {/* <div className='absolute  top-[1300px]'>
       <Footer/>
-    </div>
+    </div> */}
     </>
   )
 }

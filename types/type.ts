@@ -16,28 +16,39 @@ export interface StarterMenuProps {
 }
 
 //
-
 export interface ShopCardProps {
   id: string;
-  image: string;
-  title: string;
+  imageUrl: string; 
+  name: string;
+  description?:string;
   price: string;
   discountPrice?: string;
   sell?: string;
-  tag?: string;
-  des?: string;
-  ratingImage?: string;
-  raingNum?: string;
+  tags?: string;
+  ratingUrl?: string;
+  ratingNum?: string;
   reviews?: string;
   text?: string;
   bottomDetail?: string;
   bottomDetail2?: string;
+  category?: string;
+  img?: string;
+  quantity?: number;
+  total?: number;
 }
-
 export interface BlogCardProps {
-  id: string;
-  image: string;
-  title: string;
+  id : string;
+  title: string; 
+  slug: string; 
+  imageUrl: string; 
+  detail1?: string; 
+  detail2?: string; 
+  paragraph1?: string; 
+  paragraph2?: string; 
+  paragraph3?: string; 
+  paragraph4?: string;
+  paragraph5?: string;
+ 
 }
 export interface MenuCardProps {
   id?: string;
@@ -54,8 +65,13 @@ export interface LatestBlogProps {
 }
 
 export interface ChefsProps {
-  image: string;
   name: string;
+  position?: string;
+  experience?: number;
+  specialty?: string;
+  imageUrl:string;
+  description?: string;
+  available?: boolean;
 }
 
 export interface TeamMemberCardsPropsTypes {
@@ -84,4 +100,19 @@ export interface CartProps {
   img: string;
   quantity: number;
   total: number;
+}
+
+export interface SliderShopCardProps {
+  id: string;
+  image:string;
+  title: string;
+  price: string;
+  discountPrice?: string;
+  sell?: string;
+
+}
+ export interface PaginationProps {
+  currentPage: number;
+  totalPages: number;
+  onPageChange: (page: number) => void;
 }

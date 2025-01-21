@@ -1,36 +1,73 @@
 "use client";
 import React from "react";
-import { blogCardData } from "../../../../data/data";
 import Image from "next/image";
-import Banner from "@/app/components/Banner";
-import BlogSideBar from "@/app/components/BlogSideBar";
-import Footer from "@/app/components/Footer";
-import Link from "next/link";
+import Banner from "@/components/Banner";
+import BlogSideBar from "@/components/BlogSideBar";
+import Footer from "@/components/Footer";
 import { FaFacebookF } from "react-icons/fa";
 import { FaTwitter } from "react-icons/fa";
 import { FaInstagram } from "react-icons/fa";
 import { FaPinterest } from "react-icons/fa";
-import ErrorePage from "@/app/components/ErrorePage";
+import ErrorePage from "@/components/ErrorePage";
+import { BlogCardProps } from "../../../../types/type";
+import { useState,useEffect } from "react";
+import { client } from "@/sanity/lib/client";
+import { notFound } from "next/navigation";
+
 interface Props {
   params: {
     id: string;
   };
 }
+
 const BlogDetails: React.FC<Props> = ({ params }) => {
+  const [blog, setBlog] = useState<BlogCardProps | null>(null);
+  const [loading, setLoading] = useState(true);
   const { id } = params;
-  const product = blogCardData.find((item) => item.id === id);
 
-  if (!product) {
-    return (
-      <section>
-        <Banner name="404" mainHeading="404 Error" />
-        
-        <ErrorePage/>
-      </section>
+  useEffect(() => {
+    const fetchBlog = async () => {
+      const query = ` *[_type == "blogPost"]{
+      _id,
+      title,
+      "imageUrl": image.asset->url,
+      detail1,
+      detail2,
+      paragraph1,
+  paragraph2,
+  paragraph3,
+  paragraph4,
+  paragraph5
+   
+   }`;
 
-      
-    );
+      try {
+        const blogData: BlogCardProps[] = await client.fetch(query, { id });
+        console.log("Blog data fetched:", blogData);
+        if (!blogData || blogData.length === 0) {
+          notFound();
+        } else {
+          setBlog(blogData[0]);
+        }
+      } catch (error) {
+        console.error("Error fetching blog:", error);
+        notFound();
+      } finally {
+        setLoading(false);
+      }
+    };
+
+    fetchBlog();
+  }, [id]);
+
+  if (loading) {
+    return <div>Loading...</div>;
   }
+
+  if (!blog) {
+    return <ErrorePage />;
+  }
+
 
   return (
     <>
@@ -40,8 +77,8 @@ const BlogDetails: React.FC<Props> = ({ params }) => {
       <section className="w-[300px] md:w-[872px] md:h-[3138px] h-[3638px] absolute top-[500px] md:top-[620px] left-[40px] md:left-[300px] xl:left-[100px] xxl:left-[300px] ">
         <div className=" w-[300px] md:w-[872px] h-[700px] md:h-[845px] ">
           <Image
-            src={product.image}
-            alt={product.title}
+            src={blog.imageUrl}
+            alt={blog.title}
             height={520}
             width={872}
             className="md:w-[872px] w-[300px] h-[230px] md:h-[520px]"
@@ -80,16 +117,16 @@ const BlogDetails: React.FC<Props> = ({ params }) => {
             </div>
           </div>
           <h1 className="font-bold text-[18px] md:text-[24px] font-helvetica text-[#333333]  absolute  md:left-0 left-[20px]  top-[270px] md:top-[578px]">
-            {product.title}
+            {blog.title}
           </h1>
           <div className="w-[260px] md:w-[694.83px] border-b-[1px] border-[#828282] opacity-20 absolute  md:left-0 left-[20px]  top-[355px]  md:top-[634px]">
             
           </div>
           <p className="font-normal text-[14px] md:text-[16px] font-helvetica text-[#4F4F4F] w-[300px] md:w-[872px] absolute  md:left-0 left-[20px]  top-[375px] md:top-[658px]">
-            {product.detail1}
+            {blog.detail1}
           </p>
           <p className="font-normal text-[14px] md:text-[16px] font-helvetica text-[#4F4F4F] w-[300px] md:w-[872px] absolute  md:left-0 left-[20px]  top-[580px] md:top-[770px]">
-            {product.detail2}
+            {blog.detail2}
           </p>
         </div>
         <div className=" w-[300px] md:w-[853px] h-[200px] md:h-[176px] relative top-[60px]  bg-[#FF9F0D] md:py-0 py-2">
@@ -110,28 +147,28 @@ const BlogDetails: React.FC<Props> = ({ params }) => {
           </div>
         </div>
         <p className="text-[14px] md:text-[16px] font-helvetica font-normal text-[#4F4F4F] md:leading-[24px]  w-[300px] md:w-[882px] relative top-[100px] md:top-[120px]">
-          {product.para1}
+          {blog.paragraph1}
         </p>
         <p className="text-[14px] md:text-[16px] font-helvetica font-normal text-[#4F4F4F] md:leading-[24px] w-[300px] md:w-[420px] relative top-[120px] md:top-[150px]">
-          {product.para2}
+          {blog.paragraph2}
         </p>
         <p className="text-[14px] md:text-[16px] font-helvetica font-normal text-[#4F4F4F] md:leading-[24px] w-[300px] md:w-[420px] relative top-[400px] md:top-[180px]">
-          {product.para3}
+          {blog.paragraph3}
         </p>
-        <p className="text-[14px] md:text-[16px] font-helvetica font-normal text-[#4F4F4F] md:leading-[24px] w-[300px] md:w-[882px] relative top-[420px] md:top-[210px]">
-          {product.para4}
+        <p className="text-[14px] md:text-[16px] font-helvetica font-normal text-[#4F4F4F] md:leading-[24px] w-[300px] md:w-[700px] relative top-[420px] md:top-[210px]">
+          {blog.paragraph4}
         </p>
-        <p className="text-[14px] md:text-[16px] font-helvetica font-normal text-[#4F4F4F] md:leading-[24px] w-[300px] md:w-[882px] relative top-[430px] md:top-[240px]">
-          {product.para5}
+        <p className="text-[14px] md:text-[16px] font-helvetica font-normal text-[#4F4F4F] md:leading-[24px] w-[300px] md:w-[700px] relative top-[430px] md:top-[240px]">
+          {blog.paragraph5}
         </p>
         <Image
-          src={product.image}
+          src={blog.imageUrl}
           alt=""
           height={366}
           width={424}
           className="md:h-[430px] h-[200px] object-cover md:w-[424px] w-[300px] absolute top-[1560px] md:top-[1300px]  md:left-[448px]"
         />
-        <div className="border-[#E0E0E0] border-[1px] absolute top-[2550px] md:top-[2070px] w-[300px] md:w-[872px] h-[60px]  flex  md:flex-row flex-col justify-center gap-[5px] md:gap-[300px] items-center">
+        <div className="border-[#E0E0E0] border-[1px] absolute top-[2550px] md:top-[1980px] w-[300px] md:w-[872px] h-[60px]  flex  md:flex-row flex-col justify-center gap-[5px] md:gap-[300px] items-center">
           <div className="w-[150px] md:w-[297px] h-[24px]  flex justify-center gap-[10px] items-center">
             <p className="text-[#333333] font-bold font-helvetica text-[14px] md:text-[16px]">
               Tags:
@@ -155,7 +192,7 @@ const BlogDetails: React.FC<Props> = ({ params }) => {
         </div>
 
         {/* Comment section */}
-        <div className="w-[300px] md:w-[872px] h-[472px] relative top-[600px] md:top-[400px]">
+        <div className="w-[300px] md:w-[872px] h-[472px] relative   top-[600px]">
           <h1 className="text-[24px] md:text-[32px] font-bold font-helvetica text-[#333333] text-left">
             Comments - 03
           </h1>
@@ -296,7 +333,7 @@ const BlogDetails: React.FC<Props> = ({ params }) => {
             </div>
           </div>
         </div>
-        <div className="w-[300px] md:w-[872px] h-[484px]  relative top-[700px] md:top-[500px]">
+        <div className="w-[300px] md:w-[872px] h-[484px]  relative top-[700px]">
           <h1 className="font-helvetica text-[18px] md:text-[24px] font-bold text-[#333333] text-start">
             Post a comment
           </h1>
@@ -320,14 +357,15 @@ const BlogDetails: React.FC<Props> = ({ params }) => {
           </button>
         </div>
 
-        {/* <aside className="absolute top-[2750px] md:top-[-5px] left-[30px] md:left-[1000px]">
+        <aside className="absolute top-[2750px] md:top-[-5px] left-[30px] md:left-[1000px]">
           <BlogSideBar />
-        </aside> */}
+        </aside>
       </section>
 
-<div className="absolute md:top-[4000px] top-[4260px]">
+
+ <div className="absolute md:top-[4000px] top-[4260px]">
       <Footer/>
-      </div>
+      </div> 
     </>
   );
 };

@@ -1,29 +1,71 @@
 "use client";
 import React from "react";
-import { shopCardData } from "../../../../data/data";
 import Image from "next/image";
-import Banner from "@/app/components/Banner";
-import Footer from "@/app/components/Footer";
-import ShopSliders from "@/app/components/ShopSlider";
+import Banner from "@/components/Banner";
+import Footer from "@/components/Footer";
+import ShopSliders from "@/components/ShopSlider";
 import Link from "next/link";
-import ErrorePage from "@/app/components/ErrorePage";
+import ErrorePage from "@/components/ErrorePage";
+import { ShopCardProps } from "../../../../types/type";
+import { useEffect, useState } from "react";
+import { client } from "@/sanity/lib/client";
+import { notFound } from "next/navigation";
 interface Props {
   params: {
     id: string;
   };
 }
 const shopCardsDetails: React.FC<Props> = ({ params }) => {
-  const { id } = params;
-  const product = shopCardData.find((item: any) => item.id === id);
-  if (!product) {
-    return (
-      <section>
-        <Banner name="404" mainHeading="404 Error" />
-        <ErrorePage/>
-      </section>
+  const [product, setProduct] = useState<ShopCardProps | null>(null);
+    const [loading, setLoading] = useState(true);
+    const { id } = params;
+    useEffect(() => {
+      const fetchProduct = async () => {
+        const query = `*[_type=="food" && _id == $id] {
+          ratingNum,
+      description,
+      reviews,
+      name,
+      text,
+      bottomDetail2,
+      _id,
+      category,
+      "imageUrl": image.asset->url, 
+      originalPrice,
+      discountPrice,
+      "ratingUrl": ratingImage.asset->url, 
+      sell,
+      tags,
+      bottomDetail,
+      price
+      
+        }`;
+    try {
+      const productData: ShopCardProps[] = await client.fetch(query, { id });
+      if (!productData || productData.length === 0) {
+        notFound();
+      } else {
+        setProduct(productData[0]);
+      }
+    } catch (error) {
+      console.error("Error fetching product:", error);
+      notFound();
+    } finally {
+      setLoading(false);
+    }
+  };
 
-    );
-  }
+  fetchProduct();
+}, [id]);
+
+if (loading) {
+  return <div>Loading...</div>;
+}
+
+if (!product) {
+  return <ErrorePage />;
+}
+
   return (
     <>
       <section className="">
@@ -34,28 +76,28 @@ const shopCardsDetails: React.FC<Props> = ({ params }) => {
         <div className="w-[300px] md:w-[687px] h-[596px] absolute top-[450px] md:top-[530px] left-[35px] md:left-[300px] xl:left-[100px] xxl:left-[300px] flex gap-[13px] ">
           <div className="flex flex-col gap-[20px]">
             <Image
-              src={product.image}
+              src={product.imageUrl}
               alt="food-image"
               height={129}
               width={132}
               className="h-[80px] md:h-[129px] w-[150px] md:w-[132px] object-cover rounded-lg"
             />
             <Image
-              src={product.image}
+              src={product.imageUrl}
               alt="food-image"
               height={129}
               width={132}
               className="h-[80px] md:h-[129px] w-[150px] md:w-[132px] object-cover rounded-lg"
             />
             <Image
-              src={product.image}
+              src={product.imageUrl}
               alt="food-image"
               height={129}
               width={132}
               className="h-[80px] md:h-[129px] w-[150px] md:w-[132px] object-cover rounded-lg"
             />
             <Image
-              src={product.image}
+              src={product.imageUrl}
               alt="food-image"
               height={129}
               width={132}
@@ -64,7 +106,7 @@ const shopCardsDetails: React.FC<Props> = ({ params }) => {
           </div>
           <div className="ml-[10px]">
             <Image
-              src={product.image}
+              src={product.imageUrl}
               alt="large-food-image"
               height={596}
               width={491}
@@ -73,7 +115,7 @@ const shopCardsDetails: React.FC<Props> = ({ params }) => {
           </div>
         </div>
         <span className="w-[70px] h-[28px] md:w-[86px] md:h-[28px] absolute top-[850px] md:top-[534px] left-[35px] md:left-[1020px] xl:left-[850px] xxl:left-[1024px] rounded-[6px] bg-[#FF9F0D] text-white font-normal text-[10px] md:text-[14px] font-inter flex justify-center items-center whitespace-nowrap">
-          {product.tag}
+          {product.tags}
         </span>
         <div className="w-[152px] h-[26px] absolute left-[200px]  md:left-[1478px] xl:left-[1300px] xxl:left-[1478px] top-[850px] md:top-[530px]  flex md:justify-between justify-center md:gap-0 gap-[10px] items-center">
           <div className="flex justify-start gap-[6px]">
@@ -84,14 +126,14 @@ const shopCardsDetails: React.FC<Props> = ({ params }) => {
               height={24}
                className="h-[18px] w-[18px] md:h-[24px] md:w-[24px]"
             />
-            <span className="text-[14px] md:text-[18px] font-normal font-inter text-[#828282]">
+            <button className="text-[14px] md:text-[18px] font-normal font-inter text-[#828282]">
               Prev
-            </span>
+            </button>
           </div>
           <div className="flex justify-start gap-[6px]">
-            <span className="text-[14px] md:text-[18px] font-normal font-inter text-[#828282]">
+            <button className="text-[14px] md:text-[18px] font-normal font-inter text-[#828282]">
               Next
-            </span>
+            </button>
             <Image
               src="/ArrowRight.svg"
               alt=""
@@ -103,11 +145,11 @@ const shopCardsDetails: React.FC<Props> = ({ params }) => {
         </div>
 
         <h1 className="text-[24px] md:text-[48px] font-bold font-helvetica text-[#333333] absolute left-[35px] md:left-[1020px] xl:left-[850px] xxl:left-[1024px] top-[890px] md:top-[570px] whitespace-nowrap">
-          {product.title}
+          {product.name}
         </h1>
 
         <p className="w-[300px] md:w-[608px] h-[97px] absolute top-[930px] md:top-[650px] left-[35px] md:left-[1020px] xl:left-[850px] xxl:left-[1024px] text-[#4F4F4F] font-normal font-inter text-[14px] md:text-[18px] md:leading-[26px]">
-          {product.des}
+          {product.description}
         </p>
 
         <div className="w-[300px] md:w-[611px] border-b-[1px] border-[#E0E0E0] absolute left-[35px] md:left-[1020px] xl:left-[850px] xxl:left-[1024px] top-[1100px] md:top-[779px]"></div>
@@ -183,9 +225,9 @@ const shopCardsDetails: React.FC<Props> = ({ params }) => {
             width={20}
             className="md:h-[20px] h-[16px] w-[16px] md:w-[20px]"
           />
-          <p className="font-normal text-[14px] md:text-[18px] whitespace-nowrap text-white font-inter ">
+          <button className="font-normal text-[14px] md:text-[18px] whitespace-nowrap text-white font-inter ">
            <Link href="/cart"> Add to cart</Link>
-          </p>
+          </button>
         </button>
 
         <div className="w-[250px] md:w-[618px] border-b-[1px] border-[#E0E0E0] absolute left-[35px] md:left-[1020px] xl:left-[850px] xxl:left-[1024px]  top-[1300px] md:top-[1048px]"></div>
@@ -199,9 +241,9 @@ const shopCardsDetails: React.FC<Props> = ({ params }) => {
               width={20}
               className="md:h-[20px] h-[16px] w-[16px] md:w-[20px]"
             />
-            <p className="font-inter text-[14px] md:text-[18px] font-normal text-[#4F4F4F]">
+            <button className="font-inter text-[14px] md:text-[18px] font-normal text-[#4F4F4F]">
               Add to Wishlist
-            </p>
+            </button>
           </div>
           <div className="flex justify-start gap-[5px] items-center">
             <Image
@@ -218,7 +260,7 @@ const shopCardsDetails: React.FC<Props> = ({ params }) => {
         </div>
  
          <p className=" absolute top-[1370px] md:top-[1106px] left-[35px] md:left-[1020px] xl:left-[850px] xxl:left-[1024px] font-inter text-[#333333] text-[14px] md:text-[18px] font-normal whitespace-nowrap">
-          Category: {product.title}
+          Category: {product.category}
         </p>
 
         <p className="absolute left-[35px] top-[1400px] md:top-[1140px] md:left-[1020px] xl:left-[850px] xxl:left-[1024px] font-inter text-[#333333] text-[14px] md:text-[18px] font-normal whitespace-nowrap">
@@ -293,19 +335,19 @@ const shopCardsDetails: React.FC<Props> = ({ params }) => {
           </h1>
           <ul className="list-disc  md:ml-9 mt-4">
             <li className="font-inter font-normal text-[12px] md:text-[14px] text-[#4F4F4F] whitespace-nowrap mt-2">
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+            Crafted with premium ingredients for unmatched quality and taste.
             </li>
             <li className="font-inter font-normal text-[12px] md:text-[14px] text-[#4F4F4F] whitespace-nowrap mt-2">
-              Maecenas ullamcorper est et massa mattis condimentum.
+            Designed to provide an exceptional sensory experience.
             </li>
             <li className="font-inter font-normal text-[12px] md:text-[14px] text-[#4F4F4F] whitespace-nowrap mt-2">
-              Vestibulum sed massa vel ipsum imperdiet malesuada.
+            Perfectly balanced to suit a variety of preferences and occasions.
             </li>
             <li className="font-inter font-normal text-[12px] md:text-[14px] text-[#4F4F4F] whitespace-nowrap mt-2">
-              Etiam nec massa et lectus faucibus ornare congue in nunc.
+            Sustainably sourced and ethically produced to support a better planet.
             </li>
             <li className="font-inter font-normal text-[12px] md:text-[14px] text-[#4F4F4F] whitespace-nowrap mt-2">
-              Mauris eget diam magna, in blandit turpis.
+            Backed by rigorous quality checks for a trustworthy experience.
             </li>
           </ul>
         </div> 

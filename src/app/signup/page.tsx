@@ -1,18 +1,19 @@
 import React from "react";
-import Banner from "../components/Banner";
+import Banner from "@/components/Banner";
 import Image from "next/image";
-import Footer from "../components/Footer";
+import Footer from "@/components/Footer";
 const SignUp = () => {
   return (
     <>
       <div className="">
         <Banner name="sign up" mainHeading="Sign up page" />
       </div>
-      <section className="w-[300px] md:w-[424px] h-[624px] absolute top-[510px]  md:top-[630px]  md:left-[743px] xl:left-[543px] xxl:left-[743px]  left-[50px]  shadow-2xl shadow-[#E0E0E0]">
-        <h1 className="text-[18px] md:text-[20px] font-bold font-helvetica relative top-[35px] left-[35px] text-[#333333]">
+      <div className="flex justify-center w-full items-center">
+      <section className="w-[300px] md:w-[424px] h-[624px] absolute top-[540px]  md:top-[630px] md:left-[150px] lg:left-[343px] xl:left-[543px] xxl:left-[620px] xxxl:left-[743px]   shadow-2xl shadow-[#E0E0E0]">
+        <h1 className="text-[18px] w-[150px] md:text-[20px] font-bold font-helvetica relative top-[35px] left-[35px] text-[#333333]">
           Sign Up
         </h1>
-        <div className="relative top-[-35px]">
+        <div className="relative top-[-35px] ">
           <div className="w-[220px] md:w-[360px] h-[44px] flex justify-start items-center gap-[10px] pl-[14px] relative top-[100px] left-[35px] border-[#E0E0E0] border-[1px]">
             <Image
               src="/User.svg"
@@ -41,7 +42,7 @@ const SignUp = () => {
               placeholder="Email"
             />
           </div>
-          <div className="w-[220px] ]md:w-[360px] h-[44px] flex justify-start items-center gap-[10px] pl-[14px] relative top-[133px] left-[35px] border-[#E0E0E0] border-[1px]">
+          <div className="w-[220px] ] md:w-[360px] h-[44px] flex justify-start items-center gap-[10px] pl-[14px] relative top-[133px] left-[35px] border-[#E0E0E0] border-[1px]">
             <Image
               src="/Lock.svg"
               alt="lock-image"
@@ -55,7 +56,7 @@ const SignUp = () => {
               placeholder="Passward"
             />
           </div>
-          <div className="h-[22px] flex justify-start items-center gap-[10px] pl-[14px] relative top-[153px] left-[35px] whitespace-nowrap">
+          <div className="h-[22px] w-[200px] md:w-[300px] flex justify-start items-center gap-[10px] pl-[14px] relative top-[153px] ms:left-[35px] left-[20px] whitespace-nowrap">
             <div className="w-[20px] h-[20px] flex items-center justify-center">
               <input
                 type="checkbox"
@@ -111,9 +112,10 @@ const SignUp = () => {
           </div>
         </div>
       </section>
-      <div className="absolute md:top-[1410px] top-[1210px]">
-        <Footer />
       </div>
+      {/* <div className="absolute md:top-[1410px] top-[1210px]">
+        <Footer />
+      </div> */}
     </>
   );
 };

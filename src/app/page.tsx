@@ -14,7 +14,7 @@ const Home = () => {
     });
   }, []);
   return (
-    <div className=' relative mx-auto w-[390px] xl:w-[1484px]  md:w-[1920px] lg:w-[1920px] xxl:w-[1920px] bg-black md:h-[8479px] h-[8300px]'>
+    <div className=' relative mx-auto w-full  max-w-[1920px]  md:h-[8479px] h-[8300px] bg-black'>
   <HeaderHero />
 </div>
   )
