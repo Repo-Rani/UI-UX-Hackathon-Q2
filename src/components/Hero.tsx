@@ -1,12 +1,11 @@
 import React from "react";
 import Image from "next/image";
 
-// import WhyChooseMe from "./WhyChooseUs";
 import Clients from "./Client";
 import OurMenu from "./OurMenu";
 import OurChef from "./HeroOurChef";
 import LatestBlogItems from "./LatestBlogItems";
-// import LandingFooter from "./LandingFooter";
+import LandingFooter from "./LandingFooter";
 import Testimonial from "./Testimonial";
 import HeroAboutUs from "./HeroAboutUs";
 import HeroFoodCategory from "./HeroFoodCategory";
@@ -92,9 +91,9 @@ const HeaderHero = () => {
           <LatestBlogItems />
         </div>
       </section>
-      {/* <div className="absolute md:top-[7759px] top-[8300px]">
+      <div className="absolute md:top-[7759px] top-[8300px]">
         <LandingFooter />
-      </div>  */}
+      </div> 
     </>
   );
 };
