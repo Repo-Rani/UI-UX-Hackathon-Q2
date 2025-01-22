@@ -20,9 +20,9 @@ const ErrorePage = () => {
   <button className=" w-[130px] h-[40px] md:w-[197px] md:h-[58px] absolute top-[790px] md:top-[810px] ms:top-[770px] xl:top-[840px] py-[16px] px-[48px] rounded-[6px] text-[14px] md:text-[18px] font-bold text-white font-helvetica flex justify-center items-center bg-[#FF9F0D] whitespace-nowrap">
 <Link href="/Home">Go to home</Link>
   </button>
-  {/* <div className="absolute top-[1050px]">
+  <div className="absolute top-[1050px]">
   <Footer/>
-</div> */}
+</div>
 </div>
   )
 }

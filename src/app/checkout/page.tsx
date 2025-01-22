@@ -1,7 +1,6 @@
 import React from "react";
 import Banner from "@/components/Banner";
 import Footer from "@/components/Footer";
-import Link from "next/link";
 import CheckoutForm from "@/components/CheckoutForm";
 import PlaceOrder from "@/components/PlaceOrder";
 const Checkout = () => {

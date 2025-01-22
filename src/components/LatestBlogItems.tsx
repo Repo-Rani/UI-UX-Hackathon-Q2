@@ -1,5 +1,5 @@
 import React from "react";
-import { latestBlogData } from "../../../data/data";
+import { latestBlogData } from "../../data/data";
 import LatestBlog from "./LatestBlog";
 const LatestBlogItems = () => {
   return (

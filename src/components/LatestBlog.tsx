@@ -1,6 +1,6 @@
 import React from "react";
 import Image from "next/image";
-import { LatestBlogProps } from "../../../types/type";
+import { LatestBlogProps } from "../../types/type";
 import { LiaCommentDotsSolid } from "react-icons/lia";
 import Link from "next/link";
 

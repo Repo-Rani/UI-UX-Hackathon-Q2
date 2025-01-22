@@ -5,18 +5,18 @@ import Image from "next/image";
 import StarterMenuItems from "@/components/StarterMenuItems";
 import Clients from "@/components/Client";
 import Footer from "@/components/Footer";
-import { useEffect } from 'react';
-import AOS from "aos";
-import "aos/dist/aos.css";
+// import { useEffect } from 'react';
+// import AOS from "aos";
+// import "aos/dist/aos.css";
 const OurMenu = () => {
-   useEffect(() => {
-      AOS.init({
-        duration: 1000,
-        easing: "ease",
-        once: true,
-        anchorPlacement: "top-bottom",
-      });
-    }, []);
+  //  useEffect(() => {
+  //     AOS.init({
+  //       duration: 1000,
+  //       easing: "ease",
+  //       once: true,
+  //       anchorPlacement: "top-bottom",
+  //     });
+  //   }, []);
   return (
     <>
       <section

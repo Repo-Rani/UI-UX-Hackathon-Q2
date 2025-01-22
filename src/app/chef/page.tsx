@@ -2,19 +2,19 @@
 import React from "react";
 import Banner from "@/components/Banner";
 import Footer from "@/components/Footer";
-import { useEffect } from 'react';
-import AOS from "aos";
-import "aos/dist/aos.css";
+// import { useEffect } from 'react';
+// import AOS from "aos";
+// import "aos/dist/aos.css";
 import ChefCards from "@/components/ChefCards";
 const Chef = () => {
-     useEffect(() => {
-        AOS.init({
-          duration: 1000,
-          easing: "ease",
-          once: true,
-          anchorPlacement: "top-bottom",
-        });
-      }, []);
+    //  useEffect(() => {
+    //     AOS.init({
+    //       duration: 1000,
+    //       easing: "ease",
+    //       once: true,
+    //       anchorPlacement: "top-bottom",
+    //     });
+    //   }, []);
   return (
     <>
       <section>
