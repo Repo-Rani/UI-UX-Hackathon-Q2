@@ -1,6 +1,6 @@
 import React from 'react'
-import Banner from '../components/Banner';
-import Footer from '../components/Footer';
+import Banner from '@/components/Banner';
+import Footer from '@/components/LandingFooter';
 
 const page = () => {
   return (
