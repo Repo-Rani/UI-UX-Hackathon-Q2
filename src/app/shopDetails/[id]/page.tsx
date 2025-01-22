@@ -15,7 +15,7 @@ interface Props {
     id: string;
   };
 }
-const shopCardsDetails: React.FC<Props> = ({ params }) => {
+const ShopCardsDetails: React.FC<Props> = ({ params }) => {
   const [product, setProduct] = useState<ShopCardProps | null>(null);
     const [loading, setLoading] = useState(true);
     const { id } = params;
@@ -365,4 +365,4 @@ if (!product) {
   );
 };
 
-export default shopCardsDetails;
+export default ShopCardsDetails;

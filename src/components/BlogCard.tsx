@@ -60,8 +60,10 @@ const BlogCard = () => {
   return (
     <div className="absolute top-[500px] left-[300px] md:top-[530px] xxxl:left-[300px] xl:left-[70px]">
       <div className="grid grid-cols-1 gap-[20px] md:gap-[40px]">
-        {blogs.map((blog) => (
-            <div className="w-[300px] md:w-[872px] md:h-[830px] h-[550px] flex flex-col items-center justify-center gap-[25px] relative">
+        {blogs.map((blog, index) => (
+            <div
+           key={index} 
+            className="w-[300px] md:w-[872px] md:h-[830px] h-[550px] flex flex-col items-center justify-center gap-[25px] relative">
               <Image
                 src={blog.imageUrl}
                 alt="food-image"
