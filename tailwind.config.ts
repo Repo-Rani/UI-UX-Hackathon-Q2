@@ -3,7 +3,6 @@ import type { Config } from "tailwindcss";
 
 
 const config: Config = {
-    darkMode: ["class"],
     content: [
     "./src/pages/**/*.{js,ts,jsx,tsx,mdx}",
     "./src/components/**/*.{js,ts,jsx,tsx,mdx}",
@@ -18,6 +17,7 @@ const config: Config = {
   			sm: '600px',
   			md: '768px',
   			lg: '1024px',
+			xlg:'1265px',
   			xl: '1440px',
   			xxl: '1512px',
   			xxxl: '1920px'

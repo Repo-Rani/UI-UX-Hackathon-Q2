@@ -7,6 +7,8 @@
 @tailwind components;
 @tailwind utilities;
 
+
+
 @layer components {
   .nav_link {
     @apply relative text-base font-medium w-fit block after:content-[''] after:absolute after:h-[3px]
@@ -193,15 +195,14 @@ body {
   }
 }
 
-@layer base {
+ @layer base {
   * {
     @apply border-border;
   }
   body {
     @apply bg-background text-foreground;
   }
-}
-
+} 
 
 
 

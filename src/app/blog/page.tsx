@@ -1,22 +1,22 @@
 "use client"
 import React from 'react'
-import Banner from '@/components/Banner';
-import BlogSideBar from '@/components/BlogSideBar';
-// import Pagination from '@/components/Pagination';
-import BlogCard from '@/components/BlogCard';
-import Footer from '@/components/Footer';
-// import { useEffect } from 'react';
-// import AOS from "aos";
-// import "aos/dist/aos.css";
+import Banner from '@/components/banner/Banner';
+import BlogSideBar from '@/components/blog/BlogSideBar';
+// import Pagination from '@/components/shop/Pagination';
+import BlogCard from '@/components/blog/BlogCard';
+import Footer from '@/components/footer/Footer';
+import { useEffect } from 'react';
+import AOS from "aos";
+import "aos/dist/aos.css";
 const Blog = () => {
-  //  useEffect(() => {
-  //     AOS.init({
-  //       duration: 1000,
-  //       easing: "ease",
-  //       once: true,
-  //       anchorPlacement: "top-bottom",
-  //     });
-  //   }, []);
+   useEffect(() => {
+      AOS.init({
+        duration: 1000,
+        easing: "ease",
+        once: true,
+        anchorPlacement: "top-bottom",
+      });
+    }, []);
   return (
     <>
     <section

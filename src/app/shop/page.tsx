@@ -1,12 +1,11 @@
 "use client";
 import React from "react";
-import Banner from "@/components/Banner";
+import Banner from "@/components/banner/Banner";
 import Image from "next/image";
-import Footer from "@/components/Footer";
-// import AOS from "aos";
-// import "aos/dist/aos.css";
-import ShopSidebar from "@/components/ShopSidebar";
-import ShopCard from "@/components/ShopCard";
+import Footer from "@/components/footer/Footer";
+import "aos/dist/aos.css";
+import ShopSidebar from "@/components/shop/ShopSidebar";
+import ShopCard from "@/components/shop/ShopCard";
 const Shop = () => {
  
   return (
@@ -15,8 +14,8 @@ const Shop = () => {
         <div className="">
           <Banner mainHeading="Our Shop" name="Shop" />
 
-          <div className="absolute left-[20px] ms:left-[40px] sm:left-[30px] md:left-0 xxxl:left-[300px] xxl:left-[100px] sm:top-[560px] md:top-[520px]  top-[510px] xl:top-[565px] ">
-            <div className=" w-[230px] ms:w-[250px] xl:w-[332px] h-[46px] flex justify-center gap-[10px] md:justify-between relative lg:top-[35px] xl:top-0">
+          <div className="absolute left-[20px] ms:left-[40px] sm:left-[30px] md:left-[10px] xxxl:left-[300px] xxl:left-[100px] sm:top-[560px] md:top-[520px]  top-[510px] xl:top-[565px] ">
+            <div className=" w-[230px] ms:w-[250px] xl:w-[332px] h-[46px] flex justify-center gap-[10px] lg:justify-between relative md:top-[37px] lg:top-[35px] xl:top-0">
               <span className="font-inter font-normal text-[16px] md:text-[18px] xl:text-[20px] xl:leading-[28px] w-[81px] h-[28px] text-[#333333] relative top-[10px]">
                 Sort By :
               </span>
@@ -36,7 +35,7 @@ const Shop = () => {
               </div>
             </div>
 
-            <div className=" w-[230px] ms:w-[250px] xl:w-[332px] h-[46px]  sm:left-[280px] md:left-0 lg:left-[350px]  relative top-[20px] sm:top-[-45px]  lg:top-[-10px] xl:-top-11 xl:left-[400px] flex justify-center gap-[5px] md:justify-between">
+            <div className=" w-[230px] ms:w-[250px] xl:w-[332px] h-[46px]  sm:left-[280px] md:left-[310px] lg:left-[350px]  relative top-[20px] sm:top-[-45px] md:top-[-10px]  lg:top-[-10px] xl:-top-11 xl:left-[400px] flex justify-center gap-[5px] md:justify-between">
               <span className="font-inter font-normal text-[16px] md:text-[18px] xl:text-[20px] xl:leading-[28px] w-[81px] h-[28px] text-[#333333] relative top-[10px]">
                 Show :
               </span>

@@ -1,8 +1,8 @@
 import React from "react";
-import Banner from "@/components/Banner";
-import Footer from "@/components/Footer";
-import CheckoutForm from "@/components/CheckoutForm";
-import PlaceOrder from "@/components/PlaceOrder";
+import Banner from "@/components/banner/Banner";
+import Footer from "@/components/footer/Footer";
+import CheckoutForm from "@/components/chekout/CheckoutForm";
+import PlaceOrder from "@/components/chekout/PlaceOrder";
 const Checkout = () => {
   return (
     <>

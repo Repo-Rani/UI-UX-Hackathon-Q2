@@ -1,21 +1,21 @@
 import React from "react";
-import Banner from "@/components/Banner";
+import Banner from "@/components/banner/Banner";
 import Image from "next/image";
-import Footer from "@/components/Footer";
+import Footer from "@/components/footer/Footer";
 const Login = () => {
   return (
     <>
       <div className="">
         <Banner name="Login" mainHeading="Login page" />
       </div>
-      <div className="flex justify-center w-full items-center">
+      <section className="flex justify-center  items-center">
 
-      <section className="w-[300px] md:w-[424px] h-[564px] absolute top-[540px]  md:top-[630px]  md:left-[150px] lg:left-[343px] xl:left-[543px] xxl:left-[630px] xxxl:left-[743px]     shadow-2xl shadow-[#E0E0E0]">
-        <h1 className="text-[18px] md:text-[20px] w-[150px] font-bold font-helvetica relative top-[35px] left-[35px] text-[#333333]">
+      <div className="w-[250px] ms:w-[300px] md:w-[424px] h-[564px] absolute top-[540px]  md:top-[630px]      shadow-2xl shadow-[#E0E0E0]">
+        <h1 className="text-[18px] md:text-[20px] w-[150px] font-bold font-helvetica relative top-[35px] left-[10px] ms:left-[35px] text-[#333333]">
           Login
         </h1>
         <div className="relative top-[-48px]">
-          <div className="w-[220px] md:w-[360px] h-[44px] flex justify-start items-center gap-[10px] pl-[14px] relative top-[117px] left-[35px] border-[#E0E0E0] border-[1px]">
+          <div className="w-[220px] md:w-[360px] h-[44px] flex justify-start items-center gap-[10px] pl-[14px] relative top-[117px] left-[10px] ms:left-[35px] border-[#E0E0E0] border-[1px]">
             <Image
               src="/EnvelopeSimple.svg"
               alt=""
@@ -29,7 +29,7 @@ const Login = () => {
               placeholder="Email"
             />
           </div>
-          <div className="w-[220px] md:w-[360px] h-[44px] flex justify-start items-center gap-[10px] pl-[14px] relative top-[133px] left-[35px] border-[#E0E0E0] border-[1px]">
+          <div className="w-[220px] md:w-[360px] h-[44px] flex justify-start items-center gap-[10px] pl-[14px] relative top-[133px] left-[10px] ms:left-[35px] border-[#E0E0E0] border-[1px]">
             <Image
               src="/Lock.svg"
               alt=""
@@ -43,7 +43,7 @@ const Login = () => {
               placeholder="Passward"
             />
           </div>
-          <div className="h-[22px] w-[200px] flex justify-start items-center gap-[10px] pl-[14px] relative top-[153px] left-[35px] px-3 ms:px-0 whitespace-nowrap">
+          <div className="h-[22px] w-[200px] flex justify-start items-center gap-[10px] pl-[14px] relative top-[153px] left-[10px] ms:left-[35px] px-3 ms:px-0 whitespace-nowrap">
   <div className="w-[20px] h-[20px] flex items-center justify-center">
     <input
       type="checkbox"
@@ -55,20 +55,20 @@ const Login = () => {
     Remember me?
   </p>
 </div>
-          <button className="relative top-[180px] left-[35px] w-[220px] md:w-[360px] h-[35px] md:h-[44px] bg-[#FF9F0D] text-white hover:bg-[#ffffff] hover:text-[#FF9F0D] hover:border-[1px] hover:border-[#FF9F0D] transition-all duration-300 ease-in-out font-halvetica text-[14px] md:text-[16px] font-normal flex justify-center items-center">
+          <button className="relative top-[180px] left-[10px] ms:left-[35px] w-[220px] md:w-[360px] h-[35px] md:h-[44px] bg-[#FF9F0D] text-white hover:bg-[#ffffff] hover:text-[#FF9F0D] hover:border-[1px] hover:border-[#FF9F0D] transition-all duration-300 ease-in-out font-halvetica text-[14px] md:text-[16px] font-normal flex justify-center items-center">
             Login
           </button>
-          <p className="w-[70px] md:w-[113px] text-[12px] md:text-[14px]  font-normal font-helvetica text-[#828282] relative left-[35px]  md:left-[283px] top-[195px] whitespace-nowrap">
+          <p className="w-[70px] md:w-[113px] text-[12px] md:text-[14px]  font-normal font-helvetica text-[#828282] relative left-[10px] ms:left-[35px]  md:left-[283px] top-[195px] whitespace-nowrap">
             Forget password?
           </p>
-          <div className="w-[245px] md:w-[360px] h-[152px] relative left-[35px] top-[220px] flex justify-between flex-col ">
-            <div className="w-[245px] md:w-[360px] h-[32px] flex justify-center items-center">
-              <span className="border-b-[1px] w-[100px]  md:w-[168px] border-[#E0E0E0]"></span>
+          <div className="w-[245px] md:w-[360px] h-[152px] relative left-[10px] ms:left-[35px] top-[220px] flex justify-between flex-col ">
+            <div className="w-[215px] sm:w-[245px] md:w-[360px] h-[32px] flex justify-center items-center  ">
+              <span className="border-b-[1px] w-[80px] ms:w-[100px]  md:w-[168px] border-[#E0E0E0]"></span>
               <span className="w-[28px] md:w-[32px] h-[32px] border-[#E0E0E0] border-[1px] text-[12px] md:text-[14px]  font-helvetica font-normal text-[#4F4F4F] flex justify-center items-center cursor-pointer">
                 OR
               </span>
 
-              <span className="border-b-[1px] w-[100px]  md:w-[168px]  border-[#E0E0E0]">
+              <span className="border-b-[1px]  w-[80px] ms:w-[100px]  md:w-[168px]  border-[#E0E0E0]">
                 
               </span>
             </div>
@@ -98,8 +98,9 @@ const Login = () => {
             </div>
           </div>
         </div>
+        </div>
+      
       </section>
-      </div>
 
       <div className="absolute md:top-[1290px] top-[1190px]">
         <Footer/>

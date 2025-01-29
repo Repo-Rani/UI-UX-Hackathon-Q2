@@ -1,14 +1,14 @@
 "use client";
 import React from "react";
 import Image from "next/image";
-import Banner from "@/components/Banner";
-import BlogSideBar from "@/components/BlogSideBar";
-import Footer from "@/components/Footer";
+import Banner from "@/components/banner/Banner";
+import BlogSideBar from "@/components/blog/BlogSideBar";
+import Footer from "@/components/footer/Footer";
 import { FaFacebookF } from "react-icons/fa";
 import { FaTwitter } from "react-icons/fa";
 import { FaInstagram } from "react-icons/fa";
 import { FaPinterest } from "react-icons/fa";
-import ErrorePage from "@/components/ErrorePage";
+import ErrorePage from "@/app/errorePage/page";
 import { BlogCardProps } from "../../../../types/type";
 import { useState,useEffect } from "react";
 import { client } from "@/sanity/lib/client";

@@ -1,6 +1,6 @@
 import React from 'react'
-import Banner from '@/components/Banner';
-import Footer from '@/components/LandingFooter';
+import Banner from '@/components/banner/Banner';
+import Footer from '@/components/footer/Footer';
 
 const page = () => {
   return (
@@ -11,9 +11,9 @@ const page = () => {
     </div>
    
     </section>
-    {/* <div className='absolute  top-[1300px]'>
+    <div className='absolute  top-[1300px]'>
       <Footer/>
-    </div> */}
+    </div>
     </>
   )
 }
