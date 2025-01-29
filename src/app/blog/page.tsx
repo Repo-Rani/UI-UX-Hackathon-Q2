@@ -4,7 +4,7 @@ import Banner from '@/components/banner/Banner';
 import BlogSideBar from '@/components/blog/BlogSideBar';
 // import Pagination from '@/components/shop/Pagination';
 import BlogCard from '@/components/blog/BlogCard';
-import Footer from '@/components/footer/Footer';
+// import Footer from '@/components/footer/Footer';
 import { useEffect } from 'react';
 import AOS from "aos";
 import "aos/dist/aos.css";
@@ -20,7 +20,7 @@ const Blog = () => {
   return (
     <>
     <section
-  className="relative mx-auto w-[390px] md:w-[1920px] xl:w-[1484px] xxl:w-[1920px] lg:w-[1920px] max-w-[1920px]"
+  className="relative mx-auto w-full max-w-[1920px]"
  
 >
   <div className=''>
@@ -41,9 +41,9 @@ const Blog = () => {
   </div>
 </section>
 
-<div className='absolute top-[2970px] md:top-[4245px]'>
+{/* <div className='absolute top-[2970px] md:top-[4245px]'>
 <Footer/>
-</div>
+</div> */}
 </>
   )
 }

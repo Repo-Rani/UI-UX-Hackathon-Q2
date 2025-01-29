@@ -3,7 +3,7 @@ import React from "react";
 import Image from "next/image";
 import Banner from "@/components/banner/Banner";
 import BlogSideBar from "@/components/blog/BlogSideBar";
-import Footer from "@/components/footer/Footer";
+// import Footer from "@/components/footer/Footer";
 import { FaFacebookF } from "react-icons/fa";
 import { FaTwitter } from "react-icons/fa";
 import { FaInstagram } from "react-icons/fa";
@@ -74,7 +74,7 @@ const BlogDetails: React.FC<Props> = ({ params }) => {
       <div className="">
         <Banner mainHeading="Blog Details" name="Blog details" />
       </div>
-      <section className="w-[300px] md:w-[872px] md:h-[3138px] h-[3638px] absolute top-[500px] md:top-[620px] left-[40px] md:left-[300px] xl:left-[100px] xxl:left-[300px] ">
+      <section className="w-[300px] md:w-[872px] md:h-[3138px] h-[3638px] absolute top-[500px] md:top-[620px] left-[40px] xxxl:left-[300px] xl:left-[100px]  xxl:left-0">
         <div className=" w-[300px] md:w-[872px] h-[700px] md:h-[845px] ">
           <Image
             src={blog.imageUrl}
@@ -363,9 +363,9 @@ const BlogDetails: React.FC<Props> = ({ params }) => {
       </section>
 
 
- <div className="absolute md:top-[4000px] top-[4260px]">
+ {/* <div className="absolute md:top-[4000px] top-[4260px]">
       <Footer/>
-      </div> 
+      </div>  */}
     </>
   );
 };

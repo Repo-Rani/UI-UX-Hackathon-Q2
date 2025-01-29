@@ -1,4 +1,4 @@
-export default {
+const blogPostSchema = {
   name: "blogPost",
   type: "document",
   title: "Blog Post",
@@ -71,3 +71,6 @@ export default {
     },
   ],
 };
+
+
+export default blogPostSchema;
