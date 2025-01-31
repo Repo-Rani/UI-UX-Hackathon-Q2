@@ -1,7 +1,7 @@
 'use client'
 import Banner from "@/components/banner/Banner";
 import Image from "next/image";
-import Footer from "@/components/footer/Footer";
+// import Footer from "@/components/footer/Footer";
 import Link from "next/link";
 const Cart = () => {
  
@@ -102,10 +102,10 @@ const Cart = () => {
            </Link>
          </div>
      </div> 
-
+{/* 
       <div className="absolute xl:top-[1872px] top-[2000px]">
         <Footer />
-      </div>
+      </div> */}
     </>
   );
 };
