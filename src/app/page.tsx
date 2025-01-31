@@ -14,8 +14,10 @@ const Home = () => {
     });
   }, []);
   return (
-    <div className=' relative mx-auto w-full  max-w-[1920px]  bg-black  md:h-[8479px] h-[8300px] '>
+    <div className='  relative mx-auto  bg-[#0D0D0D]  w-full   max-w-[1920px]  h-[9000px] flex justify-center  '>
+
   <HeaderHero />
+  
 </div>
   )
 }

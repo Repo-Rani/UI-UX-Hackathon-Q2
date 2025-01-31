@@ -3,8 +3,8 @@ import React from "react";
 import Banner from "@/components/banner/Banner";
 import Image from "next/image";
 import StarterMenuItems from "@/components/menu/StarterMenuItems";
-import Clients from "@/components/hero/Client";
-import Footer from "@/components/footer/Footer";
+import Clients from "@/components/menu/Clients";
+// import Footer from "@/components/footer/Footer";
 import { useEffect } from 'react';
 import AOS from "aos";
 import "aos/dist/aos.css";
@@ -20,7 +20,7 @@ const OurMenu = () => {
   return (
     <>
       <section
-        className="relative mx-auto w-full md:h-[5235px] flex justify-center h-[6580px]"
+        className="relative mx-auto w-full md:h-[5235px] flex justify-center bg-white h-[6580px]"
        
       >
         
@@ -325,9 +325,9 @@ const OurMenu = () => {
           </div>
         
       </section>
-      <div className="absolute md:top-[4650px] top-[5350px]">
+      {/* <div className="absolute md:top-[4650px] top-[5350px]">
         <Footer />
-      </div>
+      </div> */}
     </>
   );
 };

@@ -14,8 +14,8 @@ const Footer = () => {
   return (
     <>
       <footer className=" w-full h-[1300px] md:h-[774.15px] relative bg-red-500 text-white flex justify-between gap-[20px] items-center flex-col">
-        <div className="w-[300px] md:w-[1170px] md:h-[142.62px] h-[300px] absolute  top-[50px] flex justify-between flex-col items-center">
-          <div className="w-[300px] md:w-[1170px]  flex justify-between items-center h-[100px]">
+        <div className="w-full xl:w-[1170px] md:h-[142.62px] h-[300px] absolute  top-[50px] flex justify-between flex-col items-center">
+          <div className="w-full xl:w-[1170px]  flex justify-between items-center h-[100px]">
             <div className="flex justify-center md:gap-[10px] flex-col">
               <h2 className=" font-helvetica font-bold text-[18px] md:text-[32px] text-[#ffffff] whitespace-nowrap md:leading-[40px] relative ">
                 <span className="text-[#FF9F0D]">St</span>ill You Need Our
@@ -26,7 +26,7 @@ const Footer = () => {
               </p>
             </div>
 
-            <form className="w-[80px] md:w-[459px] h-[40px] md:h-[55.86px] md:top-0 top-[70px]  flex mx-auto relative">
+            <form className="w-[80px] md:w-[459px] h-[40px] md:h-[55.86px] md:top-0 top-[70px] left-[-250px] flex mx-auto relative">
   <input
     type="email"
     placeholder="Enter Your Email"
@@ -42,9 +42,9 @@ const Footer = () => {
 
           </div>
 
-          <div className="w-[250px] md:w-[1170px] border-b-[1px] border-[#FF9F0D] relative md:top-0 top-[-120px] "></div>
+          <div className="w-full border-b-[1px] border-[#FF9F0D] relative md:top-0 top-[-120px] "></div>
         </div>
-        <div className="w-[150px] md:w-[1320px] h-[331px] relative top-[280px]  flex justify-between items-center md:flex-row flex-col ">
+        <div className="w-full h-[331px] relative top-[280px]  flex justify-between items-center md:flex-row flex-col ">
           <div className="flex justify-center relative top-[-55px] md:right-0 right-[90px] gap-[10px] md:gap-[20px]  flex-col">
             <h2 className="text-[16px] md:text-[24px] font-bold text-white font-helvetica">
               About Us
@@ -185,7 +185,7 @@ const Footer = () => {
             <div className="flex flex-col justify-center gap-[10px] relative md:top-[-120px] xl:top-[-10px] xxl:top-[-120px] top-[-110px]">
                         <div className="w-[244px] h-[53px] flex justify-between ">
                           <div className="">
-                            {/* image */}
+                          
                             <Image
                               src="/Mask Group.svg"
                               alt="food-image"
@@ -244,8 +244,8 @@ const Footer = () => {
                       </div>
                     </div>
                   </div>
-        <div
-          className="w-[390px] md:w-[1920px] xl:w-[1484px] xxl:w-[1920px] h-[100px]  bg-[#4F4F4F] 
+        {/* <div
+          className="w-full h-[100px]  bg-[#4F4F4F] 
  text-white  flex items-center"
         >
           <div className="flex justify-between items-center w-full px-10">
@@ -271,7 +271,7 @@ const Footer = () => {
       </div>
     </div>
   </div>
-</div>
+</div> */}
        
       </footer>
     </>

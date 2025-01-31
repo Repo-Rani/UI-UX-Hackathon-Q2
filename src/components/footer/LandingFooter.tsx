@@ -13,9 +13,9 @@ import { PiClockClockwise } from "react-icons/pi";
 const LandingFooter = () => {
   return (
     <>
-      <footer className=" w-full h-[1300px] md:h-[774.15px] relative  bg-purple-300 text-white flex justify-between gap-[20px] items-center flex-col">
+<footer className="w-full min-h-screen h-auto md:h-[774px] bg-purple-300 text-white flex flex-col justify-center gap-5 items-center">  
         
-        <div className="w-[260px] ms:w-[300px] md:w-[1170px] md:h-[142.62px] h-[300px]  top-[50px] flex justify-between flex-col items-center">
+        <div className="w-full md:w-[1170px] md:h-[142.62px] h-[300px]  top-[50px] flex justify-between flex-col items-center">
           <div className="w-[200px] ms:w-[300px] md:w-[1170px]  flex justify-between items-center h-[100px]">
             <div className="flex justify-center md:gap-[10px] flex-col">
               <h2 className=" font-helvetica font-bold text-[18px] md:text-[32px] text-[#ffffff] whitespace-nowrap md:leading-[40px] relative md:left-0 xs:left-[10px] ms:left-[50px]">
@@ -46,7 +46,7 @@ const LandingFooter = () => {
 
           <div className="w-[250px] md:w-[1170px] border-b-[1px] border-[#FF9F0D] relative md:top-0 top-[-120px] md:left-0 left-[30px]"></div>
         </div>
-        <div className="w-[150px] md:w-[1320px] h-[331px] relative top-[280px]   flex justify-between xl:items-center xxl:justify-between items-center ">
+        {/* <div className="w-[150px] md:w-[1320px] h-[331px] relative top-[280px]   flex justify-between xl:items-center xxl:justify-between items-center ">
           <div className="flex justify-center relative top-[-55px] md:right-0 right-[70px] ms:right-[90px] gap-[10px] md:gap-[20px]  flex-col">
             <h2 className="text-[16px] md:text-[24px] font-bold text-white font-helvetica">
               About Us
@@ -249,7 +249,7 @@ const LandingFooter = () => {
           className="ms:w-[390px] max-w-[1920px] xs:w-[320px] w-full  h-[100px]  bg-[#ff9f0d] 
  text-white flex items-center md:flex-row flex-col"
         >
-          <p className="md:w-[384px] w-[300px] h-[24px] relative md:absolute  whitespace-nowrap xxxl:left-[300px] xl:left-[70px] xxl:left-[300px] text-[12px] left-[-30px] md:text-[16px] font-inter font-normal md:px-0 px-10  md:top-[710px] top-[15px]">
+          <p className="md:w-[384px] w-[300px] h-[24px] relative md:relative  whitespace-nowrap xxxl:left-[300px] xl:left-[70px] xxl:left-[300px] text-[12px] left-[-30px] md:text-[16px] font-inter font-normal md:px-0 px-10  md:top-[710px] top-[15px]">
             Copyright © 2022 by Ayeman. All Rights Reserved.
           </p>
           <div className="md:w-[240px] w-[175px] md:h-[34px] relative md:left-[1420px] xl:left-[1050px] xxl:left-[500px]  left-[-20px] flex justify-between items-center md:top-0 top-[30px]  ">
@@ -276,8 +276,8 @@ const LandingFooter = () => {
           alt="image"
           height={294}
           width={244}
-          className="w-[120px] h-[148px] md:h-[294px] md:w-[244px] xl:w-[200px] xl:h-[250px] xxl:w-[244px] xxl:h-[294px] absolute bottom-0 ms:right-0 right-[0px] md:right-[-14px] "
-        />
+          className="w-[120px] h-[148px] md:h-[294px] md:w-[244px] xl:w-[200px] xl:h-[250px] xxl:w-[244px] xxl:h-[294px] relative bottom-0 ms:right-0 right-[0px] md:right-[-14px] "
+        /> */}
       </footer>
     </>
   );

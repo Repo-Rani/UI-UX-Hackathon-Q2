@@ -26,13 +26,13 @@ const LandingNavbar = () => {
   return (
     <header className="max-w-[1920px] w-full mx-auto  ">
       <div className="flex justify-center items-center w-full mx-auto">
-        <nav className=" max-w-[1320px] xl:w-[1320px]  h-[5.5rem] absolute top-[45px]  lg:flex justify-between   w-full  md:px-8  z-[10]  md:block hidden mx-auto">
+        <nav className=" max-w-[1320px] xl:w-[1320px]  xlg:w-[1200px] h-[5.5rem] absolute top-[45px]  lg:flex justify-between   w-full  md:px-8  z-[10]  md:block hidden mx-auto">
           
           {/* Logo */}
           <div className="h-[32px] w-[109px] absolute md:top-[-5px] lg:top-0   xxl:left-[605px] xl:left-[555px] lg:left-[500px] md:left-[350px]">
             <Link
               href="/"
-              className="text-[20px] lg:text-[22px] xl:text-[24px] font-bold text-white font-inter w-[109px] h-[32px] z-10"
+              className="text-[20px] lg:text-[22px] xlg:text-[24px] font-bold text-white font-inter w-[109px] h-[32px] z-10"
             >
               Food<span className="text-[#FF9F0D]">tuck</span>
             </Link>

@@ -1,7 +1,7 @@
 import React from "react";
 import Banner from "@/components/banner/Banner";
 import Image from "next/image";
-import Footer from "@/components/footer/Footer";
+// import Footer from "@/components/footer/Footer";
 const SignUp = () => {
   return (
     <>
@@ -112,10 +112,10 @@ const SignUp = () => {
         </div>
         </div>
       </section>
-      
+{/*       
       <div className="absolute md:top-[1410px] top-[1210px]">
         <Footer />
-      </div>
+      </div> */}
     </>
   );
 };

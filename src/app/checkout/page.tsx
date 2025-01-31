@@ -1,6 +1,6 @@
 import React from "react";
 import Banner from "@/components/banner/Banner";
-import Footer from "@/components/footer/Footer";
+// import Footer from "@/components/footer/Footer";
 import CheckoutForm from "@/components/chekout/CheckoutForm";
 import PlaceOrder from "@/components/chekout/PlaceOrder";
 const Checkout = () => {
@@ -18,9 +18,9 @@ const Checkout = () => {
 {/* Right Side */}
 <PlaceOrder/>
       </div>
-      <div className="absolute xl:top-[1500px] top-[1900px]">
+      {/* <div className="absolute xl:top-[1500px] top-[1900px]">
       <Footer/>
-      </div>
+      </div> */}
       </section>
     </>
   );

@@ -2,7 +2,7 @@
 import React from "react";
 import Image from "next/image";
 import Banner from "@/components/banner/Banner";
-import Footer from "@/components/footer/Footer";
+// import Footer from "@/components/footer/Footer";
 import ShopSliders from "@/components/shopSlider/ShopSlider";
 import ErrorePage from "@/app/errorePage/page";
 import { ShopCardProps } from "../../../../types/type";
@@ -383,9 +383,9 @@ const ShopCardsDetails: React.FC<Props> = ({ params }) => {
         </div>
       </section>
 
-      <div className="absolute md:top-[2403px] top-[2700px]">
+      {/* <div className="absolute md:top-[2403px] top-[2700px]">
         <Footer/>
-      </div> 
+      </div>  */}
     </>
   );
 };

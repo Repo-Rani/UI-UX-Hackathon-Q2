@@ -319,17 +319,17 @@ export const menuCardData = [
 export const latestBlogData = [
     {
         image: "/lb-1.svg",
-        title:"Pellentesque Non Efficitur Mi Aliquam Convallis Mi Quis",
+        title:"Pellentesque Non Efficitur Mine",
         date: "10 Feb 2022",
     },
     {
         image: "/lb-2.svg",
-        title:"Morbi Sodales Tellus Elit, In Blandit Risus Suscipit A",
+        title:"Morbi Sodales Tellus Elit, In ",
         date: "10 Feb 2022",
     },
     {
         image: "/lb-3.svg",
-        title:"Curabitur rutrum velit ac congue malesuada",
+        title:"Curabitur rutrum velit ac tasty",
         date: "10 Feb 2022",
     }
 ]

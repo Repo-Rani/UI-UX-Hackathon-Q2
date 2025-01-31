@@ -1,7 +1,7 @@
 "use client"
 import React from "react";
 import Banner from "@/components/banner/Banner";
-import Footer from "@/components/footer/Footer";
+// import Footer from "@/components/footer/Footer";
 import { useEffect } from 'react';
 import AOS from "aos";
 import "aos/dist/aos.css";
@@ -26,9 +26,9 @@ const Chef = () => {
         </div>
         </div>
       </section>
-      <div className="absolute md:top-[2036px] top-[1500px]">
+      {/* <div className="absolute md:top-[2036px] top-[1500px]">
         <Footer />
-      </div>
+      </div> */}
     </>
   );
 };

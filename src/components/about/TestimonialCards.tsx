@@ -16,14 +16,14 @@ const TestimonialCards = () => {
   }, []);
 
   return (
-    <div className="w-[300px] ms:w-[320px] h-[200px] sm:w-[450px]  md:w-[600px]  md:h-[325px] xlg:h-[420px] xlg:w-[868.47px]      relative ms:left-[20px] xsm:left-[-15px] sm:left-[-70px] md:left-[60px] xlg:left-[-50px] xxl:left-[130px] xxxl:left-[220px]  md:bottom-[170px] bottom-[150px] bg-[#ffffff] shadow-custom">
-      <div className="w-[300px] h-[200px] sm:w-[430px]  md:w-[600px] xlg:w-[696.57px] xlg:h-[485.89px] md:h-[320px] lg:h-[280px]  relative xlg:left-[85px]  left-0 ms:left-[10px] lg:left-0 top-[20px] lg:top-[25px] xlg:top-0 flex flex-col justify-center gap-[12px] items-center ">
+    <div className="w-[300px] ms:w-[320px] h-[200px] sm:w-[450px]  md:w-[600px] lg:w-[700px] md:h-[420px] xl:w-[868.47px] lg:h-[450px] relative left-[10px] ms:left-[25px] md:left-[60px] xl:left-0 xxl:left-[130px] xxxl:left-[220px]  md:bottom-[170px] bottom-[150px] bg-[#ffffff] shadow-custom">
+      <div className="w-[300px] h-[200px] sm:w-[430px] lg:w-[630px] md:w-[600px] xl:w-[696.57px] md:h-[485.89px]  relative xl:left-[85px] lg:left-[40px] left-0 ms:left-[10px] top-[20px]  flex flex-col justify-center gap-[12px] items-center ">
         <Image
           src="/testimonial.svg"
           alt="image"
           height={500.56}
           width={395.75}
-          className="w-[110px] ms:w-[125px] h-[250px] md:w-[180px] lg:w-[250px] xlg:w-[395.75px] md:h-[500.56px] absolute top-[10px]  sm:top-[15px] sm:left-[345px] md:top-0  xlg:top-[50px] md:left-[490px] lg:left-[470px] xlg:left-[525px] left-[200px] ms:left-[200px] bottom-[90px] md:bottom-[100px] lg:bottom-0 xl:bottom-[160px]"
+          className="w-[110px] ms:w-[150px] h-[250px] md:w-[180px] lg:w-[300px] xl:w-[395.75px] md:h-[500.56px] absolute top-[10px]  sm:top-[15px] sm:left-[345px] md:top-[110px]  xl:top-[50px] md:left-[490px] lg:left-[485px] xl:left-[525px] left-[200px] ms:left-[200px] bottom-[90px] md:bottom-[100px] lg:bottom-0 xl:bottom-[160px]"
         />
 
         <Image
@@ -31,11 +31,11 @@ const TestimonialCards = () => {
           alt={testimonialsData[currentIndex].name}
           height={134}
           width={133}
-          className="w-[80px] h-[80px] md:w-[133px] md:h-[134px] absolute bottom-[210px] md:bottom-[300px] lg:bottom-[280px]
-           xlg:bottom-[440px]"
+          className="w-[80px] h-[80px] md:w-[133px] md:h-[134px] absolute bottom-[210px]
+           md:bottom-[440px]"
         />
         <Image src="/Quotes.svg" alt="quotes-image" height={48} width={48} className="md:w-[48px] md:h-[48px] w-[24px] h-[24px] " />
-        <p className="w-[300px] h-[100px] ms:w-[330px] md:w-[600px] sm:w-[400px] xl:w-[696.57px] md:h-[103.97px]  relative text-center text-[10px] md:text-[18px] bottom-[10px]  md:bottom-0  md:px-5 px-7">
+        <p className="w-[330px] h-[100px] md:w-[600px] sm:w-[400px] xl:w-[696.57px] md:h-[103.97px]  relative text-center text-[10px] md:text-[18px] bottom-[10px]  md:bottom-0  md:px-5 px-7">
           {testimonialsData[currentIndex].desc}
         </p>
         <Image
@@ -54,7 +54,7 @@ const TestimonialCards = () => {
       </div>
 
       {/* Navigation Dots */}
-      <div className="flex justify-center space-x-2   mt-6 lg:mt-16  xlg:mt-0">
+      <div className="flex justify-center space-x-2   mt-6 md:mt-0 xl:mt-4">
         {testimonialsData.map((_, index) => (
           <button
             key={index}

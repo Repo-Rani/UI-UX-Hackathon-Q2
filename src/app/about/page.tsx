@@ -5,8 +5,8 @@ import Banner from '@/components/banner/Banner'
 import AboutChooseUs from '@/components/about/AboutChooseUs'
 import AboutTeamMember from '@/components/about/TeamMember'
 import AboutFoodMenu from '@/components/about/AboutMenu'
-import Testimonial from '@/components/hero/Testimonial'
-import Footer from '@/components/footer/Footer'
+import Testimonial from '@/components/about/Testimonial'
+// import Footer from '@/components/footer/Footer'
 import { useEffect } from 'react';
 import AOS from "aos";
 import "aos/dist/aos.css";
@@ -28,13 +28,14 @@ const About = () => {
       <AboutTeamMember/>
      
       <Testimonial/> 
-      </section>
       <AboutFoodMenu/>
+      </section>
+     
       
    
-    <div className='absolute md:top-[4950px] top-[4700px]'>
+    {/* <div className='absolute md:top-[4950px] top-[4700px]'>
     <Footer/>
-    </div>
+    </div> */}
     </>
   )
 }

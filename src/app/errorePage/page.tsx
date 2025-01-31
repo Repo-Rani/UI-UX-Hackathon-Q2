@@ -1,7 +1,7 @@
 import React from 'react'
 import Banner from '@/components/banner/Banner'
 import Link from 'next/link'
-import Footer from '@/components/footer/Footer'
+// import Footer from '@/components/footer/Footer'
 
 const ErrorePage = () => {
   return (
@@ -31,9 +31,9 @@ const ErrorePage = () => {
 <Link href="/Home">Go to home</Link>
   </button>
   </div>
-  <div className="absolute top-[1050px]">
+  {/* <div className="absolute top-[1050px]">
   <Footer/>
-</div>
+</div> */}
 </div>
 </>
   )

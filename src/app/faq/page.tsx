@@ -1,7 +1,7 @@
 import React from "react";
 import Banner from "@/components/banner/Banner";
 import FaqCard from "@/components/faq/FaqCard";
-import Footer from "@/components/footer/Footer";
+// import Footer from "@/components/footer/Footer";
 
 const FaqPage = () => {
   return (
@@ -26,9 +26,9 @@ const FaqPage = () => {
           </div>
         </div>
       </section>
-      <div className="absolute xl:top-[1352px] top-[1500px]">
+      {/* <div className="absolute xl:top-[1352px] top-[1500px]">
         <Footer />
-      </div>
+      </div> */}
     </>
   );
 };
