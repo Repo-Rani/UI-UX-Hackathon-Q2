@@ -20,9 +20,9 @@ const OurChef = () => {
        
       className="flex  flex-col  md:flex-row md:justify-center gap-[15px] xlg:justify-between relative top-[20px] md:left-[30px] xlg:left-[30px] md:righ-0  ms:right-[80px] right-[95px] xlg:w-[1150px] xl:w-[1320px] md:w-[700px] lg:w-[980px] w-[300px] ms:w-[350px] lg:h-[200px] xlg:h-[391px] h-[391px] ">
         <div
-          // data-aos="flip-left"
-          // data-aos-easing="ease-out-cubic"
-          // data-aos-duration="1000"
+          data-aos="flip-left"
+          data-aos-easing="ease-out-cubic"
+          data-aos-duration="1000"
         >
           <Image
             src="/chef-1.svg"
@@ -43,9 +43,9 @@ const OurChef = () => {
 
         <div 
         
-        // data-aos="flip-left"
-        // data-aos-easing="ease-out-cubic"
-        // data-aos-duration="1000"
+        data-aos="flip-left"
+        data-aos-easing="ease-out-cubic"
+        data-aos-duration="1000"
         >
           <Image
             src="/chef-2.svg"
@@ -65,9 +65,9 @@ const OurChef = () => {
         </div>
 
         <div
-        //  data-aos="flip-left"
-        //  data-aos-easing="ease-out-cubic"
-        //  data-aos-duration="1000"
+         data-aos="flip-left"
+         data-aos-easing="ease-out-cubic"
+         data-aos-duration="1000"
         >
           <Image
             src="/chef-3.svg"
@@ -86,9 +86,9 @@ const OurChef = () => {
           </div>
         </div>
         <div
-        //  data-aos="flip-left"
-        //  data-aos-easing="ease-out-cubic"
-        //  data-aos-duration="1000"
+         data-aos="flip-left"
+         data-aos-easing="ease-out-cubic"
+         data-aos-duration="1000"
         >
           <Image
             src="/chef-4.svg"

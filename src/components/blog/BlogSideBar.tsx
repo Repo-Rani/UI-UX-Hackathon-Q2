@@ -42,7 +42,7 @@ const BlogSideBar = () => {
   return (
   <>
   {/* FOr Desktop Screens */}
-    <div className="w-[300px] md:w-[424px] h-[2501px]  md:flex hidden items-center justify-between flex-col">
+    <div className="w-[300px] lg:w-[424px] h-[2501px]  lg:flex hidden items-center justify-between flex-col">
       <div className="md:w-[421.82px] md:h-[70px] w-[300px] h-[50px]  bg-[#ffffff] flex items-center justify-between border-[1px] border-[#e0e0e0] ">
         <input
           type="text"
@@ -371,7 +371,7 @@ const BlogSideBar = () => {
 {/* Sidebar for mobile screens */}
 
 <button
-        className="block md:hidden fixed   top-[510px] right-4   hover:bg-black bg-[#ff9f0d] z-40 p-2 rounded-full "
+        className="block lg:hidden fixed   top-[510px] right-4   hover:bg-black bg-[#ff9f0d] z-40 p-2 rounded-full "
         onClick={toggleSidebar}
       >
         <VscSettings className="h-5 w-5 text-white" />
@@ -390,7 +390,7 @@ const BlogSideBar = () => {
           className="flex flex-col gap-[30px]"
         >
           <button
-            className="md:hidden mb-4 self-end text-black mt-1 mr-[-30px]"
+            className="lg:hidden mb-4 self-end text-black mt-1 mr-[-30px]"
             onClick={toggleSidebar}
           >
             <FiX className="text-[24px]" />

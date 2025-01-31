@@ -25,7 +25,7 @@ const OurMenu = () => {
       >
         
         <Banner mainHeading="Our Menu" name="Menu" />
-        <div className="xl:w-[1180px] xxl:w-[1320px] md:w-[450px] lg:w-[250px]  w-[300px] h-[628px] absolute md:top-[500px] xl:top-[531px] top-[500px] xsm:top-[600px] sm:top-[650px]    bg-white flex lg:flex-row flex-col  justify-center items-center gap-[30px] lg:gap-0 md:justify-between lg:left-[40px] xl:left-[110px] xxl:left-[40px] xxxl:left-[250px]">
+        <div className="xl:w-[1180px] xxl:w-[1320px] md:w-[450px] lg:w-[250px]  w-[300px] h-[628px] absolute md:top-[500px] xl:top-[531px] top-[500px] xsm:top-[600px] sm:top-[650px]    bg-white flex lg:flex-row flex-col  justify-center items-center gap-[30px] lg:gap-0 md:justify-between lg:left-[40px] xl:left-[110px] xxl:left-[100px] xxxl:left-[250px]">
          
           <Image
              data-aos="fade-right"
@@ -85,7 +85,7 @@ const OurMenu = () => {
         </div> 
         </div>
 
-        <div className="xl:w-[1180px] xxl:w-[1320px] md:w-[450px] lg:w-[250px]  w-[300px] h-[628px] absolute xl:top-[1279px] md:top-[1590px] lg:top-[1100px] xsm:top-[1500px] sm:top-[1700px] top-[1330px]   bg-white flex  lg:flex-row-reverse  flex-col justify-center md:gap-0 gap-[30px] md:justify-between lg:left-[600px] xl:left-[110px] xxl:left-[40px] xxxl:left-[250px] ">
+        <div className="xl:w-[1180px] xxl:w-[1320px] md:w-[450px] lg:w-[250px]  w-[300px] h-[628px] absolute xl:top-[1279px] md:top-[1590px] lg:top-[1100px] xsm:top-[1500px] sm:top-[1700px] top-[1330px]   bg-white flex  lg:flex-row-reverse  flex-col justify-center md:gap-0 gap-[30px] md:justify-between lg:left-[600px] xl:left-[110px] xxl:left-[100px] xxxl:left-[250px] ">
           <Image
              data-aos="fade-left"
         data-aos-delay="100"
@@ -95,7 +95,7 @@ const OurMenu = () => {
             width={300}
             className="xl:w-[448px] xl:h-[626px] xsm:w-[300px]  w-[270px] xsm:h-[500px] h-[330px] relative xsm:left-0 left-[10px]"
           />
- <div className="w-full lg:w-[600px] xl:w-[700px] flex justify-center lg:justify-start relative md:top-[30px] lg:top-0">
+ <div className="w-full lg:w-[600px] xl:w-[700px] flex justify-center lg:justify-start relative md:top-[30px] lg:top-0 ">
 
           <div className="relative ">
             <Image
@@ -210,7 +210,7 @@ const OurMenu = () => {
           </div>
           </div>
 
-        <div className="xl:w-[1180px] md:w-[450px] lg:w-[250px] h-[175px]  w-[300px] sm:h-[628px] absolute xsm:top-[4000px] top-[3350px] sm:top-[4280px] xl:top-[3363px] lg:top-[2850px] md:top-[4350px] lg:left-[600px] xl:left-[110px] xxl:left-[40px] xxxl:left-[250px]  bg-white  flex  lg:flex-row-reverse flex-col justify-center items-center lg:gap-0 gap-[30px] md:justify-between  ">
+        <div className="xl:w-[1180px] md:w-[450px] lg:w-[250px] h-[175px]  w-[300px] sm:h-[628px] absolute xsm:top-[4000px] top-[3350px] sm:top-[4280px] xl:top-[3363px] lg:top-[2850px] md:top-[4350px] lg:left-[600px] xl:left-[110px] xxl:left-[120px] xxxl:left-[250px]  bg-white  flex  lg:flex-row-reverse flex-col justify-center items-center lg:gap-0 gap-[30px] md:justify-between  ">
           <Image
              data-aos="fade-left"
         data-aos-delay="100"
@@ -218,7 +218,7 @@ const OurMenu = () => {
             alt="menu-item"
             height={626}
             width={300}
-            className="xl:w-[448px] xl:h-[626px] xsm:w-[300px]  w-[270px] xsm:h-[500px] h-[330px] relative xsm:left-0 left-[10px] top-[300px] xsm:top-0 "
+            className="xl:w-[448px] xl:h-[626px] xsm:w-[300px]  w-[270px] xsm:h-[500px] h-[330px] relative xsm:left-0 left-[10px] top-[300px] xl:left-[70px] xsm:top-0 "
           />
  <div className="w-full lg:w-[600px] xl:w-[700px] flex justify-center lg:justify-start relative md:top-[30px]  top-[320px]  xsm:top-0 lg:top-0">
 

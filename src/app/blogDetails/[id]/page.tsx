@@ -74,7 +74,7 @@ const BlogDetails: React.FC<Props> = ({ params }) => {
       <div className="">
         <Banner mainHeading="Blog Details" name="Blog details" />
       </div>
-      <section className="w-[300px] md:w-[872px] md:h-[3138px] h-[3638px] absolute top-[500px] md:top-[620px] left-[40px] xxxl:left-[300px] xl:left-[100px]  xxl:left-0">
+      <section className="w-[300px] md:w-[872px] md:h-[3138px] h-[3638px] absolute top-[500px] md:top-[620px] left-[40px] xxxl:left-[300px] xl:left-[20px] xxl:left-[30px]  ">
         <div className=" w-[300px] md:w-[872px] h-[700px] md:h-[845px] ">
           <Image
             src={blog.imageUrl}
@@ -357,7 +357,7 @@ const BlogDetails: React.FC<Props> = ({ params }) => {
           </button>
         </div>
 
-        <aside className="absolute top-[2750px] md:top-[-5px] left-[30px] md:left-[1000px]">
+        <aside className="absolute top-[2750px] md:top-[-5px] left-[30px] xl:left-[930px] xxl:left-[1000px]">
           <BlogSideBar />
         </aside>
       </section>

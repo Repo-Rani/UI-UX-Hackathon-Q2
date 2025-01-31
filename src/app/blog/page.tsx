@@ -20,7 +20,7 @@ const Blog = () => {
   return (
     <>
     <section
-  className="relative mx-auto w-full max-w-[1920px]"
+  className="relative mx-auto w-full max-w-[1920px] "
  
 >
   <div className=''>

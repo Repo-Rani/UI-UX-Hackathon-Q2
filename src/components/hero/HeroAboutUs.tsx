@@ -6,22 +6,22 @@ import Link from 'next/link'
 const HeroAboutUs = () => {
   return (
     <>
-          <section className="md:w-[750px] w-[300px] xsm:w-[400px] sm:w-[550px] lg:w-[950px] xl:w-[1320px] xlg:w-[1200px] xl:h-[570px] md:h-[500px] sm:h-[830px]  h-[670px] absolute top-[600px] md:top-[580px] xlg:top-[1070px] xxl:left-[100px] xxxl:left-[300px] md:left-[10px] lg:left-[30px] xlg:left-[35px] xl:left-[65px] flex justify-center  items-center bg-black">
+          <section className="md:w-[750px] w-[300px] xsm:w-[400px] sm:w-[550px] lg:w-[950px] xl:w-[1320px] xlg:w-[1200px] xl:h-[570px] md:h-[500px] sm:h-[830px]  h-[670px] absolute top-[600px] md:top-[580px] xlg:top-[1070px] xxl:left-[100px] xxxl:left-[300px] md:left-[10px] lg:left-[30px] xlg:left-[35px] xl:left-[65px] flex justify-center  items-center bg-transparent">
     
           <div className='w-full flex justify-center items-center px-3 md:px-0'>
     <div className="w-full sm:w-[465px]  xl:w-[1320px] xl:h-[562px]  absolute top-[40px] xl:top-0 xsm:left-[10px]  md:left-0 lg:left-0  xlg:left-0   flex flex-col gap-[5px] xl:gap-[12px] ">
     
     <span
-      // data-aos="fade-right"
-      // data-aos-delay="100"
+      data-aos="fade-right"
+      data-aos-delay="100"
       className="xl:text-[32px] sm:text-[28px] ms:text-[24px] ms:w-[100px] md:w-[150px] whitespace-nowrap xl:w-0 text-[22px] font-normal text-[#FF9F0D]  font-greatvibes"
     >
       About us
     </span>
 
     <h1
-      // data-aos="fade-right"
-      // data-aos-delay="100"
+      data-aos="fade-right"
+      data-aos-delay="100"
       className="text-[20px] sm:text-[32px] ms:w-[300px] sm:w-[500px] md:w-[350px] xl:w-0 xl:text-[48px] font-bold font-helvetica whitespace-nowrap  md:leading-[56px] text-[#ffffff]"
     >
       <span className="text-[#FF9F0D]">We </span>Create the best <br />
@@ -29,8 +29,8 @@ const HeroAboutUs = () => {
     </h1>
 
     <p
-      // data-aos="fade-left"
-      // data-aos-delay="200"
+      data-aos="fade-left"
+      data-aos-delay="200"
       className="text-[10px] xl:leading-[24px] w-[300px] ms:w-[335px]  xsm:w-[350px] sm:w-[500px]  xlg:w-[526px] md:w-[400px]   sm:text-[12px] xlg:text-[16px] text-[#ffffff] font-inter  font-normal"
     >
       Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque
@@ -43,8 +43,8 @@ const HeroAboutUs = () => {
     </p>
     <div className=" w-[300px]  sm:w-[450px] md:w-[400px] xlg:w-[550px]  flex flex-col gap-4">
       <div
-        // data-aos="fade-right"
-        // data-aos-delay="300"
+        data-aos="fade-right"
+        data-aos-delay="300"
         className="flex items-center justify-start mr-5  "
       >
         <FaCheck className="w-[17px] h-[12.24px] text-[#ffffff] mr-2 " />
@@ -53,8 +53,8 @@ const HeroAboutUs = () => {
         </span>
       </div>
       <div
-        // data-aos="fade-left"
-        // data-aos-delay="400"
+        data-aos="fade-left"
+        data-aos-delay="400"
         className="flex items-center mr-2"
       >
         <FaCheck className="w-[17px] h-[12.24px] text-[#ffffff] " />
@@ -63,14 +63,14 @@ const HeroAboutUs = () => {
         </span>
       </div>
       <div
-        // data-aos="fade-right"
-        // data-aos-delay="500"
+        data-aos="fade-right"
+        data-aos-delay="500"
         className="flex items-center"
       >
         <FaCheck className="w-[17px] h-[12.24px] text-[#ffffff] mr-2" />
         <span
-          // data-aos="fade-right"
-          // data-aos-delay="300"
+          data-aos="fade-right"
+          data-aos-delay="300"
           className="text-[10px] text-[#ffffff] sm:text-[14px] xlg:text-[18px] font-normal whitespace-nowrap font-inter w-[50px]"
         >
           Lorem ipsum dolor sit amet, consectetur adipiscing elit

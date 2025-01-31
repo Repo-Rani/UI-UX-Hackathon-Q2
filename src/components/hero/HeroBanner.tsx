@@ -53,8 +53,8 @@ const HeroBanner = () => {
                 </h1>
 
                 <p
-                  // data-aos="fade-right"
-                  // data-aos-delay="300"
+                  data-aos="fade-right"
+                  data-aos-delay="300"
                   className="font-inter font-normal  text-[8px] ms:text-[10px] lg:text-[12px] xlg:text-[16px] xlg:leading-[24px] text-[#FFFFFF]    "
                 >
                   Lorem ipsum dolor sit amet, consectetur adipiscing elit.{" "}
@@ -62,8 +62,8 @@ const HeroBanner = () => {
                   Varius sed pharetra dictum neque massa congue
                 </p>
                 <button
-                  // data-aos="fade-left"
-                  // data-aos-delay="500"
+                  data-aos="fade-left"
+                  data-aos-delay="500"
                   className=" w-[75px]  h-[28px] md:w-[100px] md:h-[35px]   xxxl:w-[190px] xxxl:h-[60px]  xlg:w-[150px] xlg:h-[50px]   rounded-[30px] bg-[#FF9F0D] hover:bg-[#E0DFDF] text-[10px] md:text-[12px] xlg:text-[16px]  font-inter text-[#E0DFDF] hover:text-[#FF9F0D] hover:scale-105 transition-all duration-300 ease-in-out  font-normal"
                 >
                   <Link href="/menu">See Menu</Link>

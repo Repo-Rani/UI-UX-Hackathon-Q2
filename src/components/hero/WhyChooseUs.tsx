@@ -57,22 +57,22 @@ const WhyChooseUs = () => {
  <div className="ms:w-[350px] xlg:w-[500px] xl:w-[580px]  w-[300px] flex justify-center items-center flex-col relative xxl:left-[270px] xlg:left-[130px] sm:left-0 lg:left-[20px] left-[10px] xsm:left-[20px] lg:top-[60px] xlg:top-0 sm:top-[-200px] md:top-[30px] ms:top-[-160px] top-[-200px]">
       
         <span
-        //   data-aos="fade-right"
-        // data-aos-delay="100"
+          data-aos="fade-right"
+        data-aos-delay="100"
         className="lg:w-[175px] lg:h-[40px] font-greatvibes font-normal text-[20px] sm:text-[28px] xlg:text-[32px]  text-[#ff9f0d] absolute xlg:left-[-50px] xl:left-[-10px]   top-[-35px] xsm:left-0 sm:left-[20px] md:top-0 xlg:top-[75px] left-[10px] lg:left-[-10px]  whitespace-nowrap">
           Why Choose Us
         </span>
         <h2
-        //   data-aos="fade-left"
-        // data-aos-delay="100"
+          data-aos="fade-left"
+        data-aos-delay="100"
         className=" absolute  sm:w-[310px] lg:w-[452px]  xlg:top-[125px] font-helvetica font-bold xlg:text-[48px] sm:text-[32px] text-[24px] lg:leading-[56px] lg:left-[-10px] xlg:left-[-50px] xl:left-[-10px] ms:left-[10px] xsm:left-0 sm:left-[20px] md:top-[30px]  left-[10px] top-0 text-[#ffffff]">
           <span className="text-[#ff9f0d]">Ex</span>tra ordinary taste
           <br />
           And Experienced
         </h2>
         <p
-        //   data-aos="fade-right"
-        // data-aos-delay="200"
+          data-aos="fade-right"
+        data-aos-delay="200"
         className="xlg:w-[526px] lg:w-[465px] w-[290px] lg:h-[120px] relative xsm:left-[-30px] md:top-0  lg:top-[-80px] sm:left-[-10px] ms:left-[-20px]  left-[5px] lg:left-[55px] xlg:left-[-35px]  xlg:top-[25px] sm:top-[10px]  font-inter font-normal xlg:text-[16px] text-[14px] lg:leading-[24px] text-[#ffffff]">
           Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque diam
           pellentesque bibendum non dui volutpat fringilla bibendum. Urna, elit
@@ -83,8 +83,8 @@ const WhyChooseUs = () => {
 
          <div className="ms:w-[374px] w-[240px] h-[135px] rounded-[6px] relative xlg:left-[-110px] sm:left-[-40px] xsm:left-[-60px] ms:left-[-40px] left-[-20px] xlg:top-[70px] lg:left-[-20px]  lg:top-[-70px]  top-[15px] ms:top-[5px] sm:top-[20px] md:top-0 xsm:top-0 flex items-center justify-center  lg:gap-[20px] xlg:gap-[30px]  gap-[12px]">
           <div 
-        //     data-aos="flip-left"
-        // data-aos-delay="300"
+            data-aos="flip-left"
+        data-aos-delay="300"
           className="flex flex-col gap-[15px] ">
             <div
             
@@ -102,8 +102,8 @@ const WhyChooseUs = () => {
             </span>
           </div>
           <div
-        //       data-aos="flip-right"
-        // data-aos-delay="300"
+              data-aos="flip-right"
+        data-aos-delay="300"
           className="flex flex-col gap-[15px]">
             <div className="xlg:w-[102px] xlg:h-[100px] lg:w-[90px] lg:h-[80px] w-[70px] h-[70px] rounded-[6px] flex justify-center items-center bg-[#FF9F0D]">
               <Image src="/Cookie.svg" alt="food-icon" width={50} height={50}
@@ -115,8 +115,8 @@ const WhyChooseUs = () => {
           </div>
 
           <div
-        //       data-aos="flip-left"
-        // data-aos-delay="300"
+              data-aos="flip-left"
+        data-aos-delay="300"
           className="flex flex-col gap-[15px]">
             <div className="xlg:w-[102px] xlg:h-[100px] lg:w-[90px] lg:h-[80px] w-[70px] h-[70px]  rounded-[6px] flex justify-center items-center bg-[#FF9F0D]">
               <Image src="/Wine.svg" alt="food-icon" width={50} height={50}
@@ -131,8 +131,8 @@ const WhyChooseUs = () => {
       </div>
 
       <div 
-        //   data-aos="flip-up"
-        // data-aos-delay="300"
+          data-aos="flip-up"
+        data-aos-delay="300"
       className="lg:w-[374px] w-[250px] h-[63px] lg:h-[93px] rounded-[6px] relative  lg:left-[525px] xlg:left-[650px] xxl:left-[940px]  sm:left-[15px] md:left-[365px] xsm:left-[15px] ms:left-[20px]  left-[20px] xlg:top-[-130px] lg:top-[-220px] sm:top-[-260px]  ms:top-[-240px] top-[-260px] md:top-[-100px] bg-[#FF9F0D]">
         <div className="lg:w-[374px] w-[250px] lg:h-[93px] h-[63px] rounded-[6px] bg-[#ffffff] ml-[10px]">
           <div className="flex items-center justify-center gap-[75px] text-center pt-[20px]">
