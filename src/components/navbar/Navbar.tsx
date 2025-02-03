@@ -6,6 +6,7 @@ import Link from "next/link";
 import { FaTimes } from "react-icons/fa";
 import { FaBars } from "react-icons/fa";
 import { PiHeart } from "react-icons/pi";
+import NavSearchBar from "./NavSearchBar";
 
 
 const navLinks = [
@@ -26,7 +27,7 @@ const Navbar = () => {
   return (
 
     // For Desktop
-    <header className="w-full  md:h-[90px]  bg-[#0D0D0D]  z-50">
+    <header className="w-full fixed md:h-[90px]  bg-[#0D0D0D]  z-50">
       <div className="flex justify-center items-center w-full mx-auto">
         
         <nav className="max-w-[1320px] xxl:w-[1320px] xl:w-[1200px] lg:w-[880px] md:w-[700px] md:h-[32px]  absolute top-[29px]   mx-auto flex justify-between items-center ">
@@ -95,7 +96,9 @@ const Navbar = () => {
             </Link>
           </div>
           <div className="relative top-[4px]  hover:text-[#FF9F0D] hover:scale-105 transition-all duration-300">
+          <Link href="/wishlist">
              <PiHeart className="h-[22px] w-[22px] text-white "/>
+            </Link>
           </div>
           </div>
           
@@ -107,31 +110,18 @@ const Navbar = () => {
       {/* Desktop Full-Screen Search Bar */}
 {isSearchOpen && (
   <div
-    className={`w-full h-[60px] bg-[#0D0D0D]  items-center px-4 transition-all duration-300 ease-in-out fixed top-0 left-0 z-50 md:flex hidden`}
+    className={`w-full h-[65px] bg-[#0D0D0D]  items-center px-4 transition-all duration-300 ease-in-out fixed top-0 left-0 z-50 md:flex hidden`}
   >
     {/* Close Button */}
     <button
       onClick={() => setIsSearchOpen(false)}
-      className="text-[#FFFFFF] mr-4 mt-[15px] xxl:mt-[20px]"
+      className="text-[#FFFFFF] mr-4 "
     >
       <FaTimes size={22} />
     </button>
 
     {/* Search Input */}
-    <div className="flex-1 border-[1px] border-[#FF9F0D] h-[50px] rounded-[27px] flex items-center px-4 relative top-[15px] ">
-      <input
-        type="text"
-        placeholder="Search..."
-        className="flex-1 font-inter font-normal bg-transparent border-none outline-none text-[14px] text-[#FFFFFF]"
-      />
-      <Image
-        src="/Vector (1).svg"
-        alt="search-vector"
-        width={20}
-        height={20}
-        className="cursor-pointer relative ms:right-0 right-4"
-      />
-    </div>
+    <NavSearchBar/>
   </div>
 )}
 
@@ -200,7 +190,9 @@ const Navbar = () => {
             </Link>
           </div>
           <div className="relative top-[4px]  hover:text-[#FF9F0D] hover:scale-105 transition-all duration-300">
+          <Link href="/wishlist">
              <PiHeart className="xsm:w-[22px] xsm:h-[22px] w-[20px] h-[20px] text-white cursor-pointer "/>
+             </Link>
           </div>
           </div>
           
@@ -223,20 +215,7 @@ const Navbar = () => {
             </button>
       
             {/* Search Input */}
-            <div className="flex-1 border-[1px] border-[#FF9F0D] h-[40px] rounded-[27px] flex items-center px-4  ">
-              <input
-                type="text"
-                placeholder="Search..."
-                className="flex-1 font-inter font-normal bg-transparent border-none outline-none text-[14px] text-[#FFFFFF]"
-              />
-              <Image
-                src="/Vector (1).svg"
-                alt="search-vector"
-                width={20}
-                height={20}
-                className="cursor-pointer relative ms:right-0 right-4"
-              />
-            </div>
+           <NavSearchBar/>
           </div>
         )}
       </div>

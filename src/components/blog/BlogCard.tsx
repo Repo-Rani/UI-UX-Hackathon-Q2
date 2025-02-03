@@ -4,6 +4,8 @@ import Image from "next/image";
 import { BlogCardProps } from "../../../types/type";
 import Link from "next/link";
 import { client } from "@/sanity/lib/client";
+import Pagination from "../shop/Pagination";
+
 
 const fetchBlog = async (): Promise<BlogCardProps[]> => {
   const blogs = await client.fetch(`
@@ -37,6 +39,8 @@ const fetchBlog = async (): Promise<BlogCardProps[]> => {
 const BlogCard = () => {
   const [blogs, setBlogs] = useState<BlogCardProps[]>([]);
   const [loading, setLoading] = useState(true);
+  const [currentPage, setCurrentPage] = useState(1);
+    const dataPerPage = 4; 
 
   useEffect(() => {
     const loadProducts = async () => {
@@ -57,10 +61,20 @@ const BlogCard = () => {
     return <p>Loading products...</p>;
   }
 
+  const totalPages = Math.ceil(blogs.length / dataPerPage);
+
+  const handlePageChange = (page: number) => {
+    setCurrentPage(page);
+  };
+
+  const indexOfLastBlogs = currentPage * dataPerPage;
+  const indexOfFirstBlogs = indexOfLastBlogs - dataPerPage;
+  const currentBlogs = blogs.slice(indexOfFirstBlogs, indexOfLastBlogs);
+
   return (
     <div className="absolute top-[500px] left-[300px] md:top-[530px] xxxl:left-[300px] xl:left-[70px]">
       <div className="grid grid-cols-1 gap-[20px] md:gap-[40px]">
-        {blogs.map((blog, index) => (
+        {currentBlogs.map((blog, index) => (
             <div
            key={index} 
             className="w-[300px] md:w-[872px] md:h-[830px] h-[550px] flex flex-col items-center justify-center gap-[25px] relative">
@@ -130,10 +144,23 @@ const BlogCard = () => {
       </button>
       </Link>
             </div>
+             
           
         ))}
+
+</div>
+         {/* Pagination Section */}
+         <div className="absolute xl:top-[3500px] top-[2500px] sm:top-[1900px] md:top-[2550px] lg:top-[2000px] xl:left-[380px] md:left-0 lg:left-[200px] xxxl:left-[635px] sm:left-[100px]">
+        <Pagination
+          currentPage={currentPage}
+          totalPages={totalPages}
+          onPageChange={handlePageChange}
+        />
       </div>
+
+      
     </div>
+    
   );
 };
 

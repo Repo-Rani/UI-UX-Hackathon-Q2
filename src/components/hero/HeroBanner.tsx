@@ -6,7 +6,7 @@ import Link from "next/link";
 
 const HeroBanner = () => {
   return (
-    <section className=" relative top-0 mx-auto max-w-[1920px]  bg-opacity-80  w-full bg-[#0d0d0d]  xlg:h-[950px] md:h-[570px] h-[550px]   text-white   ">
+    <section className=" relative top-0 mx-auto max-w-[1920px]  bg-opacity-80  w-full bg-[#0d0d0d]  xlg:h-[950px] md:h-[570px] h-[550px]   text-white md:z-0 -z-5   ">
       <div className=" ">
         {/* Background Image */}
         <Image
@@ -91,7 +91,7 @@ const HeroBanner = () => {
                     width={100}
                     quality={100}
                     priority
-                    className="w-[190px] h-[190px] md:w-[230px] md:h-[230px] lg:h-[315px] lg:w-[310px] xxl:w-[525px] xxl:h-[570px] xlg:w-[500px] xlg:h-[465px] xxxl:w-[610px] xxxl:h-[620px]   z-20 rotatePlate"
+                    className="w-[190px] h-[190px] md:w-[230px] md:h-[230px] lg:h-[315px] lg:w-[310px] xxl:w-[525px] xxl:h-[570px] xlg:w-[500px] xlg:h-[465px] xxxl:w-[610px] xxxl:h-[620px]   z-2 rotatePlate"
                   />
                 </div>
               </div>

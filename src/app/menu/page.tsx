@@ -20,7 +20,7 @@ const OurMenu = () => {
   return (
     <>
       <section
-        className="relative mx-auto w-full md:h-[5235px] flex justify-center bg-white h-[6580px]"
+        className="relative mx-auto w-full md:h-[5235px]  flex justify-center bg-white h-[6580px]"
        
       >
         

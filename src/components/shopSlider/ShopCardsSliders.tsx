@@ -1,18 +1,24 @@
 import React from 'react';
 import Image from 'next/image';
-import Link from 'next/link';
-import { SliderShopCardProps } from '../../../types/type';
-const ShopCardsSliders = ({id,  image, title, price, discountPrice, sell }: SliderShopCardProps) => {
+interface Product {
+  id: string;
+  name: string;
+  price: number;
+  discountPrice?: string;
+  imageUrl: string;
+  sell?: string;
+}
+
+const ShopCardsSliders: React.FC<{ product: Product }> = ({ product }) => {
   return (
 
-    <Link href={`${id}`} passHref>
 
     <div className="w-[250px] ms:w-[300px] h-[240px] md:w-[170px] md:h-[145px] lg:w-[240px] lg:h-[230px] xl:w-[312px] xl:h-[350px] relative group">
       {/* Image Section */}
       <div className="relative">
         <Image
-          src={image}
-          alt="shop-food"
+          src={product.imageUrl}
+          alt={product.name}
           height={267}
           width={312}
           className="w-[300px] h-[240px] md:w-[170px] md:h-[145px] lg:w-[240px] lg:h-[230px] xl:w-[312px] xl:h-[267px] object-cover rounded-md"
@@ -48,25 +54,25 @@ const ShopCardsSliders = ({id,  image, title, price, discountPrice, sell }: Slid
         </div>
       
         {/* Sell Badge */}
-        {sell && (
+        {product.sell && (
           <div className="absolute top-[20px] left-[20px] bg-[#ff9f0d] rounded-[6px] w-[52px] h-[22px] flex items-center justify-center">
-            <span className="font-inter font-normal text-[14px] text-[#ffffff]">{sell}</span>
+            <span className="font-inter font-normal text-[14px] text-[#ffffff]">{product.sell}</span>
           </div>
         )}
       </div>
 
       {/* Title Section */}
-      <h2 className="mt-4 font-bold text-[18px] text-[#333333] font-inter">{title}</h2>
+      <h2 className="mt-4 font-bold text-[18px] text-[#333333] font-inter">{product.name}</h2>
       
       {/* Price Section */}
       <div className="flex justify-between items-center mt-2">
-        <span className="text-[#FF9F0D] font-medium font-inter">{price}</span>
-        {discountPrice && (
-          <span className="line-through text-[#828282] font-inter relative right-[12rem]">{discountPrice}</span>
+        <span className="text-[#FF9F0D] font-medium font-inter">${product.price}.00</span>
+        {product.discountPrice && (
+          <span className="line-through text-[#828282] font-inter relative right-[12rem]">${product.discountPrice}.00</span>
         )}
       </div>
     </div>
-    </Link>
+   
   );
 };
 

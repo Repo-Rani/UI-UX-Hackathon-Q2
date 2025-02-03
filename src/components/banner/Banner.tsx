@@ -6,13 +6,13 @@ import Link from "next/link";
 const Banner = ({ name, mainHeading }: BannerPropsTypes) => {
   return (
     <>
-      <section className="relative w-full max-w-[1920px] h-[410px] bg-black">
+      <section className="relative md:top-[80px] top-[70px] w-full max-w-[1920px] h-[410px] bg-black  md:z-0 -z-5">
         <Image
           src="/unsplash_4ycv3Ky1ZZU (1).svg"
           alt=""
           layout="fill"
           objectFit="cover"
-          className="w-full h-full object-cover "
+          className="w-full h-full object-cover  "
         />
         <div className="absolute top-[50%] left-[50%] transform -translate-x-[50%] -translate-y-[50%] flex justify-center items-center flex-col text-center">
           <h1

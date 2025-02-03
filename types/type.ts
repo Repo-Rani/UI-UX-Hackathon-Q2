@@ -17,7 +17,7 @@ export interface StarterMenuProps {
 
 //
 export interface ShopCardProps {
-  id: string;
+  id?: string;
   imageUrl: string;
   name: string;
   description?: string;
@@ -51,13 +51,14 @@ export interface BlogCardProps {
 }
 export interface MenuCardProps {
   id?: string;
-  image: string;
+  imageUrl: string;
   name: string;
   desc: string;
   price: string;
 }
 
 export interface LatestBlogProps {
+  _id: string;
   image: string;
   title: string;
   date: string;
@@ -92,12 +93,24 @@ export interface PrevArrowsProps {
 }
 
 export interface CartProps {
-  image: string;
+  id:string;
+  imageUrl: string;
   name: string;
   price: number;
-  img: string;
+  img?: string;
   quantity: number;
-  total: number;
+  total?: number;
+}
+
+
+export interface Product {
+  id: string;
+  imageUrl: string;
+  name: string;
+  price: number;
+
+  quantity?: number;
+  total?: number;
 }
 
 export interface SliderShopCardProps {
@@ -112,4 +125,48 @@ export interface PaginationProps {
   currentPage: number;
   totalPages: number;
   onPageChange: (page: number) => void;
+}
+
+export interface ProductSuggestion {
+  _id: string;
+  name: string;
+  imageUrl: string;
+  _type: string;
+  price: number;
+}
+
+export interface Testimonial  {
+  _id: string;
+  name: string;
+  image: string;
+  desc: string;
+  profession: string;
+  ratingimage: string;
+};
+
+export interface WishlistProductsType {
+  _id: string;
+  name: string;
+  imageUrl: string;
+  price: number;
+}
+
+export interface WishlistItem  {
+  _id: string;
+  name: string;
+  imageUrl: string;
+  price: number;
+  description?: string;
+  category?: string;
+  discountPercent?: number;
+  isNew?: boolean;
+  ratingReviews?: number;
+  offer?: number;
+  colors?: string[]; 
+  sizes?: string[]; 
+};
+
+
+export interface CartProduct extends ShopCardProps {
+  quantity: number;
 }

@@ -6,6 +6,7 @@ import Link from "next/link";
 import { FaTimes } from "react-icons/fa";
 import { FaBars } from "react-icons/fa";
 import { PiHeart } from "react-icons/pi";
+import SearchBar from "./SearchBar";
 const navLinks = [
   { href: "/", label: "Home" },
   { href: "/menu", label: "Menu" },
@@ -16,6 +17,7 @@ const navLinks = [
   { href: "/contact", label: "Contact" },
 ];
 
+
 const LandingNavbar = () => {
   const pathName = usePathname();
   const [isOpen, setIsOpen] = useState(false);
@@ -25,8 +27,8 @@ const LandingNavbar = () => {
 
   return (
     <header className="max-w-[1920px] w-full mx-auto  ">
-      <div className="flex justify-center items-center w-full mx-auto">
-        <nav className=" max-w-[1320px] xl:w-[1320px]  xlg:w-[1200px] h-[5.5rem] absolute top-[45px]  lg:flex justify-between   w-full  md:px-8  z-[10]  md:block hidden mx-auto">
+      <div className="flex justify-center items-center w-full mx-auto ">
+        <nav className="  max-w-[1320px] xl:w-[1320px]  xlg:w-[1200px] h-[5.5rem] absolute top-[45px]  lg:flex justify-between   w-full  md:px-8  z-[10]  md:block hidden mx-auto">
           
           {/* Logo */}
           <div className="h-[32px] w-[109px] absolute md:top-[-5px] lg:top-0   xxl:left-[605px] xl:left-[555px] lg:left-[500px] md:left-[350px]">
@@ -61,22 +63,8 @@ const LandingNavbar = () => {
 
           <div className="flex items-center gap-2 lg:gap-3 xl:w-[350px] md:w-[230px] lg:w-[270px] relative lg:top-[10px] md:top-[40px] md:left-[470px] xxl:left-[-20px] lg:left-0 xl:left-0">
   {/* Search Bar */}
-  <div className="border-[1px] border-[#FF9F0D] xl:w-[310px] lg:w-[200px] md:w-[180px] h-[40px] lg:h-[45px] xl:h-[54px] rounded-[27px] flex items-center justify-between lg:px-8 xl:px-4 px-4">
-    <input
-      type="text"
-      placeholder="Search..."
-      className="font-inter xl:w-[240px] lg:w-[130px] md:w-[100px] font-normal bg-transparent border-none outline-none text-[14px] xxxl:text-[16px]  text-[#FFFFFF]"
-    />
-    <Image
-      src="/Vector (1).svg"
-      alt="search-vector"
-      width={24}
-      height={24}
-      className="cursor-pointer xl:h-[24px] xl:w-[24px] w-[22px] h-[22px]"
-    />
-     
-  </div>
-
+  
+<SearchBar/>
   {/* Handbag Icon */}
   <Link href="/cart">
     <Image
@@ -87,7 +75,9 @@ const LandingNavbar = () => {
       className="lg:w-[22px] xl:h-[24px] lg:h-[22px] w-[20px] h-[20px] text-[#FFFFFF] cursor-pointer"
     />
   </Link>
+  <Link href="/wishlist">
   <PiHeart className="h-[24px] w-[24px] text-white "/>
+  </Link>
 </div>
         </nav>
       </div>
@@ -145,8 +135,9 @@ const LandingNavbar = () => {
         className="  cursor-pointer"
       />
     </Link>
-
+    <Link href="/wishlist">
     <PiHeart className="h-[22px] w-[22px] text-white "/>
+    </Link>
   </div>
   ) : (
     // Full-Screen Search Bar
@@ -165,20 +156,7 @@ const LandingNavbar = () => {
       </button>
 
       {/* Search Input */}
-      <div className="flex-1 border-[1px] border-[#FF9F0D] h-[40px] rounded-[27px] flex items-center px-4 ">
-        <input
-          type="text"
-          placeholder="Search..."
-          className="flex-1 font-inter font-normal bg-transparent border-none outline-none text-[14px] text-[#FFFFFF]"
-        />
-        <Image
-          src="/Vector (1).svg"
-          alt="search-vector"
-          width={20}
-          height={20}
-          className="cursor-pointer relative ms:right-0 right-4"
-        />
-      </div>
+     <SearchBar/>
     </div>
   )}
 </div>

@@ -13,10 +13,11 @@ import { PiClockClockwise } from "react-icons/pi";
 const Footer = () => {
   return (
     <>
-      <footer className=" w-full h-[1300px] md:h-[774.15px] relative bg-red-500 text-white flex justify-between gap-[20px] items-center flex-col">
-        <div className="w-full xl:w-[1170px] md:h-[142.62px] h-[300px] absolute  top-[50px] flex justify-between flex-col items-center">
-          <div className="w-full xl:w-[1170px]  flex justify-between items-center h-[100px]">
-            <div className="flex justify-center md:gap-[10px] flex-col">
+      <footer className=" w-full h-[1300px] md:h-[700px]  bg-red-500 text-white  ">
+        <div className="w-full xl:w-[1170px] md:h-[142.62px] h-[300px] absolute  top-[50px] flex justify-between flex-col items-center"> 
+           <div className="w-full xl:w-[1170px] flex justify-between items-center h-[100px]">
+           
+             <div className="flex justify-center md:gap-[10px] flex-col">
               <h2 className=" font-helvetica font-bold text-[18px] md:text-[32px] text-[#ffffff] whitespace-nowrap md:leading-[40px] relative ">
                 <span className="text-[#FF9F0D]">St</span>ill You Need Our
                 Support?
@@ -24,7 +25,7 @@ const Footer = () => {
               <p className="font-normal text-[12px] md:text-[16px] md:leading-[24px] font-helvetica text-[#ffffff] whitespace-nowrap relative top-[10px] md:top-0 ">
                 Dont wait make a smart & logical quote here. Its pretty easy.
               </p>
-            </div>
+            </div> 
 
             <form className="w-[80px] md:w-[459px] h-[40px] md:h-[55.86px] md:top-0 top-[70px] left-[-250px] flex mx-auto relative">
   <input
@@ -244,7 +245,7 @@ const Footer = () => {
                       </div>
                     </div>
                   </div>
-        {/* <div
+        <div
           className="w-full h-[100px]  bg-[#4F4F4F] 
  text-white  flex items-center"
         >
@@ -271,7 +272,7 @@ const Footer = () => {
       </div>
     </div>
   </div>
-</div> */}
+</div>
        
       </footer>
     </>

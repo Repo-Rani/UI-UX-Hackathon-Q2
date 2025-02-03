@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import Link from "next/link";
 import Image from "next/image";
-import MenuCardItemsList from "./MenuCardItemsList";
+import MenuCard from "./MenuCard";
 
 const OurMenu = () => {
   const [activeTab, setActiveTab] = useState("BreakFast");
@@ -64,7 +64,7 @@ const OurMenu = () => {
         </div>
         {/* Right side */}
         <div className="relative top-[-70px] xlg:top-[100px]  md:top-[80px] md:left-[-70px] lg:left-[30px] xl:left-[-170px] xlg:left-[-130px]">
-          <MenuCardItemsList />
+          <MenuCard />
         </div>
       </div>
     </div>

@@ -89,8 +89,8 @@ const ShopCard: React.FC = () => {
         <div className="absolute left-[10px] ms:left-[20px] sm:left-[45px]  md:left-[20px] xsm:left-[40px] xxxl:left-[300px] xl:left-[30px] lg:left-[20px] xxl:left-[60px] top-[660px] md:top-[650px]  ">
            <div className="grid grid-cols-2 sm:grid-cols-3  md:grid-cols-2 lg:grid-cols-3 xsm:gap-x-[30px] xsm:gap-y-[75px] ms:gap-x-[25px] gap-x-[10px] gap-y-[65px]  sm:gap-x-[25px] sm:gap-y-[80px] lg:gap-x-[25px] lg:gap-y-[30px] xl:gap-x-[15px] xl:gap-y-[70px] xl:gap-[25px]  ">
       {currentProducts.map((product) => (
-        <Link href={`shopDetails/${product.id}`} passHref key={product.id}>
-          <div className="w-[150px] xl:w-[312px] h-[160px] xl:h-[330px] lg:h-[235px] sm:w-[150px] md:w-[200px] relative group">
+        <Link href={`/shopDetails/${product.id}`} passHref key={product.id}>
+        <div className="w-[150px] xl:w-[312px] h-[160px] xl:h-[330px] lg:h-[235px] sm:w-[150px] md:w-[200px] relative group">
             {/* Image Section */}
             <div className="relative">
               <Image
