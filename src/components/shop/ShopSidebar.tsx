@@ -6,7 +6,6 @@ import { FiX } from "react-icons/fi";
 import { VscSettings } from "react-icons/vsc";
 import RangeSlider from './PriceRange';
 import { FoodCategory, ShopCardProps } from '../../../types/type';
-import ShopSearchBar from './ShopSearchBar';
 
 
 const ShopSidebar = ({handleCategoryChange}: FoodCategory) => {
@@ -31,8 +30,23 @@ const ShopSidebar = ({handleCategoryChange}: FoodCategory) => {
 {/* For desktop screens */}
     <aside className='md:flex hidden'>
     <div className="w-[312px] h-[1489px] relative top-[150px]   xxxl:left-[1308px] xl:left-[1050px] lg:left-[700px] md:left-[500px] xxl:left-[1108px] border-[1px] rounded-[6px] border-[#f2f2f2] ">
-       {/* SearchBar */}
-<ShopSearchBar/>
+        <div className="w-[248px] h-[46px] p-3 relative left-[25px] top-[1.5rem] bg-red-100 ">
+          <input
+            type="text"
+            placeholder="Search Porduct"
+            
+            className="bg-transparent outline-none border-none placeholder-[#828282] font-inter font-normal text-[16px] realtive left-[20px] top-[11px]"
+          />
+          <div className="bg-[#ff9f0d] w-[46px] h-[46px] relative left-[200px] -top-9 flex items-center justify-center">
+            <Image
+              src="/MagnifyingGlass (1).svg"
+              alt="magnifyin-search"
+              height={20}
+              width={20}
+            />
+          </div>
+        </div>
+
         <div className="w-[248px] h-[372px] relative top-[40px] left-[28px] flex flex-col justify-between items-center">
               <h2 className="font-helvetica font-bold text-[20px] text-[#333333] w-[248px] h-[28px]">
                 Category
