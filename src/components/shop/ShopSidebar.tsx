@@ -5,104 +5,58 @@ import { useState } from "react";
 import { FiX } from "react-icons/fi";
 import { VscSettings } from "react-icons/vsc";
 import RangeSlider from './PriceRange';
+import { FoodCategory, ShopCardProps } from '../../../types/type';
+import ShopSearchBar from './ShopSearchBar';
 
 
-const ShopSidebar = () => {
+const ShopSidebar = ({handleCategoryChange}: FoodCategory) => {
+      const categories = ["All","Sandwiches", "Burgur", "Drink", "Pizza","Sweet", "Chicken Food", "Cheese Butter" ];
+      const [filteredProducts, setFilteredProducts] = useState<ShopCardProps[]>([]);
+      const [totalPages, setTotalPages] = useState(0);
+      const [currentPage, setCurrentPage] = useState(1); 
+
+      const [selectedCategory, setSelectedCategory] = useState<string | null>(null);
+      const handleCategoryClick = (category: string, index: number) => {
+        handleCategoryChange(category, index); 
+        setSelectedCategory(category); 
+      };
   const [isSidebarOpen, setIsSidebarOpen] = useState(false);
   const toggleSidebar = () => {
     setIsSidebarOpen(!isSidebarOpen);
     
   };
+  const category =  "food"
   return (
     <>
 {/* For desktop screens */}
     <aside className='md:flex hidden'>
     <div className="w-[312px] h-[1489px] relative top-[150px]   xxxl:left-[1308px] xl:left-[1050px] lg:left-[700px] md:left-[500px] xxl:left-[1108px] border-[1px] rounded-[6px] border-[#f2f2f2] ">
-        <div className="w-[248px] h-[46px] p-3 relative left-[25px] top-[1.5rem] bg-red-100 ">
-          <input
-            type="text"
-            placeholder="Search Porduct"
-            className="bg-transparent outline-none border-none placeholder-[#828282] font-inter font-normal text-[16px] realtive left-[20px] top-[11px]"
-          />
-          <div className="bg-[#ff9f0d] w-[46px] h-[46px] relative left-[200px] -top-9 flex items-center justify-center">
-            <Image
-              src="/MagnifyingGlass (1).svg"
-              alt="magnifyin-search"
-              height={20}
-              width={20}
-            />
-          </div>
-        </div>
-
+       {/* SearchBar */}
+<ShopSearchBar/>
         <div className="w-[248px] h-[372px] relative top-[40px] left-[28px] flex flex-col justify-between items-center">
-          <h2 className="font-helvetica font-bold text-[20px] text-[#333333] w-[248px] h-[28px]">
-            Category
-          </h2>
-          <div className="w-[248px] h-[26px] flex gap-[8px] ">
-          <input
-      type="checkbox"
-      className="w-[14px] h-[14px] border-[1px] border-[#333333] mt-2"
-    />            <span className="font-helvetica text-[18px] font-normal text-[#333333]">
-              Sandwiches
+              <h2 className="font-helvetica font-bold text-[20px] text-[#333333] w-[248px] h-[28px]">
+                Category
+              </h2>
+
+{
+    categories.map((category, index) => (
+        <div key={index}  onClick={() => handleCategoryClick(category, index)}
+        className="w-[248px] h-[26px] flex  gap-[8px] ">
+
+            <input type="checkbox" 
+            className="w-[14px] h-[14px] border-[1px] border-[#333333] mt-2"
+            checked={selectedCategory === category} 
+                  readOnly 
+            />
+            <span className="font-helvetica text-[18px] font-normal text-[#333333]">
+                {category}
             </span>
-          </div>
-          <div className="w-[248px] h-[26px] flex gap-[8px]  ">
-          <input
-      type="checkbox"
-      className="w-[14px] h-[14px] border-[1px] border-[#333333] mt-2"
-    />            <span className="font-helvetica text-[18px] font-normal text-[#333333]">
-              Burgur
-            </span>
-          </div>
-          <div className="w-[248px] h-[26px] flex gap-[8px] ">
-          <input
-      type="checkbox"
-      className="w-[14px] h-[14px] border-[1px] border-[#333333] mt-2"
-    />            <span className="font-helvetica text-[18px] font-normal text-[#333333]">
-              Chicken Chup
-            </span>
-          </div>
-          <div className="w-[248px] h-[26px] flex gap-[8px] ">
-          <input
-      type="checkbox"
-      className="w-[14px] h-[14px] border-[1px] border-[#333333] mt-2"
-    />            <span className="font-helvetica text-[18px] font-normal text-[#333333]">
-              Drink
-            </span>
-          </div>
-          <div className="w-[248px] h-[26px] flex gap-[8px] ">
-          <input
-      type="checkbox"
-      className="w-[14px] h-[14px] border-[1px] border-[#333333] mt-2"
-    />            <span className="font-helvetica text-[18px] font-normal text-[#333333]">
-              Pizza
-            </span>
-          </div>
-          <div className="w-[248px] h-[26px] flex gap-[8px] ">
-          <input
-      type="checkbox"
-      className="w-[14px] h-[14px] border-[1px] border-[#333333] mt-2"
-    />            <span className="font-helvetica text-[18px] font-normal text-[#333333]">
-              Thi
-            </span>
-          </div>
-          <div className="w-[248px] h-[26px] flex gap-[8px] ">
-          <input
-      type="checkbox"
-      className="w-[14px] h-[14px] border-[1px] border-[#333333] mt-2"
-    />            <span className="font-helvetica text-[18px] font-normal text-[#333333]">
-              Non Veg
-            </span>
-          </div>
-          <div className="w-[248px] h-[26px] flex gap-[8px] ">
-          <input
-      type="checkbox"
-      className="w-[14px] h-[14px] border-[1px] border-[#333333] mt-2"
-    />            <span className="font-helvetica text-[18px] font-normal text-[#333333]">
-              Uncategorized
-            </span>
-          </div>
         </div>
+        
+    ))
+  }
+<div/>
+</div>
 
         <div className="relative top-[60px] left-[25px]">
           <Image
@@ -131,8 +85,13 @@ const ShopSidebar = () => {
           Filter By Price
         </h1>
         <RangeSlider
-           
-          />
+        category={category}
+        setFilteredProducts={setFilteredProducts}
+        setTotalPages={setTotalPages}
+        currentPage={currentPage} // Pass currentPage
+        setCurrentPage={setCurrentPage} // Pass setCurrentPage
+      />
+
         <div className="flex justify-between w-[246px] h-[24px]">
           <p className="text-[16px] font-normal text-black/65 font-inter">
             From $0 to $8000
@@ -333,75 +292,7 @@ const ShopSidebar = () => {
           </div>
         </div>
 
-        <div className="w-[248px] h-[372px] relative top-[40px] left-[28px] flex flex-col justify-between items-center">
-          <h2 className="font-helvetica font-bold text-[20px] text-[#333333] w-[248px] h-[28px]">
-            Category
-          </h2>
-          <div className="w-[248px] h-[26px] flex gap-[8px] ">
-          <input
-      type="checkbox"
-      className="w-[14px] h-[14px] border-[1px] border-[#333333] mt-2"/>
-            <span className="font-helvetica text-[18px] font-normal text-[#333333]">
-              Sandwiches
-            </span>
-          </div>
-          <div className="w-[248px] h-[26px] flex gap-[8px]  ">
-          <input
-      type="checkbox"
-      className="w-[14px] h-[14px] border-[1px] border-[#333333] mt-2"/>           
-       <span className="font-helvetica text-[18px] font-normal text-[#333333]">
-              Burgur
-            </span>
-          </div>
-          <div className="w-[248px] h-[26px] flex gap-[8px] ">
-          <input
-      type="checkbox"
-      className="w-[14px] h-[14px] border-[1px] border-[#333333] mt-2"/>           
-       <span className="font-helvetica text-[18px] font-normal text-[#333333]">
-              Chicken Chup
-            </span>
-          </div>
-          <div className="w-[248px] h-[26px] flex gap-[8px] ">
-          <input
-      type="checkbox"
-      className="w-[14px] h-[14px] border-[1px] border-[#333333] mt-2"/>           
-       <span className="font-helvetica text-[18px] font-normal text-[#333333]">
-              Drink
-            </span>
-          </div>
-          <div className="w-[248px] h-[26px] flex gap-[8px] ">
-          <input
-      type="checkbox"
-      className="w-[14px] h-[14px] border-[1px] border-[#333333] mt-2"/>           
-       <span className="font-helvetica text-[18px] font-normal text-[#333333]">
-              Pizza
-            </span>
-          </div>
-          <div className="w-[248px] h-[26px] flex gap-[8px] ">
-          <input
-      type="checkbox"
-      className="w-[14px] h-[14px] border-[1px] border-[#333333] mt-2"/>           
-       <span className="font-helvetica text-[18px] font-normal text-[#333333]">
-              Thi
-            </span>
-          </div>
-          <div className="w-[248px] h-[26px] flex gap-[8px] ">
-          <input
-      type="checkbox"
-      className="w-[14px] h-[14px] border-[1px] border-[#333333] mt-2"/>            
-      <span className="font-helvetica text-[18px] font-normal text-[#333333]">
-              Non Veg
-            </span>
-          </div>
-          <div className="w-[248px] h-[26px] flex gap-[8px] ">
-          <input
-      type="checkbox"
-      className="w-[14px] h-[14px] border-[1px] border-[#333333] mt-2"/>           
-       <span className="font-helvetica text-[18px] font-normal text-[#333333]">
-              Uncategorized
-            </span>
-          </div>
-        </div>
+      
 
         <div className="relative top-[60px] left-[16px] ms:left-[25px]">
           <Image

@@ -122,7 +122,7 @@ const [cart, setCart] = useState<CartProps[]>([]);
               quality={100}
               className="h-[200px] w-[200px]"
             />
-            <Link href="/casual">
+            <Link href="/shop">
               <button className="bg-black w-[130px] h-[40px] rounded-[50px] border-none outline-none text-white font-satoshi flex justify-center items-center hover:bg-black/80">
                 Back to Shop
               </button>

@@ -170,3 +170,35 @@ export interface WishlistItem  {
 export interface CartProduct extends ShopCardProps {
   quantity: number;
 }
+
+export interface CategorySelectionTypes {
+  name: string;
+  bgColor: string;
+  imgSrc: string;
+}
+export interface CategorySelectionPropTypes {
+  onSelectCategory: (category: string | null) => void;
+  activeCategory: string | null;
+  selectedCategory: string | null;
+}
+
+export interface FoodCategory {
+  handleCategoryChange: (category: string, index: number) => void;
+
+}
+
+export interface RangeSliderProps {
+  category: string;
+  setFilteredProducts: (products: any[]) => void;
+  setTotalPages: (totalPages: number) => void;
+  currentPage: number;           
+  setCurrentPage: (page: number) => void; 
+}
+
+export interface ContactFormData {
+  name: string;
+  fullName: string;
+  email: string;
+  phoneNumber: string;
+  message: string;
+}

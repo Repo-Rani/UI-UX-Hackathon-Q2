@@ -56,8 +56,7 @@ const Shop = () => {
             </div>
           </div>
 
-          {/* right side */}
-          <ShopSidebar/>
+         
 
           <div>
            <ShopCard/>

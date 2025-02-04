@@ -18,6 +18,8 @@ import { RiSubtractLine } from "react-icons/ri";
 import { PiSmileySad } from "react-icons/pi";
 // import { RxCross2 } from "react-icons/rx";
 import { Product } from "../../../../types/type";
+import { RiHeart3Fill, RiHeart3Line } from "react-icons/ri";
+
 
 
 
@@ -31,6 +33,7 @@ import {
   SheetHeader,
   SheetTrigger,
 } from "@/components/ui/sheet";
+import { useToast } from "@/hooks/use-toast";
 
 interface Props {
   params: {
@@ -38,159 +41,167 @@ interface Props {
   };
 }
 const ShopCardsDetails: React.FC<Props> = ({ params }) => {
-  // For Data Fetching From sanity
-
   const [product, setProduct] = useState<ShopCardProps | null>(null);
   const [cart, setCart] = useState<Product[]>([]);
   const [showCart, setShowCart] = useState(false);
+  const [loading, setLoading] = useState(true);
+  const [count, setCount] = useState(1);
 
+  const { id } = params;
 
-    const [loading, setLoading] = useState(true);
-    // For Counter
-    const [count, setCount] = useState(1);
+  const { toast } = useToast();
+const [isWishlisted, setIsWishlisted] = useState(false);
 
- 
+useEffect(() => {
+  if (product) { // Check if product is not null or undefined
+    const storedWishlist = localStorage.getItem("wishlist");
+    const wishlist: ShopCardProps[] = storedWishlist ? JSON.parse(storedWishlist) : [];
+    setIsWishlisted(wishlist.some((item) => item.id === product.id));
+  }
+}, [product?.id]); // Optional chaining to avoid errors if product is null/undefined
 
-  // For prev and next button
-  
+const toggleWishlist = () => {
+  if (!product) { // Check if product is not null or undefined
+    toast({ description: "Product is not available." });
+    return;
+  }
 
-    const { id } = params;
-    useEffect(() => {
-      const fetchProduct = async () => {
-        const query = `*[_type=="food" && _id == $id] {
-          ratingNum,
-      description,
-      reviews,
-      name,
-      text,
-      bottomDetail2,
-      _id,
-      category,
-      "imageUrl": image.asset->url, 
-      originalPrice,
-      discountPrice,
-      "ratingUrl": ratingImage.asset->url, 
-      sell,
-      tags,
-      bottomDetail,
-      price
-      
-        }`;
-    try {
-      const productData: ShopCardProps[] = await client.fetch(query, { id });
-      if (!productData || productData.length === 0) {
+  const storedWishlist = localStorage.getItem("wishlist");
+  const wishlist: ShopCardProps[] = storedWishlist ? JSON.parse(storedWishlist) : [];
+
+  if (isWishlisted) {
+    const updatedWishlist = wishlist.filter((item) => item.id !== product.id);
+    localStorage.setItem("wishlist", JSON.stringify(updatedWishlist));
+    toast({ description: "Item removed from wishlist." });
+  } else {
+    wishlist.push(product);
+    localStorage.setItem("wishlist", JSON.stringify(wishlist));
+    toast({ description: "Item added to wishlist successfully." });
+  }
+
+  setIsWishlisted(!isWishlisted);
+};
+  useEffect(() => {
+    const fetchProduct = async () => {
+      const query = `*[_type=="food" && _id == $id] {
+        ratingNum,
+        description,
+        reviews,
+        name,
+        text,
+        bottomDetail2,
+        _id,
+        category,
+        "imageUrl": image.asset->url, 
+        originalPrice,
+        discountPrice,
+        "ratingUrl": ratingImage.asset->url, 
+        sell,
+        tags,
+        bottomDetail,
+        price
+      }`;
+      try {
+        const productData: ShopCardProps[] = await client.fetch(query, { id });
+        if (!productData || productData.length === 0) {
+          notFound();
+        } else {
+          setProduct(productData[0]);
+        }
+      } catch (error) {
+        console.error("Error fetching product:", error);
         notFound();
-      } else {
-        setProduct(productData[0]);
+      } finally {
+        setLoading(false);
       }
-    } catch (error) {
-      console.error("Error fetching product:", error);
-      notFound();
-    } finally {
-      setLoading(false);
+    };
+
+    fetchProduct();
+  }, [id]);
+
+  const addToCart = (product: ShopCardProps) => {
+    const productInCart = cart.find((item) => item.id === product.id);
+  
+    if (productInCart) {
+      const updatedCart = cart.map((item) =>
+        item.id === product.id
+          ? { ...item, quantity: (item.quantity ?? 0) + 1 }
+          : item
+      );
+      setCart(updatedCart);
+      localStorage.setItem("cart", JSON.stringify(updatedCart));
+    } else {
+      const updatedCart = [
+        ...cart,
+        {
+          id: product.id,
+          name: product.name,
+          imageUrl: product.imageUrl,
+          price: product.price,
+          quantity: 1,
+        },
+      ];
+      setCart(updatedCart);
+      localStorage.setItem("cart", JSON.stringify(updatedCart));
     }
   };
+  const removeFromCart = (productId: string) => {
+    const updatedCart = cart.filter((item) => item.id !== productId);
+    setCart(updatedCart);
+    localStorage.setItem("cart", JSON.stringify(updatedCart));
+  };
 
-  fetchProduct();
-}, [id]);
+  useEffect(() => {
+    const savedCart = localStorage.getItem("cart");
+    if (savedCart) {
+      setCart(JSON.parse(savedCart));
+    }
+  }, []);
 
+  useEffect(() => {
+    if (cart.length > 0) {
+      localStorage.setItem("cart", JSON.stringify(cart));
+    }
+  }, [cart]);
 
-const addToCart = (product: ShopCardProps) => {
-  const productInCart = cart.find((item) => item.id === product.id);
-
-  if (productInCart) {
+  const increaseQuantity = (productId: string) => {
     const updatedCart = cart.map((item) =>
-      item.id === product.id
+      item.id === productId
         ? { ...item, quantity: (item.quantity ?? 0) + 1 }
         : item
     );
     setCart(updatedCart);
     localStorage.setItem("cart", JSON.stringify(updatedCart));
-  } else {
-    const updatedCart = [
-      ...cart,
-      {
-        id: product.id,
-        title: product.name,
-        image: product.imageUrl,
-        price: product.price,
-        quantity: 1, 
-       
-      },
-    ];
+  };
+
+  const decreaseQuantity = (productId: string) => {
+    const updatedCart = cart.map((item) => {
+      if (item.id === productId && (item.quantity ?? 0) > 1) {
+        return { ...item, quantity: (item.quantity ?? 0) - 1 };
+      } else {
+        return item;
+      }
+    });
+
     setCart(updatedCart);
     localStorage.setItem("cart", JSON.stringify(updatedCart));
-  }
-};
-const removeFromCart = (productId: string) => {
-  const updatedCart = cart.filter((item) => item.id !== productId);
-  setCart(updatedCart);
-  localStorage.setItem("cart", JSON.stringify(updatedCart));
-};
-useEffect(() => {
-  const savedCart = localStorage.getItem("cart");
-  if (savedCart) {
-    setCart(JSON.parse(savedCart));
-  }
-}, []);
+  };
 
-useEffect(() => {
-  if (cart.length > 0) {
-    localStorage.setItem("cart", JSON.stringify(cart));
-  }
-}, [cart]);
+  const handleIncrement = () => {
+    setCount(count + 1);
+  };
 
-useEffect(() => {
-  const savedCart = localStorage.getItem("cart");
-  if (savedCart) {
-    setCart(JSON.parse(savedCart));
-  }
-}, []);
-
-
-
-const increaseQuantity = (productId: string) => {
-  const updatedCart = cart.map((item) =>
-    item.id === productId
-      ? { ...item, quantity: (item.quantity ?? 0) + 1 }
-      : item
-  );
-  setCart(updatedCart);
-  localStorage.setItem("cart", JSON.stringify(updatedCart));
-};
-const decreaseQuantity = (productId: string) => {
-  const updatedCart = cart.map((item) => {
-    if (item.id === productId && (item.quantity ?? 0) > 1) {
-      return { ...item, quantity: (item.quantity ?? 0) - 1 };
-    } else {
-      return item;
+  const handleDecrement = () => {
+    if (count > 1) {
+      setCount(count - 1);
     }
-  });
+  };
+
+  if (loading) {
+    return <div>Loading...</div>;
+  }
 
   
-  setCart(updatedCart);
-  localStorage.setItem("cart", JSON.stringify(updatedCart));
-};
-useEffect(() => {
-  const savedCart = localStorage.getItem("cart");
-  if (savedCart) {
-    setCart(JSON.parse(savedCart));
-  }
-}, []);
-
-const handleIncrement = () => {
-  setCount(count + 1);
-};
-
-const handleDecrement = () => {
-  if (count > 1) {
-    setCount(count - 1);
-  }
-};
-
-if (loading) {
-  return <div>Loading...</div>;
-}
 
 if (!product) {
   return <ErrorePage />;
@@ -378,105 +389,107 @@ if (!product) {
         <Sheet open={showCart} onOpenChange={setShowCart}>
           <SheetTrigger asChild>
           <Button
-              variant="outline"
-              className="fixed bottom-6 right-6 font-satoshi bg-black text-white p-4 rounded-full flex items-center justify-center text-lg cursor-pointer w-[50px] h-[50px] hover:text-white hover:bg-black"
-              onClick={() => setShowCart(!showCart)}
-            >
-              <div className="w-[15px] h-[15px] flex justify-center items-center bg-white text-black rounded-full text-[10px] absolute top-[8px] left-[25px]">
-                {cart.length}
-              </div>
-              <FaCartArrowDown className="text-white h-7 w-7 ml-[-10px]" />
-            </Button>
+  variant="outline"
+  className="fixed bottom-6 right-6 font-satoshi bg-black text-white p-4 rounded-full flex items-center justify-center text-lg cursor-pointer w-[50px] h-[50px] hover:text-white hover:bg-black"
+  onClick={() => setShowCart(!showCart)}
+>
+  <div className="w-[15px] h-[15px] flex justify-center items-center bg-white text-black rounded-full text-[10px] absolute top-[8px] left-[25px]">
+    {cart.length}
+  </div>
+  <FaCartArrowDown className="text-white h-7 w-7 ml-[-10px]" />
+</Button>
           </SheetTrigger>
 
           <SheetContent className="overflow-y-auto h-auto">
-            <SheetHeader>
-              <h2 className="text-2xl font-semibold mb-4 font-integralCf uppercase">
-                Your Cart
-              </h2>
-            </SheetHeader>
-            <div>
-              {cart.length === 0 ? (
-                <div className="flex justify-start gap-1 items-center">
-                  <p className="text-lg text-gray-500 font-satoshi">
-                    Your cart is empty
+  <SheetHeader>
+    <h2 className="text-2xl font-semibold mb-4 font-integralCf uppercase">
+      Your Cart
+    </h2>
+  </SheetHeader>
+  <div>
+    {cart.length === 0 ? (
+      <div className="flex justify-start gap-1 items-center">
+        <p className="text-lg text-gray-500 font-satoshi">
+          Your cart is empty
+        </p>
+        <PiSmileySad className="h-[20px] w-[20px] text-gray-500" />
+      </div>
+    ) : (
+      cart.map((item) => (
+        <div key={item.id} className="border-b py-4">
+          <div className="flex justify-center items-center w-full px-4 gap-[10px]">
+            <Image
+              src={item.imageUrl}
+              alt="product-image"
+              height={40}
+              width={40}
+              className="h-[60px] w-[60px] object-cover"
+            />
+            <div className="flex flex-col">
+              <div className="flex justify-between items-center w-[270px]">
+                <h3 className="font-semibold text-black font-satoshi">
+                  {item.name}
+                </h3>
+                <PiTrashFill
+                  onClick={() => removeFromCart(item.id)}
+                  className="text-red-500 h-5 w-5 cursor-pointer hover:text-red-400"
+                />
+              </div>
+              
+              <div className="flex justify-between items-center w-[270px]">
+                <p className="text-black font-satoshi font-bold text-[16px]">
+                  ${item.price}
+                </p>
+                <div className="flex justify-center items-center gap-[10px] w-[100px] bg-BannerBgColor rounded-[50px] px-3 py-2 h-8">
+                  <IoAddOutline
+                    onClick={() => increaseQuantity(item.id)}
+                    className="h-4 w-4 text-black cursor-pointer"
+                  />
+                  <p className="text-[14px] text-black font-satoshi font-bold">
+                    {item.quantity}
                   </p>
-                  <PiSmileySad className="h-[20px] w-[20px] text-gray-500" />
+                  <RiSubtractLine
+                    onClick={() => decreaseQuantity(item.id)}
+                    className="h-4 w-4 text-black cursor-pointer"
+                  />
                 </div>
-              ) : (
-                cart.map((item) => (
-                  <div key={item.id} className="border-b py-4">
-                    <div className="flex justify-center items-center w-full px-4 gap-[10px]">
-                      <Image
-                        src={item.imageUrl}
-                        alt="product-image"
-                        height={40}
-                        width={40}
-                        className="h-[60px] w-[60px] object-cover"
-                      />
-                      <div className="flex flex-col">
-                        <div className="flex justify-between items-center w-[270px]">
-                          <h3 className="font-semibold text-black font-satoshi">
-                            {item.name}
-                          </h3>
-                          <PiTrashFill
-                            onClick={() => removeFromCart(item.id)}
-                            className="text-red-500 h-5 w-5 cursor-pointer hover:text-red-400"
-                          />
-                        </div>
-                        
-                        <div className="flex justify-between items-center w-[270px]">
-                          <p className="text-black font-satoshi font-bold text-[16px]">
-                            ${item.price}
-                          </p>
-                          <div className="flex justify-center items-center gap-[10px] w-[100px] bg-BannerBgColor rounded-[50px] px-3 py-2 h-8">
-                            <IoAddOutline
-                              onClick={() => increaseQuantity(item.id)}
-                              className="h-4 w-4 text-black cursor-pointer"
-                            />
-                            <p className="text-[14px] text-black font-satoshi font-bold">
-                              {item.quantity}
-                            </p>
-                            <RiSubtractLine
-                              onClick={() => decreaseQuantity(item.id)}
-                              className="h-4 w-4 text-black cursor-pointer"
-                            />
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                ))
-              )}
+              </div>
             </div>
-            <div className="mt-4 flex justify-center gap-[20px] items-center">
-              <Link
-                href="/cart"
-                className="w-full h-[50px] bg-[#FF9F0D] text-white font-helvetica text-[15px] font-medium rounded-[50px] flex justify-center items-center"
-              >
-                <button>View cart</button>
-              </Link>
-            </div>
-            <SheetFooter>
-              <SheetClose
-                asChild
-                className="border-none outline-none"
-              ></SheetClose>
-            </SheetFooter>
-          </SheetContent>
+          </div>
+        </div>
+      ))
+    )}
+  </div>
+  <div className="mt-4 flex justify-center gap-[20px] items-center">
+    <Link
+      href="/cart"
+      className="w-full h-[50px] bg-[#FF9F0D] text-white font-helvetica text-[15px] font-medium rounded-[50px] flex justify-center items-center"
+    >
+      <button>View cart</button>
+    </Link>
+  </div>
+  <SheetFooter>
+    <SheetClose
+      asChild
+      className="border-none outline-none"
+    ></SheetClose>
+  </SheetFooter>
+</SheetContent>
         </Sheet>
 
        <div className="w-[275px] sm:w-[500px] md:w-[600px] lg:w-[400px] xl:w-[618px] border-b-[1px] border-[#E0E0E0] absolute left-[15px] ms:left-[35px] lg:left-[600px] xsm:left-[50px] xl:left-[690px] xxl:left-[785px] xxxl:left-[950px]  top-[1300px] md:top-[1350px] lg:top-[950px] xl:top-[1048px]"></div>
 
         <div className="w-[278px] h-[26px] absolute top-[1330px] left-[15px] ms:left-[35px] xsm:left-[50px] lg:left-[600px] md:top-[1380px] lg:top-[970px] xl:top-[1072px] xl:left-[690px] xxl:left-[785px] xxxl:left-[950px] flex justify-between items-center">
           <div className="flex justify-start gap-[5px] items-center">
-            <Image
-              src="/Heart.svg"
-              alt=""
-              height={20}
-              width={20}
-              className="md:h-[20px] h-[16px] w-[16px] md:w-[20px]"
-            />
+          <button
+            onClick={(e) => {
+              e.preventDefault();
+              toggleWishlist();
+            }}
+            className="absolute top-2 left-2 text-black font-thin text-3xl z-10"
+          >
+            {isWishlisted ? <RiHeart3Fill /> : <RiHeart3Line />}
+          </button>
             <button className="font-inter text-[14px] md:text-[18px] font-normal text-[#4F4F4F]">
               Add to Wishlist
             </button>

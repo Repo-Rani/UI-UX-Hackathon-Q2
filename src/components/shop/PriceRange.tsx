@@ -1,21 +1,54 @@
 'use client'
-import { useState } from "react";
+import { useState, useEffect } from "react";
+import { RangeSliderProps } from "../../../types/type";
+import { client } from "@/sanity/lib/client";
+import { useCallback } from "react";
 
-const RangeSlider = () => {
-  const [leftValue, setLeftValue] = useState(50); 
-  const [rightValue, setRightValue] = useState(200); 
+const RangeSlider: React.FC<RangeSliderProps> = ({ category, setFilteredProducts, setTotalPages }) => {
+  const [leftValue, setLeftValue] = useState(10);
+  const [rightValue, setRightValue] = useState(200);
+  const [currentPage, setCurrentPage] = useState(1);
+  const fetchAndSetProducts = useCallback(async (minPrice: number, maxPrice: number, page: number) => {
+    try {
+      const productsPerPage = 9;
+      const startIndex = (page - 1) * productsPerPage;
+      const query = `*[_type == "food" && price >= ${minPrice} && price <= ${maxPrice}] | order(price asc) [${startIndex}...${startIndex + productsPerPage}] {
+        _id,
+        name,
+        price,
+      
+       
+        "imageUrl": image.asset->url,
+        ratingReviews
+      }`;
+      const products = await client.fetch(query);
+      setFilteredProducts(products);
 
-  const handleLeftChange = (e:any) => {
-    const value = parseInt(e.target.value);
+      const countQuery = `count(*[_type == "food" && price >= ${minPrice} && price <= ${maxPrice}])`;
+      const totalCount = await client.fetch(countQuery);
+      setTotalPages(Math.ceil(totalCount / productsPerPage));
+    } catch (error) {
+      console.error("Error fetching filtered products:", error);
+    }
+  }, [category, setFilteredProducts, setTotalPages]); 
+
+  useEffect(() => {
+    fetchAndSetProducts(leftValue, rightValue, currentPage);
+  }, [fetchAndSetProducts, leftValue, rightValue, currentPage]); 
+
+  const handleLeftChange = (e: React.ChangeEvent<HTMLInputElement>) => { 
+    const value = parseInt(e.target.value, 10);
     if (value < rightValue) {
       setLeftValue(value);
+      setCurrentPage(1);
     }
   };
 
-  const handleRightChange = (e:any) => {
-    const value = parseInt(e.target.value);
+  const handleRightChange = (e: React.ChangeEvent<HTMLInputElement>) => { 
+    const value = parseInt(e.target.value, 10);
     if (value > leftValue) {
       setRightValue(value);
+      setCurrentPage(1);
     }
   };
   return (

@@ -5,29 +5,48 @@ import Link from "next/link";
 import { client } from "@/sanity/lib/client";
 import { ShopCardProps } from "../../../types/type";
 import Pagination from "./Pagination"; 
+import ShopSidebar from "./ShopSidebar";
 
 
 
-const fetchProducts = async (): Promise<ShopCardProps[]> => {
-  const products = await client.fetch(`
-    *[_type=="food"] {
-      ratingNum,
-      description,
-      reviews,
-      name,
-      text,
-      bottomDetail2,
-      _id,
-      category,
-      "imageUrl": image.asset->url, 
-      originalPrice,
-      discountPrice,
-      "ratingUrl": ratingImage.asset->url, 
-      sell,
-      bottomDetail,
-      price
-    }
-  `);
+const fetchProducts = async (category: string | null): Promise<ShopCardProps[]> => {
+  const query = category
+    ? `*[_type=="food" && category == "${category}"] {
+        ratingNum,
+        description,
+        reviews,
+        name,
+        text,
+        bottomDetail2,
+        _id,
+        category,
+        "imageUrl": image.asset->url, 
+        originalPrice,
+        discountPrice,
+        "ratingUrl": ratingImage.asset->url, 
+        sell,
+        bottomDetail,
+        price
+      }`
+    : `*[_type=="food"] {
+        ratingNum,
+        description,
+        reviews,
+        name,
+        text,
+        bottomDetail2,
+        _id,
+        category,
+        "imageUrl": image.asset->url, 
+        originalPrice,
+        discountPrice,
+        "ratingUrl": ratingImage.asset->url, 
+        sell,
+        bottomDetail,
+        price
+      }`;
+
+  const products = await client.fetch(query);
   return products.map((product: any) => ({
     id: product._id,
     imageUrl: product.imageUrl,
@@ -48,15 +67,14 @@ const ShopCard: React.FC = () => {
   const [products, setProducts] = useState<ShopCardProps[]>([]);
   const [loading, setLoading] = useState(true);
   const [currentPage, setCurrentPage] = useState(1);
-  const productsPerPage = 15; 
+  const [selectedCategory, setSelectedCategory] = useState<string | null>(null);
 
-
-  
+  const productsPerPage = 15;
 
   useEffect(() => {
     const loadProducts = async () => {
       try {
-        const data = await fetchProducts();
+        const data = await fetchProducts(selectedCategory);
         setProducts(data);
       } catch (error) {
         console.error("Error fetching products:", error);
@@ -66,7 +84,14 @@ const ShopCard: React.FC = () => {
     };
 
     loadProducts();
-  }, []);
+  }, [selectedCategory]);
+
+  // Function to handle category change
+  const handleCategoryChange = (category: string, index: number) => {
+    console.log("Selected Category:", category); // Debugging: Log selected category
+    setSelectedCategory(category); // Update selected category
+    setCurrentPage(1); // Reset to the first page when category changes
+  };
 
   const totalPages = Math.ceil(products.length / productsPerPage);
 
@@ -78,14 +103,14 @@ const ShopCard: React.FC = () => {
   const indexOfFirstProduct = indexOfLastProduct - productsPerPage;
   const currentProducts = products.slice(indexOfFirstProduct, indexOfLastProduct);
 
-  
-
   if (loading) {
     return <p>Loading products...</p>;
   }
 
   return (
     <div className="product-list mt-24">
+            <ShopSidebar handleCategoryChange={handleCategoryChange} />
+
         <div className="absolute left-[10px] ms:left-[20px] sm:left-[45px]  md:left-[20px] xsm:left-[40px] xxxl:left-[300px] xl:left-[30px] lg:left-[20px] xxl:left-[60px] top-[660px] md:top-[650px]  ">
            <div className="grid grid-cols-2 sm:grid-cols-3  md:grid-cols-2 lg:grid-cols-3 xsm:gap-x-[30px] xsm:gap-y-[75px] ms:gap-x-[25px] gap-x-[10px] gap-y-[65px]  sm:gap-x-[25px] sm:gap-y-[80px] lg:gap-x-[25px] lg:gap-y-[30px] xl:gap-x-[15px] xl:gap-y-[70px] xl:gap-[25px]  ">
       {currentProducts.map((product) => (
