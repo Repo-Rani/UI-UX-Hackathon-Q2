@@ -6,7 +6,7 @@ import Banner from "@/components/banner/Banner";
 import ShopSliders from "@/components/shopSlider/ShopSlider";
 import Link from "next/link";
 import ErrorePage from "@/app/errorePage/page";
-import { ShopCardProps } from "../../../../types/type";
+import { CartProps, ShopCardProps } from "../../../../types/type";
 import { useEffect, useState } from "react";
 import { client } from "@/sanity/lib/client";
 import { notFound } from "next/navigation";
@@ -42,7 +42,7 @@ interface Props {
 }
 const ShopCardsDetails: React.FC<Props> = ({ params }) => {
   const [product, setProduct] = useState<ShopCardProps | null>(null);
-  const [cart, setCart] = useState<Product[]>([]);
+  const [cart, setCart] = useState<CartProps[]>([]);
   const [showCart, setShowCart] = useState(false);
   const [loading, setLoading] = useState(true);
   const [count, setCount] = useState(1);
@@ -53,15 +53,15 @@ const ShopCardsDetails: React.FC<Props> = ({ params }) => {
 const [isWishlisted, setIsWishlisted] = useState(false);
 
 useEffect(() => {
-  if (product) { // Check if product is not null or undefined
+  if (product) { 
     const storedWishlist = localStorage.getItem("wishlist");
     const wishlist: ShopCardProps[] = storedWishlist ? JSON.parse(storedWishlist) : [];
     setIsWishlisted(wishlist.some((item) => item.id === product.id));
   }
-}, [product?.id]); // Optional chaining to avoid errors if product is null/undefined
+}, [product?.id]); 
 
 const toggleWishlist = () => {
-  if (!product) { // Check if product is not null or undefined
+  if (!product) { 
     toast({ description: "Product is not available." });
     return;
   }
@@ -120,31 +120,31 @@ const toggleWishlist = () => {
   }, [id]);
 
   const addToCart = (product: ShopCardProps) => {
-    const productInCart = cart.find((item) => item.id === product.id);
+      const productInCart = cart.find((item) => item.id === product.id);
   
-    if (productInCart) {
-      const updatedCart = cart.map((item) =>
-        item.id === product.id
-          ? { ...item, quantity: (item.quantity ?? 0) + 1 }
-          : item
-      );
-      setCart(updatedCart);
-      localStorage.setItem("cart", JSON.stringify(updatedCart));
-    } else {
-      const updatedCart = [
-        ...cart,
-        {
-          id: product.id,
+      if (productInCart) {
+        const updatedCart = cart.map((item) =>
+          item.id === product.id
+            ? { ...item, quantity: (item.quantity ?? 0) + 1 }
+            : item
+        );
+        setCart(updatedCart);
+        localStorage.setItem("cart", JSON.stringify(updatedCart));
+      } else {
+        const newCartItem: CartProps = {
+          id: product.id ?? "default-id",
           name: product.name,
           imageUrl: product.imageUrl,
           price: product.price,
           quantity: 1,
-        },
-      ];
-      setCart(updatedCart);
-      localStorage.setItem("cart", JSON.stringify(updatedCart));
-    }
-  };
+          total: product.price,
+        };
+  
+        const updatedCart: CartProps[] = [...cart, newCartItem];
+        setCart(updatedCart);
+        localStorage.setItem("cart", JSON.stringify(updatedCart));
+      }
+    };
   const removeFromCart = (productId: string) => {
     const updatedCart = cart.filter((item) => item.id !== productId);
     setCart(updatedCart);
@@ -390,7 +390,7 @@ if (!product) {
           <SheetTrigger asChild>
           <Button
   variant="outline"
-  className="fixed bottom-6 right-6 font-satoshi bg-black text-white p-4 rounded-full flex items-center justify-center text-lg cursor-pointer w-[50px] h-[50px] hover:text-white hover:bg-black"
+  className="fixed bottom-6 right-6 font-satoshi bg-[#FF9F0D] text-white p-4 rounded-full flex items-center justify-center text-lg cursor-pointer w-[50px] h-[50px] hover:text-white hover:bg-black"
   onClick={() => setShowCart(!showCart)}
 >
   <div className="w-[15px] h-[15px] flex justify-center items-center bg-white text-black rounded-full text-[10px] absolute top-[8px] left-[25px]">
@@ -480,13 +480,13 @@ if (!product) {
        <div className="w-[275px] sm:w-[500px] md:w-[600px] lg:w-[400px] xl:w-[618px] border-b-[1px] border-[#E0E0E0] absolute left-[15px] ms:left-[35px] lg:left-[600px] xsm:left-[50px] xl:left-[690px] xxl:left-[785px] xxxl:left-[950px]  top-[1300px] md:top-[1350px] lg:top-[950px] xl:top-[1048px]"></div>
 
         <div className="w-[278px] h-[26px] absolute top-[1330px] left-[15px] ms:left-[35px] xsm:left-[50px] lg:left-[600px] md:top-[1380px] lg:top-[970px] xl:top-[1072px] xl:left-[690px] xxl:left-[785px] xxxl:left-[950px] flex justify-between items-center">
-          <div className="flex justify-start gap-[5px] items-center">
+          <div className="flex  justify-betweent gap-[5px] items-center w-[180px]">
           <button
             onClick={(e) => {
               e.preventDefault();
               toggleWishlist();
             }}
-            className="absolute top-2 left-2 text-black font-thin text-3xl z-10"
+            className="absolute  text-black text-opacity-70 font-thin text-2xl z-10"
           >
             {isWishlisted ? <RiHeart3Fill /> : <RiHeart3Line />}
           </button>

@@ -116,7 +116,7 @@ const Cart = () => {
             {cart.map((product, index) => (
               <div
                 key={index}
-                className="flex justify-between items-center w-full border-b border-gray-200 py-4 relative top-[-620px]"
+                className="flex justify-between items-center w-full border-b border-gray-200 py-4 relative top-[-380px]"
               >
                 {/* Product Column */}
                 <div className="flex items-center justify-between w-[200px] sm:w-[300px]">
