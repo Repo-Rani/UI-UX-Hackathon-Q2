@@ -7,8 +7,9 @@ import tesimonials from './testimonials'
 import latestBlog from './latestBlog'
 import menuSchema from './menu'
 import heroMenu from './heroMenu'
+import guideSchema from './userGuide'
 
 
 export const schema: { types: SchemaTypeDefinition[] } = {
-  types: [foods, chef,blogs,faq,tesimonials,latestBlog, menuSchema, heroMenu]
+  types: [foods, chef,blogs,faq,tesimonials,latestBlog, menuSchema, heroMenu, guideSchema]
 }

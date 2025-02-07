@@ -16,7 +16,7 @@ const OurMenu = () => {
   ];
 
   return (
-          <section className="absolute xlg:left-[60px]   xl:left-[110px]  xxl:left-[150px] xxxl:left-[300px]  xl:top-[3834px] xlg:top-[3750px] sm:top-[3600px] md:top-[2650px] lg:top-[2750px] ms:top-[3300px] top-[3260px] ">
+          <section className="absolute xlg:left-[60px] lg:left-[220px]  xl:left-[110px]  xxl:left-[150px] xxxl:left-[300px]  left-[10px] ms:left-0 xsm:left-[30px] sm:left-[120px] md:left-[30px] xl:top-[3834px] xlg:top-[3750px] sm:top-[3600px] md:top-[2650px] lg:top-[2750px] ms:top-[3300px] top-[3260px] ">
     
     <div className="w-[300px] xsm:w-[360px] md:w-[700px] xlg:w-[1200px] xl:w-[1320px] md:h-[656px] relative md:left-[10px] lg:left-[-75px] xlg:left-0">
       <div className="w-full flex flex-col justify-center items-center">
@@ -29,7 +29,7 @@ const OurMenu = () => {
       </div>
 
       {/* Menu Tabs */}
-      <div className="sm:w-[550px]  w-[300px] h-[28px]  md:w-[700px] lg:w-[850px] xlg:w-[1056px] relative top-[280px] left-[10px] xsm:left-[30px] sm:left-[-80px] md:left-0 xl:left-[30px]  md:top-[40px] flex flex-wrap justify-between items-center">
+      <div className="sm:w-[550px]  w-[300px] h-[28px]  md:w-[700px] lg:w-[850px] xlg:w-[1056px] relative top-[280px] left-[10px] xsm:left-[50px] sm:left-[-80px] md:left-0 xl:left-[30px]  md:top-[40px] flex flex-wrap justify-between items-center">
         {menuItems.map((item, index) => (
           <Link href="/" key={index}>
             <div
@@ -46,7 +46,7 @@ const OurMenu = () => {
 
       {/* Left side */}
       <div className="grid grid-cols-1 md:grid-cols-2 md:gap-0 gap-[20px] relative xlg:left-[-30px]  ">
-        <div className="relative md:top-[85px] lg:top-0 xlg:top-[80px] md:left-[-70px] lg:left-[-120px] xl:left-[-75px] xlg:left-[-30px] ms:left-[30px] left-[10px]">
+        <div className="relative md:top-[85px] lg:top-[20px] xlg:top-[80px] md:left-[-70px] lg:left-[-120px] xl:left-[-75px] xlg:left-[-30px]  xsm:left-[45px] left-[10px]">
           <Image
             src="/menuleaf.svg"
             alt="menu-leaf"
@@ -59,11 +59,11 @@ const OurMenu = () => {
             alt="menu-food"
             height={362}
             width={366}
-            className="xlg:w-[395px] lg:h-[370px] lg:w-[300px] w-[210px] h-[210px] relative  lg:bottom-[400px] ms:bottom-[205px] bottom-[210px] left-[30px] md:left-[45px] lg:left-[20px] xlg:left-[60px] rotatePlate"
+            className="xlg:w-[395px] lg:h-[370px] lg:w-[300px] w-[210px] h-[210px] relative  lg:bottom-[388px] ms:bottom-[205px] bottom-[210px] left-[30px]  md:left-[45px] lg:left-[20px] xlg:left-[60px] rotatePlate"
           />
         </div>
         {/* Right side */}
-        <div className="relative top-[-70px] xlg:top-[100px]  md:top-[80px] md:left-[-70px] lg:left-[30px] xl:left-[-170px] xlg:left-[-130px]">
+        <div className="relative top-[-70px] xlg:top-[100px]  md:top-[80px] md:left-[-70px] lg:left-[10px]  xl:left-[-170px] xlg:left-[-130px]">
           <MenuCard />
         </div>
       </div>

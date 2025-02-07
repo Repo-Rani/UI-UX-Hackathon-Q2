@@ -9,16 +9,15 @@ import ErrorePage from "@/app/errorePage/page";
 import { CartProps, ShopCardProps } from "../../../../types/type";
 import { useEffect, useState } from "react";
 import { client } from "@/sanity/lib/client";
-import { notFound } from "next/navigation";
+import { notFound, useRouter } from "next/navigation";
 import { Button } from "@/components/ui/button";
 import { FaCartArrowDown } from "react-icons/fa";
 import { PiTrashFill } from "react-icons/pi";
 import { IoAddOutline } from "react-icons/io5";
 import { RiSubtractLine } from "react-icons/ri";
 import { PiSmileySad } from "react-icons/pi";
-// import { RxCross2 } from "react-icons/rx";
-import { Product } from "../../../../types/type";
 import { RiHeart3Fill, RiHeart3Line } from "react-icons/ri";
+import ComparisonTable from "@/components/shop/ComparisionTable";
 
 
 
@@ -46,6 +45,10 @@ const ShopCardsDetails: React.FC<Props> = ({ params }) => {
   const [showCart, setShowCart] = useState(false);
   const [loading, setLoading] = useState(true);
   const [count, setCount] = useState(1);
+  const [comparisonList, setComparisonList] = useState<ShopCardProps[]>([]);
+const [showCompareDialog, setShowCompareDialog] = useState(false);
+  
+
 
   const { id } = params;
 
@@ -151,6 +154,47 @@ const toggleWishlist = () => {
     localStorage.setItem("cart", JSON.stringify(updatedCart));
   };
 
+  
+ const addToCompare = (product: ShopCardProps) => {
+     if (comparisonList.length === 2) {
+       if (
+         window.confirm(
+           "You can only compare two items at a time. Do you want to clear the comparison list?"
+         )
+       ) {
+         setComparisonList([]); 
+       }
+       return;
+     }
+     
+     const isAlreadyAdded = comparisonList.some(
+       (item) => item.id === product.id
+     );
+     
+     if (!isAlreadyAdded) {
+       const updatedList = [...comparisonList, product];
+       setComparisonList(updatedList);
+   
+       if (updatedList.length === 1) {
+         alert("First product selected successfully. Now select the second product.");
+       } else if (updatedList.length === 2) {
+         alert("Second product selected successfully.");
+         setShowCompareDialog(true); 
+       }
+     } else {
+       alert("This item is already in the comparison list.");
+     }
+   };
+     const removeCompareItem = (productId: string) => {
+       const updatedList = comparisonList.filter((item) => item.id !== productId);
+       setComparisonList(updatedList);
+       if (updatedList.length === 0) {
+         setShowCompareDialog(false);
+       }
+       alert("Item removed from comparison list.");
+     };
+ 
+
   useEffect(() => {
     const savedCart = localStorage.getItem("cart");
     if (savedCart) {
@@ -196,6 +240,8 @@ const toggleWishlist = () => {
       setCount(count - 1);
     }
   };
+
+  
 
   if (loading) {
     return <div>Loading...</div>;
@@ -269,11 +315,13 @@ if (!product) {
                className="h-[18px] w-[18px] md:h-[24px] md:w-[24px]"
             />
             <button className="text-[14px] md:text-[18px] font-normal font-inter text-[#828282]">
+           
               Prev
             </button>
           </div>
           <div className="flex justify-start gap-[6px]">
             <button className="text-[14px] md:text-[18px] font-normal font-inter text-[#828282]">
+            
               Next
             </button>
             <Image
@@ -481,12 +529,12 @@ if (!product) {
 
         <div className="w-[278px] h-[26px] absolute top-[1330px] left-[15px] ms:left-[35px] xsm:left-[50px] lg:left-[600px] md:top-[1380px] lg:top-[970px] xl:top-[1072px] xl:left-[690px] xxl:left-[785px] xxxl:left-[950px] flex justify-between items-center">
           <div className="flex  justify-betweent gap-[5px] items-center w-[180px]">
-          <button
+         <button
             onClick={(e) => {
               e.preventDefault();
               toggleWishlist();
             }}
-            className="absolute  text-black text-opacity-70 font-thin text-2xl z-10"
+            className="absolute top-2 left-2 text-black text-2xl z-10"
           >
             {isWishlisted ? <RiHeart3Fill /> : <RiHeart3Line />}
           </button>
@@ -494,13 +542,17 @@ if (!product) {
               Add to Wishlist
             </button>
           </div>
-          <div className="flex justify-start gap-[5px] items-center">
+
+          
+          <div className="flex justify-start gap-[5px] items-center cursor-pointer">
             <Image
               src="/GitDiff (1).svg"
               alt=""
               height={20}
               width={20}
                className="md:h-[20px] h-[16px] w-[16px] md:w-[20px]"
+               onClick={() => addToCompare(product)}
+
             />
             <p className="font-inter text-[14px] md:text-[18px] font-normal text-[#4F4F4F]">
               Compare
@@ -606,8 +658,28 @@ if (!product) {
      <ShopSliders/>
      </div> 
 
-    
+      {showCompareDialog && (
+  <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50">
+    <div className="bg-white p-6 rounded-md shadow-lg w-1/2">
+      <h2 className="text-xl font-bold mb-4">Product Comparison</h2>
+      <ComparisonTable 
+        products={comparisonList} 
+        removeCompareItem={removeCompareItem} 
+      />
+      <button
+        onClick={() => setShowCompareDialog(false)}
+        className="mt-4 bg-red-500 text-white px-4 py-2 rounded-md"
+      >
+        Close
+      </button>
+    </div>
+  </div>
+)}
+
+
       </section>
+
+    
 
  {/* <div className="absolute md:top-[2403px] top-[2700px]">
         <Footer/>

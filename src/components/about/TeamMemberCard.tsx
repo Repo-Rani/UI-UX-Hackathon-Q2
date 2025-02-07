@@ -3,6 +3,8 @@ import Image from "next/image";
 import { TeamMemberCardsPropsTypes } from "../../../types/type";
 import { FaFacebookF, FaPinterest, FaTwitter, FaYoutube } from "react-icons/fa";
 
+
+
 const TeamMemberCard = ({ name, profession }: TeamMemberCardsPropsTypes) => {
   return (
     <>
@@ -15,11 +17,11 @@ const TeamMemberCard = ({ name, profession }: TeamMemberCardsPropsTypes) => {
           alt=""
           height={398}
           width={312}
-          className="w-[150px] xsm:w-[200px] h-[250px] md:w-[160px] lg:w-[250px] xl:h-[398px] xl:w-[312px]"
+          className="w-[145px] xsm:w-[200px] h-[250px] md:w-[160px] lg:w-[250px] xl:h-[398px] xl:w-[312px]"
         />
 
         {/* Card Details */}
-        <div className="w-[140px] xsm:w-[200px] lg:w-[250px] xl:w-[312px] xl:h-[88px] py-3 flex justify-between flex-col shadow-xl shadow-[#CDCDCD40]">
+        <div className="w-[140px] xsm:w-[200px] md:w-[180px] lg:w-[250px] xl:w-[312px] xl:h-[88px] py-3 flex justify-between flex-col shadow-xl shadow-[#CDCDCD40]">
           <h1 className="font-bold text-[16px] lg:text-[20px] font-helvetica text-[#4F4F4F] text-center">
             {name}
           </h1>

@@ -25,7 +25,7 @@ const LatestBlog = () => {
   }, []);
 
   return (
-    <section className="w-full flex justify-center items-center absolute xl:top-[6800px] xxl:top-[6907px] top-[5800px] sm:top-[6350px] md:top-[4800px] lg:top-[5100px] xlg:top-[6700px]">
+    <section className="w-full flex justify-center items-center absolute xl:top-[6800px] xxl:top-[6907px] top-[5750px] sm:top-[6350px] md:top-[4800px] lg:top-[5100px] xlg:top-[6700px]">
       <div className=" ">
         <span className="w-full font-greatvibes xlg:text-[32px] sm:text-[28px] text-[20px] font-normal text-[#ff9f0d] flex justify-center">
           Blog Post
@@ -39,7 +39,7 @@ const LatestBlog = () => {
           {latestBlogs.map((item, index) => (
             <div
               key={index}
-              className="w-[255px] h-[330px] ms:h-[345px] xsm:h-[400px] xsm:w-[320px] md:w-[240px] md:h-[342px] lg:w-[300px] lg:h-[390px] xl:w-[424px] xl:h-[553px] xlg:w-[350px] xlg:h-[455px] flex flex-col justify-center gap-[20px] xlg:gap-[25px] xl:gap-[35px] border-[1px] border-[#ffffff] p-4"
+              className="w-[255px] h-[330px] ms:h-[345px] xsm:h-[400px] xsm:w-[320px] md:w-[240px] md:h-[342px] lg:w-[300px] lg:h-[390px] xl:w-[424px] xl:h-[553px] xlg:w-[350px] xlg:h-[455px] flex flex-col justify-center gap-[20px] xlg:gap-[25px] xl:gap-[35px] border-[1px] border-[#ffffff] "
             >
               {/* Image */}
               <Image
@@ -48,7 +48,7 @@ const LatestBlog = () => {
                 height={349}
                 width={423}
                
-                className="w-full h-full object-cover"
+                className="w-full h-full relative ms:top-0 top-[10px] md:top-[2px] object-cover"
               />
 
               {/* Date */}

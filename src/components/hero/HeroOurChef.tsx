@@ -10,19 +10,19 @@ const OurChef = () => {
     <div
  
     className=" ">
-      <span className="w-[56px] h-[40px] font-greatvibes font-normal  lg:text-[32px] text-[22px] text-[#ff9f0d] relative xlg:bottom-[15px]  xlg:left-[560px] xl:left-[630px] md:left-[350px] lg:left-[430px] left-[60px] ">
+      <span className="w-[56px] h-[40px] font-greatvibes font-normal  lg:text-[32px] text-[22px] text-[#ff9f0d] relative xlg:bottom-[15px]  xlg:left-[560px] xl:left-[630px] md:left-[350px] lg:left-[430px] left-[40px] ">
         Chefs
       </span>
-      <h3 className="xlg:w-[329px] w-[200px] ms:w-[250px] xlg:h-[56px] font-helvetica lg:text-[48px] text-[25px] font-bold text-[#ffffff] relative xlg:bottom-[15px] xlg:left-[420px] xl:left-[500px] md:left-[300px] whitespace-nowrap ">
+      <h3 className="xlg:w-[329px] w-[200px] ms:w-[250px] xlg:h-[56px] font-helvetica lg:text-[48px] text-[25px] font-bold text-[#ffffff] relative xlg:bottom-[15px] xlg:left-[420px] xl:left-[500px] md:left-[300px] left-[-15px] whitespace-nowrap ">
         <span className="text-[#ff9f0d]">Me</span>et Our Chef
       </h3>
       <div
        
-      className="flex  flex-col  md:flex-row md:justify-center gap-[15px] xlg:justify-between relative top-[20px] md:left-[30px] xlg:left-[30px] md:righ-0  ms:right-[80px] right-[95px] xlg:w-[1150px] xl:w-[1320px] md:w-[700px] lg:w-[980px] w-[300px] ms:w-[350px] lg:h-[200px] xlg:h-[391px] h-[391px] ">
+      className="flex  flex-col  md:flex-row md:justify-center md:gap-[15px] xlg:justify-between relative top-[20px] md:left-[30px] xlg:left-[30px] md:righ-0 right-[85px]  xlg:w-[1150px] xl:w-[1320px] md:w-[700px] lg:w-[980px] w-[300px] ms:w-[350px] lg:h-[200px] xlg:h-[391px] h-[391px] ">
         <div
-          data-aos="flip-left"
-          data-aos-easing="ease-out-cubic"
-          data-aos-duration="1000"
+          // data-aos="flip-left"
+          // data-aos-easing="ease-out-cubic"
+          // data-aos-duration="1000"
         >
           <Image
             src="/chef-1.svg"
@@ -43,18 +43,18 @@ const OurChef = () => {
 
         <div 
         
-        data-aos="flip-left"
-        data-aos-easing="ease-out-cubic"
-        data-aos-duration="1000"
+        // data-aos="flip-left"
+        // data-aos-easing="ease-out-cubic"
+        // data-aos-duration="1000"
         >
           <Image
             src="/chef-2.svg"
             alt="chef-image"
             height={391}
             width={312}
-            className="rounded-[6px] w-[145px] ms:w-[180px] h-[180px] md:h-[210px] lg:h-[225px] lg:w-[190px] xlg:w-[312px] xlg:h-[391px]  relative bottom-[230px] md:bottom-0 left-[170px]   md:left-0 "
+            className="rounded-[6px] w-[145px] ms:w-[180px] h-[180px] md:h-[210px] lg:h-[225px] lg:w-[190px] xlg:w-[312px] xlg:h-[391px]  relative bottom-[227px] md:bottom-0 left-[160px]   md:left-0 "
           />
-          <div className="xlg:w-[181px] xlg:h-[67px] w-[100px] h-[45px] rounded-b-[6px] rounded-l-[6px] bg-[#ffffff] relative xl:bottom-[67px] xlg:bottom-[110px] bottom-[285px] md:bottom-[55px]  md:left-[30px] xlg:left-[25px] left-[210px] flex flex-col pl-5 pt-[6px]">
+          <div className="xlg:w-[181px] xlg:h-[67px] w-[100px] h-[45px] rounded-b-[6px] rounded-l-[6px] bg-[#ffffff] relative xl:bottom-[67px] xlg:bottom-[110px] bottom-[280px] md:bottom-[55px]  md:left-[30px] xlg:left-[25px] left-[190px] flex flex-col pl-5 pt-[6px]">
             <span className="w-[85px] ms:w-[95px] h-[26px] font-inter font-bold xlg:text-[18px] text-[12px] text-[#333333]">
               D.Scoriesh
             </span>
@@ -65,9 +65,9 @@ const OurChef = () => {
         </div>
 
         <div
-         data-aos="flip-left"
-         data-aos-easing="ease-out-cubic"
-         data-aos-duration="1000"
+        //  data-aos="flip-left"
+        //  data-aos-easing="ease-out-cubic"
+        //  data-aos-duration="1000"
         >
           <Image
             src="/chef-3.svg"
@@ -76,7 +76,7 @@ const OurChef = () => {
             width={312}
             className="rounded-[6px] xlg:w-[312px] xlg:h-[391px] w-[145px] ms:w-[180px] h-[180px] md:h-[210px] lg:h-[225px] lg:w-[190px] relative md:bottom-0 bottom-[250px]"
           />
-          <div className="xlg:w-[181px] xlg:h-[67px] w-[100px] h-[45px] rounded-b-[6px] rounded-l-[6px] bg-[#ffffff] relative xl:bottom-[67px] xlg:bottom-[110px] bottom-[300px] md:bottom-[55px]      left-[30px] flex flex-col pl-5 pt-[6px]">
+          <div className="xlg:w-[181px] xlg:h-[67px] w-[100px] h-[45px] rounded-b-[6px] rounded-l-[6px] bg-[#ffffff] relative xl:bottom-[67px] xlg:bottom-[110px] bottom-[300px] md:bottom-[55px]  left-[30px] flex flex-col pl-5 pt-[6px]">
             <span className="w-[85px] ms:w-[95px] h-[26px] font-inter font-bold xlg:text-[18px] text-[12px] text-[#333333]">
               M.William
             </span>
@@ -86,22 +86,22 @@ const OurChef = () => {
           </div>
         </div>
         <div
-         data-aos="flip-left"
-         data-aos-easing="ease-out-cubic"
-         data-aos-duration="1000"
+        //  data-aos="flip-left"
+        //  data-aos-easing="ease-out-cubic"
+        //  data-aos-duration="1000"
         >
           <Image
             src="/chef-4.svg"
             alt="chef-image"
             height={391}
             width={312}
-            className="rounded-[6px] w-[145px] ms:w-[180px] h-[180px] lg:h-[225px] md:h-[210px] lg:w-[190px] xlg:w-[312px] xlg:h-[391px]  relative md:bottom-0 bottom-[490px] md:left-0 left-[170px]"
+            className="rounded-[6px] w-[145px] ms:w-[180px] h-[180px] lg:h-[225px] md:h-[210px] lg:w-[190px] xlg:w-[312px] xlg:h-[391px]  relative md:bottom-0 bottom-[475px] md:left-0 left-[160px]"
           />
-          <div className="xlg:w-[181px] xlg:h-[67px] w-[100px] h-[45px] rounded-b-[6px] rounded-l-[6px] bg-[#ffffff] relative xl:bottom-[67px] xlg:bottom-[110px] bottom-[540px] md:bottom-[55px]  md:left-[30px] left-[210px] flex flex-col pl-5 pt-[6px]">
+          <div className="xlg:w-[181px] xlg:h-[67px] w-[100px] h-[45px] rounded-b-[6px] rounded-l-[6px] bg-[#ffffff] relative xl:bottom-[67px] xlg:bottom-[110px] bottom-[528px] md:bottom-[55px]  md:left-[30px] left-[190px] flex flex-col pl-5 pt-[6px]">
             <span className="w-[85px] ms:w-[95px] h-[26px] font-inter font-bold xlg:text-[18px] text-[12px] text-[#333333] whitespace-nowrap">
               W.ReadFroad
             </span>
-            <span className="w-[71px] h-[22px] font-inter font-normal xlg:text-[14px] text-[10px] text-[#333333] whitespace-nowrap">
+            <span className="w-[71px] h-[22px] font-inter font-normal xlg:text-[14px] text-[10px] text-[#333333] whitespace-nowrap text-center">
               Chef
             </span>
           </div>
@@ -111,7 +111,7 @@ const OurChef = () => {
       </div> 
 
        <Link href="/chef">
-      <button className="xlg:w-[155px] xlg:h-[50px] w-[80px] h-[30px] rounded-[25px] border-[1px] border-[#ff9f0d] relative xlg:left-[565px] xl:left-[590px] md:left-[340px] lg:left-[485px] xlg:top-[68px] lg:top-[70px] top-[60px] md:top-[-145px]  left-[15px] ms:left-[63px] flex items-center justify-center hover:scale-105 transition-all duration-300 ease-in-out">
+      <button className="xlg:w-[155px] xlg:h-[50px] w-[80px] h-[30px] rounded-[25px] border-[1px] border-[#ff9f0d] relative xlg:left-[565px] xl:left-[590px] md:left-[340px] lg:left-[485px] xlg:top-[68px] lg:top-[70px] top-[60px] md:top-[-145px]  left-[35px] ms:left-[63px] flex items-center justify-center hover:scale-105 transition-all duration-300 ease-in-out">
         <span className="font-inter font-normal xlg:text-[16px] text-[10px] text-[#ffffff]">See More</span>
       </button>
     </Link>   

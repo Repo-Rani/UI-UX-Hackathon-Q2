@@ -28,21 +28,21 @@ const LandingNavbar = () => {
   return (
     <header className="max-w-[1920px] w-full mx-auto  ">
       <div className="flex justify-center items-center w-full mx-auto ">
-        <nav className="  max-w-[1320px] xl:w-[1320px]  xlg:w-[1200px] h-[5.5rem] absolute top-[45px]  lg:flex justify-between   w-full  md:px-8  z-[10]  md:block hidden mx-auto">
+        <nav className="  max-w-[1320px] xl:w-[1320px]  xlg:w-[1200px]   h-[5.5rem] absolute top-[45px]  lg:flex justify-between   w-full  md:px-11  z-[10]  md:block hidden mx-auto">
           
           {/* Logo */}
-          <div className="h-[32px] w-[109px] absolute md:top-[-5px] lg:top-0   xxl:left-[605px] xl:left-[555px] lg:left-[500px] md:left-[350px]">
+          <div className=" absolute w-full flex justify-center  items-center  ">
             <Link
               href="/"
-              className="text-[20px] lg:text-[22px] xlg:text-[24px] font-bold text-white font-inter w-[109px] h-[32px] z-10"
+              className=" h-[32px] w-[109px] text-[20px] lg:text-[22px] xlg:text-[24px] font-bold text-white font-inter  z-10 flex justify-"
             >
               Food<span className="text-[#FF9F0D]">tuck</span>
             </Link>
           </div>
 
-         
           {/* Desktop Menu */}
-          <ul className="relative h-auto w-auto hidden md:flex flex-row translate-x-0 md:w-[280px] lg:w-[350px]  xl:w-[400px]   xxxl:w-[470px] justify-between items-center ">
+          <div className="w-full flex justify-start items-center ">
+          <ul className=" h-auto w-auto hidden md:flex flex-row translate-x-0 md:w-[280px] lg:w-[350px]  xl:w-[400px]   xxxl:w-[470px] justify-between items-center relative lg:top-[-50px] ">
 
           {navLinks.map((item) => (
             <li key={item.label}>
@@ -58,10 +58,11 @@ const LandingNavbar = () => {
           ))}
            
           </ul>
+          </div>
 
           {/* Search Bar */}
-
-          <div className="flex items-center gap-2 lg:gap-3 xl:w-[350px] md:w-[230px] lg:w-[270px] relative lg:top-[10px] md:top-[40px] md:left-[470px] xxl:left-[-20px] lg:left-0 xl:left-0">
+<div className="w-full flex justify-end ">
+          <div className="flex items-center  gap-2 lg:gap-3 xl:w-[350px] md:w-[230px] lg:w-[270px] relative lg:top-[10px] md:top-[40px]">
   {/* Search Bar */}
   
 <SearchBar/>
@@ -79,6 +80,7 @@ const LandingNavbar = () => {
   <PiHeart className="h-[24px] w-[24px] text-white "/>
   </Link>
 </div>
+</div>
         </nav>
       </div>
 
@@ -95,7 +97,7 @@ const LandingNavbar = () => {
         </button>
               )}
                {!isSearchOpen && (
-        <div className="h-[32px] w-[90px]  flex items-center justify-center">
+        <div className="h-[32px] w-[90px] ml-8 flex items-center justify-center">
           <Link
             href="/"
             className="text-[24px] font-bold text-white font-inter w-[109px] h-[32px] z-10"

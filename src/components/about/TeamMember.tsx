@@ -18,7 +18,7 @@ const AboutTeamMember = () => {
               sed pharetra dictum neque massa congue
             </p>
           </div>
-          <div className="flex justify-center items-center xl:mt-0 md:mt-[-100px] mt-[-320px]">
+          <div className="flex justify-center items-center xl:mt-0 sm:mt-[-100px] mt-[-320px]">
           <Image
             src="/about5.svg"
             alt="food-image"

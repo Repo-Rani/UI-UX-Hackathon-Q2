@@ -14,7 +14,7 @@ const Shop = () => {
         <div className="">
           <Banner mainHeading="Our Shop" name="Shop" />
 
-          <div className="absolute left-[20px] ms:left-[40px] sm:left-[30px] md:left-[10px] xxxl:left-[300px] xxl:left-[100px] sm:top-[560px] md:top-[520px]  top-[510px] xl:top-[565px] ">
+          <div className="absolute left-[20px] ms:left-[40px] sm:left-[30px] md:left-[10px] xxxl:left-[300px] xlg:left-[100px]  sm:top-[560px] md:top-[520px]  top-[510px] xl:top-[565px] ">
             <div className=" w-[230px] ms:w-[250px] xl:w-[332px] h-[46px] flex justify-center gap-[10px] lg:justify-between relative md:top-[37px] lg:top-[35px] xl:top-0">
               <span className="font-inter font-normal text-[16px] md:text-[18px] xl:text-[20px] xl:leading-[28px] w-[81px] h-[28px] text-[#333333] relative top-[10px]">
                 Sort By :
@@ -58,7 +58,7 @@ const Shop = () => {
 
          
 
-          <div>
+          <div className=" ">
            <ShopCard/>
           </div>
         

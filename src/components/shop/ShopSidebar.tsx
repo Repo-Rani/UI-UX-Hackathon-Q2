@@ -24,13 +24,13 @@ const ShopSidebar = ({handleCategoryChange}: FoodCategory) => {
     setIsSidebarOpen(!isSidebarOpen);
     
   };
-  const category =  "food"
+  const category = "Pizza"
   return (
     <>
 {/* For desktop screens */}
     <aside className='md:flex hidden'>
-    <div className="w-[312px] h-[1489px] relative top-[150px]   xxxl:left-[1308px] xl:left-[1050px] lg:left-[700px] md:left-[500px] xxl:left-[1108px] border-[1px] rounded-[6px] border-[#f2f2f2] ">
-        <div className="w-[248px] h-[46px] p-3 relative left-[25px] top-[1.5rem] bg-red-100 ">
+    <div className="lg:w-[312px] h-[1590px] w-[290px]  relative top-[150px]   xxxl:left-[1308px] xl:left-[1050px] lg:left-[700px] xlg:left-[850px] md:left-[450px] xxl:left-[1108px] border-[1px] rounded-[6px] border-[#f2f2f2] ">
+        <div className="w-[248px] h-[46px] p-3 relative lg:left-[25px]  left-[10px] top-[1.5rem] bg-red-100 ">
           <input
             type="text"
             placeholder="Search Porduct"
@@ -47,7 +47,7 @@ const ShopSidebar = ({handleCategoryChange}: FoodCategory) => {
           </div>
         </div>
 
-        <div className="w-[248px] h-[372px] relative top-[40px] left-[28px] flex flex-col justify-between items-center">
+        <div className="w-[248px] h-[372px] relative top-[40px] lg:left-[28px] left-[15px] flex flex-col justify-between items-center">
               <h2 className="font-helvetica font-bold text-[20px] text-[#333333] w-[248px] h-[28px]">
                 Category
               </h2>
@@ -72,7 +72,7 @@ const ShopSidebar = ({handleCategoryChange}: FoodCategory) => {
 <div/>
 </div>
 
-        <div className="relative top-[60px] left-[25px]">
+        <div className="relative top-[60px] lg:left-[25px] left-[15px]">
           <Image
             src="/shop-image.svg"
             alt="food-image"
@@ -94,7 +94,7 @@ const ShopSidebar = ({handleCategoryChange}: FoodCategory) => {
         </div>
       </div>
 
-      <div className="w-[248px] h-[87px] absolute  top-[1420px]  xxxl:left-[1333px] xl:left-[1080px] lg:left-[720px] xxl:left-[1140px] md:left-[520px]  flex flex-col justify-between ">
+      <div className="w-[248px] h-[87px] absolute  top-[1440px]  xxxl:left-[1333px] xl:left-[1080px] lg:left-[720px] xxl:left-[1140px] xlg:left-[870px] md:left-[470px]  flex flex-col justify-between ">
         <h1 className="text-[20px] font-bold text-black font-helvetica ">
           Filter By Price
         </h1>
@@ -102,8 +102,8 @@ const ShopSidebar = ({handleCategoryChange}: FoodCategory) => {
         category={category}
         setFilteredProducts={setFilteredProducts}
         setTotalPages={setTotalPages}
-        currentPage={currentPage} // Pass currentPage
-        setCurrentPage={setCurrentPage} // Pass setCurrentPage
+        currentPage={currentPage} 
+        setCurrentPage={setCurrentPage} 
       />
 
         <div className="flex justify-between w-[246px] h-[24px]">
@@ -116,7 +116,7 @@ const ShopSidebar = ({handleCategoryChange}: FoodCategory) => {
         </div>
       </div>
 
-      <div className="w-[252px] h-[368px] absolute top-[1530px] xxl:top-[1540px] xxxl:left-[1338px] lg:left-[720px] xl:left-[1080px] xxl:left-[1150px] md:left-[520px] ">
+      <div className="w-[252px] h-[368px] absolute top-[1580px] xxl:top-[1540px] xxxl:left-[1338px] lg:left-[720px] xl:left-[1080px] xxl:left-[1150px] xlg:left-[870px] md:left-[470px] ">
         <h1 className=" text-[20px] font-bold text-black font-helvetica mb-7 mt-5">
           Latest Products
         </h1>
@@ -221,7 +221,7 @@ const ShopSidebar = ({handleCategoryChange}: FoodCategory) => {
           </div>
         </div>
 
-        <div className="  w-[225px] h-[162px] relative top-[20px] xxl:top-[35px]">
+        <div className="  w-[225px] h-[162px] relative top-[35px]">
           <h2 className="font-helvetica text-[20px] font-bold w-[127px] h-[28px] text-[#333333] mb-5">
             Product Tags{" "}
           </h2>
@@ -264,7 +264,7 @@ const ShopSidebar = ({handleCategoryChange}: FoodCategory) => {
 
     {/* For mobile screen */}
      <button
-        className="block md:hidden fixed top-[510px] right-4  hover:bg-black bg-[#ff9f0d] z-40 p-2 rounded-full "
+        className="block md:hidden absolute top-[510px] right-4  hover:bg-black bg-[#ff9f0d] z-40 p-2 rounded-full "
         onClick={toggleSidebar}
       >
         <VscSettings className="h-5 w-5 text-white" />

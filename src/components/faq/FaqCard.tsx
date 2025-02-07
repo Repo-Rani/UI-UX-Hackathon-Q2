@@ -5,6 +5,7 @@ import { FaqProps } from "../../../types/type";
 import { useState, useEffect } from "react";
 import { client } from "@/sanity/lib/client";
 
+
 const fetchfaq = async (): Promise<FaqProps[]> => {
   const faqData = await client.fetch(`
     *[_type == "faq"]{
@@ -31,6 +32,7 @@ const FaqCard = () => {
   };
 
   const [faq, setFaq] = useState<FaqProps[]>([]);
+
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
@@ -55,7 +57,6 @@ const FaqCard = () => {
     <>
     
     <div className="flex justify-center items-center w-full ">
-    
     <div className="grid grid-cols-1 xl:grid-cols-2 md:gap-[35px] gap-[20px] ">
           {faq.map((faqItem) => (
             <div key={faqItem._id}>
@@ -86,7 +87,7 @@ const FaqCard = () => {
             </div>
           ))}
         </div>
-
+        
 </div>
     
     </>

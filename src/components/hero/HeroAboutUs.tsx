@@ -9,8 +9,8 @@ const HeroAboutUs = () => {
           <section className="md:w-[750px] w-[300px] xsm:w-[400px] sm:w-[550px] lg:w-[950px] xl:w-[1320px] xlg:w-[1200px] xl:h-[570px] md:h-[500px] sm:h-[830px]  h-[670px] absolute top-[600px] md:top-[580px] xlg:top-[1070px] xxl:left-[100px] xxxl:left-[300px] md:left-[10px] lg:left-[30px] xlg:left-[35px] xl:left-[65px] flex justify-center  items-center bg-transparent">
     
           <div className='w-full flex justify-center items-center px-3 md:px-0'>
-    <div className="w-full sm:w-[465px]  xl:w-[1320px] xl:h-[562px]  absolute top-[40px] xl:top-0 xsm:left-[10px]  md:left-0 lg:left-0  xlg:left-0   flex flex-col gap-[5px] xl:gap-[12px] ">
-    
+    <div className="w-full sm:w-[465px]  xl:w-[1320px] xl:h-[562px]  absolute top-[50px] xl:top-0 left-[10px] ms:left-[25px] xsm:left-[20px] md:left-0 lg:left-0  xlg:left-0   flex flex-col gap-[5px] xl:gap-[12px] ">
+    <div className='relative sm:left-[50px] md:left-0'>
     <span
       data-aos="fade-right"
       data-aos-delay="100"
@@ -81,12 +81,14 @@ const HeroAboutUs = () => {
     
         className=" flex flex-col  items-center md:flex-row md:items-start justify-center xsm:mt-3 mt-2  "
       >
-        <button className="bg-[#FF9F0D] hover:bg-[#E0DFDF] text-[10px] sm:text-[12px] xlg:text-[16px]   text-[#E0DFDF] hover:text-[#FF9F0D] hover:scale-105 transition-all duration-300 ease-in-out rounded-[30px]  w-[70px]  h-[28px] xsm:right-[100px] sm:w-[100px] sm:h-[38px]  xxxl:w-[190px] xxxl:h-[60px] xlg:w-[150px] xlg:h-[50px]  relative  right-[100px] md:right-[130px] lg:right-[130px] sm:right-[160px]  xlg:right-[160px] xxl:right-[140px]">
+        <button className="bg-[#FF9F0D] hover:bg-[#E0DFDF] text-[10px] sm:text-[12px] xlg:text-[16px]   text-[#E0DFDF] hover:text-[#FF9F0D] hover:scale-105 transition-all duration-300 ease-in-out rounded-[30px]  w-[70px]  h-[28px] xsm:right-[100px] sm:w-[100px] sm:h-[38px]  xxxl:w-[190px] xxxl:h-[60px] xlg:w-[150px] xlg:h-[50px]  relative  right-[100px] md:right-[130px] lg:right-[130px] sm:right-[160px]  xlg:right-[190px] xxl:right-[140px]">
           <Link href='/about'>Read More</Link>
         </button>
       </div> 
     </div>
-  <div className="relative ms:left-0 left-[10px]  md:top-[-420px]  top-[10px] xsm:top-[15px] sm:top-0 xlg:top-[-480px] xxl:top-[-460px] sm:left-[45px] lg:w-[400px] md:left-[430px] xl:left-[-280px] xlg:left-[-320px] xxl:left-[-340px] lg:top-[-420px] lg:left-[520px]  md:w-[310px] xlg:w-[660px] xxxl:left[960px]">
+    </div>
+    
+  <div className="relative left-[10px]  md:top-[-380px]  top-[10px] xsm:top-[15px] sm:top-0 xlg:top-[-450px] xxl:top-[-460px] sm:left-[45px] lg:w-[400px] md:left-[430px] xl:left-[-280px] xlg:left-[-320px] xxl:left-[-340px] lg:top-[-350px] lg:left-[520px]  md:w-[310px] xlg:w-[660px] xxxl:left[960px]">
     <Image
       src="/about-1.svg"
       alt="Hero Image"

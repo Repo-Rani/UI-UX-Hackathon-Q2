@@ -51,14 +51,12 @@ const Wishlist: React.FC = () => {
     }
   };
 
-  // Remove from cart function
   const removeFromCart = (productId: string) => {
     const updatedCart = cart.filter((item) => item.id !== productId);
     setCart(updatedCart);
     localStorage.setItem("cart", JSON.stringify(updatedCart));
   };
 
-  // Fetch cart from localStorage
   useEffect(() => {
     const savedCart = localStorage.getItem("cart");
     if (savedCart) {
@@ -66,7 +64,6 @@ const Wishlist: React.FC = () => {
     }
   }, []);
 
-  // Increase quantity function
   const increaseQuantity = (productId: string) => {
     const updatedCart = cart.map((item) =>
       item.id === productId
@@ -77,7 +74,6 @@ const Wishlist: React.FC = () => {
     localStorage.setItem("cart", JSON.stringify(updatedCart));
   };
 
-  // Decrease quantity function
   const decreaseQuantity = (productId: string) => {
     const updatedCart = cart.map((item) => {
       if (item.id === productId && (item.quantity ?? 0) > 1) {
@@ -89,14 +85,12 @@ const Wishlist: React.FC = () => {
     setCart(updatedCart);
     localStorage.setItem("cart", JSON.stringify(updatedCart));
   };
-
-  // Fetch wishlist from localStorage
+ localStorage
   useEffect(() => {
     const savedWishlist = JSON.parse(localStorage.getItem("wishlist") || "[]");
     setWishlist(savedWishlist);
   }, []);
 
-  // Remove from wishlist function
   const removeFromWishlist = (id: string) => {
     const updatedWishlist = wishlist.filter((item) => item._id !== id);
     setWishlist(updatedWishlist);
@@ -105,14 +99,14 @@ const Wishlist: React.FC = () => {
 
   return (
     <>
-      <div className="pt-[80px]"> 
+      <div className="md:pt-[65px] pt-[50px]"> 
         {wishlist.length === 0 ? (
           <div className="flex flex-col justify-center gap-y-[10px] w-full items-center mx-auto min-h-screen">
-            <h1 className="font-integralCf text-[28px] text-black text-center font-extrabold tracking-wider">
+            <h1 className="font-helvetica text-[28px] text-black text-center font-extrabold tracking-wider">
               Your Wishlist
             </h1>
             <div className="flex justify-center items-center gap-2">
-              <p className="text-black/50 font-satoshi">
+              <p className="text-black/50 font-helvetica">
                 Your Wishlist is Empty!
               </p>
               <PiSmileySad className="h-5 w-5 text-black/50" />
@@ -127,7 +121,7 @@ const Wishlist: React.FC = () => {
               className="h-[200px] w-[200px]"
             />
             <Link href="/shop">
-              <button className="bg-[#FF9F0D] w-[130px] h-[40px] rounded-[50px] border-none outline-none text-white font-satoshi flex justify-center items-center hover:bg-black/80">
+              <button className="bg-[#FF9F0D] w-[130px] h-[40px] rounded-[50px] border-none outline-none text-white font-helvetica flex justify-center items-center hover:bg-black/80">
                 Back to Shop
               </button>
             </Link>
@@ -135,10 +129,10 @@ const Wishlist: React.FC = () => {
         ) : (
           <div className="flex flex-col items-center h-auto w-full mx-auto gap-y-[20px] justify-center relative top-[70px]">
 
-<h1 className="font-integralCf text-[28px] text-black text-center font-extrabold tracking-wider">
+<h1 className="font-helvetica text-[28px] text-black text-center font-bold tracking-wider">
               Your Wishlist
             </h1>
-            <div className="grid grid-cols-5 w-[1000px] px-6 py-4 bg-BannerBgColor border-b-[1px] border-black/90 rounded-[4px] font-helvetica text-center">
+            <div className="grid grid-cols-5 xlg:w-[1000px] lg:w-[900px] md:w-[700px] w-[300px] px-6 py-4 bg-[#FF9F0D] border-b-[1px]  text-white rounded-[4px] font-helvetica text-center">
               <div>Product</div>
               <div>Product Name</div>
               <div>Price</div>
@@ -149,7 +143,7 @@ const Wishlist: React.FC = () => {
               {wishlist.map((item) => (
                 <div
                   key={item._id}
-                  className="grid grid-cols-5 items-center px-6 py-4 border-b-[1px] border-gray-300 font-satoshi text-center"
+                  className="grid grid-cols-5 items-center px-6 py-4 border-b-[1px] border-gray-300 font-helvetica text-center"
                 >
                   <div>
                     <Image
@@ -191,7 +185,7 @@ const Wishlist: React.FC = () => {
                         };
                         addToCart(product);
                       }}
-                      className="bg-[#FF9F0D] text-white font-satoshi text-[14px] rounded-[50px] flex justify-center items-center w-[200px] h-[40px]"
+                      className="bg-[#FF9F0D] text-white font-helvetica text-[14px] rounded-[50px] flex justify-center items-center w-[200px] h-[40px]"
                     >
                       Add to Cart
                     </button>
@@ -208,7 +202,7 @@ const Wishlist: React.FC = () => {
             <SheetTrigger asChild>
               <Button
                 variant="outline"
-                className="fixed bottom-6 right-6 font-satoshi bg-[#FF9F0D] text-white p-4 rounded-full flex items-center justify-center text-lg cursor-pointer w-[50px] h-[50px] hover:text-white hover:bg-black"
+                className="fixed bottom-6 right-6 font-helvetica bg-[#FF9F0D] text-white p-4 rounded-full flex items-center justify-center text-lg cursor-pointer w-[50px] h-[50px] hover:text-white hover:bg-black"
                 onClick={() => setShowCart(!showCart)}
               >
                 <div className="w-[15px] h-[15px] flex justify-center items-center bg-white text-black rounded-full text-[10px] absolute top-[8px] left-[25px]">
@@ -219,14 +213,14 @@ const Wishlist: React.FC = () => {
             </SheetTrigger>
             <SheetContent className="overflow-y-auto h-[100vh] max-w-[100vw] w-full px-4 py-6">
               <SheetHeader>
-                <h2 className="text-2xl font-semibold mb-4 font-integralCf uppercase">
+                <h2 className="text-2xl font-semibold mb-4 font-helvetica uppercase">
                   Your Cart
                 </h2>
               </SheetHeader>
               <div>
                 {cart.length === 0 ? (
                   <div className="flex justify-start gap-1 items-center">
-                    <p className="text-lg text-gray-500 font-satoshi">
+                    <p className="text-lg text-gray-500 font-helvetica">
                       Your cart is empty
                     </p>
                     <PiSmileySad className="h-[20px] w-[20px] text-gray-500" />
@@ -244,7 +238,7 @@ const Wishlist: React.FC = () => {
                         />
                         <div className="flex flex-col">
                           <div className="flex justify-between items-center w-full sm:w-[270px]">
-                            <h3 className="font-semibold text-black font-satoshi">
+                            <h3 className="font-semibold text-black font-helvetica">
                               {item.name}
                             </h3>
                             <PiTrashFill
@@ -253,7 +247,7 @@ const Wishlist: React.FC = () => {
                             />
                           </div>
                           <div className="flex justify-between items-center w-full sm:w-[270px]">
-                            <p className="text-black font-satoshi font-bold text-[16px]">
+                            <p className="text-black font-helvetica font-bold text-[16px]">
                               ${item.price}
                             </p>
                             <div className="flex justify-center items-center gap-2 bg-BannerBgColor rounded-full px-3 py-2 h-8">
@@ -261,7 +255,7 @@ const Wishlist: React.FC = () => {
                                 onClick={() => increaseQuantity(item.id)}
                                 className="h-4 w-4 text-black cursor-pointer"
                               />
-                              <p className="text-[14px] text-black font-satoshi font-bold">
+                              <p className="text-[14px] text-black font-helvetica font-bold">
                                 {item.quantity}
                               </p>
                               <RiSubtractLine
@@ -279,7 +273,7 @@ const Wishlist: React.FC = () => {
               <div className="mt-4 flex flex-col sm:flex-row justify-center gap-4 items-center">
                 <Link
                   href="/cart"
-                  className="w-full sm:w-full h-[50px] bg-[#FF9F0D] text-white font-satoshi text-[15px] font-medium rounded-full flex justify-center items-center"
+                  className="w-full sm:w-full h-[50px] bg-[#FF9F0D] text-white font-helvetica text-[15px] font-medium rounded-full flex justify-center items-center"
                 >
                   <button>View cart</button>
                 </Link>

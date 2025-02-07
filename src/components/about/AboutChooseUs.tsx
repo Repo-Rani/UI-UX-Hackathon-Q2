@@ -4,7 +4,7 @@ const AboutChooseUs = () => {
   return (
     <>
  <section className="w-full flex justify-center items-center">
-      <div className="w-[300px]  md:w-[750px] xl:w-[1320px] h-[500px] md:h-[670px] xl:h-[865px] absolute md:top-[1100px] lg:top-[1250px]  xl:top-[1384px] xxl:top-[1450px] top-[1250px]  xsm:top-[1420px] sm:top-[1000px]  flex flex-col justify-between">
+      <div className="w-[300px]  md:w-[750px] xl:w-[1320px] xlg:w-[1150px] h-[500px] md:h-[670px] xl:h-[865px] absolute md:top-[1100px] lg:top-[1250px]  xl:top-[1384px] xxl:top-[1450px] top-[1250px]  xsm:top-[1420px] sm:top-[1000px]  flex flex-col justify-between">
         <div className=" h-[112px] flex flex-col justify-center text-center ">
           <h1 className="font-helvetica text-[22px] xsm:text-[24px] md:text-[36px] xl:text-[48px] font-bold text-[#333333] relative bottom-2">
             Why Choose us
@@ -21,9 +21,10 @@ const AboutChooseUs = () => {
           alt=""
           height={386}
           width={1320}
-          className="xl:w-[1320px] lg:w-[1000px] md:w-[750px] sm:w-[550px] xsm:w-[425px] ms:w-[350px] w-[300px] h-[386px]  "
+          className="xl:w-[1320px] xlg:w-[1150px] lg:w-[1000px] md:w-[750px] sm:w-[550px] xsm:w-[425px] ms:w-[350px] w-[300px] h-[386px] xlg:mt-5 xl:mt-0  "
         />
-        <div className=" w-[300px] xl:w-[1320px] lg:w-[700px] md:w-[750px] h-[253px] flex lg:flex-row   flex-col md:justify-between justify-center lg:gap-0 gap-[30px] items-center relative md:top-0  lg:top-[30px]  top-[60px]">
+        
+        <div className=" w-[300px] xl:w-[1320px] xlg:w-[1100px] lg:w-[970px] md:w-[750px] h-[253px] flex lg:flex-row   flex-col md:justify-between justify-center lg:gap-0 gap-[30px] items-center relative md:top-0  lg:top-[30px] lg:left-[-100px]  xlg:left-0  top-[60px]">
           <div className="xsm:w-[359px] lg:w-[300px] xl:w-[359px] w-[300px] h-[225px] flex flex-col justify-between items-center">
             <Image
               src="/Student.svg"

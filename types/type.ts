@@ -1,3 +1,6 @@
+import { TypedObject } from "@portabletext/types";
+
+
 export interface ToggleButtonProps {
   onClick: () => void;
   isOpen: boolean;
@@ -35,6 +38,7 @@ export interface ShopCardProps {
   img?: string;
   quantity?: number;
   total?: number;
+  createdAt?: string; 
 }
 export interface BlogCardProps {
   id: string;
@@ -78,11 +82,7 @@ export interface TeamMemberCardsPropsTypes {
   name: string;
   profession: string;
 }
-export interface FaqProps {
-  _id: string;
-  question: string;
-  answer: string;
-}
+
 
 export interface NextArrowsProps {
   onClick: () => void;
@@ -120,6 +120,7 @@ export interface SliderShopCardProps {
   price: string;
   discountPrice?: string;
   sell?: string;
+  
 }
 export interface PaginationProps {
   currentPage: number;
@@ -202,3 +203,89 @@ export interface ContactFormData {
   phoneNumber: string;
   message: string;
 }
+
+export interface OrderData {
+  productId: string;
+  productName: string;
+  quantity: number;
+  totalAmount: number;
+  status: string;
+  originalPrice: number;
+}
+
+export interface Order {
+  orderId: string;
+  userId: string;
+  orderDate: string;
+  orderData: OrderData[];
+}
+
+export interface ShipmentData {
+  orderId: string;
+  userName: string;
+  userEmail: string;
+  userPhone: string;
+  countryCode: string;
+  shippingAddress: string;
+  status: string;
+  trackingNumber: string;
+  shipmentDate: string;
+  deliveryDate: string;
+  carrier: string;
+}
+
+export interface Orders {
+  orderId: string;
+  productId: string;
+  productName: string;
+  productPrice: number;
+  quantity: number;
+}
+
+export interface UserData {
+  userId: string;
+  name: string;
+  email: string;
+  phoneNumber: string;
+  countryCode: string;
+  address: string;
+  order: Orders[];
+}
+
+export interface Message {
+  user: "User" | "Bot";
+  text: string;
+}
+
+export interface FaqProps {
+  _id: string;
+  question: string;
+  answer: string;
+}
+
+export interface Guide {
+  title: string;
+  content: TypedObject[]; 
+  slug: { current: string };
+}
+
+export interface GuideDetailsProps {
+  guide: Guide;
+  onBack: () => void; 
+}
+export interface UserPageGuide {
+  _id: string;
+  title: string;
+  content: TypedObject[];
+  slug: { current: string };
+}
+
+export interface GuideList {
+  slug: { current: string };
+  title: string;
+}
+export interface UserGuideListProps {
+  guides: GuideList[]; 
+  onGuideClick: (guide: GuideList) => void;
+}
+

@@ -5,7 +5,7 @@ const AboutFoodMenu = () => {
   return (
     <>
     < section className="flex justify-center items-center w-full relative ">
-      <div className="w-[300px] sm:w-[550px] md:w-[650px] lg:w-[950px] xl:w-[1035px] xxl:w-[1320px] md:h-[1000px] lg:h-[941px] absolute md:top-[3860px] lg:top-[3440px] xl:top-[3800px] xxl:top-[3500px] top-[3200px] sm:top-[3000px] xsm:top-[3350px] ">
+      <div className="w-[300px] sm:w-[550px] md:w-[650px] lg:w-[950px] xl:w-[1035px] xxl:w-[1320px] md:h-[1000px] lg:h-[941px] absolute md:top-[3050px]  xl:top-[3500px] xxl:top-[3500px] top-[2800px] xsm:top-[3000px] sm:top-[2580px]  ">
         <Image
           src="/about6.svg"
           alt=""
@@ -22,7 +22,7 @@ const AboutFoodMenu = () => {
           Lorem ipsum dolor sit amet, consectetur adipiscing elit. Varius sed
           pharetra dictum neque massa congue
         </p>
-        <div className="w-[320px] md:w-[500px] xl:w-[560px] xxl:w-[622px] h-[28px] flex md:justify-between justify-center md:gap-0 gap-[25px] items-center flex-wrap relative top-[35px] xsm:top-[50px] mx-auto">
+        <div className="w-[310px]  sm:w-[500px] xl:w-[560px] xxl:w-[622px] h-[28px] flex md:justify-between justify-center md:gap-0 gap-[25px] items-center flex-wrap relative top-[35px] xsm:top-[50px] mx-auto">
           {["Breakfast", "Lunch", "Dinner", "Dessert", "Drink", "Snack"].map(
             (item, index) => (
               <Link
@@ -35,8 +35,8 @@ const AboutFoodMenu = () => {
             )
           )}
         </div>
-        <div className="w-[300px] sm:w-[580px] md:w-[690px] lg:w-[950px] xl:w-[1100px] xxl:w-[1320px] border-b-[1px] border-[#E0E0E0] relative top-[110px] md:top-[65px]"></div>
-        <div className="grid grid-cols-1 lg:grid-cols-2 md:gap-[20px] overflow-hidden">
+        <div className="w-[300px] sm:w-[580px] md:w-[650px] lg:w-[950px] xl:w-[1100px] xxl:w-[1320px] border-b-[1px] border-[#E0E0E0] relative top-[110px] md:top-[65px]"></div>
+        <div className="grid grid-cols-1 lg:grid-cols-2 md:gap-[20px] lg:gap-[50px] xlg:gap-[20px] overflow-hidden">
           <div className="xl:w-[1100px] xxl:w-[1320px] md:h-[460px] lg:h-[600px] relative top-[130px] sm:left-[150px] md:left-0 xxl:left-[100px] ">
             <div className="w-[300px] lg:w-[450px] md:w-[648px] h-[111px] flex justify-between flex-col">
               <div className="flex justify-between">

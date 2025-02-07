@@ -5,18 +5,18 @@ import Image from "next/image";
 const HeroFoodCategory = () => {
   return (
     <>
-           <section className="xl:w-[1320px] xlg:w-[1200px] lg:w-[1000px] sm:h-[489px] w-full h-[1200px] absolute md:top-[1130px] lg:top-[1120px]  xlg:top-[1752px] xlg:left-[15px] sm:top-[1480px] xxxl:left-[300px] xxl:left-[100px] xsm:top-[1300px]  top-[1330px] rounded-[6px] ">
+           <section className="xl:w-[1320px] xlg:w-[1200px] lg:w-[1000px] sm:h-[489px] w-full h-[1200px] absolute md:top-[1130px] lg:top-[1120px]  xlg:top-[1752px] xlg:left-[15px] sm:top-[1480px] xxxl:left-[300px] xxl:left-[100px]   top-[1330px] rounded-[6px] ">
     
       <div className="w-full flex justify-center items-center flex-col">
-        <span className="w-[177px] h-[40px] relative font-greatvibes text-normal text-[#FF9F0D] text-[24px] md:text-[32px]  xlg:leading-[40px] xsm:left-[10px] sm:left-0 ">
+        <span className="w-[177px] h-[40px] relative font-greatvibes text-normal text-[#FF9F0D] text-[24px] sm:text-[32px]  xlg:leading-[40px] xsm:left-[10px] sm:left-0 ">
           Food Category
         </span>
-        <h2 className="md:w-[446px] md:h-[56px] relative  ms:left-[15px] xsm:left-[-10px] sm:left-[10px]  md:left-0 text-center font-helvetica font-bold text-[26px] md:text-[35px] lg:text-[48px] mb-[15px]  text-[#ffffff]">
+        <h2 className="md:w-[446px] md:h-[56px] relative  ms:left-[15px] xsm:left-[-10px] sm:left-[10px]  md:left-0 text-center font-helvetica font-bold text-[26px] sm:text-[35px] lg:text-[48px] mb-[15px]  text-[#ffffff]">
           <span className="text-[#FF9F0D]">Ch</span>oose Food Iteam
         </h2>
       </div>
       <div className="flex justify-center items-center w-full px-6 sm:px-0 ">
-        <div className="grid grid-cols-2 md:grid-cols-4 lg:gap-[15px] gap-[12px] md:gap-[10px]  sm:gap-x-[10px] w-[300px] h-[400px]  sm:w-[400px]  md:w-[700px]  lg:w-[900px] xlg:w-[1250px] xxl:w-[1320px]  rounded-[6px] relative   xlg:top-[50px] ">
+        <div className="grid grid-cols-2 md:grid-cols-4 lg:gap-[15px] gap-[12px] md:gap-[10px]  sm:gap-x-[10px] w-[300px] h-[400px]  sm:w-[400px]  md:w-[700px]  lg:w-[900px] xlg:w-[1250px] xxl:w-[1320px]  rounded-[6px] relative sm:top-[20px]   xlg:top-[50px] ">
           <div className="relative">
             <Image
               src="/c1.svg"

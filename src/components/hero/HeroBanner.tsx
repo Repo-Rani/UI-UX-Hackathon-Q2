@@ -33,19 +33,19 @@ const HeroBanner = () => {
                 <div className="  w-[50px] lg:w-[80px] xlg:w-[145px] xxxl:w-[158px] relative top-[80px] xlg:top-[305px] lg:top-[140px] border-[1px] -rotate-90 border-[#ffffff] left-[-17px] xlg:left-[-67px]  lg:left-[-30px]"></div>
               </div>
             </div>
-            <div className="flex justify-center flex-col absolute lg:h-[450px] md:h-[410px]   xxxl:left-[300px] xxl:left-[130px] xxxl:top-[240px]  xlg:left-[110px] xlg:top-[90px] md:top-0 lg:left-[80px]   md:left-[60px] sm:left-[180px] top-[60px] left-[60px] ms:left-[80px] xsm:left-[100px]">
+            <div className="flex justify-center flex-col absolute lg:h-[450px] md:h-[410px]   xxxl:left-[300px] xxl:left-[130px] xxxl:top-[240px]  xlg:left-[110px] xlg:top-[60px] md:top-0 lg:left-[80px]   md:left-[60px] sm:left-[180px] top-[60px] left-[60px] ms:left-[80px] xsm:left-[100px]">
               <div className="   xlg:w-[472px]  xxxl:h-[356px] h-[80px] rounded-[30px] space-y-3 xlg:space-y-6">
                 <span
                   // data-aos="fade-right"
                   // flip-down
-                  className="font-greatvibes font-normal text-[18px] lg:text-[25px]  xlg:text-[32px]  relative md:top-[20px] top-[10px]  text-[#FF9F0D]"
+                  className="font-greatvibes font-normal text-[18px] sm:text-[25px] md:text-[18px] lg:text-[25px]  xlg:text-[32px]  relative md:top-[20px] top-[10px]  text-[#FF9F0D]"
                 >
                   Its Quick & Amusing!
                 </span>
                 <h1
                   data-aos="fade-left"
                   data-aos-delay="200"
-                  className="font-helvetica font-bold text-[26px] lg:text-[32px] xlg:text-5xl  text-white"
+                  className="font-helvetica font-bold text-[26px] sm:text-[32px] md:text-[26px] lg:text-[32px] xlg:text-5xl  text-white"
                 >
                   <span className="text-[#FF9F0D]">Th</span>e Art of speed{" "}
                   <br />
@@ -55,11 +55,11 @@ const HeroBanner = () => {
                 <p
                   data-aos="fade-right"
                   data-aos-delay="300"
-                  className="font-inter font-normal  text-[8px] ms:text-[10px] lg:text-[12px] xlg:text-[16px] xlg:leading-[24px] text-[#FFFFFF]    "
+                  className="font-inter font-normal  text-[8px] ms:text-[10px] sm:text-[12px] xlg:text-[16px] xlg:leading-[24px] text-[#FFFFFF]    "
                 >
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit.{" "}
-                  <br />
-                  Varius sed pharetra dictum neque massa congue
+                 Bringing you the finest flavors, one delicious bite at a time. 
+<br />  
+Where every meal is a celebration of taste and tradition.
                 </p>
                 <button
                   data-aos="fade-left"
@@ -72,7 +72,7 @@ const HeroBanner = () => {
             </div>
 
             {/* Right side */}
-            <div className="w-full flex xxl:justify-start  justify-center  relative top-[50px] md:top-[120px] xxl:top-[150px]">
+            <div className="w-full flex xxl:justify-start  justify-center  relative top-[50px] sm:top-[70px] md:top-[120px] xxl:top-[150px]">
               <div className=" ">
                 <Image
                   src="/Image (2).svg"

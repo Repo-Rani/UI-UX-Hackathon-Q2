@@ -6,23 +6,26 @@ import { useState, useEffect } from "react";
 import Link from "next/link";
 import { PiTrashFill } from "react-icons/pi";
 
-import { GoChevronRight } from "react-icons/go";
 import { IoAddOutline } from "react-icons/io5";
 import { RiSubtractLine } from "react-icons/ri";
 import { CartProps } from "../../../types/type";
 import { HiOutlineShoppingBag } from "react-icons/hi2";
+import dynamic from "next/dynamic";
+
+const CheckoutModal = dynamic(
+  () => import("../../components/OrderSystem/CheckOutModal"),
+  {
+    ssr: false,
+  }
+);
 const Cart = () => {
-  // const [count, setCount] = useState(1);
-  // const handleIncrement = () => {
-  //   setCount(count + 1);
-  // };
-  // const handleDecrement = () => {
-  //   if (count > 1) {
-  //     setCount(count - 1);
-  //   }
-  // };
+  
   const [validPromo, setValidPromo] = useState<boolean>(false);
   const [promoCode, setPromoCode] = useState<string>("");
+  const [isModalOpen, setIsModalOpen] = useState(false);
+  const [orderSucess, setOrderSuccess] = useState<any | boolean>(false);
+
+
   const [cart, setCart] = useState<CartProps[]>(() => {
     if (typeof window !== "undefined") {
       const savedCart = localStorage.getItem("cart");
@@ -58,6 +61,8 @@ const Cart = () => {
       updateCart(updatedCart);
     }
   };
+  
+
   const subtotal = cart.reduce(
     (acc, item) => acc + item.price * item.quantity,
     0
@@ -73,6 +78,23 @@ const Cart = () => {
       alert("Invalid Promo Code");
     }
   };
+  const handleOpenModal = () => {
+    if (cart.length === 0 || subtotal === 0) {
+      // subtotal ko call nahi karein, direct use karein
+      alert("Please add items to your cart before proceeding to checkout.");
+      return;
+    }
+    setIsModalOpen(true);
+  };
+
+  const handleSubmitForm = (formData: any) => {
+    console.log(formData);
+    localStorage.removeItem("cart");
+    setCart([]);
+  };
+
+  const handleCloseModal = () => setIsModalOpen(false);
+
 
 
   return (
@@ -97,7 +119,7 @@ const Cart = () => {
           </div>
         ) : (
 
-          <section className="w-full sm:w-[550px] md:w-full xl:w-[1320px] h-[765px] items-center absolute top-[570px] ms:left-[-5px] xsm:left-[-35px] lg:left-0 md:left-[-50px] sm:left-[15px] xl:left-[70px] xxl:left-[130px] xxxl:left-[301px] flex flex-col justify-between">
+          <section className="w-full sm:w-[550px] md:w-full xl:w-[1320px] h-[765px] items-center absolute top-[670px] ms:left-[-5px] xsm:left-[-35px] lg:left-0 md:left-[-50px] sm:left-[15px] xl:left-[70px] xxl:left-[130px] xxxl:left-[301px] flex flex-col justify-between">
           {/* Headings */}
           <div className="w-[300px] lg:w-[700px] md:w-[600px] sm:w-[550px] xl:w-[1325.86px] h-[29.04px] relative lg:left-[-85px] sm:left-[20px] xl:left-0 top-[-30px] flex justify-between">
             <h2 className="w-[50px] sm:w-[100px] h-[29.04px] font-inter font-bold text-[16px] md:text-[18px] text-[#333333]">
@@ -116,7 +138,7 @@ const Cart = () => {
             {cart.map((product, index) => (
               <div
                 key={index}
-                className="flex justify-between items-center w-full border-b border-gray-200 py-4 relative top-[-380px]"
+                className="flex justify-between items-center w-full border-b border-gray-200 py-4 relative top-[-580px]"
               >
                 {/* Product Column */}
                 <div className="flex items-center justify-between w-[200px] sm:w-[300px]">
@@ -178,15 +200,14 @@ const Cart = () => {
            
 
 {/* Coupon code and subtotal part */}
-<div className="w-[300px] xl:w-[1320px] h-[338px] absolute sm:top-[1350px] top-[1270px] xl:top-[1414px] left-[10px] ms:left-[35px] sm:left-[50px] md:left-[80px] lg:left-[30px] xl:left-[50px] xxl:left-[130px] xxxl:left-[301px] flex justify-between">
+<div className="w-[300px] xl:w-[1320px] h-[338px] absolute sm:top-[1350px] top-[1270px] xl:top-[530px] left-[10px] ms:left-[35px] sm:left-[50px] md:left-[80px] lg:left-[30px] xl:left-[-15px] xxl:left-[130px] xxxl:left-[301px] flex justify-between">
 <div className="w-[300px] xl:w-[648px] h-[252px] justify-between flex flex-col">
   <h1 className="font-halvetica text-[22px] sm:text-[28px] xl:text-[32px] font-bold text-black">
     Coupon Code
   </h1>
   <div className="flex flex-col justify-center xl:pr-0 pr-2 pl-2 xl:pl-6 gap-[20px] w-[300px] ms:w-[320px] sm:w-[500px] lg:w-[400px] xl:w-[648px] h-[188px] rounded-[6px] border-[1px] border-[#E0E0E0] relative xl:top-0 top-[-15px]">
     <p className="font-inter font-normal text-[14px] sm:text-[14px] xl:text-[18px] text-[#828282] w-[300px] sm:w-[400px] xl:w-[472px]">
-      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque
-      diam pellentesque bibendum non
+    Unlock exclusive savings with our special coupon code! Enjoy amazing discounts on your favorite products. Limited-time offer grab your deal now!
     </p>
     <div className="w-[280px] md:w-[420px] lg:w-[380px] xl:w-[598px] h-[50px] xl:h-[62px] rounded-[6px] border-[1px] border-[#E0E0E0] flex justify-between left-[-10px]">
       <input
@@ -260,6 +281,38 @@ const Cart = () => {
                   
           
             )}
+
+<div className="flex justify-between lg:items-center mt-6 lg:flex-row flex-col lg:gap-0 gap-4">
+<button
+            onClick={handleOpenModal}
+            className="px-6 py-2 bg-darkPrimary text-black rounded-md hover:bg-navbarColor mt-28"
+          >
+            Go to checkout
+          </button>
+        {/* </SignedIn> */}
+
+        {isModalOpen && (
+          <CheckoutModal
+            isOpen={setIsModalOpen}
+            onSubmit={(formData) => {
+              console.log("Order Submitted", formData);
+              setTimeout(() => {
+                setIsModalOpen(false); 
+                setOrderSuccess(false); 
+              }, 5000);
+            }}
+            cartItems={cart}
+            closeModal={handleCloseModal}
+            orderSuccess={setOrderSuccess}
+            setCartItems={setCart} 
+            calculateSubtotal={subtotal}
+          />
+        )}
+
+        <button className="px-6 py-2 bg-darkPrimary text-black rounded-md hover:bg-navbarColor">
+          <Link href="/products">Continue Shopping</Link>
+        </button>
+      </div>  
           
       </>
     );

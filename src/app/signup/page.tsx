@@ -9,7 +9,7 @@ const SignUp = () => {
         <Banner name="sign up" mainHeading="Sign up page" />
       </div>
       <section className="flex justify-center  items-center">
-      <div className="w-[250px] ms:w-[300px] md:w-[424px] h-[600px] absolute top-[540px]  md:top-[630px]  shadow-2xl shadow-[#E0E0E0]">
+      <div className="w-[250px] ms:w-[300px] md:w-[424px] h-[630px] absolute top-[540px]  md:top-[630px]  shadow-2xl shadow-[#E0E0E0]">
 
         <h1 className="text-[18px] w-[150px] md:text-[20px] font-bold font-helvetica relative top-[35px] left-[10px] ms:left-[35px] text-[#333333]">
           Sign Up
@@ -112,8 +112,8 @@ const SignUp = () => {
         </div>
         </div>
       </section>
-{/*       
-      <div className="absolute md:top-[1410px] top-[1210px]">
+      
+      {/* <div className="absolute md:top-[1410px] top-[1210px]">
         <Footer />
       </div> */}
     </>
