@@ -24,7 +24,6 @@ const ShopSidebar = ({handleCategoryChange}: FoodCategory) => {
     setIsSidebarOpen(!isSidebarOpen);
     
   };
-  const category = "Pizza"
   return (
     <>
 {/* For desktop screens */}
@@ -99,7 +98,7 @@ const ShopSidebar = ({handleCategoryChange}: FoodCategory) => {
           Filter By Price
         </h1>
         <RangeSlider
-        category={category}
+        category={""}
         setFilteredProducts={setFilteredProducts}
         setTotalPages={setTotalPages}
         currentPage={currentPage} 

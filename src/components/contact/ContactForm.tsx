@@ -27,7 +27,7 @@ const ContactForm = () => {
               Thanks for Choosing Foodtuck!
             </h1>
             <p className="sm:text-sm text-[12px] text-gray-500 mt-4 xxl:text-[16px] font-helvetica max-w-[500px] leading-5 tracking-wider">
-            At Foodtuck, we are passionate about bringing your culinary dreams to life in the digital world. Whether you're a small food truck or a growing restaurant chain, we offer a complete suite of services—from mouth-watering branding and concept development to seamless e-commerce solutions and irresistible marketing strategies. 
+            At Foodtuck, we are passionate about bringing your culinary dreams to life in the digital world. Whether you are a small food truck or a growing restaurant chain, we offer a complete suite of services—from mouth-watering branding and concept development to seamless e-commerce solutions and irresistible marketing strategies. 
             </p>
             <div className="md:mt-12 mt-6">
               <h2 className="text-gray-800 text-base font-bold xxl:text-[20px]">

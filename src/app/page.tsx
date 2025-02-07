@@ -4,7 +4,7 @@ import { motion, AnimatePresence } from "framer-motion";
 import HeaderHero from "@/components/hero/Hero";
 import AOS from "aos";
 import "aos/dist/aos.css";
-import Footer from "@/components/footer/LandingFooter";
+// import Footer from "@/components/footer/LandingFooter";
 
 // const Loader = ({ isVisible }: any) => {
 //   const text = "Foodtuck";
@@ -187,9 +187,9 @@ export default function Home() {
         <>
           <div className='bg-[#0D0D0D] w-full max-w-[1920px] h-[8000px]'>
             <HeaderHero />
-            <div className="absolute md:top-[8270px] top-[7060px]">
+            {/* <div className="absolute md:top-[8270px] top-[7060px]">
               <Footer />
-            </div>
+            </div> */}
           </div>
         </>
       )}

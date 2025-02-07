@@ -55,14 +55,6 @@ const [showCompareDialog, setShowCompareDialog] = useState(false);
   const { toast } = useToast();
 const [isWishlisted, setIsWishlisted] = useState(false);
 
-useEffect(() => {
-  if (product) { 
-    const storedWishlist = localStorage.getItem("wishlist");
-    const wishlist: ShopCardProps[] = storedWishlist ? JSON.parse(storedWishlist) : [];
-    setIsWishlisted(wishlist.some((item) => item.id === product.id));
-  }
-}, [product?.id]); 
-
 const toggleWishlist = () => {
   if (!product) { 
     toast({ description: "Product is not available." });

@@ -63,8 +63,8 @@ const MenuCard: React.FC = () => {
     <div className="grid grid-cols-1 md:grid-cols-2 gap-y-[20px] gap-x-[130px] lg:gap-x-[280px] xlg:gap-x-[130px] ">
       {
         products.map((product, index) => (
-          <div className=" ">
-<div className="w-[250px] xsm:w-[300px] sm:w-[376px] md:w-[300px] xlg:w-[376px] h-[79px] flex xlg:justify-between justify-center gap-[15px] sm:gap-[30] xlg:gap-0  relative left-[25px] sm:left-0 md:left-[-100px]  xlg:left-0 ">
+          <div   className=" ">
+<div  key={index} className="w-[250px] xsm:w-[300px] sm:w-[376px] md:w-[300px] xlg:w-[376px] h-[79px] flex xlg:justify-between justify-center gap-[15px] sm:gap-[30] xlg:gap-0  relative left-[25px] sm:left-0 md:left-[-100px]  xlg:left-0 ">
 <Image src={product.imageUrl} alt={product.name}
             height={79} width={80} className='w-[80px] h-[79px] md:w-[65px] md:h-[60px] lg:w-[80px] lg:h-[79px] rounded-[6px]'/>
             <div className='flex flex-col justify-between '>

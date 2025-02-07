@@ -12,162 +12,75 @@ import { PiClockClockwise } from "react-icons/pi";
 
 const Footer = () => {
   return (
-    <footer className="ms:w-full w-[320px] bg-blue-300 text-white flex flex-col items-center py-10">
-    {/* Top Section */}
-    <div className="w-full flex flex-col md:flex-row justify-between items-center gap-6 mb-10 px-4 sm:px-8">
-      <div className="text-center md:text-left">
-        <h2 className="font-helvetica font-bold text-[18px] sm:text-[24px] md:text-[32px] text-white">
-          <span className="text-[#FF9F0D]">St</span>ill You Need Our Support?
-        </h2>
-        <p className="font-helvetica text-[12px] md:text-[16px] text-white mt-2">
-          Don't wait, make a smart & logical quote here. It's pretty easy.
-        </p>
-      </div>
-      <form className="w-full  h-[40px] md:h-[55.86px] flex gap-2">
-        <input
-          type="email"
-          placeholder="Enter Your Email"
-          className="flex-grow bg-[#FF9F0D] placeholder-[#ffffff] rounded-[4px] text-xs md:text-[16px] placeholder-opacity-[59%] px-2 md:px-4 py-1 md:py-2 focus:outline-none"
-        />
-        <button
-          type="submit"
-          className="bg-white text-[#FF9F0D] font-inter px-4 md:px-6 py-1 md:py-2 rounded-[4px] font-semibold hover:bg-[#FF9F0D] hover:text-white whitespace-nowrap text-xs md:text-[16px] transition-all duration-300 mr-[10px]"
-        >
-          Subscribe Now
-        </button>
-      </form>
-    </div>
-  
-    {/* Divider */}
-    <div className="w-full border-b-[1px] border-[#FF9F0D] my-6 sm:my-10 px-4 sm:px-8"></div>
-  
-    {/* Middle Section */}
-    <div className="w-full grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-8 px-4 sm:px-8">
-      {/* About Us */}
-      <div>
-        <h2 className="text-[16px] md:text-[24px] font-bold font-helvetica mb-4">
-          About Us
-        </h2>
-        <p className="font-inter text-[12px] md:text-[16px] text-white mb-6">
-          Corporate clients and leisure travelers have been relying on Groundlink
-          for dependable, safe, and professional chauffeured car service in major
-          cities across the world.
-        </p>
-        <div className="flex gap-4">
-          <div className="w-[50px] h-[50px] md:w-[78px] md:h-[72px] bg-[#FF9F0D] flex justify-center items-center">
-            <PiClockClockwise className="text-white w-[30px] h-[30px]" />
-          </div>
-          <div>
-            <h2 className="font-inter text-[18px] text-white font-normal">
-              Opening Hours
-            </h2>
-            <p className="text-[10px] md:text-[14px] text-white font-inter">
-              Mon - Sat (8.00 - 6.00)
-            </p>
-            <p className="text-[10px] md:text-[14px] text-white font-inter">
-              Sunday - Closed
-            </p>
-          </div>
-        </div>
-      </div>
-  
-      {/* Useful Links */}
-      <div>
-        <h2 className="text-[16px] md:text-[24px] font-bold font-helvetica mb-4">
-          Useful Links
-        </h2>
-        <ul className="space-y-2">
-          {["About", "News", "Partners", "Team", "Menu", "Contact"].map(
-            (link, index) => (
-              <li key={index}>
-                <Link
-                  href={`/${link.toLowerCase()}`}
-                  className="text-[12px] md:text-[16px] font-inter hover:text-[#FF9F0D]"
-                >
-                  {link}
-                </Link>
-              </li>
-            )
-          )}
-        </ul>
-      </div>
-  
-      {/* Help */}
-      <div>
-        <h2 className="text-[16px] md:text-[24px] font-bold font-helvetica mb-4">
-          Help?
-        </h2>
-        <ul className="space-y-2">
-          {[
-            "FAQ",
-            "Terms & Conditions",
-            "Reporting",
-            "Documentation",
-            "Support Policy",
-            "Privacy",
-          ].map((link, index) => (
-            <li key={index}>
-              <Link
-                href={`/${link.toLowerCase().replace(/ /g, "-")}`}
-                className="text-[12px] md:text-[16px] font-inter hover:text-[#FF9F0D]"
-              >
-                {link}
-              </Link>
-            </li>
-          ))}
-        </ul>
-      </div>
-  
-      {/* Recent Posts */}
-      <div>
-        <h2 className="text-[16px] md:text-[24px] font-bold font-helvetica mb-4">
-          Recent Posts
-        </h2>
-        <div className="space-y-4">
-          {[1, 2, 3].map((post, index) => (
-            <div key={index} className="flex gap-4">
-              <div className="w-[59px] h-[48px] relative">
-                <Image
-                  src={`/footer-${index}.svg`}
-                  alt="Post Image"
-                  layout="fill"
-                  objectFit="cover"
-                  className="rounded"
-                />
-              </div>
-              <div>
-                <p className="font-inter text-[14px] text-white/50">20 Feb 2022</p>
-                <p className="font-inter text-[16px] text-white">
-                  Keep Your Business
-                </p>
-              </div>
+    <>
+      <footer className="w-full h-[1300px] md:h-[774.15px] relative bg text-white flex justify-between gap-[20px] items-center flex-col">
+        
+        <div className="w-[260px] ms:w-[300px] md:w-[1170px] md:h-[142.62px] h-[300px] absolute md:left-[359px] xl:left-[150px] xxl:left-[359px] left-[10px] top-[50px] flex justify-between flex-col items-center">
+          <div className="w-[200px] ms:w-[300px] md:w-[1170px] flex justify-between items-center h-[100px]">
+            <div className="flex justify-center md:gap-[10px] flex-col">
+              <h2 className="font-helvetica font-bold text-[18px] md:text-[32px] text-[#ffffff] whitespace-nowrap md:leading-[40px] relative md:left-0 xs:left-[10px] ms:left-[50px]">
+                <span className="text-[#FF9F0D]">St</span>ill You Need Our
+                Support?
+              </h2>
+              <p className="font-normal text-[10px] ms:text-[12px] md:text-[16px] md:leading-[24px] font-helvetica text-[#ffffff] whitespace-nowrap relative top-[10px] md:top-0 md:left-0 ms:left-[30px]">
+                Dont wait make a smart & logical quote here. Its pretty easy.
+              </p>
             </div>
-          ))}
-        </div>
-      </div>
-    </div>
-  
-    {/* Bottom Section */}
-    <div className="w-full bg-[#FF9F0D] mt-10 py-4">
-      <div className="w-full mx-auto flex flex-col md:flex-row justify-between items-center px-4 sm:px-8">
-        <p className="text-[12px] md:text-[16px] font-inter text-white mb-4 md:mb-0">
-          Copyright © 2022 by Ayeman. All Rights Reserved.
-        </p>
-        <div className="flex gap-4">
-          {[FaFacebookF, FaTwitter, FaInstagram, FaYoutube, FaPinterest].map(
-            (Icon, index) => (
-              <div
-                key={index}
-                className="w-[24px] h-[24px] md:w-[36px] md:h-[34px] bg-white rounded-[2px] flex items-center justify-center hover:bg-[#FF9F0D] transition-all duration-300"
+
+            <form className="w-[80px] md:w-[459px] h-[40px] md:h-[55.86px] md:top-0 top-[70px] md:right-0 xs:right-[280px] ms:right-[280px] flex mx-auto relative">
+              <input
+                type="email"
+                placeholder="Enter Your Email"
+                className="flex-grow bg-[#FF9F0D] placeholder-[#ffffff] rounded-[4px] md:text-[16px] text-xs placeholder-opacity-[59%] px-[6px] md:px-4 py-1 md:py-2 focus:outline-none"
+              />
+              <button
+                type="submit"
+                className="bg-white text-[#FF9F0D] font-inter px-2 md:px-6 py-1 md:py-2 rounded-[4px] font-semibold hover:bg-[#FF9F0D] hover:text-white whitespace-nowrap md:text-[16px] text-xs transition-all duration-300"
               >
-                <Icon className="text-[#4F4F4F] hover:text-white text-[12px] sm:text-[16px]" />
-              </div>
-            )
-          )}
+                Subscribe Now
+              </button>
+            </form>
+          </div>
+
+          <div className="w-[250px] md:w-[1170px] border-b-[1px] border-[#FF9F0D] relative md:top-0 top-[-120px] md:left-0 left-[30px]"></div>
         </div>
-      </div>
-    </div>
-  </footer>
+
+        <div className="w-[150px] md:w-[1320px] h-[331px] relative top-[280px] left-0 xl:left-[-40px] xxl:left-0 flex justify-between xl:items-center xxl:justify-between items-center xl:px-10 xxl:px-0">
+          {/* Rest of your content */}
+        </div>
+
+        <div className="ms:w-[390px] xs:w-[320px] w-full h-[100px] bg-[#ff9f0d] text-white flex items-center md:flex-row flex-col">
+          <p className="md:w-[384px] w-[300px] h-[24px] relative md:absolute whitespace-nowrap xxxl:left-[300px] xl:left-[70px] xxl:left-[300px] text-[12px] left-[-30px] md:text-[16px] font-inter font-normal md:px-0 px-10 md:top-[710px] top-[15px]">
+            Copyright © 2022 by Ayeman. All Rights Reserved.
+          </p>
+          <div className="md:w-[240px] w-[175px] md:h-[34px] relative md:left-[1420px] xl:left-[1050px] xxl:left-[1420px] left-[-20px] flex justify-between items-center md:top-0 top-[30px]">
+            <div className="md:w-[36px] md:h-[34px] w-[28px] h-[28px] rounded-[2px] bg-white hover:bg-[#ff9f0d] flex items-center justify-center">
+              <FaFacebookF className="text-[16px] text-[#4F4F4F] hover:text-white hover:scale-105 transition-all duration-300 ease-in-out text-center" />
+            </div>
+            <div className="md:w-[36px] md:h-[34px] w-[28px] h-[28px] rounded-[2px] bg-white hover:bg-[#ff9f0d] hover:scale-105 transition-all duration-300 ease-in-out flex items-center justify-center">
+              <FaTwitter className="text-[16px] text-[#4F4F4F] hover:text-[white] text-center" />
+            </div>
+            <div className="md:w-[36px] md:h-[34px] w-[28px] h-[28px] rounded-[2px] bg-white hover:bg-[#ff9f0d] hover:scale-105 transition-all duration-300 ease-in-out flex items-center justify-center md:gap-0 gap-5">
+              <FaInstagram className="text-[16px] text-[#4F4F4F] hover:text-[white] text-center" />
+            </div>
+            <div className="md:w-[36px] md:h-[34px] w-[28px] h-[28px] rounded-[2px] bg-white hover:bg-[#ff9f0d] hover:scale-105 transition-all duration-300 ease-in-out flex items-center justify-center">
+              <FaYoutube className="text-[16px] text-[#FF9F0D] hover:text-[white] text-center" />
+            </div>
+            <div className="md:w-[36px] md:h-[34px] w-[28px] h-[28px] rounded-[2px] bg-white hover:bg-[#ff9f0d] hover:scale-105 transition-all duration-300 ease-in-out flex items-center justify-center">
+              <FaPinterest className="text-[16px] text-[#4F4F4F] hover:text-[white] text-center" />
+            </div>
+          </div>
+        </div>
+
+        <Image
+          src="/footer-leaf.svg"
+          alt="image"
+          height={294}
+          width={244}
+          className="w-[120px] h-[148px] md:h-[294px] md:w-[244px] xl:w-[200px] xl:h-[250px] xxl:w-[244px] xxl:h-[294px] absolute bottom-0 ms:right-0 right-[0px] md:right-[-14px]"
+        />
+      </footer>
+    </>
   );
 };
 
