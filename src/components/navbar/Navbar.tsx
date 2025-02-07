@@ -1,5 +1,5 @@
 "use client";
-import React, { useState } from "react";
+import React, { useState,useEffect } from "react";
 import Image from "next/image";
 import { usePathname } from "next/navigation";
 import Link from "next/link";
@@ -7,6 +7,12 @@ import { FaTimes } from "react-icons/fa";
 import { FaBars } from "react-icons/fa";
 import { PiHeart } from "react-icons/pi";
 import NavSearchBar from "./NavSearchBar";
+import { UserButton, useUser } from "@clerk/nextjs";
+import { useSession, signOut } from "next-auth/react";
+import { UserCircle } from "lucide-react"; 
+
+
+
 
 
 const navLinks = [
@@ -19,10 +25,41 @@ const navLinks = [
   { name: "Contact", href: "/contact" },
 ]
 const Navbar = () => {
+  const { isSignedIn } = useUser()
+
   const pathName = usePathname();
   const [isOpen, setIsOpen] = useState(false);
     const [isSearchOpen, setIsSearchOpen] = useState(false); 
-  
+    const [cartCount, setCartCount] = useState(0);
+      const [wishlistCount, setWishlistCount] = useState(0);
+    
+    // Update cart count
+      useEffect(() => {
+        if (typeof window !== "undefined") {
+          const cart = JSON.parse(localStorage.getItem("cart") || "[]");
+          setCartCount(cart.length);
+        }
+      }, []);
+    
+    useEffect(() => {
+        if (typeof window !== "undefined") {
+          const wishlist = JSON.parse(localStorage.getItem("wishlist") || "[]");
+          setWishlistCount(wishlist.length);
+    
+          const handleStorageChange = (event: StorageEvent) => {
+            if (event.key === "wishlist") {
+              const updatedWishlist = JSON.parse(event.newValue || "[]");
+              setWishlistCount(updatedWishlist.length);
+            }
+          };
+    
+          window.addEventListener("storage", handleStorageChange);
+    
+          return () => {
+            window.removeEventListener("storage", handleStorageChange);
+          };
+        }
+      }, []);
 
   return (
 
@@ -32,9 +69,11 @@ const Navbar = () => {
         
         <nav className="max-w-[1320px] xxl:w-[1320px] xl:w-[1200px] lg:w-[880px] md:w-[700px] md:h-[32px]  absolute top-[29px]   mx-auto flex justify-between items-center ">
           <div className="md:w-[109px] md:h-[32px] md:flex  hidden">
+            <Link href="/">
             <h1 className="font-helvetica font-bold text-[22px] lg:text-[24px]  text-[#FFFFFF]">
               Food<span className="text-[#FF9F0D]">tuck</span>
             </h1>
+            </Link>
           </div>
           <div className="flex justify-center items-center">
           <ul className="w-[400px] lg:w-[450px] xl:w-[508px] h-[24px] bg-transparent absolute  top-[4px] hidden md:flex flex-row justify-between items-center">
@@ -59,7 +98,7 @@ const Navbar = () => {
           
           </div>
 
-          <div className="md:flex justify-between items-center w-[115px] lg:w-[130px] relative lg:top-0 top-[-5px] hidden">
+          <div className="md:flex justify-between items-center w-[115px] lg:w-[140px] relative lg:top-0 top-[-5px] hidden">
           <div className="relative top-[8px] hover:text-[#FF9F0D] hover:scale-105 transition-all duration-300 ">
           <button
       onClick={() => setIsSearchOpen(true)} 
@@ -74,30 +113,44 @@ const Navbar = () => {
     </button>
           </div>
           <div className="relative top-[4px]  hover:text-[#FF9F0D] hover:scale-105 transition-all duration-300">
-            <Link href="/signup">
-              <Image
-                src="/User (1).svg"
-                alt="user-vector"
-                height={24}
-                width={24}
-                className="lg:w-[24px] lg:h-[24px] h-[20px] w-[20px] text-[#FFFFFF] cursor-pointer "
-              />
-            </Link>
+          <div>
+  {isSignedIn ? (
+    <UserButton />
+  ) : (
+    <a href="/sign-in" className="text-white flex items-center gap-2">
+      <UserCircle size={22} /> 
+    </a>
+  )}
+</div>
           </div>
-          <div className="relative top-[4px]  hover:text-[#FF9F0D] hover:scale-105 transition-all duration-300">
-            <Link href="/cart">
-              <Image
-                src="/Tote (1).svg"
-                alt="Tote-vector"
-                height={24}
-                width={24}
-                className="lg:w-[24px] lg:h-[24px] h-[20px] w-[20px] text-[#FFFFFF] cursor-pointer "
-              />
-            </Link>
-          </div>
+          <div className="relative">
+                <Link href="/cart">
+                  {cartCount > 0 && (
+                    <div className="relative">
+                      {/* Cart Icon */}
+                      <Image
+                        src="/Tote (1).svg"
+                        alt="Tote-vector"
+                        height={24}
+                        width={24}
+                        className="lg:w-[22px] xl:h-[24px] lg:h-[22px] w-[20px] h-[20px] text-[#FFFFFF] cursor-pointer"
+                      />
+                      {/* Cart Count */}
+                      <span className="absolute -top-2 -right-2 bg-red-500 text-white text-xs font-bold w-5 h-5 flex items-center justify-center rounded-full">
+                        {cartCount}
+                      </span>
+                    </div>
+                  )}
+                </Link>
+              </div>
           <div className="relative top-[4px]  hover:text-[#FF9F0D] hover:scale-105 transition-all duration-300">
           <Link href="/wishlist">
              <PiHeart className="h-[22px] w-[22px] text-white "/>
+             {wishlistCount > 0 && (
+                  <span className="absolute top-[-5px]  right-[-10px] bg-red-500 text-white rounded-full text-[10px] font-helvetica w-4 h-4 flex items-center justify-center">
+                    {wishlistCount}
+                  </span>
+                )}
             </Link>
           </div>
           </div>
@@ -147,7 +200,7 @@ const Navbar = () => {
         </div>
  )}
  {!isSearchOpen ? (
-        <div className="flex justify-between items-center w-[100px]  xsm:w-[120px] ">
+        <div className="flex justify-between items-center w-[120px]  xsm:w-[120px] ">
           <div className="relative top-[7px] hover:text-[#FF9F0D] hover:scale-105 transition-all duration-300 ">
           
             <button
@@ -167,32 +220,50 @@ const Navbar = () => {
            </button>
                
           </div>
+        
           <div className="relative top-[4px]  hover:text-[#FF9F0D] hover:scale-105 transition-all duration-300">
-            <Link href="/signup">
-              <Image
-                src="/User (1).svg"
-                alt="user-vector"
-                height={22}
-                width={22}
-                className=" text-[#FFFFFF] cursor-pointer xsm:w-[22px] xsm:h-[22px] w-[20px] h-[20px] "
-              />
-            </Link>
-          </div>
-          <div className="relative top-[4px]  hover:text-[#FF9F0D] hover:scale-105 transition-all duration-300">
-            <Link href="/cart">
-              <Image
-                src="/Tote (1).svg"
-                alt="Tote-vector"
-                height={22}
-                width={22}
-                className="text-[#FFFFFF] cursor-pointer xsm:w-[22px] xsm:h-[22px] w-[20px] h-[20px] "
-              />
-            </Link>
+          <div className="relative">
+                <Link href="/cart">
+                  {cartCount > 0 && (
+                    <div className="relative">
+                      {/* Cart Icon */}
+                      <Image
+                        src="/Tote (1).svg"
+                        alt="Tote-vector"
+                        height={24}
+                        width={24}
+                        className="lg:w-[22px] xl:h-[24px] lg:h-[22px] w-[20px] h-[20px] text-[#FFFFFF] cursor-pointer"
+                      />
+                      {/* Cart Count */}
+                      <span className="absolute -top-2 -right-2 bg-red-500 text-white text-xs font-bold w-4 h-4 flex items-center justify-center rounded-full">
+                        {cartCount}
+                      </span>
+                    </div>
+                  )}
+                </Link>
+              </div>
           </div>
           <div className="relative top-[4px]  hover:text-[#FF9F0D] hover:scale-105 transition-all duration-300">
           <Link href="/wishlist">
              <PiHeart className="xsm:w-[22px] xsm:h-[22px] w-[20px] h-[20px] text-white cursor-pointer "/>
+             {wishlistCount > 0 && (
+                  <span className="absolute top-[-8px]  right-[-10px] bg-red-500 text-white rounded-full text-[10px] font-helvetica w-4 h-4 flex items-center justify-center">
+                    {wishlistCount}
+                  </span>
+                )}
              </Link>
+          </div>
+
+          <div className="relative top-[4px]  hover:text-[#FF9F0D] hover:scale-105 transition-all duration-300">
+          <div>
+  {isSignedIn ? (
+    <UserButton />
+  ) : (
+    <a href="/sign-in" className="text-white flex items-center gap-2">
+      <UserCircle size={22} /> 
+    </a>
+  )}
+</div>
           </div>
           </div>
           
@@ -211,7 +282,7 @@ const Navbar = () => {
               onClick={() => setIsSearchOpen(false)}
               className="text-[#FFFFFF] mr-4"
             >
-              <FaTimes size={22} />
+              <FaTimes size={20} />
             </button>
       
             {/* Search Input */}

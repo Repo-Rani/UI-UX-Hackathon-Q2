@@ -95,6 +95,7 @@ const toggleWishlist = () => {
         tags,
         bottomDetail,
         price
+         status,
       }`;
       try {
         const productData: ShopCardProps[] = await client.fetch(query, { id });
@@ -520,20 +521,20 @@ if (!product) {
        <div className="w-[275px] sm:w-[500px] md:w-[600px] lg:w-[400px] xl:w-[618px] border-b-[1px] border-[#E0E0E0] absolute left-[15px] ms:left-[35px] lg:left-[600px] xsm:left-[50px] xl:left-[690px] xxl:left-[785px] xxxl:left-[950px]  top-[1300px] md:top-[1350px] lg:top-[950px] xl:top-[1048px]"></div>
 
         <div className="w-[278px] h-[26px] absolute top-[1330px] left-[15px] ms:left-[35px] xsm:left-[50px] lg:left-[600px] md:top-[1380px] lg:top-[970px] xl:top-[1072px] xl:left-[690px] xxl:left-[785px] xxxl:left-[950px] flex justify-between items-center">
-          <div className="flex  justify-betweent gap-[5px] items-center w-[180px]">
-         <button
-            onClick={(e) => {
-              e.preventDefault();
-              toggleWishlist();
-            }}
-            className="absolute top-2 left-2 text-black text-2xl z-10"
-          >
-            {isWishlisted ? <RiHeart3Fill /> : <RiHeart3Line />}
-          </button>
-            <button className="font-inter text-[14px] md:text-[18px] font-normal text-[#4F4F4F]">
-              Add to Wishlist
-            </button>
-          </div>
+        <div className="flex items-center gap-[5px] w-[180px]">
+  <button
+    onClick={(e) => {
+      e.preventDefault();
+      toggleWishlist();
+    }}
+    className="text-black text-2xl"
+  >
+    {isWishlisted ? <RiHeart3Fill /> : <RiHeart3Line />}
+  </button>
+  <button className="font-inter text-[14px] md:text-[18px] font-normal text-[#4F4F4F]">
+    Add to Wishlist
+  </button>
+</div>
 
           
           <div className="flex justify-start gap-[5px] items-center cursor-pointer">

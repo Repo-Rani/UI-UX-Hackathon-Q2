@@ -43,11 +43,10 @@ const SearchBar = () => {
     }
   };
   return (
-    <div className="border-[1px] border-[#FF9F0D] xl:w-[310px] lg:w-[200px] md:w-[180px] h-[40px] lg:h-[45px] xl:h-[54px] rounded-[27px] flex items-center justify-between lg:px-8 xl:px-4 px-4">
+    <div className="border-[1px] border-[#FF9F0D] xl:w-[310px] lg:w-[200px] md:w-[180px] h-[40px] lg:h-[45px] xl:h-[54px] rounded-[27px] flex items-center justify-between lg:px-8 xl:px-4 px-7">
       <input
         type="text"
-        value={query}
-        onChange={(e) => setQuery(e.target.value)}
+       
         placeholder="Search..."
         className="font-inter xl:w-[240px] lg:w-[130px] md:w-[100px] font-normal bg-transparent border-none outline-none text-[14px] xxxl:text-[16px]  text-[#FFFFFF]"
       />

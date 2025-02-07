@@ -5,7 +5,7 @@ import Link from "next/link";
 import { client } from "@/sanity/lib/client";
 import { ShopCardProps } from "../../../types/type";
 import Pagination from "./Pagination";
-import ShopSidebar from "./ShopSidebar";
+import ShopSidebar from "./SideBarShop";
 import ComparisonTable from "./ComparisionTable";
 import { CartProps } from "../../../types/type";
 import { Button } from "@/components/ui/button";

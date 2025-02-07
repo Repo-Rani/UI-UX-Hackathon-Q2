@@ -107,6 +107,21 @@ const foodSchema = {
         title: 'Bottom Detail 2',
         description: 'Additional bottom detail for the food item',
       },
+
+      {
+        name: 'status',
+        type: 'string',
+        title: 'Status',
+        description: 'Status of the food item (e.g., New, Old, Top Selling)',
+        options: {
+          list: [
+            { title: 'New', value: 'New' },
+            { title: 'Old', value: 'Old' },
+            { title: 'Top Selling', value: 'Top Selling' },
+          ],
+          layout: 'dropdown', 
+        },
+      }
     ],
   };
   

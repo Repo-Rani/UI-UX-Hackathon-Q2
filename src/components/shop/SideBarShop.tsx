@@ -28,7 +28,7 @@ const ShopSidebar = ({handleCategoryChange}: FoodCategory) => {
     <>
 {/* For desktop screens */}
     <aside className='md:flex hidden'>
-    <div className="lg:w-[312px] h-[1590px] w-[290px]  relative top-[150px]   xxxl:left-[1308px] xl:left-[1050px] lg:left-[700px] xlg:left-[850px] md:left-[450px] xxl:left-[1108px] border-[1px] rounded-[6px] border-[#f2f2f2] ">
+    <div className="lg:w-[312px] h-[1590px] w-[290px]  relative top-[150px]   xxxl:left-[1308px] xl:left-[1050px] lg:left-[700px] xlg:left-[850px] md:left-[450px] xxl:left-[1108px] border-[1px] rounded-[6px] border-[#f2f2f2] cursor-pointer ">
         <div className="w-[248px] h-[46px] p-3 relative lg:left-[25px]  left-[10px] top-[1.5rem] bg-red-100 ">
           <input
             type="text"
