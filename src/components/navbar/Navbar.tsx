@@ -98,63 +98,65 @@ const Navbar = () => {
           
           </div>
 
-          <div className="md:flex justify-between items-center w-[115px] lg:w-[140px] relative lg:top-0 top-[-5px] hidden">
-          <div className="relative top-[8px] hover:text-[#FF9F0D] hover:scale-105 transition-all duration-300 ">
-          <button
-      onClick={() => setIsSearchOpen(true)} 
+          <div className="md:flex justify-between items-center w-[115px] lg:w-[140px] relative lg:top-0 hidden">
+  <div className="flex items-center gap-4">
+    {/* Search Icon */}
+    <button
+      onClick={() => setIsSearchOpen(true)}
+      className="hover:text-[#FF9F0D] hover:scale-105 transition-all duration-300 flex items-center"
     >
       <Image
         src="/Vector (1).svg"
         alt="search-vector"
         height={24}
         width={24}
-        className="lg:w-[24px] lg:h-[24px] h-[20px] w-[20px] text-[#FFFFFF] cursor-pointer "
+        className="lg:w-[24px] lg:h-[24px] h-[20px] w-[20px] text-[#FFFFFF] cursor-pointer"
       />
     </button>
-          </div>
-          <div className="relative top-[4px]  hover:text-[#FF9F0D] hover:scale-105 transition-all duration-300">
-          <div>
-  {isSignedIn ? (
-    <UserButton />
-  ) : (
-    <a href="/sign-in" className="text-white flex items-center gap-2">
-      <UserCircle size={22} /> 
-    </a>
-  )}
+
+    {/* User Icon */}
+    <div className="hover:text-[#FF9F0D] hover:scale-105 transition-all duration-300 flex items-center">
+      {isSignedIn ? (
+        <UserButton />
+      ) : (
+        <a href="/sign-in" className="text-white flex items-center">
+          <UserCircle size={22} />
+        </a>
+      )}
+    </div>
+
+    {/* Cart Icon */}
+    <div className="relative flex items-center">
+      <Link href="/cart">
+        <Image
+          src="/Tote (1).svg"
+          alt="Tote-vector"
+          height={24}
+          width={24}
+          className="lg:w-[22px] xl:h-[24px] lg:h-[22px] w-[20px] h-[20px] text-[#FFFFFF] cursor-pointer"
+        />
+      </Link>
+      {cartCount > 0 && (
+        <span className="absolute -top-2 -right-2 bg-red-500 text-white text-xs font-bold w-5 h-5 flex items-center justify-center rounded-full">
+          {cartCount}
+        </span>
+      )}
+    </div>
+
+    {/* Wishlist Icon */}
+    <div className="relative flex items-center hover:text-[#FF9F0D] hover:scale-105 transition-all duration-300">
+      <Link href="/wishlist">
+        <PiHeart className="h-[22px] w-[22px] text-white" />
+      </Link>
+      {wishlistCount > 0 && (
+        <span className="absolute -top-2 -right-2 bg-red-500 text-white rounded-full text-[10px] font-helvetica w-4 h-4 flex items-center justify-center">
+          {wishlistCount}
+        </span>
+      )}
+    </div>
+  </div>
 </div>
-          </div>
-          <div className="relative">
-                <Link href="/cart">
-                  {cartCount > 0 && (
-                    <div className="relative">
-                      {/* Cart Icon */}
-                      <Image
-                        src="/Tote (1).svg"
-                        alt="Tote-vector"
-                        height={24}
-                        width={24}
-                        className="lg:w-[22px] xl:h-[24px] lg:h-[22px] w-[20px] h-[20px] text-[#FFFFFF] cursor-pointer"
-                      />
-                      {/* Cart Count */}
-                      <span className="absolute -top-2 -right-2 bg-red-500 text-white text-xs font-bold w-5 h-5 flex items-center justify-center rounded-full">
-                        {cartCount}
-                      </span>
-                    </div>
-                  )}
-                </Link>
-              </div>
-          <div className="relative top-[4px]  hover:text-[#FF9F0D] hover:scale-105 transition-all duration-300">
-          <Link href="/wishlist">
-             <PiHeart className="h-[22px] w-[22px] text-white "/>
-             {wishlistCount > 0 && (
-                  <span className="absolute top-[-5px]  right-[-10px] bg-red-500 text-white rounded-full text-[10px] font-helvetica w-4 h-4 flex items-center justify-center">
-                    {wishlistCount}
-                  </span>
-                )}
-            </Link>
-          </div>
-          </div>
-          
+
         </nav>
 
         

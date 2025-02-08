@@ -96,6 +96,15 @@ const Wishlist: React.FC = () => {
     setWishlist(updatedWishlist);
     localStorage.setItem("wishlist", JSON.stringify(updatedWishlist));
   };
+  useEffect(() => {
+    if (typeof window !== "undefined") {
+      const storedWishlist = localStorage.getItem("wishlist");
+      if (storedWishlist) {
+        setWishlist(JSON.parse(storedWishlist));
+      }
+    }
+  }, []);
+
 
   return (
     <>

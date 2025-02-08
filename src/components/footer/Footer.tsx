@@ -13,7 +13,7 @@ import { PiClockClockwise } from "react-icons/pi";
 const Footer = () => {
   return (
     <>
-      <footer className=" md:w-[768px] xl:w-[1440px] xlg:w-[1275px] xxl:w-[1512px] xxxl:w-[1920px] lg:w-[1024px] w-[320px] ms:w-[375px] xsm:w-[425px] sm:w-[600px] max-w-[1920px] h-[1300px] md:h-[774.15px] relative bg-black text-white flex justify-between gap-[20px] items-center flex-col">
+      <footer className=" md:w-[768px] xl:w-[1440px] xlg:w-[1275px] xxl:w-[1512px] xxxl:w-[1920px] lg:w-[1024px] w-[320px] ms:w-[375px] xsm:w-[425px] sm:w-[600px] max-w-[1920px] h-[1300px] xlg:h-[774.15px] relative bg-black text-white flex justify-between gap-[20px] items-center flex-col">
         <div className="w-[280px] ms:w-[300px] md:w-[1170px] md:h-[142.62px] h-[300px] absolute   xl:left-[150px] xxxl:left-[359px] left-[10px] top-[50px] flex justify-between flex-col items-center">
           <div className="w-[280px] sm:w-[500px] ms:w-[300px] md:w-[1170px]  flex justify-between items-center h-[100px]">
             <div className="flex justify-center xlg:gap-[10px] flex-col">
@@ -125,7 +125,7 @@ const Footer = () => {
               </Link>
             </li>
           </div>
-          <div className="w-[70px] md:w-[143px] h-[367px] flex md:justify-between justify-center md:gap-0 gap-[10px] flex-col  text-white cursor-pointer list-none  relative md:top-0 top-[230px] md:right-0 right-[280px]">
+          <div className="w-[70px] md:w-[143px] h-[367px] flex md:justify-between justify-center md:gap-0 gap-[10px] flex-col  text-white cursor-pointer list-none  relative xlg:top-0 top-[230px] xlg:right-0 right-[280px]">
            <Link href="/helpCenter">
             <h2 className="font-bold text-[16px]  md:text-[24px] font-helvetica  whitespace-nowrap">
               Help?
