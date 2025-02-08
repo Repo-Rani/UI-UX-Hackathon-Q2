@@ -17,21 +17,19 @@ const RangeSlider: React.FC<RangeSliderProps> = ({ category, setFilteredProducts
         name,
         price,
         discountPrice,
-       
         "imageUrl": image.asset->url,
         ratingReviews
       }`;
       const products = await client.fetch(query);
       setFilteredProducts(products);
-
+  
       const countQuery = `count(*[_type == "casual" && price >= ${minPrice} && price <= ${maxPrice}])`;
       const totalCount = await client.fetch(countQuery);
       setTotalPages(Math.ceil(totalCount / productsPerPage));
     } catch (error) {
       console.error("Error fetching filtered products:", error);
     }
-  }, [category, setFilteredProducts, setTotalPages]); 
-
+  }, [setFilteredProducts, setTotalPages]); 
   useEffect(() => {
     fetchAndSetProducts(leftValue, rightValue, currentPage);
   }, [fetchAndSetProducts, leftValue, rightValue, currentPage]);

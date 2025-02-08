@@ -107,6 +107,7 @@ const ShopCardsSliders: React.FC<ShopCardsSlidersProps> = React.memo(
                   width={14.04}
                 />
               </div>
+             
               <div
                 className="bg-[#ffffff] w-[40.1px] h-[34px] rounded-[2px] flex justify-center items-center cursor-pointer"
                 onClick={() => toggleWishlist(Cardproduct)}
@@ -247,5 +248,8 @@ const ShopCardsSliders: React.FC<ShopCardsSlidersProps> = React.memo(
     );
   }
 );
+
+// Set the displayName property
+ShopCardsSliders.displayName = 'ShopCardsSliders';
 
 export default ShopCardsSliders;

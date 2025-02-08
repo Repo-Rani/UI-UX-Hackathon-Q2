@@ -163,7 +163,7 @@ const LandingNavbar = () => {
         )}
 
         {!isSearchOpen ? (
-          <div className="flex items-center gap-3">
+          <div className="flex items-center gap-2">
             {/* Search Bar */}
             <button
               onClick={() => setIsSearchOpen(true)}
