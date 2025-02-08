@@ -1,5 +1,5 @@
 "use client";
-import React, { useCallback, useState } from "react";
+import React, { useState } from "react";
 import Image from "next/image";
 import { ShopCardProps, CartProps } from "../../../types/type";
 import { RiHeart3Fill, RiHeart3Line } from "react-icons/ri";
@@ -37,14 +37,12 @@ const ShopCardsSliders: React.FC<ShopCardsSlidersProps> = React.memo(
     const [comparisonList, setComparisonList] = useState<ShopCardProps[]>([]);
     const [showCompareDialog, setShowCompareDialog] = useState(false);
 
-    // Remove from cart functionality
     const removeFromCart = (productId: string) => {
       const updatedCart = cart.filter((item) => item.id !== productId);
       setCart(updatedCart);
       localStorage.setItem("cart", JSON.stringify(updatedCart));
     };
 
-    // Increase quantity in cart
     const increaseQuantity = (productId: string) => {
       const updatedCart = cart.map((item) =>
         item.id === productId ? { ...item, quantity: (item.quantity ?? 0) + 1 } : item
@@ -53,7 +51,6 @@ const ShopCardsSliders: React.FC<ShopCardsSlidersProps> = React.memo(
       localStorage.setItem("cart", JSON.stringify(updatedCart));
     };
 
-    // Decrease quantity in cart
     const decreaseQuantity = (productId: string) => {
       const updatedCart = cart.map((item) => {
         if (item.id === productId && (item.quantity ?? 0) > 1) {
@@ -67,7 +64,6 @@ const ShopCardsSliders: React.FC<ShopCardsSlidersProps> = React.memo(
       localStorage.setItem("cart", JSON.stringify(updatedCart));
     };
 
-    // Remove item from comparison list
     const removeCompareItem = (productId: string) => {
       const updatedList = comparisonList.filter((item) => item.id !== productId);
       setComparisonList(updatedList);
