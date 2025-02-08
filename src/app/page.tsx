@@ -180,9 +180,9 @@ export default function Home() {
       </AnimatePresence>
       {!isLoading && (
         <>
-          <div className='bg-[#0D0D0D] w-full max-w-[1920px] md:h-[8000px] h-[7950px]'>
+          <div className='bg-[#0D0D0D] w-full max-w-[1920px] xlg:h-[8000px] h-[7950px]'>
             <HeaderHero />
-            <div className="absolute md:top-[7800px] top-[7060px] xsm:top-[7200px] sm:top-[7900px]">
+            <div className="absolute xlg:top-[7800px] top-[7060px] xsm:top-[7200px]  md:top-[6000px] sm:top-[7900px]">
               <Footer />
             </div>
           </div>
