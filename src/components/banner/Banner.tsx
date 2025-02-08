@@ -6,7 +6,7 @@ import Link from "next/link";
 const Banner = ({ name, mainHeading }: BannerPropsTypes) => {
   return (
     <>
-      <section className="relative md:top-[80px] top-[70px] w-full max-w-[1920px] h-[410px] bg-black  md:z-0 -z-5">
+      <section className="relative md:top-[80px]  w-full max-w-[1920px] h-[410px] bg-black  md:z-0 -z-5">
         <Image
           src="/unsplash_4ycv3Ky1ZZU (1).svg"
           alt=""

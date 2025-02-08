@@ -13,7 +13,7 @@ import { PiClockClockwise } from "react-icons/pi";
 const Footer = () => {
   return (
     <>
-      <footer className="w-full h-[1300px] md:h-[774.15px] relative bg text-white flex justify-between gap-[20px] items-center flex-col">
+      <footer className="w-full h-[1300px] bg-red-300 md:h-[774.15px] relative bg text-white flex justify-between gap-[20px] items-center flex-col">
         
         <div className="w-[260px] ms:w-[300px] md:w-[1170px] md:h-[142.62px] h-[300px] absolute md:left-[359px] xl:left-[150px] xxl:left-[359px] left-[10px] top-[50px] flex justify-between flex-col items-center">
           <div className="w-[200px] ms:w-[300px] md:w-[1170px] flex justify-between items-center h-[100px]">

@@ -95,7 +95,6 @@ const ShopCard: React.FC = () => {
   const productsPerPage = 15;
   const { toast } = useToast();
 
-  // Fetch wishlist status for the current product
   useEffect(() => {
     if (product) {
       const storedWishlist = localStorage.getItem("wishlist");
@@ -104,7 +103,6 @@ const ShopCard: React.FC = () => {
     }
   }, [product]);
 
-  // Toggle wishlist for the current product
   const toggleWishlist = () => {
     if (!product) {
       toast({ description: "Product is not available." });
@@ -127,7 +125,6 @@ const ShopCard: React.FC = () => {
     setIsWishlisted(!isWishlisted);
   };
 
-  // Add to cart functionality
   const addToCart = (product: ShopCardProps) => {
     const productInCart = cart.find((item) => item.id === product.id);
 
@@ -153,14 +150,12 @@ const ShopCard: React.FC = () => {
     }
   };
 
-  // Remove from cart functionality
   const removeFromCart = (productId: string) => {
     const updatedCart = cart.filter((item) => item.id !== productId);
     setCart(updatedCart);
     localStorage.setItem("cart", JSON.stringify(updatedCart));
   };
 
-  // Fetch products based on selected category
   useEffect(() => {
     const loadProducts = async () => {
       try {
@@ -176,13 +171,11 @@ const ShopCard: React.FC = () => {
     loadProducts();
   }, [selectedCategory]);
 
-  // Handle category change
   const handleCategoryChange = (category: string, index: number) => {
     setSelectedCategory(category);
     setCurrentPage(1);
   };
 
-  // Pagination logic
   const totalPages = Math.ceil(products.length / productsPerPage);
   const handlePageChange = (page: number) => {
     setCurrentPage(page);
@@ -192,7 +185,6 @@ const ShopCard: React.FC = () => {
   const indexOfFirstProduct = indexOfLastProduct - productsPerPage;
   const currentProducts = products.slice(indexOfFirstProduct, indexOfLastProduct);
 
-  // Add to comparison list
   const addToCompare = (product: ShopCardProps) => {
     if (comparisonList.length === 2) {
       if (
@@ -222,7 +214,6 @@ const ShopCard: React.FC = () => {
     }
   };
 
-  // Remove item from comparison list
   const removeCompareItem = (productId: string) => {
     const updatedList = comparisonList.filter((item) => item.id !== productId);
     setComparisonList(updatedList);
@@ -232,7 +223,6 @@ const ShopCard: React.FC = () => {
     alert("Item removed from comparison list.");
   };
 
-  // Load cart from localStorage
   useEffect(() => {
     const savedCart = localStorage.getItem("cart");
     if (savedCart) {
@@ -240,14 +230,12 @@ const ShopCard: React.FC = () => {
     }
   }, []);
 
-  // Save cart to localStorage
   useEffect(() => {
     if (cart.length > 0) {
       localStorage.setItem("cart", JSON.stringify(cart));
     }
   }, [cart]);
 
-  // Increase quantity in cart
   const increaseQuantity = (productId: string) => {
     const updatedCart = cart.map((item) =>
       item.id === productId ? { ...item, quantity: (item.quantity ?? 0) + 1 } : item
@@ -256,7 +244,6 @@ const ShopCard: React.FC = () => {
     localStorage.setItem("cart", JSON.stringify(updatedCart));
   };
 
-  // Decrease quantity in cart
   const decreaseQuantity = (productId: string) => {
     const updatedCart = cart.map((item) => {
       if (item.id === productId && (item.quantity ?? 0) > 1) {
@@ -322,8 +309,8 @@ const ShopCard: React.FC = () => {
                     <div
                       className="bg-[#ffffff] md:w-[40.1px] md:h-[34px] w-[30px] h-[25px] rounded-[2px] flex justify-center items-center cursor-pointer"
                       onClick={() => {
-                        setProduct(product); // Set the current product
-                        toggleWishlist(); // Toggle wishlist for the current product
+                        setProduct(product); 
+                        toggleWishlist(); 
                       }}
                     >
                       {isWishlisted && product.id === product.id ? (

@@ -6,7 +6,9 @@ import { ShopCardProps, CartProps } from "../../../types/type";
 import React, { useState, useEffect } from "react";
 import { client } from "@/sanity/lib/client";
 import ShopCardsSliders from "./ShopCardsSliders";
-import { useToast } from "@/hooks/use-toast";
+import { toast } from "sonner";
+import NextArrow from "./NextArrow";
+import PrevArrow from "./PrevArrow";
 
 const fetchProducts = async (): Promise<ShopCardProps[]> => {
   const products = await client.fetch(`
@@ -51,7 +53,6 @@ const ShopSliders: React.FC = () => {
   const [wishlist, setWishlist] = useState<ShopCardProps[]>([]);
   const [comparisonList, setComparisonList] = useState<ShopCardProps[]>([]);
   const [showCompareDialog, setShowCompareDialog] = useState(false);
-  const { toast } = useToast();
 
   useEffect(() => {
     const loadProducts = async () => {
@@ -176,6 +177,8 @@ const ShopSliders: React.FC = () => {
     slidesToScroll: 1,
     autoplay: true,
     autoplaySpeed: 3000,
+    nextArrow: <NextArrow onClick={() => {}} />,
+    prevArrow: <PrevArrow onClick={() => {}} />,
     responsive: [
       {
         breakpoint: 1280,
@@ -214,11 +217,11 @@ const ShopSliders: React.FC = () => {
                 if (isWishlisted) {
                   const updatedWishlist = wishlist.filter((item) => item.id !== product.id);
                   localStorage.setItem("wishlist", JSON.stringify(updatedWishlist));
-                  toast({ description: "Item removed from wishlist." });
+                  toast("Item removed from wishlist."); // Pass a string
                 } else {
                   wishlist.push(product);
                   localStorage.setItem("wishlist", JSON.stringify(wishlist));
-                  toast({ description: "Item added to wishlist successfully." });
+                  toast("Item added to wishlist successfully."); // Pass a string
                 }
 
                 setWishlist(wishlist);

@@ -1,11 +1,11 @@
-'use client'
-import { useState, useEffect } from "react";
-import { RangeSliderProps } from "../../../types/type";
+"use client"
 import { client } from "@/sanity/lib/client";
+import { useState } from "react";
+import { useEffect } from "react";
 import { useCallback } from "react";
-
+import { RangeSliderProps } from "../../../types/type";
 const RangeSlider: React.FC<RangeSliderProps> = ({ category, setFilteredProducts, setTotalPages }) => {
-  const [leftValue, setLeftValue] = useState(10);
+  const [leftValue, setLeftValue] = useState(50);
   const [rightValue, setRightValue] = useState(200);
   const [currentPage, setCurrentPage] = useState(1);
   const fetchAndSetProducts = useCallback(async (minPrice: number, maxPrice: number, page: number) => {
@@ -16,7 +16,7 @@ const RangeSlider: React.FC<RangeSliderProps> = ({ category, setFilteredProducts
         _id,
         name,
         price,
-      
+        discountPrice,
        
         "imageUrl": image.asset->url,
         ratingReviews
@@ -24,7 +24,7 @@ const RangeSlider: React.FC<RangeSliderProps> = ({ category, setFilteredProducts
       const products = await client.fetch(query);
       setFilteredProducts(products);
 
-      const countQuery = `count(*[_type == "food" && price >= ${minPrice} && price <= ${maxPrice}])`;
+      const countQuery = `count(*[_type == "casual" && price >= ${minPrice} && price <= ${maxPrice}])`;
       const totalCount = await client.fetch(countQuery);
       setTotalPages(Math.ceil(totalCount / productsPerPage));
     } catch (error) {
@@ -34,7 +34,7 @@ const RangeSlider: React.FC<RangeSliderProps> = ({ category, setFilteredProducts
 
   useEffect(() => {
     fetchAndSetProducts(leftValue, rightValue, currentPage);
-  }, [fetchAndSetProducts, leftValue, rightValue, currentPage]); 
+  }, [fetchAndSetProducts, leftValue, rightValue, currentPage]);
 
   const handleLeftChange = (e: React.ChangeEvent<HTMLInputElement>) => { 
     const value = parseInt(e.target.value, 10);
@@ -53,7 +53,6 @@ const RangeSlider: React.FC<RangeSliderProps> = ({ category, setFilteredProducts
   };
   return (
     <div className="slider-container">
-      {/* Slider bar */}
       <div className="slider-bar">
         <div
           className="slider-highlight"
@@ -63,8 +62,6 @@ const RangeSlider: React.FC<RangeSliderProps> = ({ category, setFilteredProducts
           }}
         ></div>
       </div>
-
-      {/* Left slider */}
       <input
         type="range"
         min="0"
@@ -73,7 +70,6 @@ const RangeSlider: React.FC<RangeSliderProps> = ({ category, setFilteredProducts
         className="range-input"
         onChange={handleLeftChange}
       />
-      {/* Right slider */}
       <input
         type="range"
         min="0"
@@ -82,8 +78,7 @@ const RangeSlider: React.FC<RangeSliderProps> = ({ category, setFilteredProducts
         className="range-input"
         onChange={handleRightChange}
       />
-{/* Values */}
-<div className="slider-values">
+      <div className="slider-values">
         <span>${leftValue}</span>
         <span>${rightValue}</span>
       </div>
@@ -91,4 +86,4 @@ const RangeSlider: React.FC<RangeSliderProps> = ({ category, setFilteredProducts
   );
 };
 
-export default RangeSlider
+export default RangeSlider;

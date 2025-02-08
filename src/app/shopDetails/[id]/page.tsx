@@ -32,7 +32,8 @@ import {
   SheetHeader,
   SheetTrigger,
 } from "@/components/ui/sheet";
-import { useToast } from "@/hooks/use-toast";
+
+
 
 interface Props {
   params: {
@@ -40,42 +41,19 @@ interface Props {
   };
 }
 const ShopCardsDetails: React.FC<Props> = ({ params }) => {
+  // Move all hooks to the top level
   const [product, setProduct] = useState<ShopCardProps | null>(null);
   const [cart, setCart] = useState<CartProps[]>([]);
   const [showCart, setShowCart] = useState(false);
   const [loading, setLoading] = useState(true);
   const [count, setCount] = useState(1);
   const [comparisonList, setComparisonList] = useState<ShopCardProps[]>([]);
-const [showCompareDialog, setShowCompareDialog] = useState(false);
-  
-
+  const [showCompareDialog, setShowCompareDialog] = useState(false);
+  const [isWishlisted, setIsWishlisted] = useState(false); 
 
   const { id } = params;
 
-  const { toast } = useToast();
-const [isWishlisted, setIsWishlisted] = useState(false);
-
-const toggleWishlist = () => {
-  if (!product) { 
-    toast({ description: "Product is not available." });
-    return;
-  }
-
-  const storedWishlist = localStorage.getItem("wishlist");
-  const wishlist: ShopCardProps[] = storedWishlist ? JSON.parse(storedWishlist) : [];
-
-  if (isWishlisted) {
-    const updatedWishlist = wishlist.filter((item) => item.id !== product.id);
-    localStorage.setItem("wishlist", JSON.stringify(updatedWishlist));
-    toast({ description: "Item removed from wishlist." });
-  } else {
-    wishlist.push(product);
-    localStorage.setItem("wishlist", JSON.stringify(wishlist));
-    toast({ description: "Item added to wishlist successfully." });
-  }
-
-  setIsWishlisted(!isWishlisted);
-};
+  // Fetch product data
   useEffect(() => {
     const fetchProduct = async () => {
       const query = `*[_type=="food" && _id == $id] {
@@ -94,9 +72,10 @@ const toggleWishlist = () => {
         sell,
         tags,
         bottomDetail,
-        price
-         status,
+        price,
+        status
       }`;
+
       try {
         const productData: ShopCardProps[] = await client.fetch(query, { id });
         if (!productData || productData.length === 0) {
@@ -115,78 +94,78 @@ const toggleWishlist = () => {
     fetchProduct();
   }, [id]);
 
+  
+
   const addToCart = (product: ShopCardProps) => {
-      const productInCart = cart.find((item) => item.id === product.id);
-  
-      if (productInCart) {
-        const updatedCart = cart.map((item) =>
-          item.id === product.id
-            ? { ...item, quantity: (item.quantity ?? 0) + 1 }
-            : item
-        );
-        setCart(updatedCart);
-        localStorage.setItem("cart", JSON.stringify(updatedCart));
-      } else {
-        const newCartItem: CartProps = {
-          id: product.id ?? "default-id",
-          name: product.name,
-          imageUrl: product.imageUrl,
-          price: product.price,
-          quantity: 1,
-          total: product.price,
-        };
-  
-        const updatedCart: CartProps[] = [...cart, newCartItem];
-        setCart(updatedCart);
-        localStorage.setItem("cart", JSON.stringify(updatedCart));
-      }
-    };
+    const productInCart = cart.find((item) => item.id === product.id);
+
+    if (productInCart) {
+      const updatedCart = cart.map((item) =>
+        item.id === product.id
+          ? { ...item, quantity: (item.quantity ?? 0) + 1 }
+          : item
+      );
+      setCart(updatedCart);
+      localStorage.setItem("cart", JSON.stringify(updatedCart));
+    } else {
+      const newCartItem: CartProps = {
+        id: product.id ?? "default-id",
+        name: product.name,
+        imageUrl: product.imageUrl,
+        price: product.price,
+        quantity: 1,
+        total: product.price,
+      };
+
+      const updatedCart: CartProps[] = [...cart, newCartItem];
+      setCart(updatedCart);
+      localStorage.setItem("cart", JSON.stringify(updatedCart));
+    }
+  };
+
   const removeFromCart = (productId: string) => {
     const updatedCart = cart.filter((item) => item.id !== productId);
     setCart(updatedCart);
     localStorage.setItem("cart", JSON.stringify(updatedCart));
   };
 
-  
- const addToCompare = (product: ShopCardProps) => {
-     if (comparisonList.length === 2) {
-       if (
-         window.confirm(
-           "You can only compare two items at a time. Do you want to clear the comparison list?"
-         )
-       ) {
-         setComparisonList([]); 
-       }
-       return;
-     }
-     
-     const isAlreadyAdded = comparisonList.some(
-       (item) => item.id === product.id
-     );
-     
-     if (!isAlreadyAdded) {
-       const updatedList = [...comparisonList, product];
-       setComparisonList(updatedList);
-   
-       if (updatedList.length === 1) {
-         alert("First product selected successfully. Now select the second product.");
-       } else if (updatedList.length === 2) {
-         alert("Second product selected successfully.");
-         setShowCompareDialog(true); 
-       }
-     } else {
-       alert("This item is already in the comparison list.");
-     }
-   };
-     const removeCompareItem = (productId: string) => {
-       const updatedList = comparisonList.filter((item) => item.id !== productId);
-       setComparisonList(updatedList);
-       if (updatedList.length === 0) {
-         setShowCompareDialog(false);
-       }
-       alert("Item removed from comparison list.");
-     };
- 
+  const addToCompare = (product: ShopCardProps) => {
+    if (comparisonList.length === 2) {
+      if (
+        window.confirm(
+          "You can only compare two items at a time. Do you want to clear the comparison list?"
+        )
+      ) {
+        setComparisonList([]);
+      }
+      return;
+    }
+
+    const isAlreadyAdded = comparisonList.some((item) => item.id === product.id);
+
+    if (!isAlreadyAdded) {
+      const updatedList = [...comparisonList, product];
+      setComparisonList(updatedList);
+
+      if (updatedList.length === 1) {
+        alert("First product selected successfully. Now select the second product.");
+      } else if (updatedList.length === 2) {
+        alert("Second product selected successfully.");
+        setShowCompareDialog(true);
+      }
+    } else {
+      alert("This item is already in the comparison list.");
+    }
+  };
+
+  const removeCompareItem = (productId: string) => {
+    const updatedList = comparisonList.filter((item) => item.id !== productId);
+    setComparisonList(updatedList);
+    if (updatedList.length === 0) {
+      setShowCompareDialog(false);
+    }
+    alert("Item removed from comparison list.");
+  };
 
   useEffect(() => {
     const savedCart = localStorage.getItem("cart");
@@ -234,17 +213,13 @@ const toggleWishlist = () => {
     }
   };
 
-  
-
   if (loading) {
     return <div>Loading...</div>;
   }
 
-  
-
-if (!product) {
-  return <ErrorePage />;
-}
+  if (!product) {
+    return <ErrorePage />;
+  }
 
 
   return (
@@ -525,7 +500,6 @@ if (!product) {
   <button
     onClick={(e) => {
       e.preventDefault();
-      toggleWishlist();
     }}
     className="text-black text-2xl"
   >

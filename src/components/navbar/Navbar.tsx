@@ -64,7 +64,7 @@ const Navbar = () => {
   return (
 
     // For Desktop
-    <header className="w-full fixed md:h-[90px]  bg-[#0D0D0D]  z-50">
+    <header className="w-full md:fixed md:h-[90px]  bg-[#0D0D0D]  z-50">
       <div className="flex justify-center items-center w-full mx-auto">
         
         <nav className="max-w-[1320px] xxl:w-[1320px] xl:w-[1200px] lg:w-[880px] md:w-[700px] md:h-[32px]  absolute top-[29px]   mx-auto flex justify-between items-center ">

@@ -9,6 +9,7 @@ import { ShopCardProps } from "../../../../types/type";
 import { useEffect, useState } from "react";
 import { client } from "@/sanity/lib/client";
 import { notFound } from "next/navigation";
+import SubscriptionComponent from "@/components/subscription/subscription";
 
 interface Props {
   params: {
@@ -382,7 +383,9 @@ const ShopSlidersDetails: React.FC<Props> = ({ params }) => {
           <ShopSliders />
         </div>
       </section>
-
+<div>
+  <SubscriptionComponent/>
+</div>
       {/* <div className="absolute md:top-[2403px] top-[2700px]">
         <Footer/>
       </div>  */}

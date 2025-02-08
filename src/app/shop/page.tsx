@@ -4,7 +4,6 @@ import Banner from "@/components/banner/Banner";
 import Image from "next/image";
 // import Footer from "@/components/footer/Footer";
 import "aos/dist/aos.css";
-import ShopSidebar from "@/components/shop/ShopSidebar";
 import ShopCard from "@/components/shop/ShopCard";
 const Shop = () => {
  

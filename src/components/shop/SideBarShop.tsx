@@ -6,13 +6,14 @@ import { FiX } from "react-icons/fi";
 import { VscSettings } from "react-icons/vsc";
 import RangeSlider from './PriceRange';
 import { FoodCategory, ShopCardProps } from '../../../types/type';
+import Link from 'next/link';
 
 
 const ShopSidebar = ({handleCategoryChange}: FoodCategory) => {
       const categories = ["All","Sandwiches", "Burgur", "Drink", "Pizza","Sweet", "Chicken Food", "Cheese Butter" ];
-      const [filteredProducts, setFilteredProducts] = useState<ShopCardProps[]>([]);
+      const [filteredProducts, setFilteredProducts] = useState<any[]>([]);
       const [totalPages, setTotalPages] = useState(0);
-      const [currentPage, setCurrentPage] = useState(1); 
+      const [currentPage, setCurrentPage] = useState(1);
 
       const [selectedCategory, setSelectedCategory] = useState<string | null>(null);
       const handleCategoryClick = (category: string, index: number) => {
@@ -27,7 +28,7 @@ const ShopSidebar = ({handleCategoryChange}: FoodCategory) => {
   return (
     <>
 {/* For desktop screens */}
-    <aside className='md:flex hidden'>
+    <aside className='md:flex hidden sidebar'>
     <div className="lg:w-[312px] h-[1590px] w-[290px]  relative top-[150px]   xxxl:left-[1308px] xl:left-[1050px] lg:left-[700px] xlg:left-[850px] md:left-[450px] xxl:left-[1108px] border-[1px] rounded-[6px] border-[#f2f2f2] cursor-pointer ">
         <div className="w-[248px] h-[46px] p-3 relative lg:left-[25px]  left-[10px] top-[1.5rem] bg-red-100 ">
           <input
@@ -87,23 +88,23 @@ const ShopSidebar = ({handleCategoryChange}: FoodCategory) => {
           </h2>
           <span className="font-inter text-[16px]font-bold text-[#ff9f0d] relative top-[-220px] left-[25px]">45.00$</span>
           <div className="flex justify-between w-[106px] h-[24px] relative top-[-140px] left-[25px]">
-            <span className="font-inter font-normal text-[16px] text-[#ffffff]">Shop Now</span>
+      <Link href="/"> <span className="font-inter font-normal text-[16px] text-[#ffffff]">Shop Now</span></Link>
             <Image src="/ArrowCircleRight.svg" alt="image" height={24} width={24}/>
           </div>
         </div>
       </div>
 
-      <div className="w-[248px] h-[87px] absolute  top-[1440px]  xxxl:left-[1333px] xl:left-[1080px] lg:left-[720px] xxl:left-[1140px] xlg:left-[870px] md:left-[470px]  flex flex-col justify-between ">
+      <div className="w-[248px] h-[87px] absolute  top-[950px]  xxxl:left-[1333px] xl:left-[1080px] lg:left-[720px] xxl:left-[1140px] xlg:left-[870px] md:left-[470px]  flex flex-col justify-between ">
         <h1 className="text-[20px] font-bold text-black font-helvetica ">
           Filter By Price
         </h1>
         <RangeSlider
-        category={""}
-        setFilteredProducts={setFilteredProducts}
-        setTotalPages={setTotalPages}
-        currentPage={currentPage} 
-        setCurrentPage={setCurrentPage} 
-      />
+          category={selectedCategory || "Sandwiches"}
+          setFilteredProducts={setFilteredProducts}
+          setTotalPages={setTotalPages}
+          currentPage={currentPage}        
+          setCurrentPage={setCurrentPage} 
+        />
 
         <div className="flex justify-between w-[246px] h-[24px]">
           <p className="text-[16px] font-normal text-black/65 font-inter">
@@ -115,7 +116,7 @@ const ShopSidebar = ({handleCategoryChange}: FoodCategory) => {
         </div>
       </div>
 
-      <div className="w-[252px] h-[368px] absolute top-[1580px] xxl:top-[1540px] xxxl:left-[1338px] lg:left-[720px] xl:left-[1080px] xxl:left-[1150px] xlg:left-[870px] md:left-[470px] ">
+      <div className="w-[252px] h-[368px] absolute top-[1580px] xxl:top-[1100px] xxxl:left-[1338px] lg:left-[720px] xl:left-[1080px] xxl:left-[1150px] xlg:left-[870px] md:left-[470px] ">
         <h1 className=" text-[20px] font-bold text-black font-helvetica mb-7 mt-5">
           Latest Products
         </h1>
@@ -271,7 +272,7 @@ const ShopSidebar = ({handleCategoryChange}: FoodCategory) => {
      <aside
   className={`${
     isSidebarOpen ? "translate-x-0" : "-translate-x-full"
-  } md:translate-x-0 fixed md:static top-0 left-0 z-40 md:hidden flex h-full w-full bg-white md:bg-transparent text-black ms:p-5 sm:p-0 transform transition-transform duration-300 ${
+  } md:translate-x-0 fixed md:static top-0 left-0 z-[1000] md:hidden flex h-full w-full  bg-white md:bg-transparent text-black ms:p-5 sm:p-0 transform transition-transform duration-300  ${
     isSidebarOpen ? "overflow-y-auto" : "md:overflow-visible"
   } w-[390px] md:w-[330px]`}
 >
