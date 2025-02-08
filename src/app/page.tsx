@@ -182,7 +182,7 @@ export default function Home() {
         <>
           <div className='bg-[#0D0D0D] w-full max-w-[1920px] md:h-[8000px] h-[7950px]'>
             <HeaderHero />
-            <div className="absolute md:top-[7800px] top-[7060px] xsm:top-[7200px] sm:top-[8050px]">
+            <div className="absolute md:top-[7800px] top-[7060px] xsm:top-[7200px] sm:top-[7900px]">
               <Footer />
             </div>
           </div>
