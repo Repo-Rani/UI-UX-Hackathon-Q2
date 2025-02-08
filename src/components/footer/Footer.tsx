@@ -14,8 +14,8 @@ const Footer = () => {
   return (
     <>
       <footer className=" md:w-[768px] xl:w-[1440px] xlg:w-[1275px] xxl:w-[1512px] xxxl:w-[1920px] lg:w-[1024px] w-[320px] ms:w-[375px] xsm:w-[425px] sm:w-[600px] max-w-[1920px] h-[1300px] xlg:h-[774.15px] relative bg-black text-white flex justify-between gap-[20px] items-center flex-col">
-        <div className="w-[280px] ms:w-[300px] md:w-[1170px] md:h-[142.62px] h-[300px] absolute   xl:left-[150px] xxxl:left-[359px] left-[10px] top-[50px] flex justify-between flex-col items-center">
-          <div className="w-[280px] sm:w-[500px] ms:w-[300px] md:w-[1170px]  flex justify-between items-center h-[100px]">
+        <div className="w-[280px] ms:w-[300px] xlg:w-[1170px] md:w-[760px] md:h-[142.62px] h-[300px] absolute   xl:left-[150px] xxxl:left-[359px] left-[10px] top-[50px] flex justify-between flex-col items-center">
+          <div className="w-[280px] sm:w-[500px] ms:w-[300px] xlg:w-[1170px] md:w-[760px]   flex justify-between items-center h-[100px]">
             <div className="flex justify-center xlg:gap-[10px] flex-col">
               <h2 className=" font-helvetica font-bold text-[18px] md:text-[32px] text-[#ffffff] whitespace-nowrap md:leading-[40px] relative left-[40px] sm:left-[250px] md:left-0">
                 <span className="text-[#FF9F0D]">St</span>ill You Need Our
@@ -26,7 +26,7 @@ const Footer = () => {
               </p>
             </div>
 
-            <form className="w-[80px] sm:w-[459px]  h-[40px] md:h-[55.86px] md:top-0 top-[80px] md:right-0 sm:right-[-100px]   ms:right-[200px] right-[230px] flex mx-auto relative">
+            <form className="w-[80px] sm:w-[459px]  h-[40px] md:h-[55.86px] xlg:top-0 top-[80px] xlg:right-0 md:right-0 sm:right-[-100px]   ms:right-[200px] right-[230px] flex mx-auto relative">
   <input
     type="email"
     placeholder="Enter Your Email"
@@ -42,7 +42,7 @@ const Footer = () => {
 
           </div>
 
-          <div className="w-[250px] xlg:w-[1170px] md:w-[600px] sm:w-[400px] border-b-[1px] border-[#FF9F0D] relative md:top-0 top-[-120px] md:left-0 left-[10px] sm:left-[130px] ms:left-[20px]"></div>
+          <div className="w-[250px] xlg:w-[1170px] md:w-[600px] sm:w-[400px] border-b-[1px] border-[#FF9F0D] relative xlg:top-0 md:top-[60px] top-[-120px] xlg:left-0 md:left-[-300px] left-[10px] sm:left-[130px] ms:left-[20px]"></div>
         </div>
         <div className="w-[150px] xl:w-[1100px] xxxl:w-[1320px]  md:w-[700px] h-[331px] relative top-[280px] xl:left-[-40px] xxl:left-0 left-[10px]  flex justify-between xl:items-center xxl:justify-between items-center xl:px-10 xxl:px-0">
           <div className="flex justify-center relative top-[-55px] md:right-0 right-[88px] gap-[10px] md:gap-[20px]  flex-col">

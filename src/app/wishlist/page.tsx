@@ -25,82 +25,89 @@ const Wishlist: React.FC = () => {
 
   
   const addToCart = (product: ShopCardProps) => {
-    const productInCart = cart.find((item) => item.id === product.id);
-
-    if (productInCart) {
+    if (typeof window !== "undefined") {
+      const productInCart = cart.find((item) => item.id === product.id);
+  
+      if (productInCart) {
+        const updatedCart = cart.map((item) =>
+          item.id === product.id
+            ? { ...item, quantity: (item.quantity ?? 0) + 1 }
+            : item
+        );
+        setCart(updatedCart);
+        localStorage.setItem("cart", JSON.stringify(updatedCart));
+      } else {
+        const newCartItem: CartProps = {
+          id: product.id ?? "default-id",
+          name: product.name,
+          imageUrl: product.imageUrl,
+          price: product.price,
+          quantity: 1,
+          total: product.price,
+        };
+  
+        const updatedCart: CartProps[] = [...cart, newCartItem];
+        setCart(updatedCart);
+        localStorage.setItem("cart", JSON.stringify(updatedCart));
+      }
+    }
+  };
+  
+  const removeFromCart = (productId: string) => {
+    if (typeof window !== "undefined") {
+      const updatedCart = cart.filter((item) => item.id !== productId);
+      setCart(updatedCart);
+      localStorage.setItem("cart", JSON.stringify(updatedCart));
+    }
+  };
+  
+  const increaseQuantity = (productId: string) => {
+    if (typeof window !== "undefined") {
       const updatedCart = cart.map((item) =>
-        item.id === product.id
+        item.id === productId
           ? { ...item, quantity: (item.quantity ?? 0) + 1 }
           : item
       );
       setCart(updatedCart);
       localStorage.setItem("cart", JSON.stringify(updatedCart));
-    } else {
-      const newCartItem: CartProps = {
-        id: product.id ?? "default-id",
-        name: product.name,
-        imageUrl: product.imageUrl,
-        price: product.price,
-        quantity: 1,
-        total: product.price,
-      };
-
-      const updatedCart: CartProps[] = [...cart, newCartItem];
+    }
+  };
+  
+  const decreaseQuantity = (productId: string) => {
+    if (typeof window !== "undefined") {
+      const updatedCart = cart.map((item) => {
+        if (item.id === productId && (item.quantity ?? 0) > 1) {
+          return { ...item, quantity: (item.quantity ?? 0) - 1 };
+        } else {
+          return item;
+        }
+      });
       setCart(updatedCart);
       localStorage.setItem("cart", JSON.stringify(updatedCart));
     }
   };
-
-  const removeFromCart = (productId: string) => {
-    const updatedCart = cart.filter((item) => item.id !== productId);
-    setCart(updatedCart);
-    localStorage.setItem("cart", JSON.stringify(updatedCart));
-  };
-
-  useEffect(() => {
-    const savedCart = localStorage.getItem("cart");
-    if (savedCart) {
-      setCart(JSON.parse(savedCart));
-    }
-  }, []);
-
-  const increaseQuantity = (productId: string) => {
-    const updatedCart = cart.map((item) =>
-      item.id === productId
-        ? { ...item, quantity: (item.quantity ?? 0) + 1 }
-        : item
-    );
-    setCart(updatedCart);
-    localStorage.setItem("cart", JSON.stringify(updatedCart));
-  };
-
-  const decreaseQuantity = (productId: string) => {
-    const updatedCart = cart.map((item) => {
-      if (item.id === productId && (item.quantity ?? 0) > 1) {
-        return { ...item, quantity: (item.quantity ?? 0) - 1 };
-      } else {
-        return item;
-      }
-    });
-    setCart(updatedCart);
-    localStorage.setItem("cart", JSON.stringify(updatedCart));
-  };
- localStorage
-  useEffect(() => {
-    const savedWishlist = JSON.parse(localStorage.getItem("wishlist") || "[]");
-    setWishlist(savedWishlist);
-  }, []);
-
+  
   const removeFromWishlist = (id: string) => {
-    const updatedWishlist = wishlist.filter((item) => item._id !== id);
-    setWishlist(updatedWishlist);
-    localStorage.setItem("wishlist", JSON.stringify(updatedWishlist));
+    if (typeof window !== "undefined") {
+      const updatedWishlist = wishlist.filter((item) => item._id !== id);
+      setWishlist(updatedWishlist);
+      localStorage.setItem("wishlist", JSON.stringify(updatedWishlist));
+    }
   };
   useEffect(() => {
     if (typeof window !== "undefined") {
-      const storedWishlist = localStorage.getItem("wishlist");
-      if (storedWishlist) {
-        setWishlist(JSON.parse(storedWishlist));
+      const savedCart = localStorage.getItem("cart");
+      if (savedCart) {
+        setCart(JSON.parse(savedCart));
+      }
+    }
+  }, []);
+  
+  useEffect(() => {
+    if (typeof window !== "undefined") {
+      const savedWishlist = localStorage.getItem("wishlist");
+      if (savedWishlist) {
+        setWishlist(JSON.parse(savedWishlist));
       }
     }
   }, []);
